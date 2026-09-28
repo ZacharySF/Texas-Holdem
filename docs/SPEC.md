@@ -43,3 +43,7 @@ Equity API: equity({players: (Hand | 'random')[], board, dead, method: 'exact' |
 Lab shell has all five modes; future modes name their phase. Phone card picker disables used cards. Edit hero/opponents/random/board/dead, support adding opponents; Exact and Simulate 1k/10k/100k/1M plus Deal random; display seed. Results show win/tie/loss/equity in four formats. Convergence chart plots estimate, narrowing 95% interval, and exact reference; explain why quadrupling samples halves standard error.
 
 The initial request authorized Phases 0 and 1. Subsequent explicit requests authorized Phases 2–4, then Phases 5–7 together. The latest explicit request authorizes completion of the unfinished Phase 8 and 9 items. The delivery scope ends at Phase 9. Resolve ambiguity and record tradeoffs in ARCHITECTURE.md. Priority: engine correctness/tests, Lab UI, docs polish. Finish with passing lint, typecheck, tests, build, and explicit outstanding roadmap entries.
+
+## Game experience follow-up
+
+The subsequent user request authorizes making Play the default experience and teaching through actual bot games. Keep all completed Phases 0–9 learning tools. Add a poker-room entry, one-click dealing, a spatial table with named bots and readable turns, optional street-by-street guidance, and clear results with immediate next-hand play. Keep detailed math and verification available on demand. The existing engine, bot information boundaries, seeded randomness, and saved-history rules remain authoritative.

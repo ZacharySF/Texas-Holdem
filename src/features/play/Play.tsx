@@ -7,7 +7,6 @@ import {
   newGame,
   legalActions,
   playerView,
-  potSize,
   type Game,
   type GameConfig,
   type Action,
@@ -30,7 +29,8 @@ import {
   type DecisionNote,
   type Profile,
 } from './storage';
-import { PlayingCards } from '../../ui/PlayingCards';
+import { Table, botStyles } from './Table';
+import { HandGuide } from './HandGuide';
 import { CoachPanel, type Assessment } from './CoachPanel';
 import { HistoryPanel } from './HistoryPanel';
 import './play.css';
@@ -55,6 +55,8 @@ export default function Play() {
     [commitment, setCommitment] = useState(''),
     [assessment, setAssessment] = useState<Assessment | null>(null),
     [thinking, setThinking] = useState(false),
+    [dealing, setDealing] = useState(false),
+    [guided, setGuided] = useState(true),
     [error, setError] = useState(''),
     [coach, setCoach] = useState(true),
     [exam, setExam] = useState(false),
@@ -68,7 +70,8 @@ export default function Play() {
     [retry, setRetry] = useState(0);
   const notes = useRef<DecisionNote[]>([]),
     worker = useRef<Worker | null>(null),
-    saved = useRef(new Set<string>());
+    saved = useRef(new Set<string>()),
+    preparing = useRef(false);
   const [lessonXp] = useState(() => {
     try {
       return (
@@ -123,6 +126,8 @@ export default function Play() {
 
     setThinking(true);
     let cancelled = false;
+    let botTimer: ReturnType<typeof setTimeout> | undefined;
+    const started = performance.now();
     void analysisSeed(game.config.seed, `decision:${game.history.length}`)
       .then((seed) => {
         if (cancelled) return;
@@ -149,7 +154,7 @@ export default function Play() {
           if (game.actor > 0 && response.action) {
             try {
               const next = act(game, response.action);
-              notes.current.push({
+              const note: DecisionNote = {
                 index: game.history.length,
                 seat: game.actor,
                 action: response.action,
@@ -157,8 +162,16 @@ export default function Play() {
                 equity: response.equity,
                 analysisSeed: seed,
                 reference: response.reference,
-              });
-              setGame(next);
+              };
+              botTimer = setTimeout(
+                () => {
+                  if (!cancelled) {
+                    notes.current.push(note);
+                    setGame(next);
+                  }
+                },
+                Math.max(0, 850 - (performance.now() - started)),
+              );
             } catch (e) {
               setError(e instanceof Error ? e.message : 'Bot action failed.');
             }
@@ -192,6 +205,7 @@ export default function Play() {
       });
     return () => {
       cancelled = true;
+      clearTimeout(botTimer);
       worker.current?.terminate();
       worker.current = null;
     };
@@ -231,7 +245,10 @@ export default function Play() {
       ),
     );
   }, [game, commitment, persona]);
-  async function prepare() {
+  async function prepare(manual = false) {
+    if (preparing.current || active || pending) return;
+    preparing.current = true;
+    setDealing(true);
     try {
       setError('');
       const seed = newSeed(),
@@ -250,19 +267,22 @@ export default function Play() {
           runItTwice: twice,
         };
       const hash = await seedHash(seed);
-      setPending({ config, hash });
+      if (manual) setPending({ config, hash });
+      else startHand(config, hash);
     } catch {
       setError(
         'A secure browser context with Web Crypto is required to commit a deal.',
       );
+    } finally {
+      preparing.current = false;
+      setDealing(false);
     }
   }
-  function deal() {
-    if (!pending) return;
+  function startHand(config: GameConfig, hash: string) {
     try {
-      const next = newGame(pending.config);
+      const next = newGame(config);
       notes.current = [];
-      setCommitment(pending.hash);
+      setCommitment(hash);
       setGame(next);
       setPending(null);
       setReview(null);
@@ -272,7 +292,21 @@ export default function Play() {
     }
   }
   function submit(action: Action) {
-    if (!game || game.actor !== 0 || !assessment) return;
+    if (!game || game.complete || game.actor !== 0) return;
+    if (!assessment) {
+      if (exam) return;
+      try {
+        setGame(act(game, action));
+        setGrade(
+          'You played before the estimate was ready. This action is saved in the replay without a model grade.',
+        );
+      } catch (e) {
+        setError(
+          e instanceof Error ? e.message : 'That action is unavailable.',
+        );
+      }
+      return;
+    }
     try {
       const next = act(game, action),
         view = playerView(game, 0),
@@ -326,7 +360,8 @@ export default function Play() {
       assessment &&
       (!exam || revealedAt === game.history.length),
     canAct =
-      heroTurn && !!assessment && (!exam || revealedAt === game.history.length),
+      heroTurn &&
+      (!exam || (!!assessment && revealedAt === game.history.length)),
     raiseTo = Number(raise),
     requiredXp = [0, 20, 40, 60];
   const modelRaiseTo =
@@ -341,21 +376,96 @@ export default function Play() {
     <main className="play">
       <header className="play-header">
         <div>
-          <span className="eyebrow">PLAY / NO-LIMIT HOLD’EM</span>
+          <span className="eyebrow">THE MONTE CARLO POKER ROOM</span>
           <h1>
-            Make the decision.
-            <br />
-            <em>Then see the math.</em>
+            {game ? 'A seat at the table.' : 'Your next hand starts here.'}
           </h1>
+          <p className="room-subtitle">Play the hand. Find your edge.</p>
         </div>
         <div className="bankroll">
-          <span>PLAY-MONEY BANKROLL</span>
+          <span>YOUR CHIPS · PLAY MONEY</span>
           <strong>{profile.bankroll.toLocaleString()}</strong>
           <small>
-            {xp} XP · {profile.hands} completed hands
+            {xp} XP · {profile.hands} hands played
           </small>
         </div>
       </header>
+      {!game && !pending && (
+        <section className="game-lobby">
+          <div className="lobby-copy">
+            <span className="eyebrow">PULL UP A CHAIR</span>
+            <h2>
+              Real hands.
+              <br />
+              Your decisions.
+            </h2>
+            <p>
+              Take on the bots in no-limit Hold’em. Find your rhythm at a quiet
+              table, or join five opponents. Your coach walks through the game
+              with you.
+            </p>
+            <div className="table-picker" aria-label="Choose your table">
+              {[2, 6].map((count) => (
+                <button
+                  key={count}
+                  aria-pressed={seats === count}
+                  onClick={() => setSeats(count)}
+                >
+                  <strong>
+                    {count === 2 ? 'Heads-up' : 'Six-player table'}
+                  </strong>
+                  <span>
+                    {count === 2
+                      ? 'You + one bot · room to learn'
+                      : 'You + five bots · more action'}
+                  </span>
+                </button>
+              ))}
+            </div>
+            <button
+              className="primary start-game"
+              disabled={dealing || profile.bankroll < 1}
+              onClick={() => void prepare()}
+            >
+              {dealing ? 'Shuffling…' : 'Take a seat & play'}
+            </button>
+            <p className="hint">No buy-in. No timer. Just play-money poker.</p>
+          </div>
+          <div className="lobby-table" aria-hidden="true">
+            <div className="lobby-orbit">
+              <span>♠</span>
+              <div className="lobby-cards">
+                <span>
+                  A<small>♠</small>
+                </span>
+                <span>
+                  K<small>♥</small>
+                </span>
+              </div>
+              <div className="lobby-chips">
+                <i />
+                <i />
+                <i />
+              </div>
+              <p>THE NEXT MOVE IS YOURS</p>
+            </div>
+          </div>
+        </section>
+      )}
+      <div className="session-toolbar">
+        <span>
+          {seats === 2 ? 'Heads-up' : 'Six-player'} · {bigBlind / 2} /{' '}
+          {bigBlind} blinds · {botStyles[persona].name}
+        </span>
+        <label>
+          <input
+            type="checkbox"
+            checked={guided}
+            onChange={(e) => setGuided(e.target.checked)}
+          />{' '}
+          Walk me through the hand
+        </label>
+      </div>
       {error && (
         <p className="error" role="alert">
           {error}{' '}
@@ -371,108 +481,10 @@ export default function Play() {
           )}
         </p>
       )}
-      <section className="panel play-settings">
-        <label>
-          <input
-            type="checkbox"
-            checked={twice}
-            disabled={!!active || !!pending}
-            onChange={(e) => setTwice(e.target.checked)}
-          />{' '}
-          Run it twice when betting is closed by all-ins
-        </label>
-        <p className="hint">
-          All seats agree before the deal. Remaining boards use the same deck
-          without replacement; each pot is split across both boards. Final
-          fractional chips are rounded once, clockwise from the button.
-        </p>
-        <label>
-          Table size
-          <select
-            aria-label="Table size"
-            value={seats}
-            disabled={!!active || !!pending}
-            onChange={(e) => setSeats(Number(e.target.value))}
-          >
-            <option value={2}>Heads-up</option>
-            <option value={6}>6-max</option>
-          </select>
-        </label>
-        <div>
-          <label htmlFor="persona">Bot persona</label>
-          <select
-            id="persona"
-            value={persona}
-            disabled={!!active || !!pending}
-            onChange={(e) => setPersona(e.target.value as Persona)}
-          >
-            {PERSONAS.map((p, i) => (
-              <option key={p} value={p} disabled={xp < requiredXp[i]}>
-                {p}
-                {xp < requiredXp[i] ? ` · unlock at ${requiredXp[i]} XP` : ''}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="stakes">Blinds</label>
-          <select
-            id="stakes"
-            value={bigBlind}
-            disabled={!!active || !!pending}
-            onChange={(e) => setBigBlind(Number(e.target.value))}
-          >
-            {[10, 20, 50].map((b, i) => (
-              <option value={b} key={b} disabled={xp < i * 40}>
-                {b / 2} / {b}
-                {xp < i * 40 ? ` · unlock at ${i * 40} XP` : ''}
-              </option>
-            ))}
-          </select>
-        </div>
-        <label>
-          <input
-            type="checkbox"
-            checked={coach}
-            onChange={(e) => setCoach(e.target.checked)}
-          />{' '}
-          Coach
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            checked={exam}
-            onChange={(e) => {
-              setExam(e.target.checked);
-              if (e.target.checked) setCoach(true);
-            }}
-          />{' '}
-          Exam mode
-        </label>
-        <p className="hint">
-          Earn 20 XP per completed hand or mastered lesson, plus 5 XP for
-          decisions close to this coach model. Higher stakes and additional bots
-          unlock with XP. Outs Rush adds 5 XP per new correct answer in a seed’s
-          best completed set. These chips have no cash value.
-        </p>
-      </section>
-      {!active && !pending && (
-        <div className="play-actions">
-          <button
-            className="primary"
-            disabled={profile.bankroll < 1}
-            onClick={() => void prepare()}
-          >
-            Commit next deal
-          </button>
-          {profile.bankroll < 1 && (
-            <button
-              onClick={() => setProfile((p) => ({ ...p, bankroll: 2000 }))}
-            >
-              Refill play-money bankroll
-            </button>
-          )}
-        </div>
+      {profile.bankroll < 1 && !active && (
+        <button onClick={() => setProfile((p) => ({ ...p, bankroll: 2000 }))}>
+          Refill play-money bankroll
+        </button>
       )}
       {pending && (
         <section className="panel commitment">
@@ -482,79 +494,41 @@ export default function Play() {
             The SHA-256 hash is fixed now. The seed will be revealed after the
             hand so you can verify and replay it.
           </p>
-          <button className="primary" onClick={deal}>
+          <button
+            className="primary"
+            onClick={() => startHand(pending.config, pending.hash)}
+          >
             Deal committed hand
           </button>
         </section>
       )}
-      {game && (
-        <section className="felt-table" aria-label="Poker table">
-          <div className="opponent-seats">
-            {game.players.slice(1).map((p, index) => {
-              const seat = index + 1;
-              return (
-                <div
-                  key={seat}
-                  className={`seat bot-seat ${game.actor === seat && !game.complete ? 'acting' : ''}`}
-                >
-                  <h2>
-                    Seat {seat + 1} · {persona}
-                    {game.config.button === seat ? ' · Button' : ''}
-                  </h2>
-                  <p>
-                    {p.stack} chips · {p.round} this round
-                    {p.folded ? ' · folded' : ''}
-                  </p>
-                  <PlayingCards
-                    cards={game.complete ? p.hand : []}
-                    hidden={game.complete ? 0 : 2}
-                  />
-                </div>
-              );
-            })}
-          </div>
-          <div className="table-center">
-            <span className="pot-chip">POT {potSize(game)}</span>
-            <p className="eyebrow">
-              {game.complete ? 'HAND COMPLETE' : game.street.toUpperCase()}
-            </p>
-            <PlayingCards cards={game.board} />
-            {game.runouts && (
-              <div>
-                <p>Second runout</p>
-                <PlayingCards cards={game.runouts[1]} />
-              </div>
-            )}
-            {game.board.length === 0 && (
-              <p className="hint">
-                The community cards arrive after preflop betting.
-              </p>
-            )}
-          </div>
-          <div className={`seat hero-seat ${heroTurn ? 'acting' : ''}`}>
-            <PlayingCards cards={game.players[0].hand} />
+      {game && <Table game={game} persona={persona} />}
+      {game?.complete && (
+        <section className="hand-result" aria-label="Hand result">
+          <div>
+            <span className="eyebrow">HAND COMPLETE</span>
             <h2>
-              You
-              {game.config.button === 0
-                ? game.players.length === 2
-                  ? ' · Button / small blind'
-                  : ' · Button'
-                : ''}
+              {game.players[0].stack > game.config.stacks[0]
+                ? 'Chips coming your way.'
+                : game.players[0].stack < game.config.stacks[0]
+                  ? 'A fresh hand awaits.'
+                  : 'Back where you started.'}
             </h2>
             <p>
-              {game.players[0].stack} chips · {game.players[0].round} this round
-              {game.players[0].folded ? ' · folded' : ''}
+              <strong>
+                {game.players[0].stack - game.config.stacks[0] > 0 ? '+' : ''}
+                {game.players[0].stack - game.config.stacks[0]} chips
+              </strong>{' '}
+              this hand · {game.awards[0]} returned from the pots
             </p>
           </div>
-          <p role="status" className="table-status">
-            {game.complete
-              ? `Hand over. You receive ${game.awards[0]} chips from the matched pots.`
-              : game.actor > 0
-                ? 'Bot is considering its visible cards and the public action.'
-                : thinking
-                  ? 'Calculating your visible-card estimates…'
-                  : 'Your action.'}
-          </p>
+          <button
+            className="primary"
+            disabled={dealing || !!pending || profile.bankroll < 1}
+            onClick={() => void prepare()}
+          >
+            {dealing ? 'Shuffling…' : 'Deal next hand'}
+          </button>
         </section>
       )}
       {heroTurn && exam && revealedAt !== game.history.length && (
@@ -590,10 +564,18 @@ export default function Play() {
       )}
       {heroTurn && legal && (
         <section className="panel action-panel">
-          <h2>Your action</h2>
+          <div className="action-heading">
+            <h2>Your move</h2>
+            <span>
+              {legal.canCheck
+                ? 'You can check for free'
+                : `${legal.toCall} chips to stay in`}
+            </span>
+          </div>
           <div className="play-actions">
             <button disabled={!canAct} onClick={() => submit({ type: 'fold' })}>
               Fold
+              {guided && <small>Leave this hand</small>}
             </button>
             {legal.canCheck ? (
               <button
@@ -602,6 +584,7 @@ export default function Play() {
                 onClick={() => submit({ type: 'check' })}
               >
                 Check
+                {guided && <small>Stay in for free</small>}
               </button>
             ) : (
               <button
@@ -611,11 +594,22 @@ export default function Play() {
               >
                 Call {legal.toCall}
                 {game.players[0].stack === legal.toCall ? ' · all in' : ''}
+                {guided && <small>Match the bet</small>}
               </button>
             )}
           </div>
           {legal.canRaise && (
             <div className="raise-controls">
+              <input
+                aria-label="Raise amount"
+                type="range"
+                min={Math.min(legal.minRaiseTo, legal.maxRaiseTo)}
+                max={legal.maxRaiseTo}
+                step="1"
+                value={modelRaiseTo}
+                disabled={!canAct}
+                onChange={(e) => setRaise(e.target.value)}
+              />
               <label htmlFor="raise-to">
                 Raise to (total chips this round)
               </label>
@@ -648,30 +642,47 @@ export default function Play() {
               >
                 Set all-in amount
               </button>
-              <p className="hint">
-                Full minimum: {legal.minRaiseTo}. Maximum: {legal.maxRaiseTo}. A
-                shorter raise is allowed only for your full stack and does not
-                reopen betting for a player who already acted.
-              </p>
+              <details className="raise-explanation">
+                <summary>How raising works</summary>
+                <p className="hint">
+                  Full minimum: {legal.minRaiseTo}. Maximum: {legal.maxRaiseTo}.
+                  A shorter raise is allowed only for your full stack and does
+                  not reopen betting for a player who already acted.
+                </p>
+              </details>
             </div>
           )}
         </section>
       )}
+      {game && guided && <HandGuide key={game.config.seed} game={game} />}
+      {heroTurn && thinking && (
+        <p className="hint">
+          {exam
+            ? 'Preparing the estimate for your prediction…'
+            : 'Your coach is thinking. You can play while the estimate loads.'}
+        </p>
+      )}
       {grade && (
-        <section className="panel decision-grade">
-          <h2>Your last decision grade</h2>
+        <details className="panel decision-grade">
+          <summary>Your last decision · coach feedback</summary>
           <p>{grade}</p>
+          <p className="hint">
+            Finish your hand before opening a lesson to keep its replay.
+          </p>
           <Link to="/learn/12-2">Review direct call EV →</Link>
-        </section>
+        </details>
       )}
       {showCoach && (
-        <CoachPanel
-          view={playerView(game, 0)}
-          assessment={assessment}
-          raiseTo={modelRaiseTo}
-          foldPercent={foldPercent}
-          onFoldPercent={setFoldPercent}
-        />
+        <details className="coach-drawer">
+          <summary>Ask the coach · odds &amp; decisions</summary>
+          <CoachPanel
+            view={playerView(game, 0)}
+            assessment={assessment}
+            raiseTo={modelRaiseTo}
+            foldPercent={foldPercent}
+            onFoldPercent={setFoldPercent}
+          />
+        </details>
       )}
       {game && !game.complete && (
         <details className="commitment-current">
@@ -680,9 +691,120 @@ export default function Play() {
           <p>The seed and all hands will be shown when this hand ends.</p>
         </details>
       )}
-      {review && !active && <HistoryPanel key={review.id} hand={review} />}
-      <section className="panel">
-        <h2>Saved hands on this device</h2>
+      {review && !active && (
+        <details className="review-drawer" key={review.id}>
+          <summary>Review this hand · replay, cards &amp; bot thinking</summary>
+          <HistoryPanel hand={review} />
+        </details>
+      )}
+      <details className="panel table-settings">
+        <summary>Table settings &amp; advanced options</summary>
+        <div className="play-settings">
+          <label>
+            <input
+              type="checkbox"
+              checked={twice}
+              disabled={!!active || !!pending || dealing}
+              onChange={(e) => setTwice(e.target.checked)}
+            />{' '}
+            Run it twice when betting is closed by all-ins
+          </label>
+          <p className="hint">
+            All seats agree before the deal. Remaining boards use the same deck
+            without replacement; each pot is split across both boards. Final
+            fractional chips are rounded once, clockwise from the button.
+          </p>
+          <label>
+            Table size
+            <select
+              aria-label="Table size"
+              value={seats}
+              disabled={!!active || !!pending || dealing}
+              onChange={(e) => setSeats(Number(e.target.value))}
+            >
+              <option value={2}>Heads-up</option>
+              <option value={6}>6-max</option>
+            </select>
+          </label>
+          <div>
+            <label htmlFor="persona">Bot persona</label>
+            <select
+              id="persona"
+              value={persona}
+              disabled={!!active || !!pending || dealing}
+              onChange={(e) => setPersona(e.target.value as Persona)}
+            >
+              {PERSONAS.map((p, i) => (
+                <option key={p} value={p} disabled={xp < requiredXp[i]}>
+                  {botStyles[p].name}
+                  {xp < requiredXp[i] ? ` · unlock at ${requiredXp[i]} XP` : ''}
+                </option>
+              ))}
+            </select>
+            <p className="hint">
+              {botStyles[persona].description}
+              {seats === 6 ? ' All five opponents use this style.' : ''}
+            </p>
+          </div>
+          <div>
+            <label htmlFor="stakes">Blinds</label>
+            <select
+              id="stakes"
+              value={bigBlind}
+              disabled={!!active || !!pending || dealing}
+              onChange={(e) => setBigBlind(Number(e.target.value))}
+            >
+              {[10, 20, 50].map((b, i) => (
+                <option value={b} key={b} disabled={xp < i * 40}>
+                  {b / 2} / {b}
+                  {xp < i * 40 ? ` · unlock at ${i * 40} XP` : ''}
+                </option>
+              ))}
+            </select>
+          </div>
+          <label>
+            <input
+              type="checkbox"
+              checked={coach}
+              onChange={(e) => setCoach(e.target.checked)}
+            />{' '}
+            Coach
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={exam}
+              onChange={(e) => {
+                setExam(e.target.checked);
+                if (e.target.checked) setCoach(true);
+              }}
+            />{' '}
+            Exam mode
+          </label>
+          <p className="hint">
+            Earn 20 XP per completed hand or mastered lesson, plus 5 XP for
+            decisions close to this coach model. Higher stakes and additional
+            bots unlock with XP. Outs Rush adds 5 XP per new correct answer in a
+            seed’s best completed set. These chips have no cash value.
+          </p>
+        </div>
+        {!active && !pending && (
+          <button
+            disabled={dealing || profile.bankroll < 1}
+            onClick={() => void prepare(true)}
+          >
+            Commit next deal
+          </button>
+        )}
+        <p className="hint">
+          Deals are committed automatically before cards are dealt. Use the
+          manual option to inspect the commitment first. Leaving Play or
+          reloading ends an unfinished hand without saving it.
+        </p>
+      </details>
+
+      <details className="panel saved-hands-drawer">
+        <summary>Saved hands on this device · {history.length}</summary>
         {history.length ? (
           <ul className="saved-hands">
             {history.slice(0, 30).map((h) => (
@@ -712,7 +834,30 @@ export default function Play() {
             reasoning.
           </p>
         )}
-      </section>
+      </details>
+      {!game && (
+        <div className="room-paths">
+          <div>
+            <span className="eyebrow">01 / TAKE YOUR SEAT</span>
+            <h2>Play against the bots</h2>
+            <p>
+              Every opponent acts on their own cards and the action they can
+              see.
+            </p>
+          </div>
+          <div>
+            <span className="eyebrow">02 / LEARN IN THE HAND</span>
+            <h2>A little help when it matters</h2>
+            <p>Follow the walkthrough, or switch it off and trust your read.</p>
+          </div>
+          <div>
+            <span className="eyebrow">03 / GO DEEPER</span>
+            <h2>Bring your questions</h2>
+            <p>Replay a hand, explore the odds, or open a lesson.</p>
+            <Link to="/learn">Visit the learning room →</Link>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

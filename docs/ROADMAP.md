@@ -244,3 +244,14 @@ The table covers every numerical anchor plus the explicit verification propertie
 - [x] Audited all 53 MDX lessons plus lesson components and shared probability displays. Replaced duplicated confidence percentages, notebook probabilities, example rates, and practice likelihood labels with values from registry functions, model inputs, or Rational arithmetic. Scenario descriptions retain counts, units, and definitions; computed probabilities no longer have separately typed presentation values. The existing MDX scan now also rejects decimal percentages, written numeric “percent” labels, and vulgar-fraction characters; the new presentation scan checks JSX and string/template text.
 - [x] Project-owned text contains no machine-specific home/profile/store paths or personal username references. CI installs Chromium and system dependencies with Playwright before the smoke suite; CI explicitly ignores the optional local-browser override. A regression test checks installation order and portable paths. Generated dependencies, build output, coverage, and test reports remain ignored.
 - [x] Lint, typecheck, 90 tests across 18 files, coverage, production build, and all 10 Playwright checks pass. Engine coverage remains 99.22% statements, 98.24% branches, 100% functions, and 99.31% lines. No features or engine algorithms were added; benchmark measurements were retained rather than represented as rerun.
+
+## Game experience follow-up
+
+- [x] Open in the poker room with one-click heads-up or six-player entry.
+- [x] Display named opponents, hidden cards, dealer position, bets, pot, current hand, and readable bot turns around a felt table.
+- [x] Walk through the actual preflop, flop, turn, and river with optional contextual guidance. Preserve lessons, labs, drills, Stats, detailed coaching, and replay.
+- [x] Show settled chip changes and continue directly to the next hand. Retain advanced manual commitments and automatic seed verification.
+- [x] Keep ordinary actions available during coach calculation; retain prediction gating in exam mode.
+- [x] Complete final lint, typecheck, unit tests, production build, and desktop/phone browser checks for the revised interface. All 90 unit tests and 16 browser checks pass; affected game checks were rerun after the final layout and bot-delay refinements.
+
+No engine algorithms or benchmarks changed. Active-hand recovery remains deferred: leaving Play or reloading abandons an unfinished hand without settlement. Opponent names are table identities; every seat uses the selected persona.

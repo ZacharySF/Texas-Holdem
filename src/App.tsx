@@ -44,10 +44,10 @@ function readSettings(): Settings {
   return { theme: 'dark', fourColor: false };
 }
 const modes = [
-  ['learn', 'Learn', 2],
   ['play', 'Play', 3],
-  ['lab', 'Lab', 1],
   ['arcade', 'Arcade', 4],
+  ['learn', 'Learn', 2],
+  ['lab', 'Lab', 1],
   ['stats', 'Stats', 6],
 ] as const;
 function ToolNavigation() {
@@ -108,7 +108,7 @@ export function App() {
         Skip to content
       </a>
       <header className="app-header">
-        <NavLink to="/lab" className="brand">
+        <NavLink to="/play" className="brand">
           <span className="brand-mark">♠</span>
           <span>
             MONTE CARLO<strong>HOLD'EM</strong>
@@ -259,7 +259,7 @@ export function App() {
               </Suspense>
             }
           />
-          <Route path="*" element={<Navigate to="/lab" replace />} />
+          <Route path="*" element={<Navigate to="/play" replace />} />
         </Routes>
       </div>
       <footer className="app-footer">

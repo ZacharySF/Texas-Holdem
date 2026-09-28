@@ -169,6 +169,9 @@ test('run-it-twice table, saved history, and Stats', async ({ page }) => {
   });
   await page.goto('/#/play');
   await page
+    .getByText('Table settings & advanced options', { exact: true })
+    .click();
+  await page
     .getByLabel('Run it twice when betting is closed by all-ins')
     .check();
   await page.getByLabel('Bot persona').selectOption('calling-station');
@@ -188,6 +191,18 @@ test('run-it-twice table, saved history, and Stats', async ({ page }) => {
   await expect(
     page.getByText('Second runout', { exact: true }).first(),
   ).toBeVisible();
+  const boardBottom = await page
+    .locator('.table-center')
+    .evaluate((el) => el.getBoundingClientRect().bottom);
+  const heroTop = await page
+    .locator('.hero-seat')
+    .evaluate((el) => el.getBoundingClientRect().top);
+  expect(boardBottom).toBeLessThan(heroTop);
+  await page
+    .getByText('Review this hand · replay, cards & bot thinking', {
+      exact: true,
+    })
+    .click();
   await expect(
     page.getByRole('heading', { name: 'Hand history, replay, and x-ray' }),
   ).toBeVisible();

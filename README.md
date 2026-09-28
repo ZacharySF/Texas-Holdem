@@ -1,10 +1,22 @@
 # Monte Carlo Hold'em
 
-A static browser course, equity lab, and No-Limit Hold’em game. Learn probability through counted card examples and reproducible experiments, then play against bots with a coach that explains its assumptions. Simulations run locally in workers.
+A No-Limit Hold’em game with a probability course built around it. Open the poker room, take a seat against one or five bots, and learn through real hands. An optional walkthrough follows each betting street; deeper coaching, lessons, drills, and experiments stay within reach. Everything runs locally in your browser.
 
 Phases 0–9 are implemented locally. Learn contains 53 lessons across chapters 0–25. Play supports heads-up and 6-max tables, including running all-ins twice. The Lab covers equity, ranges, repeated events, bankroll paths, shuffles, insurance, push/fold, ICM, and Kelly. Arcade includes five drills and a playable AKQ game with a small CFR trainer. Stats summarizes completed hands and forecasts.
 
 **Play online:** [Monte Carlo Hold'em](https://zacharysf.github.io/Texas-Holdem/). **Source:** [Texas-Holdem on GitHub](https://github.com/ZacharySF/Texas-Holdem). The first deployment passed all checks and the live URL was verified on 2026-09-28. GitHub Actions deploys `dist/` after successful checks on `main`. Hash routes and relative assets support project Pages URLs and shared Lab links.
+
+## Play first, learn as you go
+
+The app opens in the poker room. Choose heads-up or a six-player table and press **Take a seat & play**. The table shows named bots, concealed hole cards, the dealer button, stack sizes, bets, and whose turn it is. Opponents pause briefly so their actions are readable. Choose fold, check, call, or raise; use the slider or enter an exact raise total.
+
+**Walk me through the hand** introduces your cards, the flop, the turn, and the river as they actually arrive. Switch it off for uninterrupted play. **Ask the coach** opens the full odds and decision analysis. Ordinary actions stay available while estimates load; actions made before an estimate arrives are saved without a model grade. Exam mode still requires an estimate before acting.
+
+A result panel shows the net chip change and **Deal next hand**. Expand **Review this hand** for replay, revealed cards, bot reasoning, and runouts. Table settings, manual seed commitments, and saved histories live in expandable panels. Learn, Lab, Arcade, and Stats remain available in the main navigation. Finish a hand before navigating away: active hands are still session-only.
+
+![The poker room with one-click table entry](docs/screenshots/poker-lobby-desktop.png)
+
+<img src="docs/screenshots/poker-table-phone.png" alt="A heads-up poker hand with concealed bot cards, community cards, pot, and your hole cards" width="375" />
 
 ## Run it
 
@@ -72,10 +84,10 @@ The drawing lessons explicitly distinguish a rank-hit set-mining event from ever
 
 ## Play: heads-up and 6-max
 
-1. Select two or six seats, an available bot persona, and a blind level. Commit the next deal to display its SHA-256 hash, then press **Deal committed hand**. Your seed stays hidden in the interface until the hand ends.
+1. Select heads-up or six players and press **Take a seat & play**. Table settings contain bot styles and blinds. Each deal is committed automatically before cards are dealt; the advanced **Commit next deal** option lets you inspect the hash before dealing manually. Your seed stays hidden until the hand ends.
 2. Check, call, fold, or raise to a total contribution for the current round. Legal controls enforce the minimum increment, stack caps, and short-all-in restrictions. The button rotates between hands.
-3. Toggle the coach for weighted-range equity, separate win/tie/loss estimates, pot odds, highlighted category-improvement cards, and direct EV comparisons. Exam mode asks for your equity estimate before revealing the coach.
-4. Review the decision grade after acting. The model ignores future betting, depends on a heuristic range estimate, and uses your displayed fold-response assumption for a raise. Known uncallable overbets are excluded when pricing a short-stack call. The highlighted cards improve a made-hand category; they are not guaranteed winners.
+3. Follow the optional hand walkthrough. Expand **Ask the coach** for weighted-range equity, separate win/tie/loss estimates, pot odds, highlighted category-improvement cards, and direct EV comparisons. Exam mode asks for your equity estimate before revealing the coach.
+4. Expand the decision feedback after acting when an estimate was available. The model ignores future betting, depends on a heuristic range estimate, and uses your displayed fold-response assumption for a raise. Known uncallable overbets are excluded when pricing a short-stack call. The highlighted cards improve a made-hand category; they are not guaranteed winners.
 5. After the hand, inspect all hands and every bot reason, verify the revealed seed, replay the recorded actions, or run any encountered street out 10,000 times. Outcome histograms show net chip awards after each main and side pot is settled with the final matched contributions held fixed.
 
 Completed hand histories, commitments, actions, estimates, and exam guesses live in IndexedDB. The play-money profile lives in localStorage. Hand/decision XP, mastered-lesson XP, and Outs Rush best-score XP unlock stakes and the tight-passive, loose-aggressive, calling-station, and equity-driven personas. The bankroll can be explicitly refilled after busting; it has no cash value. Unfinished hands remain session-only and are abandoned without settlement on leaving Play or reloading.
