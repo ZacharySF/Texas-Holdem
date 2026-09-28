@@ -45,10 +45,10 @@ function readSettings(): Settings {
 }
 const modes = [
   ['play', 'Play', 3],
-  ['arcade', 'Arcade', 4],
-  ['learn', 'Learn', 2],
-  ['lab', 'Lab', 1],
-  ['stats', 'Stats', 6],
+  ['learn', 'Course', 2],
+  ['arcade', 'Drills', 4],
+  ['lab', 'Tools', 1],
+  ['stats', 'Progress', 6],
 ] as const;
 function ToolNavigation() {
   const { pathname } = useLocation();
@@ -74,15 +74,32 @@ function ToolNavigation() {
           ['/arcade/akq', 'AKQ game'],
         ]
       : [];
-  return links.length ? (
-    <nav className="tool-nav" aria-label="Tools">
-      {links.map(([to, label]) => (
-        <NavLink key={to} to={to} end>
-          {label}
-        </NavLink>
-      ))}
-    </nav>
-  ) : null;
+  const help = pathname.startsWith('/lab')
+    ? 'Tools let you explore a specific poker question. Choose one below, or follow the course for a guided introduction.'
+    : pathname.startsWith('/arcade')
+      ? 'Drills are short games for practicing one skill at a time. Pick a game below; your scores are saved on this device.'
+      : pathname.startsWith('/stats')
+        ? 'Your completed hands and forecasts appear here. Play a hand or finish a drill to start building your history.'
+        : '';
+  return (
+    <>
+      {help && (
+        <div className="mode-guide">
+          <p>{help}</p>
+          <NavLink to="/learn">Find your next lesson →</NavLink>
+        </div>
+      )}
+      {links.length ? (
+        <nav className="tool-nav" aria-label="Tools">
+          {links.map(([to, label]) => (
+            <NavLink key={to} to={to} end>
+              {label}
+            </NavLink>
+          ))}
+        </nav>
+      ) : null}
+    </>
+  );
 }
 export function App() {
   const [settings, setSettings] = useState(readSettings);

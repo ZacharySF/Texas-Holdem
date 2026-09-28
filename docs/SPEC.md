@@ -47,3 +47,7 @@ The initial request authorized Phases 0 and 1. Subsequent explicit requests auth
 ## Game experience follow-up
 
 The subsequent user request authorizes making Play the default experience and teaching through actual bot games. Keep all completed Phases 0–9 learning tools. Add a poker-room entry, one-click dealing, a spatial table with named bots and readable turns, optional street-by-street guidance, and clear results with immediate next-hand play. Keep detailed math and verification available on demand. The existing engine, bot information boundaries, seeded randomness, and saved-history rules remain authoritative.
+
+## Guided navigation follow-up
+
+The latest request authorizes a simpler course path inspired by numbered tutorial sites, beginning at Chapter 1 and interleaving lessons with real games. Put accessible coaching beside play on desktop and behind an obvious phone control. Preserve the mathematical curriculum, simulations, practice questions, and game rules. Track reading and game participation separately from quiz mastery, and make returning from a completed practice hand to the same lesson straightforward.

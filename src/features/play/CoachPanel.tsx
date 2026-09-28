@@ -44,9 +44,9 @@ export function CoachPanel({
         <span className="eyebrow">DIRECT ODDS MODEL</span>
       </div>
       <p>
-        Equity against the live opponents’ estimated weighted ranges, inferred
-        from its persona and public actions. Actual hidden hole cards are
-        excluded.
+        Equity means your average share of the pot over possible outcomes,
+        including ties. I estimate it from your cards, the board, and the hands
+        each opponent might hold. I cannot see their hidden cards.
       </p>
       <Probability
         label={`YOUR EQUITY · MONTE CARLO · ${result.samples.toLocaleString()} SAMPLES`}
@@ -154,10 +154,10 @@ export function CoachPanel({
               sampled={false}
             />
             <div>
-              <h3>The price</h3>
+              <h3>What does calling cost?</h3>
               <p>
-                Contestable pot including the bet: {options.contestablePot}{' '}
-                chips.
+                Chips you could win, including the current bet:{' '}
+                {options.contestablePot} chips.
                 <br />
                 Call: {view.legal.toCall} chips.
               </p>
@@ -170,6 +170,11 @@ export function CoachPanel({
               )}
             </div>
           </div>
+          <p>
+            EV means expected value: the average net chip change in this model.
+            Positive values mean an average gain; negative values mean an
+            average loss. A single hand can turn out differently.
+          </p>
           <label htmlFor="fold-estimate">
             Assumed chance the bot folds to your raise:{' '}
             {percent(foldPercent / 100)}

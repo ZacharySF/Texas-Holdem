@@ -1061,3 +1061,284 @@
     font-size: 1.5rem;
   }
 }
+
+.play {
+  max-width: 1500px;
+}
+.course-invitation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  background: var(--panel);
+}
+.course-invitation h2 {
+  font: 1.6rem var(--serif);
+  margin-top: 8px;
+}
+.course-invitation p {
+  font-size: 0.87rem;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+.course-invitation > div:last-child {
+  display: grid;
+  gap: 6px;
+  min-width: 200px;
+}
+.course-practice-banner {
+  padding: 22px;
+  background: var(--panel);
+  border-left: 3px solid var(--gold);
+  border-radius: 10px;
+}
+.course-practice-banner h2 {
+  margin-top: 8px;
+  font-size: 1.1rem;
+}
+.course-practice-banner p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+.course-practice-banner .lesson-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.poker-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 350px;
+  gap: 22px;
+  align-items: start;
+}
+.table-column {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+.coach-sidebar {
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--gold);
+  border-radius: 16px;
+  background: var(--panel);
+  scrollbar-gutter: stable;
+}
+.coach-sidebar > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.coach-sidebar > header h2 {
+  font: 1.8rem var(--serif);
+  margin-top: 6px;
+}
+.coach-sidebar .eyebrow {
+  font-size: 0.55rem;
+}
+.coach-intro {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-block: 12px 18px;
+}
+.coach-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+}
+.coach-tabs button {
+  flex: 1;
+  font-size: 0.72rem;
+  padding: 10px 8px;
+}
+.coach-tabs button[aria-pressed='true'] {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--subtle);
+}
+.coach-topic {
+  padding-top: 18px;
+  font-size: 0.85rem;
+}
+.coach-topic h3 {
+  font-size: 1rem;
+}
+.coach-sidebar .hand-guide {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+.coach-sidebar .hand-guide .coach-avatar,
+.coach-sidebar .hand-guide .eyebrow {
+  display: none;
+}
+.coach-sidebar .guide-heading {
+  flex-wrap: wrap;
+}
+.coach-sidebar .guide-heading button {
+  margin-left: 0;
+}
+.coach-sidebar .street-progress {
+  gap: 5px;
+}
+.coach-sidebar .street-progress li {
+  font-size: 0.62rem;
+}
+.coach-sidebar .coach-panel {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+.coach-sidebar .coach-panel .section-head {
+  flex-wrap: wrap;
+}
+.coach-sidebar .coach-metrics {
+  grid-template-columns: 1fr;
+}
+.coach-sidebar .coach-panel p {
+  font-size: 0.82rem;
+}
+.coach-sidebar table {
+  width: 100%;
+  font-size: 0.7rem;
+  border-collapse: collapse;
+}
+.coach-sidebar th,
+.coach-sidebar td {
+  padding: 8px 4px;
+  overflow-wrap: anywhere;
+}
+.coach-sidebar .runout-spread {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.coach-sidebar .coach-links {
+  gap: 6px;
+  flex-direction: column;
+}
+.coach-sidebar .coach-links a {
+  line-height: 1.5;
+}
+.coach-sidebar .seed-code {
+  overflow-wrap: anywhere;
+}
+.coach-course-focus {
+  padding: 14px;
+  border-left: 3px solid var(--gold);
+  background: var(--subtle);
+  margin-bottom: 16px;
+}
+.coach-course-focus p {
+  margin-block: 8px 0;
+  font-size: 0.83rem;
+}
+.poker-dictionary {
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+}
+.poker-dictionary dt {
+  font-weight: 600;
+}
+.poker-dictionary dd {
+  margin: 4px 0 16px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.mobile-coach-button,
+.close-coach {
+  display: none;
+}
+@media (max-width: 1179px) {
+  .poker-workspace {
+    grid-template-columns: 1fr;
+  }
+  .play {
+    padding-bottom: 100px;
+  }
+  .mobile-coach-button {
+    display: block;
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    z-index: 6;
+    padding: 13px 20px;
+    background: var(--accent);
+    color: var(--on-accent);
+    border: 1px solid var(--accent);
+    box-shadow: 0 4px 25px #0005;
+    font-weight: 600;
+  }
+  .coach-sidebar {
+    display: none;
+    position: fixed;
+    inset: auto 12px 76px auto;
+    width: min(440px, calc(100vw - 24px));
+    max-height: calc(100dvh - 110px);
+    z-index: 7;
+    box-shadow: 0 0 50px #0007;
+  }
+  .coach-sidebar.coach-is-open {
+    display: block;
+  }
+  .close-coach {
+    display: block;
+    font-size: 0.72rem;
+  }
+}
+@media (max-width: 600px) {
+  .course-invitation {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+  .course-invitation h2 {
+    font-size: 1.4rem;
+  }
+  .coach-sidebar {
+    padding: 18px;
+  }
+  .course-practice-banner {
+    padding: 18px;
+  }
+  .mobile-coach-button {
+    font-size: 0.8rem;
+  }
+}
+
+.coach-sidebar {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.coach-sidebar > header,
+.coach-intro,
+.coach-tabs {
+  flex-shrink: 0;
+}
+.coach-topic {
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.mobile-coach-button:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+@media (max-width: 1179px) {
+  .coach-sidebar {
+    display: none;
+  }
+  .coach-sidebar.coach-is-open {
+    display: flex;
+  }
+}

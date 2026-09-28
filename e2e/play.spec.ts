@@ -32,6 +32,20 @@ async function noOverflow(page: Page) {
   ).toBe(true);
 }
 
+async function openCoach(page: Page) {
+  const button = page.getByRole('button', {
+    name: 'Open coach · help with this hand',
+  });
+  if (await button.isVisible()) await button.click();
+}
+async function closeCoach(page: Page) {
+  const button = page.getByRole('button', {
+    name: 'Back to table',
+    exact: true,
+  });
+  if (await button.isVisible()) await button.click();
+}
+
 test('game entry, guided streets, result, replay and next hand', async ({
   page,
 }, testInfo) => {
@@ -57,21 +71,28 @@ test('game entry, guided streets, result, replay and next hand', async ({
   await expect(
     page.locator('.bot-seat [aria-label="Hidden opponent card"]'),
   ).toHaveCount(2);
+  await openCoach(page);
   await expect(
     page.getByRole('heading', { name: 'Start with your two cards' }),
   ).toBeVisible();
+  await closeCoach(page);
   await expect(page.getByRole('button', { name: /^Call / })).toBeEnabled();
   await page.getByRole('button', { name: /^Call / }).click();
+  await openCoach(page);
   await expect(
     page.getByRole('heading', { name: 'Meet the shared cards' }),
   ).toBeVisible();
+  await closeCoach(page);
   await page.getByRole('button', { name: /^(Check|Call) / }).waitFor();
-  await expect(page.locator('.coach-drawer > summary')).toBeVisible();
-  await page.locator('.coach-drawer > summary').click();
+  await openCoach(page);
+  await page.getByRole('button', { name: 'Odds & why', exact: true }).click();
   await expect(
     page.getByRole('heading', { name: 'Coach · your visible information' }),
   ).toBeVisible();
-  await page.locator('.coach-drawer > summary').click();
+  await page
+    .getByRole('button', { name: 'Explain the hand', exact: true })
+    .click();
+  await closeCoach(page);
   const heroCards = await page
     .locator('.hero-seat .playing-card')
     .evaluateAll((cards) =>
@@ -90,13 +111,17 @@ test('game entry, guided streets, result, replay and next hand', async ({
   });
   await noOverflow(page);
   await page.getByRole('button', { name: /^(Check|Call) / }).click();
+  await openCoach(page);
   await expect(
     page.getByRole('heading', { name: 'One card still to come' }),
   ).toBeVisible();
+  await closeCoach(page);
   await page.getByRole('button', { name: /^(Check|Call) / }).click();
+  await openCoach(page);
   await expect(
     page.getByRole('heading', { name: 'Make your final decision' }),
   ).toBeVisible();
+  await closeCoach(page);
   await page.getByRole('button', { name: /^(Check|Call) / }).click();
   await expect(page.getByRole('region', { name: 'Hand result' })).toBeVisible();
   await expect(page.locator('.bankroll small')).toContainText('1 hands played');

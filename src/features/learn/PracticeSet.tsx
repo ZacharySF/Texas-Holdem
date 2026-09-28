@@ -36,12 +36,12 @@ export function PracticeSet() {
   return (
     <section data-part="practice" className="lesson-section practice">
       <span className="eyebrow">05 / YOUR TURN</span>
-      <h2>Practice with this seed</h2>
+      <h2>Check your understanding</h2>
       <p>
         Five questions, one attempt per question. Mastery requires{' '}
         {learningFacts.mastery().display().percent}. Equivalent fractions are
         accepted. Scores save after the whole set; unfinished answers reset if
-        you leave. Use a new seed above for a fresh set.
+        you leave. Open Practice settings above for a fresh set.
       </p>
       <div className="practice-question">
         <h3>

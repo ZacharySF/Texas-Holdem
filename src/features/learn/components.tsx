@@ -30,6 +30,7 @@ import { useLesson } from './context';
 import { ExactValue, Formula, NotebookBlock } from './NotebookBlock';
 import { SimCheck } from './SimCheck';
 import { PracticeSet } from './PracticeSet';
+import { lessonGameLink } from './journey';
 function Section({
   part,
   number,
@@ -68,6 +69,7 @@ export function Idea({ children }: { children: ReactNode }) {
   );
 }
 export function AtTheTable({ children }: { children: ReactNode }) {
+  const { lesson, seed } = useLesson();
   return (
     <Section
       part="table"
@@ -76,7 +78,15 @@ export function AtTheTable({ children }: { children: ReactNode }) {
     >
       {children}
       <p>
-        <Link to="/lab">Try specific cards in the Equity Lab →</Link>
+        <Link to={lessonGameLink(lesson.id, seed)}>
+          Play a hand with this lesson’s coach →
+        </Link>
+      </p>
+      <p className="hint">
+        Finish any unanswered quiz first; partial answers reset when you leave.
+      </p>
+      <p>
+        <Link to="/lab">Explore specific cards in the odds tools →</Link>
       </p>
     </Section>
   );

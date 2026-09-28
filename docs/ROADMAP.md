@@ -255,3 +255,15 @@ The table covers every numerical anchor plus the explicit verification propertie
 - [x] Complete final lint, typecheck, unit tests, production build, and desktop/phone browser checks for the revised interface. All 90 unit tests and 16 browser checks pass; affected game checks were rerun after the final layout and bot-delay refinements.
 
 No engine algorithms or benchmarks changed. Active-hand recovery remains deferred: leaving Play or reloading abandons an unfinished hand without settlement. Opponent names are table identities; every seat uses the selected persona.
+
+## Guided course and side coach
+
+- [x] Clear Chapter 1 entry from the poker room and course overview, with optional poker rules.
+- [x] Searchable numbered chapter contents, current lesson, previous/next links, and shortcuts to lesson sections.
+- [x] Separate saved reading position, explicit read status, and completed practice-hand status from quiz mastery.
+- [x] Link lessons to real bot games with a practice focus and preserve the lesson/seed on return.
+- [x] Keep the coach beside the table on desktop and one button away on phones, with plain-language help, optional odds, and decision feedback.
+- [x] Clarify site destinations and simplify the first lesson without changing computed probabilities.
+- [x] Final lint, typecheck, 92 unit tests, production build, and all 20 desktop/phone browser checks pass. Checks cover the Chapter 1/game/return round trip, distinct reading and mastery records, course search and section focus, desktop coach placement, and phone opening, closing, and focus restoration.
+
+Partial quizzes and active hands remain session-only. Reading or playing a hand does not establish mastery. The mathematical curriculum and measured benchmarks are unchanged.

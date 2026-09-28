@@ -1,7 +1,9 @@
 import { readForecasts, forecastXp } from '../arcade/forecastStorage';
 import { readDrill, drillXp } from '../arcade/progress';
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useSearchParams } from 'react-router';
+import { lessonById, lessons } from '../../content/lessons';
+import { useJourney, practiceFocus, lessonReturnLink } from '../learn/journey';
 import {
   act,
   newGame,
@@ -30,7 +32,7 @@ import {
   type Profile,
 } from './storage';
 import { Table, botStyles } from './Table';
-import { HandGuide } from './HandGuide';
+import { CoachSidebar } from './CoachSidebar';
 import { CoachPanel, type Assessment } from './CoachPanel';
 import { HistoryPanel } from './HistoryPanel';
 import './play.css';
@@ -42,6 +44,19 @@ function readProfile(): Profile {
   }
 }
 export default function Play() {
+  const [params] = useSearchParams();
+  const courseLesson = lessonById(params.get('lesson') ?? '');
+  const {
+    journey,
+    markPlayed,
+    storageError: courseStorageError,
+  } = useJourney();
+  const returnToLesson = courseLesson
+    ? lessonReturnLink(courseLesson.id, params.get('lessonSeed'))
+    : '/learn/1-1';
+  const nextCourseLesson = courseLesson
+    ? lessons[lessons.indexOf(courseLesson) + 1]
+    : undefined;
   const [profile, setProfile] = useState(readProfile),
     [persona, setPersona] = useState<Persona>('tight-passive'),
     [bigBlind, setBigBlind] = useState(10),
@@ -213,6 +228,7 @@ export default function Play() {
   useEffect(() => {
     if (!game?.complete || saved.current.has(game.config.seed)) return;
     saved.current.add(game.config.seed);
+    if (courseLesson) markPlayed(courseLesson.id);
     const record: SavedHand = {
       version: 1,
       id: game.config.seed,
@@ -244,7 +260,7 @@ export default function Play() {
         'This hand is available in memory, but could not be saved to IndexedDB.',
       ),
     );
-  }, [game, commitment, persona]);
+  }, [game, commitment, persona, courseLesson, markPlayed]);
   async function prepare(manual = false) {
     if (preparing.current || active || pending) return;
     preparing.current = true;
@@ -390,6 +406,74 @@ export default function Play() {
           </small>
         </div>
       </header>
+      {!game && !courseLesson && (
+        <section className="course-invitation">
+          <div>
+            <span className="eyebrow">NOT SURE WHERE TO BEGIN?</span>
+            <h2>Start at Chapter 1. We’ll guide you.</h2>
+            <p>
+              Read a short lesson, play a hand with the coach, then pick up
+              where you left off.
+            </p>
+          </div>
+          <div>
+            <Link className="course-primary" to="/learn/1-1">
+              Start Chapter 1 →
+            </Link>
+            <Link
+              to={
+                journey.current === '1-1'
+                  ? '/learn'
+                  : `/learn/${journey.current}`
+              }
+            >
+              {journey.current === '1-1'
+                ? 'Browse the course'
+                : 'Continue learning'}{' '}
+              →
+            </Link>
+          </div>
+        </section>
+      )}
+      {courseStorageError && (
+        <p role="status" className="hint">
+          Your course progress works for this visit, but this browser could not
+          save it.
+        </p>
+      )}
+      {courseLesson && (
+        <section className="course-practice-banner">
+          <span className="eyebrow">COURSE → PLAY → BACK TO YOUR LESSON</span>
+          <h2>
+            Practice for {courseLesson.id.replace('-', '.')} ·{' '}
+            {courseLesson.title}
+          </h2>
+          <p>{practiceFocus(courseLesson.chapter)}</p>
+          {active ? (
+            <p className="hint">
+              Finish this hand to save it. Your return-to-lesson button will
+              appear here.
+            </p>
+          ) : (
+            <div className="lesson-actions">
+              <Link to={returnToLesson}>
+                Return to lesson {courseLesson.id.replace('-', '.')} →
+              </Link>
+              {game?.complete && nextCourseLesson && (
+                <Link to={`/learn/${nextCourseLesson.id}`}>
+                  Next lesson: {nextCourseLesson.id.replace('-', '.')} →
+                </Link>
+              )}
+            </div>
+          )}
+          {game?.complete && (
+            <p className="course-status">
+              Practice hand complete. Think about what you noticed, then
+              continue the lesson.
+            </p>
+          )}
+        </section>
+      )}
       {!game && !pending && (
         <section className="game-lobby">
           <div className="lobby-copy">
@@ -502,188 +586,217 @@ export default function Play() {
           </button>
         </section>
       )}
-      {game && <Table game={game} persona={persona} />}
-      {game?.complete && (
-        <section className="hand-result" aria-label="Hand result">
-          <div>
-            <span className="eyebrow">HAND COMPLETE</span>
-            <h2>
-              {game.players[0].stack > game.config.stacks[0]
-                ? 'Chips coming your way.'
-                : game.players[0].stack < game.config.stacks[0]
-                  ? 'A fresh hand awaits.'
-                  : 'Back where you started.'}
-            </h2>
-            <p>
-              <strong>
-                {game.players[0].stack - game.config.stacks[0] > 0 ? '+' : ''}
-                {game.players[0].stack - game.config.stacks[0]} chips
-              </strong>{' '}
-              this hand · {game.awards[0]} returned from the pots
-            </p>
-          </div>
-          <button
-            className="primary"
-            disabled={dealing || !!pending || profile.bankroll < 1}
-            onClick={() => void prepare()}
-          >
-            {dealing ? 'Shuffling…' : 'Deal next hand'}
-          </button>
-        </section>
-      )}
-      {heroTurn && exam && revealedAt !== game.history.length && (
-        <section className="panel">
-          <h2>Estimate before you reveal</h2>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              const n = Number(guess);
-              if (guess.trim() && Number.isFinite(n) && n >= 0 && n <= 100) {
-                setRevealedAt(game.history.length);
-                setError('');
-              } else
-                setError(
-                  `Enter an equity estimate from ${new Rational(0).display().percent} to ${new Rational(1).display().percent}.`,
-                );
-            }}
-          >
-            <label htmlFor="exam-guess">
-              Your estimated equity, in percent
-            </label>
-            <input
-              id="exam-guess"
-              value={guess}
-              onChange={(e) => setGuess(e.target.value)}
-              inputMode="decimal"
-            />
-            <button disabled={!assessment} type="submit">
-              Reveal coach
-            </button>
-          </form>
-        </section>
-      )}
-      {heroTurn && legal && (
-        <section className="panel action-panel">
-          <div className="action-heading">
-            <h2>Your move</h2>
-            <span>
-              {legal.canCheck
-                ? 'You can check for free'
-                : `${legal.toCall} chips to stay in`}
-            </span>
-          </div>
-          <div className="play-actions">
-            <button disabled={!canAct} onClick={() => submit({ type: 'fold' })}>
-              Fold
-              {guided && <small>Leave this hand</small>}
-            </button>
-            {legal.canCheck ? (
+      <div className={game ? 'poker-workspace' : undefined}>
+        <div className="table-column">
+          {game && <Table game={game} persona={persona} />}
+          {game?.complete && (
+            <section className="hand-result" aria-label="Hand result">
+              <div>
+                <span className="eyebrow">HAND COMPLETE</span>
+                <h2>
+                  {game.players[0].stack > game.config.stacks[0]
+                    ? 'Chips coming your way.'
+                    : game.players[0].stack < game.config.stacks[0]
+                      ? 'A fresh hand awaits.'
+                      : 'Back where you started.'}
+                </h2>
+                <p>
+                  <strong>
+                    {game.players[0].stack - game.config.stacks[0] > 0
+                      ? '+'
+                      : ''}
+                    {game.players[0].stack - game.config.stacks[0]} chips
+                  </strong>{' '}
+                  this hand · {game.awards[0]} returned from the pots
+                </p>
+              </div>
               <button
                 className="primary"
-                disabled={!canAct}
-                onClick={() => submit({ type: 'check' })}
+                disabled={dealing || !!pending || profile.bankroll < 1}
+                onClick={() => void prepare()}
               >
-                Check
-                {guided && <small>Stay in for free</small>}
+                {dealing ? 'Shuffling…' : 'Deal next hand'}
               </button>
-            ) : (
-              <button
-                className="primary"
-                disabled={!canAct}
-                onClick={() => submit({ type: 'call' })}
-              >
-                Call {legal.toCall}
-                {game.players[0].stack === legal.toCall ? ' · all in' : ''}
-                {guided && <small>Match the bet</small>}
-              </button>
-            )}
-          </div>
-          {legal.canRaise && (
-            <div className="raise-controls">
-              <input
-                aria-label="Raise amount"
-                type="range"
-                min={Math.min(legal.minRaiseTo, legal.maxRaiseTo)}
-                max={legal.maxRaiseTo}
-                step="1"
-                value={modelRaiseTo}
-                disabled={!canAct}
-                onChange={(e) => setRaise(e.target.value)}
-              />
-              <label htmlFor="raise-to">
-                Raise to (total chips this round)
-              </label>
-              <input
-                id="raise-to"
-                type="number"
-                min={Math.min(legal.minRaiseTo, legal.maxRaiseTo)}
-                max={legal.maxRaiseTo}
-                step="1"
-                value={raise}
-                onChange={(e) => setRaise(e.target.value)}
-              />
-              <button
-                disabled={
-                  !canAct ||
-                  !Number.isInteger(raiseTo) ||
-                  raiseTo <= game.bet ||
-                  raiseTo > legal.maxRaiseTo ||
-                  (raiseTo < legal.minRaiseTo && raiseTo !== legal.maxRaiseTo)
-                }
-                onClick={() => submit({ type: 'raise', to: raiseTo })}
-              >
-                Raise to {raise || '…'}
-              </button>
-              <button
-                disabled={!canAct}
-                onClick={() => {
-                  setRaise(String(legal.maxRaiseTo));
+            </section>
+          )}
+          {heroTurn && exam && revealedAt !== game.history.length && (
+            <section className="panel">
+              <h2>Estimate before you reveal</h2>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const n = Number(guess);
+                  if (
+                    guess.trim() &&
+                    Number.isFinite(n) &&
+                    n >= 0 &&
+                    n <= 100
+                  ) {
+                    setRevealedAt(game.history.length);
+                    setError('');
+                  } else
+                    setError(
+                      `Enter an equity estimate from ${new Rational(0).display().percent} to ${new Rational(1).display().percent}.`,
+                    );
                 }}
               >
-                Set all-in amount
-              </button>
-              <details className="raise-explanation">
-                <summary>How raising works</summary>
-                <p className="hint">
-                  Full minimum: {legal.minRaiseTo}. Maximum: {legal.maxRaiseTo}.
-                  A shorter raise is allowed only for your full stack and does
-                  not reopen betting for a player who already acted.
-                </p>
-              </details>
-            </div>
+                <label htmlFor="exam-guess">
+                  Your estimated equity, in percent
+                </label>
+                <input
+                  id="exam-guess"
+                  value={guess}
+                  onChange={(e) => setGuess(e.target.value)}
+                  inputMode="decimal"
+                />
+                <button disabled={!assessment} type="submit">
+                  Reveal coach
+                </button>
+              </form>
+            </section>
           )}
-        </section>
-      )}
-      {game && guided && <HandGuide key={game.config.seed} game={game} />}
-      {heroTurn && thinking && (
-        <p className="hint">
-          {exam
-            ? 'Preparing the estimate for your prediction…'
-            : 'Your coach is thinking. You can play while the estimate loads.'}
-        </p>
-      )}
-      {grade && (
-        <details className="panel decision-grade">
-          <summary>Your last decision · coach feedback</summary>
-          <p>{grade}</p>
-          <p className="hint">
-            Finish your hand before opening a lesson to keep its replay.
-          </p>
-          <Link to="/learn/12-2">Review direct call EV →</Link>
-        </details>
-      )}
-      {showCoach && (
-        <details className="coach-drawer">
-          <summary>Ask the coach · odds &amp; decisions</summary>
-          <CoachPanel
-            view={playerView(game, 0)}
-            assessment={assessment}
-            raiseTo={modelRaiseTo}
-            foldPercent={foldPercent}
-            onFoldPercent={setFoldPercent}
+          {heroTurn && legal && (
+            <section className="panel action-panel">
+              <div className="action-heading">
+                <h2>Your move</h2>
+                <span>
+                  {legal.canCheck
+                    ? 'You can check for free'
+                    : `${legal.toCall} chips to stay in`}
+                </span>
+              </div>
+              <div className="play-actions">
+                <button
+                  disabled={!canAct}
+                  onClick={() => submit({ type: 'fold' })}
+                >
+                  Fold
+                  {guided && <small>Leave this hand</small>}
+                </button>
+                {legal.canCheck ? (
+                  <button
+                    className="primary"
+                    disabled={!canAct}
+                    onClick={() => submit({ type: 'check' })}
+                  >
+                    Check
+                    {guided && <small>Stay in for free</small>}
+                  </button>
+                ) : (
+                  <button
+                    className="primary"
+                    disabled={!canAct}
+                    onClick={() => submit({ type: 'call' })}
+                  >
+                    Call {legal.toCall}
+                    {game.players[0].stack === legal.toCall ? ' · all in' : ''}
+                    {guided && <small>Match the bet</small>}
+                  </button>
+                )}
+              </div>
+              {legal.canRaise && (
+                <div className="raise-controls">
+                  <input
+                    aria-label="Raise amount"
+                    type="range"
+                    min={Math.min(legal.minRaiseTo, legal.maxRaiseTo)}
+                    max={legal.maxRaiseTo}
+                    step="1"
+                    value={modelRaiseTo}
+                    disabled={!canAct}
+                    onChange={(e) => setRaise(e.target.value)}
+                  />
+                  <label htmlFor="raise-to">
+                    Raise to (total chips this round)
+                  </label>
+                  <input
+                    id="raise-to"
+                    type="number"
+                    min={Math.min(legal.minRaiseTo, legal.maxRaiseTo)}
+                    max={legal.maxRaiseTo}
+                    step="1"
+                    value={raise}
+                    onChange={(e) => setRaise(e.target.value)}
+                  />
+                  <button
+                    disabled={
+                      !canAct ||
+                      !Number.isInteger(raiseTo) ||
+                      raiseTo <= game.bet ||
+                      raiseTo > legal.maxRaiseTo ||
+                      (raiseTo < legal.minRaiseTo &&
+                        raiseTo !== legal.maxRaiseTo)
+                    }
+                    onClick={() => submit({ type: 'raise', to: raiseTo })}
+                  >
+                    Raise to {raise || '…'}
+                  </button>
+                  <button
+                    disabled={!canAct}
+                    onClick={() => {
+                      setRaise(String(legal.maxRaiseTo));
+                    }}
+                  >
+                    Set all-in amount
+                  </button>
+                  <details className="raise-explanation">
+                    <summary>How raising works</summary>
+                    <p className="hint">
+                      Full minimum: {legal.minRaiseTo}. Maximum:{' '}
+                      {legal.maxRaiseTo}. A shorter raise is allowed only for
+                      your full stack and does not reopen betting for a player
+                      who already acted.
+                    </p>
+                  </details>
+                </div>
+              )}
+            </section>
+          )}
+        </div>
+        {game && (
+          <CoachSidebar
+            game={game}
+            guided={guided}
+            feedback={grade}
+            course={
+              courseLesson && (
+                <section className="coach-course-focus">
+                  <span className="eyebrow">
+                    LESSON {courseLesson.id.replace('-', '.')} · YOUR FOCUS
+                  </span>
+                  <p>{practiceFocus(courseLesson.chapter)}</p>
+                  {game.complete && (
+                    <Link to={returnToLesson}>Return to your lesson →</Link>
+                  )}
+                </section>
+              )
+            }
+            odds={
+              showCoach ? (
+                <CoachPanel
+                  view={playerView(game, 0)}
+                  assessment={assessment}
+                  raiseTo={modelRaiseTo}
+                  foldPercent={foldPercent}
+                  onFoldPercent={setFoldPercent}
+                />
+              ) : (
+                <p role="status">
+                  {game.complete
+                    ? 'This hand is over. Open Review this hand below the table to see the cards, replay the action, and explore the results.'
+                    : exam && heroTurn && revealedAt !== game.history.length
+                      ? 'Make your equity prediction at the table first, then choose Reveal coach.'
+                      : !coach
+                        ? 'Turn on Coach in Table settings to see the estimates.'
+                        : heroTurn && thinking
+                          ? 'Updating your estimate. You can still act while it loads.'
+                          : 'I’ll show your odds when it is your turn. For now, follow the action in Explain the hand.'}
+                </p>
+              )
+            }
           />
-        </details>
-      )}
+        )}
+      </div>
       {game && !game.complete && (
         <details className="commitment-current">
           <summary>Current deal commitment</summary>

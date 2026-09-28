@@ -6,11 +6,25 @@ Phases 0–9 are implemented locally. Learn contains 53 lessons across chapters 
 
 **Play online:** [Monte Carlo Hold'em](https://zacharysf.github.io/Texas-Holdem/). **Source:** [Texas-Holdem on GitHub](https://github.com/ZacharySF/Texas-Holdem). The first deployment passed all checks and the live URL was verified on 2026-09-28. GitHub Actions deploys `dist/` after successful checks on `main`. Hash routes and relative assets support project Pages URLs and shared Lab links.
 
+## Start here
+
+Choose **Start Chapter 1** in the poker room, or open **Course**. The course has a numbered, searchable chapter list and previous/next lesson links. If poker itself is new, start with the optional rules introduction. You can read ahead without passing a quiz.
+
+Each lesson gives you a card example, an explanation, an experiment, and a chance to practice. **Play a practice hand** takes that lesson’s focus to a real bot game. Finish the hand, then **Return to lesson** to pick up the same lesson and experiment code. Your place, read lessons, and played practice hands save on this device; quiz mastery is tracked separately. Unfinished quiz answers reset when you leave.
+
+The **coach sits beside the table** on desktop. On a phone, use **Open coach · help with this hand**. Choose **Explain the hand**, **Odds & why**, or **Last decision**. Plain definitions are available in the coach. Close it with **Back to table** or Escape; opening it does not restart your game.
+
+The top navigation is **Play** (bot games), **Course** (numbered lessons), **Drills** (short practice games), **Tools** (experiments and calculators), and **Progress** (completed hands and forecasts).
+
+![The numbered course contents and guided starting point](docs/screenshots/course-contents.png)
+
+![The coach beside a live poker table](docs/screenshots/coach-beside-table.png)
+
 ## Play first, learn as you go
 
 The app opens in the poker room. Choose heads-up or a six-player table and press **Take a seat & play**. The table shows named bots, concealed hole cards, the dealer button, stack sizes, bets, and whose turn it is. Opponents pause briefly so their actions are readable. Choose fold, check, call, or raise; use the slider or enter an exact raise total.
 
-**Walk me through the hand** introduces your cards, the flop, the turn, and the river as they actually arrive. Switch it off for uninterrupted play. **Ask the coach** opens the full odds and decision analysis. Ordinary actions stay available while estimates load; actions made before an estimate arrives are saved without a model grade. Exam mode still requires an estimate before acting.
+**Walk me through the hand** introduces your cards, the flop, the turn, and the river as they actually arrive. Switch it off for uninterrupted play. **Odds & why** in the side coach opens the full odds and decision analysis. Ordinary actions stay available while estimates load; actions made before an estimate arrives are saved without a model grade. Exam mode still requires an estimate before acting.
 
 A result panel shows the net chip change and **Deal next hand**. Expand **Review this hand** for replay, revealed cards, bot reasoning, and runouts. Table settings, manual seed commitments, and saved histories live in expandable panels. Learn, Lab, Arcade, and Stats remain available in the main navigation. Finish a hand before navigating away: active hands are still session-only.
 
@@ -68,7 +82,7 @@ Dark and light themes, an optional four-color deck, suit symbols, keyboard focus
 
 ## Learn: chapters 0–25
 
-Open Learn for the optional Hold’em introduction, probability and odds formats, ordered counting, combinations, complements, inclusion–exclusion, conditional card removal, final hand frequencies, flop events, and drawing odds. Every lesson has a concrete hook, a careful explanation, an aligned KaTeX notebook, a live experiment, five seeded practice questions with worked solutions, a table application, and a quant corner. Exact counting, simulation, shortcut error, and the decision it supports are connected in every lesson.
+Open Course for the optional Hold’em introduction, probability and odds formats, ordered counting, combinations, complements, inclusion–exclusion, conditional card removal, final hand frequencies, flop events, and drawing odds. Every lesson has a concrete hook, a careful explanation, an aligned KaTeX notebook, a live experiment, five seeded practice questions with worked solutions, a table application, and a quant corner. Exact counting, simulation, shortcut error, and the decision it supports are connected in every lesson.
 
 The lesson URL preserves its seed. Experiments show exact and observed values in all four formats, sample counts, a Wilson confidence interval, the gap, and an SVG convergence chart. Counting formulas are checked against dealt outcomes, suit textures against independent suit counts, and final hand categories against exhaustive evaluators. Selectable Phase 4 events cover every required anchor, including a million-trial option for rare royals. Rare nonzero percentages retain significant digits. KaTeX fonts and individually loaded MDX lesson files are local assets.
 
@@ -76,7 +90,7 @@ Practice accepts equivalent fractions, finite decimals, percentages, “1 in N,�
 
 ## Arcade: five seeded drills and AKQ
 
-Open Arcade, keep the 20-second clock, choose 40 seconds, or use untimed practice. Each seeded set presents five actual card spots with an explicit next-card target. Count flush, straight, combined, or exposed-opponent winning cards; no card counts twice. Pause and resume whenever needed. Expiry shows the worked answer and waits for you to advance.
+Open Drills, keep the 20-second clock, choose 40 seconds, or use untimed practice. Each seeded set presents five actual card spots with an explicit next-card target. Count flush, straight, combined, or exposed-opponent winning cards; no card counts twice. Pause and resume whenever needed. Expiry shows the worked answer and waits for you to advance.
 
 Answers reveal the qualifying cards, the unseen-card count, the exact next-card chance in four formats, and a lesson link. A backdoor requiring two cards is distinct from a next-card out. Only completed sets save a best score; improving that score earns drill XP in Play. Replay or share the URL seed without duplicating XP for the same answers. Display settings and reduced-motion behavior carry across modes.
 
@@ -86,8 +100,8 @@ The drawing lessons explicitly distinguish a rank-hit set-mining event from ever
 
 1. Select heads-up or six players and press **Take a seat & play**. Table settings contain bot styles and blinds. Each deal is committed automatically before cards are dealt; the advanced **Commit next deal** option lets you inspect the hash before dealing manually. Your seed stays hidden until the hand ends.
 2. Check, call, fold, or raise to a total contribution for the current round. Legal controls enforce the minimum increment, stack caps, and short-all-in restrictions. The button rotates between hands.
-3. Follow the optional hand walkthrough. Expand **Ask the coach** for weighted-range equity, separate win/tie/loss estimates, pot odds, highlighted category-improvement cards, and direct EV comparisons. Exam mode asks for your equity estimate before revealing the coach.
-4. Expand the decision feedback after acting when an estimate was available. The model ignores future betting, depends on a heuristic range estimate, and uses your displayed fold-response assumption for a raise. Known uncallable overbets are excluded when pricing a short-stack call. The highlighted cards improve a made-hand category; they are not guaranteed winners.
+3. Follow the optional hand walkthrough. Choose **Odds & why** in the side coach for weighted-range equity, separate win/tie/loss estimates, pot odds, highlighted category-improvement cards, and direct EV comparisons. Exam mode asks for your equity estimate before revealing the coach.
+4. Choose **Last decision** in the coach after acting when an estimate was available. The model ignores future betting, depends on a heuristic range estimate, and uses your displayed fold-response assumption for a raise. Known uncallable overbets are excluded when pricing a short-stack call. The highlighted cards improve a made-hand category; they are not guaranteed winners.
 5. After the hand, inspect all hands and every bot reason, verify the revealed seed, replay the recorded actions, or run any encountered street out 10,000 times. Outcome histograms show net chip awards after each main and side pot is settled with the final matched contributions held fixed.
 
 Completed hand histories, commitments, actions, estimates, and exam guesses live in IndexedDB. The play-money profile lives in localStorage. Hand/decision XP, mastered-lesson XP, and Outs Rush best-score XP unlock stakes and the tight-passive, loose-aggressive, calling-station, and equity-driven personas. The bankroll can be explicitly refilled after busting; it has no cash value. Unfinished hands remain session-only and are abandoned without settlement on leaving Play or reloading.
