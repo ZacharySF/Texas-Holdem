@@ -18,7 +18,7 @@ All card state, seed, sample count, and chosen method are URL parameters under H
 
 ## Delivery constraints
 
-The existing GitHub repository is connected as origin and already uses GitHub Actions for Pages. Its initial README commit is retained as the parent of the application delivery. Local startup uses the pinned Node version through nvm or Nix; localhost port 5173 supports browser storage and Web Crypto. No engine or product behavior changed for publication, and benchmark measurements were retained. A live deployment is recorded only after the workflow and URL are verified.
+The existing GitHub repository is connected as origin and uses GitHub Actions for Pages. Its initial README commit is retained as the parent of the application delivery. Local startup uses the pinned Node version through nvm or Nix; localhost port 5173 supports browser storage and Web Crypto. No engine or product behavior changed for publication, and benchmark measurements were retained. The first workflow completed successfully and the published application responded at https://zacharysf.github.io/Texas-Holdem/ on 2026-09-28.
 
 ## Verification and delivery record
 

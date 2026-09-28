@@ -4,7 +4,7 @@ A static browser course, equity lab, and No-Limit Hold’em game. Learn probabil
 
 Phases 0–9 are implemented locally. Learn contains 53 lessons across chapters 0–25. Play supports heads-up and 6-max tables, including running all-ins twice. The Lab covers equity, ranges, repeated events, bankroll paths, shuffles, insurance, push/fold, ICM, and Kelly. Arcade includes five drills and a playable AKQ game with a small CFR trainer. Stats summarizes completed hands and forecasts.
 
-**GitHub:** [Texas-Holdem](https://github.com/ZacharySF/Texas-Holdem). GitHub Pages is configured to use Actions; the included workflow deploys `dist/` after successful checks on `main`. Publication is pending the first successful deployment. Hash routes and relative assets support project Pages URLs and shared Lab links.
+**Play online:** [Monte Carlo Hold'em](https://zacharysf.github.io/Texas-Holdem/). **Source:** [Texas-Holdem on GitHub](https://github.com/ZacharySF/Texas-Holdem). The first deployment passed all checks and the live URL was verified on 2026-09-28. GitHub Actions deploys `dist/` after successful checks on `main`. Hash routes and relative assets support project Pages URLs and shared Lab links.
 
 ## Run it
 
