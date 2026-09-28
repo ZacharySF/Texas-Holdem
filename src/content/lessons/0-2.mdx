@@ -1,0 +1,55 @@
+<Hook>
+  You hold As Ad. Your opponent holds Ks Kh. The board is 2c 3d 7h 9s, and only
+  the river remains. Aces currently lead, but which river cards can change the
+  winner? First compare the hands correctly; then the simulation can count the
+  relevant river cards.
+</Hook>
+
+<Idea>
+### Compare five cards, in order
+
+The hand category comes first. Every flush beats every straight, even if the straight has higher individual ranks. Within a category, compare the ranks that define the category. If those tie, compare the leftover ranks, called **kickers**, from highest to lowest. Stop at the first difference. Never use suit as a tiebreaker.
+
+For one pair, compare the pair's rank, then the three kickers. For two pair, compare the higher pair, then the lower pair, then the kicker. For three of a kind, compare the triple and then the two kickers. A full house compares the triple before the pair; four of a kind compares the four matching cards before its kicker. A straight compares its top rank; the wheel A-2-3-4-5 has five at the top. Flushes and high-card hands compare their five ranks in descending order.
+
+<RankingTable />
+
+A royal flush is the ace-high straight flush, rather than an extra category above straight flush. The categories above rank five-card hands. Chapter 6 will count how often they occur; their ordering does not change when more cards are available.
+
+### The board can play
+
+Suppose the board itself is As Ks Qs Js Ts. Its royal flush is the best five for every remaining player. The hole cards cannot improve it. The pot is split among the tied winners. Your extra unused card is not a sixth-card kicker.
+
+Similarly, a private pair can stop appearing in your best five when the board supplies stronger pairs. Always rebuild the best five from the available cards, rather than treating your original hand's name as permanent.
+
+### The button is a position
+
+With three or more players, the small blind sits immediately left of the button and the big blind is next. Preflop action starts left of the big blind. After the flop, action starts with the first active player left of the button. The button therefore acts late after the flop, seeing other actions before deciding.
+
+With two players, the button posts the small blind and acts first preflop. The big blind acts first after the flop, so the button acts last then. Remember the two-player exception instead of applying a large-table seating picture mechanically.
+
+### Count the river in our spot
+
+Remove the four known hole cards and the four board cards. Each remaining card can be the river. In this particular spot, either remaining king makes the opponent three kings; every other river leaves the aces ahead. No river ties. The notebook counts winning river cards over all available river cards, and the simulation checks that count. This is a win probability for the stated, fully known matchup, not an estimate of an unseen opponent's range.
+
+<Shortcut />
+</Idea>
+
+<WorkedDerivation />
+<SimCheck />
+<PracticeSet />
+
+<AtTheTable>
+  At showdown, lay out each player's strongest five and compare only those
+  cards. During betting, identify who still acts behind you. Position changes
+  the information available when you decide; being on the button does not
+  physically change the deck or guarantee the winning hand.
+</AtTheTable>
+
+<QuantCorner>
+  A consistent ranking rule resembles a clear rule for comparing trade outcomes:
+  decide which quantities matter before seeing the result. Position is an
+  information advantage, much as observing a price update before acting changes
+  the information available to a trader. It does not erase uncertainty about the
+  next outcome.
+</QuantCorner>

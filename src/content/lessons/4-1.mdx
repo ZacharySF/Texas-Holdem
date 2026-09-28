@@ -1,0 +1,59 @@
+<Hook>
+  Look at two fresh hole cards. You want at least one ace. There could be an ace
+  first, an ace second, or aces in both positions. Instead of trying to separate
+  all those successes immediately, ask a simpler question: what does failure
+  look like?
+</Hook>
+
+<Idea>
+### Identify the complement exactly
+
+The **complement** of an event contains every outcome where that event does not happen. The complement of “at least one ace” is “no aces.” It is not “exactly one non-ace”: that description would exclude a hand with two non-aces, even though such a hand clearly fails the ace event.
+
+An event and its complement do not overlap. Together they cover the entire sample space. Their probabilities therefore add to the probability of the whole space, which is one. Rearranging gives the complement rule: the desired probability equals one minus the probability of failure.
+
+### Count the simple side first
+
+There are four aces in the deck, so forty-eight physical cards are non-aces. A hand with no aces chooses both cards from those forty-eight. Count such hands with a combination, then divide by the full-deck two-card combination count. Subtract that fraction from one.
+
+Notice that the denominator stays the full sample space of possible two-card hands. The numerator's smaller deck describes a restriction on favorable outcomes for the “no aces” event; it does not say the experiment actually began with aces removed.
+
+### Why doubling can overcount
+
+One tempting shortcut adds the chance of an ace in the first position and the chance of an ace in the second position. A hand such as As Ah satisfies both descriptions. Adding counts it twice, even though it should be counted once among hands with at least one ace.
+
+The complement approach avoids that overlap automatically. Its failure group contains neither one-ace nor two-ace hands. Everything outside that group has at least one ace, and each physical hand is retained exactly once.
+
+### “At least,” “exactly,” and “none”
+
+“At least one” permits one success or more. “Exactly one” excludes two successes. “None” excludes every success. For two hole cards, these distinctions can be checked by listing three rank patterns: no requested rank, one card of that rank, or both cards of that rank.
+
+Use actual cards to test your event definition. As Kh belongs to “at least one ace” and “exactly one ace.” As Ah belongs only to the first of those. Ks Kh belongs to neither. If your proposed complement excludes Ks Kh, it is not the complement you need.
+
+### Read the notebook notation
+
+N with a subscript R means the **number** of cards of the requested rank in the hand. The symbol ≥ means “greater than or equal to,” so asking whether that number is at least one names our event. The equals sign in the failure term asks for zero matching cards. No advanced notation is hiding a new calculation: the notebook only counts combinations and subtracts.
+
+The simulated experiment deals a fresh pair of cards every trial and counts success if either card is an ace. It checks the same inclusive event as the exact calculation, rather than accidentally checking exactly one ace.
+
+<Shortcut />
+</Idea>
+
+<WorkedDerivation />
+<SimCheck />
+<PracticeSet />
+
+<AtTheTable>
+  When the question says “hit at least once,” first examine whether “miss every
+  time” is easier to count. Also say whether the needed hit is actually
+  sufficient to win: having an ace and winning the pot are different events.
+  Later drawing-odds lessons will use the same complement mechanism with more
+  careful definitions of a useful card.
+</AtTheTable>
+
+<QuantCorner>
+  The chance that at least one adverse event occurs can be easier to calculate
+  through the chance that none occurs. The complement identity itself needs no
+  independence assumption. Computing the probability of “none” across several
+  events may still require a model of how those events depend on one another.
+</QuantCorner>

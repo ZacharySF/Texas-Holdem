@@ -1,0 +1,39 @@
+<Hook>
+
+Can a program discover an AKQ strategy by repeatedly asking which actions would have worked better?
+
+</Hook>
+
+<Idea>
+
+Use the same three-card game as chapter 22. A player’s information set contains their private rank and the public action history. It groups states that differ only in the hidden opponent card. A legal strategy must choose the same action probabilities across every state in that set.
+
+For each action, compare its counterfactual value with the value of the policy currently used. Counterfactual means asking what would happen if this information set were reached, with opponent and chance reach probabilities weighting the hidden states. Excluding the player’s own reach probability prevents an avoided branch from escaping evaluation merely because the player currently never visits it. Accumulate these differences as regrets: positive regret means that action would have improved past results relative to the chosen mixture.
+
+Regret matching keeps positive cumulative regrets, sums them, and assigns each action its positive regret divided by that sum. If none is positive, use a uniform mixture. The notebook works one two-action update. Negative regret is clipped for the next policy but still retained in the cumulative history; a later positive update can change which action matters.
+
+The worker visits every deal and every action branch on each iteration, so this small trainer has no chance-sampling error. It also accumulates a reach-weighted average strategy. The average policy, rather than the last noisy update, is the object evaluated by the convergence result and shown in the table. A local regret update is not itself a proof of global equilibrium. We separately compute best responses to measure the actual remaining incentives to deviate.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Toy-game training makes hidden-information constraints visible. It does not produce a usable full No-Limit Hold’em solver or remove the need to state abstractions.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+Repeated policy improvement needs an objective and an independent evaluation rule. A declining training signal alone does not prove that a strategy is robust.
+
+</QuantCorner>

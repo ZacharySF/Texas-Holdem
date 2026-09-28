@@ -1,0 +1,47 @@
+<Hook>
+
+You hold 8h 9h on 6h 7h Kc. Hearts complete a flush, and either endpoint rank completes a straight. Two cards belong to both groups. How many distinct outs do you really have?
+
+</Hook>
+
+<Idea>
+
+Write the physical cards before adding counts. The flush list contains every missing heart. The straight list contains every five and ten. The five of hearts and ten of hearts appear in both lists. Add the list lengths, subtract the overlap once, and you count each card exactly once. This is the inclusion–exclusion rule from chapter four applied to a real draw.
+
+The highlighted example below displays the shared cards and then the full union. Its two-card hit chance uses a fixed list of distinct cards. It does not add two separately computed flush and straight probabilities, which would also require subtracting the probability of runouts satisfying both events.
+
+<OutsExamples />
+
+Large draws expose the rule of four’s error. That rule grows linearly with the number of outs, but the exact two-card probability accounts for repeated hits and the decreasing deck. The adjusted shortcut subtracts one percentage point for each out above eight. Its displayed error is smaller in this example, but it is still an approximation, not a new exact rule. Practice compares the shortcut with the complement count.
+
+Now inspect the dirty-out example. You hold Ah Jh against exposed 7s 7d on Kh 7h 2c. A heart can make your flush on the turn, but 2h also pairs the board and gives the opponent a full house. Removing that physical card from the flush list gives the hearts that put you ahead immediately. The other cards still allow river redraws. A “clean on the turn” count is not a claim of guaranteed final victory.
+
+A backdoor draw needs both future cards to cooperate. With Ah Jh on 2h 7c Ks, no single turn card completes a flush. You need a heart on the turn and another heart on the river. Count the remaining hearts and multiply the two conditional branches, or choose two hearts as a set and divide by all two-card runouts. A zero next-card out count can coexist with a positive two-card backdoor chance.
+
+Drawing dead means no remaining legal runout produces the winning event. With Ah Ad against Kc Kd on Ks Kh 2c 3d, the opponent already has four kings. One river card cannot produce four aces or a straight flush for you. The exact win count is zero. This conclusion uses the opponent’s exposed cards; during ordinary play the coach must not pretend it knows hidden cards.
+
+<CourseExamples />
+
+The simulator lets you check the combined fixed-out event, the two-heart backdoor, and the drawing-dead showdown separately. They have different sample spaces and predicates. In particular, the exposed-opponent example removes both opposing cards, while the unknown-opponent fixed-out model does not. Compare definitions before comparing percentages.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Count distinct physical cards, then ask whether they actually beat plausible opposing hands. Play labels category-improvement cards conservatively and links here because a stronger made category need not win. Outs Rush specifies its target and reveals an opponent only for questions that require one.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Overlapping ways to improve cannot be treated as separate independent successes. A favorable intermediate result can also reverse before the final horizon. Naming the final event and checking shared cases prevents an optimistic double count.
+
+</QuantCorner>

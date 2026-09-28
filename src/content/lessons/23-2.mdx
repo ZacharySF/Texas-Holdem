@@ -1,0 +1,39 @@
+<Hook>
+
+Two players hold equal chips, but the winner and runner-up both receive prizes. Is half the prize pool the same as a win-or-lose chip bet?
+
+</Hook>
+
+<Idea>
+
+ICM is a model converting chip stacks into expected prizes. Malmuth–Harville first assigns each player a winning chance equal to their share of all chips. Remove the chosen winner and their stack, then assign the next place in proportion to the remaining stacks. Continue until every position is filled. Multiply probabilities along a finishing-order path, multiply by the prize at each place, and add across paths.
+
+For two players, a player either takes first or second. The worked notebook weights each prize by the corresponding chip-share model probability. For three players, first write each possible winner. Under each winner, write the two possible runner-up branches using the reduced chip total. The Lab enumerates up to six players using exact fractions. Every complete order pays the same total prize pool, so the sum of all expected prizes must equal that pool. This is a conservation check, not evidence that the ICM assumptions are always realistic.
+
+Prize value is nonlinear in chips. Compare your current expected prize with the value after winning a covered chip amount from an opponent and after losing that same amount. Define prize gain and prize loss relative to the current state. Bubble factor is loss divided by gain. The break-even winning chance for this equal chip swing is loss divided by loss plus gain. A chip-neutral gamble can therefore have negative prize expectation.
+
+ICM ignores skill differences, positions, blind pressure, and future strategic choices. Zero stacks in this calculator share the remaining lower prizes as a stated simultaneous-elimination convention. Actual tournament tiebreak rules may differ. The simulator requires positive starting stacks and samples the same proportional finishing-order model.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Before risking tournament elimination, compare prize loss and gain rather than assuming every chip has a constant cash value.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+Nonlinear payoffs make expected input and expected payout different. Risk constraints and payoff shape matter even when the underlying forecast is unchanged.
+
+</QuantCorner>

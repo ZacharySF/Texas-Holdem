@@ -1,0 +1,37 @@
+<Hook>
+
+You observe several bets in a few comparable opportunities. The observed fraction is useful, but treating it as a known permanent tendency is too strong.
+
+</Hook>
+
+<Idea>
+
+A beta distribution describes uncertainty about an unknown probability between zero and one. Its two positive parameters, alpha and beta, control how much weight lies near different probabilities. Begin with two pseudo-successes and two pseudo-failures in this example. After three successes in ten opportunities, add the successes to alpha and the failures to beta. The posterior mean is updated alpha divided by the sum of updated parameters.
+
+These pseudo-counts are a prior model, not invented observed hands. Different justified priors produce different small-sample conclusions. With more representative data their relative influence decreases. The update assumes exchangeable Bernoulli observations of the same tendency; a player changing strategy or facing different situations can violate that assumption.
+
+Predicting several future trials requires averaging their binomial probability over the uncertain success chance. This yields the beta-binomial distribution. In the notebook, (a)\_k is a rising product: a times a plus one, continuing for k factors; zero factors multiply to one. The simulation uses the equivalent reinforced-urn procedure: draw according to current counts, increment the drawn count, and repeat within a prediction trial. Restore the posterior counts before the next trial. This produces wider predictive variation than simply fixing the posterior mean and pretending it is certain.
+
+<AdvancedExamples />
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Group comparable opportunities before estimating a tendency. Keep the prior and sample count visible, and avoid overreacting to a few public actions.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Small-sample forecasting benefits from explicit uncertainty about the rate itself. Predictive variation includes both future outcome noise and uncertainty in the underlying parameter.
+
+</QuantCorner>

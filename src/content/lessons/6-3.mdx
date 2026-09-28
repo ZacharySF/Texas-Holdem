@@ -1,0 +1,45 @@
+<Hook>
+
+A seven-card deal contains Ts Js Qs Ks As plus two other cards. How many deals contain a royal flush, and can one deal contain two?
+
+</Hook>
+
+<Idea>
+
+A royal flush is the ace-high straight flush: ten, jack, queen, king, and ace in one suit. With exactly five cards, choosing the suit fixes the entire hand. The four suits therefore give four favorable physical sets. Divide by all unordered five-card sets to obtain the probability.
+
+With seven cards, choose the royal’s suit first. Its five cards are fixed. Choose the other two cards from the remaining forty-seven; their order does not matter. Multiply the number of suit choices by that combination count. Then divide by all seven-card sets.
+
+Why does this multiplication not count a set twice? Two different royal flushes require two different suits, and hence ten distinct cards. Seven cards cannot contain both. Within a chosen suit the royal’s five cards are unique, so the remaining two are also uniquely determined by the seven-card set. Every favorable set has one and only one construction.
+
+<CourseExamples />
+
+This event is “contains a royal anywhere among the seven cards.” It does not require both hole cards to play. It includes a royal entirely on the board and one completed using a single hole card. Those are different conditional stories within the same unconditional event. If you want only a hole-card-specific event, you must change the counting rule, not reuse this fraction.
+
+The straight-flush category already includes royals. Do not add the royal count to the nine-category total from the earlier lesson. It is a subset you may split out for reporting, much like pocket aces are part of all pocket pairs. When two players share a board royal, their best five tie; the rarity of the board gives neither player a special claim to the pot.
+
+Rare events need patience in simulation. One short run can record no royals. An observed count of zero does not prove the exact probability is zero; it says the sampled deals happened not to include one. The displayed Wilson interval retains an upper bound even in that case. Increase the run size or replay another seed, but do not keep stopping only when the result looks close to the reference. Such a stopping rule would distort how you judge the experiment.
+
+The larger run button makes a million fresh trials available in a worker. This still estimates the event rather than exhaustively listing every set. The exact counting argument is more efficient for this question because it exploits the structure of a royal. The two methods check different failure modes: the count checks the logic, while the simulated predicate checks actual dealt cards.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Treat a rare hand by its actual best five, including possible board ties. A long drought does not make a royal due. A particular draw on a known board needs its own card-removal calculation.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Rare-event counts can be sparse even when the event has a positive probability. A simulation that sees no tail events does not establish that tail risk is absent. Exact structural arguments are valuable checks when the event is simple enough to count.
+
+</QuantCorner>

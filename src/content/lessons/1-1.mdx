@@ -1,0 +1,53 @@
+<Hook>
+  A fresh deck is face down. You turn over one card. How often should it be an
+  ace? “Ace” is one rank name, but there is more than one physical ace. The
+  right denominator depends on what you count as a possible outcome.
+</Hook>
+
+<Idea>
+### Name the experiment before counting
+
+An **experiment** is the process you repeat: shuffle a full deck fairly and reveal one card. An **outcome** is one possible result, such as As. The **sample space** is the complete list of possible outcomes for that experiment. Here it contains every physical card in the deck, not just the thirteen rank names.
+
+An **event** is a collection of outcomes that satisfy a question. “The card is an ace” contains Ac, Ad, Ah, and As. “The card is red” contains every diamond and every heart. “The card is As” contains only the ace of spades. All three events use the same sample space, but have different favorable subsets.
+
+The word **probability**, written P, measures the size of an event relative to the possibilities, accounting for how likely those possibilities are. When all listed outcomes are equally likely, divide the number favorable to the event by the total number. The notebook does that for the ace event, abbreviated R for its requested rank.
+
+### Why equally likely matters
+
+A fair shuffle makes each physical card equally likely to be on top. You can count one unit per card. You cannot instead list “ace” and “not ace” as two equally likely outcomes: the second label collects many more cards than the first. Renaming groups does not give those groups equal weight.
+
+The same trap appears with starting hands. “Pocket pair” and “not a pocket pair” are two descriptions, but they cover different numbers of physical deals. Later, we will count those deals rather than assigning equal chances to two labels.
+
+### Change the event, keep the experiment
+
+For a heart, take all thirteen heart cards as favorable. For a red card, take both red suits. For the ace of hearts, take just that card. You have not changed how the deck is shuffled or how many cards are revealed; only the condition for counting success has changed.
+
+If the experiment changes, start again with its sample space. After seeing a known card, a second draw without replacement is drawn from the remaining deck. A formula using a full deck would answer a different question. We will work through that difference carefully in Counting I and then return to conditional probability in chapter 5.
+
+### Frequency is evidence, not a promise
+
+The exact probability describes the experiment's possibilities. A simulated **frequency** is the number of successes observed so far divided by the number of trials run. The sample can wobble around the exact value. It need not land exactly on it, and a miss on one trial does not force a success next time.
+
+In the simulator below, every trial starts with a fresh full deck. The shaded uncertainty interval is explained alongside the chart. You do not need to know its formula yet to see that a short run is less informative than a long one.
+
+<Shortcut />
+</Idea>
+
+<WorkedDerivation />
+<SimCheck />
+<PracticeSet />
+
+<AtTheTable>
+  Say what the event is before quoting a number: “an ace,” “the ace of spades,”
+  and “any card that improves my hand” count different sets. If someone names a
+  probability without identifying the available cards and the event, there is
+  not yet enough information to check the claim.
+</AtTheTable>
+
+<QuantCorner>
+  A forecast also needs a defined outcome and a time horizon. “The price rises
+  tomorrow” and “the price touches a higher level sometime tomorrow” are
+  different events. Clear event definitions make forecasts testable instead of
+  letting the question change after the result arrives.
+</QuantCorner>

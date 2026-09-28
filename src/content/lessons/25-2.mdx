@@ -1,0 +1,41 @@
+<Hook>
+
+The current strategy’s payoff is close to the known game value. Does that prove neither player can exploit it?
+
+</Hook>
+
+<Idea>
+
+No. Two poor policies can have a plausible average payoff against each other while each gives an informed opponent a large opportunity. Hold the second player’s policy fixed and find the first player’s best legal response. Then hold the first player fixed and find the second player’s best response. Compare each improvement with the baseline matchup value.
+
+For this tiny game, every player controls six information sets, each with two actions. Enumerate all deterministic assignments. Mixing cannot beat the best deterministic response to a fixed opponent because payoff is linear in the responding policy’s mixture. Each assignment acts only on a private rank and a public history; it cannot vary its action by the hidden card. This restriction is essential. A clairvoyant response would measure an impossible opponent.
+
+Exploitability here is the average of the two unilateral gains. It is nonnegative and equals zero at a verified equilibrium. The chart reports this exact finite-game metric for the learned average policy at selected iteration counts. Values need not decrease at every point. There is no Monte Carlo confidence band because the trainer and best-response checker enumerate the entire game. Floating-point arithmetic still imposes numerical tolerance.
+
+The practice set repeats a regret-matching calculation with new seeded values so you can connect the update rule with the policy being tested. Compare the final learned policy with the analytic equilibrium in the playable AKQ game. Different equilibrium mixtures may have the same game value; matching each frequency to one particular equilibrium is a stronger and unnecessary demand.
+
+A bound for this small game says nothing by itself about larger bet sizes, more cards, abstraction error, or an opponent’s mistakes. A production solver must account for those choices and numerical limits separately. This capstone stops at a completely inspectable game.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Ask which game was solved, which information was available, and how exploitability was measured before treating a solver output as a strategy guarantee.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+Out-of-sample evaluation asks a different question from fitting a target value. Adversarial best-response checks expose weaknesses that a single average score can hide.
+
+</QuantCorner>

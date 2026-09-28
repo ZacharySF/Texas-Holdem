@@ -1,0 +1,42 @@
+<Hook>
+
+You hold As Kd. Before the next card is dealt, a discarded 7c is accidentally exposed. Does the next-card ace chance still use a full deck?
+
+</Hook>
+
+<Idea>
+
+An outcome is still a physical card, but the possible outcomes have changed. As is in your hand. Kd is in your hand. The exposed 7c cannot be dealt again. Cross those three cards off a written deck list. Only the uncrossed cards belong in the new sample space.
+
+The vertical bar in conditional probability means “given.” P(A given K) asks for the chance of event A when information K is already known. We are not multiplying the chance that K happened into today’s answer. We are accepting K and counting inside the smaller space it leaves. Here A means “next card is an ace,” and K means the three named cards are unavailable.
+
+Work on the denominator and numerator separately. The denominator loses every exposed card, whether or not it helps you. The numerator loses only exposed cards that were favorable. As removes an ace from both counts. Kd and 7c remove cards from the denominator but remove no more aces. This is why two different groups of three dead cards can give different answers.
+
+Compare the second example below: As, Ad, and 7c are exposed. The number of available cards is unchanged, but another ace has disappeared. A denominator alone never describes a probability. You need the event and its favorable outcomes too. Open both calculations and inspect which number changes.
+
+A folded hand is different. You know that someone folded two cards, but usually do not know which cards. You cannot cross two particular aces off your list, nor simply subtract two from the denominator while keeping every favorable card. Under a uniformly shuffled deck with no information about those identities, the next visible card is uniform among the cards whose identities you do not know. Later range lessons will model information conveyed by an opponent’s choice to fold; we are not assuming that model here.
+
+The same distinction applies to burn cards. A face-down burn consumes a physical position in the deck, but it is not a known dead card for this calculation. Marginalizing means considering all its possible identities rather than pretending to know one. In this lesson we only remove cards whose identities are explicitly given.
+
+<CourseExamples />
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Before counting a draw, name the visible cards and the event. In the Lab, enter an actually exposed discard as a dead card. Do not enter a guessed opponent card as if it were known; use an estimated range when that information becomes available.
+
+</AtTheTable>
+
+<QuantCorner>
+
+A trading forecast is conditional on the information currently available. Updating the set of possible cases can change both the numerator and denominator of a frequency estimate. The habit is to state what is known before computing a number.
+
+</QuantCorner>

@@ -1,0 +1,39 @@
+<Hook>
+
+Your stack is short enough that one shove ends your decisions. The opponent can fold or call. What inputs determine the shove’s value?
+
+</Hook>
+
+<Idea>
+
+Start with pot P, additional covered risk R, and the opponent’s additional call C. A fold wins P. A call creates P plus R plus C in the final pot, so your expected incremental result is equity times that total minus R. Weight the called result by the call chance and add the fold branch. Folding now is zero additional chips; earlier contributions are sunk.
+
+Remove chips that cannot be called before defining R. Use equity conditional on a call: an opponent who folds weak hands leaves a stronger calling range. Multiway shoves need separate joint call branches and side-pot eligibility. The calculator deliberately models one opponent and one binary response, with no rake or later betting.
+
+A Nash range is a set of conditional action frequencies such that no player improves by changing their own policy alone. For a small example, deal distinct Q, K, A after both players ante one. The first player can fold or shove one additional chip, and the second can fold or call. Enumerate the six equally likely deals and each allowed action. The calculator lists an exact mixed equilibrium and its value; tests enumerate every deterministic push or call range as a unilateral deviation.
+
+That toy chart is not a Hold’em Nash chart. Hold’em ranges depend on every physical combo, dead cards, position, stack, blind structure, and whether the objective is chip value or prize value. A supplied fold chance and called equity can price a particular shove, but they do not solve those interacting ranges. Changing an opponent’s call behavior generally changes both inputs.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Use push/fold EV to audit assumptions, then change the calling range and observe sensitivity. An equilibrium chart from another stack or payout model is not interchangeable.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+A restricted action model can answer a narrow optimization question exactly. Expanding the action set may change the optimal policy.
+
+</QuantCorner>

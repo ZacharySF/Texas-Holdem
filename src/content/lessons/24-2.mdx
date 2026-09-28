@@ -1,0 +1,41 @@
+<Hook>
+
+You repeat an even-money opportunity and risk the same fraction of your current wealth each time. Which fraction grows wealth fastest in the long run under a known probability model?
+
+</Hook>
+
+<Idea>
+
+One win multiplies wealth by one plus the risked fraction f; one loss multiplies it by one minus f. Ten rounds multiply ten such factors. Ordinary arithmetic average payoff does not describe this compounded path. We need a way to turn products into sums.
+
+Start with powers. If ten squared is one hundred, the base-ten logarithm of one hundred is two: it asks what exponent produces the input. Because multiplying powers adds exponents, the logarithm of a product is the sum of its logarithms. The natural logarithm uses base e, introduced through repeated compounding in chapter 10. Changing the base only multiplies all logarithms by a positive constant, so it does not change the fraction that maximizes growth. A multiplier above one has positive log; a multiplier below one has negative log; a multiplier of one has zero log.
+
+After many independent trials, counts approach their expected proportions. Divide the log of final wealth relative to initial wealth by the trial count. The limiting average becomes p times the log of the winning multiplier plus one minus p times the log of the losing multiplier. At net odds b, a win multiplies wealth by one plus bf and a loss by one minus f. The calculator plots this expected log growth rather than the arithmetic average wealth multiplier.
+
+To find the peak, ask how a tiny increase in f changes growth. The derivative, meaning this local rate of change, of ln(x) is one divided by x. Applying it to the two multipliers gives pb divided by one plus bf, minus one minus p divided by one minus f. Set that slope to zero, cross-multiply the positive denominators, and collect f. The result is p minus (one minus p) divided by b. If this is negative and borrowing or taking the opposite side is unavailable, the allowed optimum is zero. The curve is concave because its second derivative is negative, so the interior stationary point is a maximum.
+
+The worked example uses even-money odds. A half-Kelly shortcut deliberately risks half the computed fraction. Its fraction error is shown below; its expected growth should be compared on the curve, not inferred from that fraction error alone. Full Kelly assumes known stable probabilities, independent repeatable opportunities, divisible wealth, and no omitted costs. An overestimated edge can turn aggressive sizing into negative log growth. Change the supplied probability in the Lab before trusting an apparently precise optimum.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Fractional Kelly is a sensitivity choice under estimation error, not a guarantee against drawdowns. Keep model-based sizing separate from the fixed-unit ruin model.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+Position sizing controls the sequence of wealth multipliers, not just the next trade’s mean profit. Forecast uncertainty and correlated exposures can invalidate a single-opportunity Kelly calculation.
+
+</QuantCorner>

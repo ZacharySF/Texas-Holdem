@@ -1,0 +1,63 @@
+<Hook>
+  A chart might put AA, AK suited, and AK offsuit into three equally sized
+  boxes. Does each box occur equally often? The boxes are **hand classes**; the
+  deck deals physical card combinations. Count the cards inside each box before
+  assigning a probability.
+</Hook>
+
+<Idea>
+### Start with all physical two-card hands
+
+The previous lesson derived the full-deck combination count. Each member is a pair of specific cards, such as As Kh. As Kh and Ah Kc are different physical combos even though both belong to the AK offsuit class. A fair two-card deal gives every physical combo the same weight.
+
+<CombinationExamples />
+
+### Count one pair class
+
+For pocket queens, the rank is fixed and the suits distinguish the four available queens. Choose two of those four suits. Reversing Qs Qh does not make a new hand, so the pair count is a combination count. The same argument applies to each other pair rank.
+
+### Count a suited non-pair class
+
+For AK suited, choose the common suit. Once the suit is chosen, both cards are determined: choosing hearts means Ah Kh. There is one combo for each suit. “Suited” means sharing a suit; it does not mean a pair, because a standard deck has only one card of each rank in a suit.
+
+### Count an offsuit non-pair class
+
+For AK offsuit, choose the ace's suit, then choose a different suit for the king. There are four choices at the first step and three at the second. Do not divide by two here: the ace's rank and the king's rank already identify which card each choice refers to. Choosing a heart for the ace and a spade for the king differs from choosing a spade for the ace and a heart for the king.
+
+### Count the boxes as well
+
+There is one pair class per rank. For non-pairs, choose two different ranks without regard to rank order; the higher rank can be written first by convention. Each rank pair has one suited class and one offsuit class. The table computes both the number of classes and the number of physical combos each class contains.
+
+<ClassTable />
+
+Multiplying classes by combos per class and adding the three disjoint types must recover the full-deck count. That total is a useful audit: every physical starting hand belongs in exactly one row, and no hand is counted twice.
+
+### Turn counts into probabilities
+
+For any pocket pair, combine all pair classes' physical combos. For pocket aces, take only the ace-pair class. For two suited cards, combine all suited classes. Divide each favorable count by the physical two-card sample space, not by the number of boxes in a chart.
+
+<StartingFacts />
+
+These are starting-shape probabilities, not equities against an opponent. A common shape can lose to a rare one, and a pair can be outdrawn. The Lab computes equity by completing boards and comparing hands; this lesson asks only what you were initially dealt.
+
+<Shortcut />
+</Idea>
+
+<WorkedDerivation />
+<SimCheck />
+<PracticeSet />
+
+<AtTheTable>
+  When comparing possible opponent holdings, remember that one pair class, one
+  suited class, and one offsuit class contain different numbers of physical
+  hands. You do not yet need a range model to see why giving every named box
+  equal weight would be wrong. Blockers and weighted ranges will extend this
+  count in later chapters.
+</AtTheTable>
+
+<QuantCorner>
+  A scenario label can hide many elementary outcomes. Giving equal weight to a
+  few convenient labels can accidentally overweight a narrow scenario and
+  underweight a broad one. Counting the outcomes represented by each label is a
+  first check on a model's weighting scheme.
+</QuantCorner>

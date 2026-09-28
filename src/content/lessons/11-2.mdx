@@ -1,0 +1,37 @@
+<Hook>
+
+AK against AQ shares a high rank. Now compare suited connectors against one and then several random opponents.
+
+</Hook>
+
+<Idea>
+
+Domination means the weaker hand shares a useful rank but loses many kicker comparisons. When an ace pairs, AK often remains ahead of AQ. The queen can still pair, and community straights, flushes, and ties remain possible. Enumerate boards before claiming that one unpaired hand is nearly dead.
+
+Suitedness adds flush routes. Connectedness adds boards on which the hole cards participate in a straight. Neither label creates an automatic fixed equity bonus; the opponent’s ranks and suits can remove important cards or dominate the same draw. Change only one feature in the selector to make a meaningful comparison. The exact value, when feasible, is the reference; the sampled interval reports uncertainty in the estimate, not variation in the underlying rules.
+
+More opponents usually reduce a strong starting hand’s share because more competing best-five hands reach showdown. The change is not universally monotone under arbitrary chosen ranges: new blockers can change which boards survive. Each multiway tie divides the pot by the number of winners. Equity against random players also assumes everyone sees the river; actual folds, position, and later bets change realized results.
+
+<AdvancedExamples />
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Use multiway equity when several players can contest the pot. Side pots have different eligible opponents, so the Play coach settles them separately.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Adding participants changes the scenario space and the dependence between outcomes. A marginal estimate from a two-party model need not transfer to a larger system.
+
+</QuantCorner>

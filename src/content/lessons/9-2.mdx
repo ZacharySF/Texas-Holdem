@@ -1,0 +1,37 @@
+<Hook>
+
+You hold Qs Qd. Does facing five opponents multiply the chance of a higher pocket pair by five?
+
+</Hook>
+
+<Idea>
+
+A single opponent can hold a pair of kings or aces. Count six physical pairs at each higher rank, then divide by the combinations of the fifty remaining cards. Adding this single-seat probability once per opponent is a useful upper bound. It counts a deal with two higher pairs twice, however. Those overlaps are possible and must be subtracted.
+
+Inclusion–exclusion alternates additions and subtractions: add single-seat events, subtract every pair of simultaneous events, add every triple, and continue. The notation Σ, capital Greek sigma, means “add the listed terms.” The number below it gives the first index; the number above gives the last. In the notebook j counts how many named opponents simultaneously hold higher pairs, and m counts all opponents. The factor C(m,j) chooses those seats. The alternating power supplies a plus for odd j and a minus for even j.
+
+For two opponents, both higher pairs can share a rank only if they use disjoint suits. A full rank has four cards: choosing one pair leaves exactly one pair for the other seat. Different ranks leave six choices at each rank. The engine counts these assignments before dividing by successive remaining two-card spaces. This preserves dependence from blockers. Increasing the number of seats creates more opportunities, but it cannot make the physical cards independent.
+
+<AdvancedExamples />
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Use table size to adjust a prior estimate. Public raises should update that estimate again, rather than treating every opponent as a uniformly random hand.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Several correlated opportunities cannot be priced by multiplying one probability by their count. Inclusion–exclusion makes the source of the overcount explicit.
+
+</QuantCorner>

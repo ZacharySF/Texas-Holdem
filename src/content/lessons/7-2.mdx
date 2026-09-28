@@ -1,0 +1,45 @@
+<Hook>
+
+You hold Qs Qd. The flop contains an ace, or a king, or both. Separately, it might be rainbow, two-tone, or monotone. How do these descriptions divide up the possible boards?
+
+</Hook>
+
+<Idea>
+
+Pocket queens leave eight overcards: four kings and four aces. Count the flops with none of those eight cards and subtract from all flops. This handles “ace or king” without counting a board with both twice. Multiplying three times a one-card overcard chance would double-count boards with several overcards.
+
+The complement automatically includes every disjoint possibility in the desired event: one overcard, two overcards, or three. It does not assert that an opponent holds an ace or king. An overcard on the board is a change in the public information, not proof that your pair has been beaten. Against some hands queens remain ahead; against others the board changes the likely winner dramatically.
+
+Suit texture is another description. Monotone means all three flop cards share one suit. Two-tone means exactly two share a suit and the third has another suit. Rainbow means all three suits differ. Those cases are disjoint and exhaustive: exactly one, two, or three distinct suits must appear on a three-card board. Their exact probabilities add to one.
+
+Rank texture is separate. A paired board means at least two flop cards share a rank; in this lesson that includes trips. A board can be both paired and two-tone. It cannot be paired and monotone because a deck has only one card of each rank in each suit. When combining rank and suit claims, inspect their overlap rather than assuming that texture labels are independent.
+
+<CourseExamples />
+
+Known hole cards change the suit counts. With Qs Qd removed, two suits have one fewer available card than the other two. You cannot use four identical full-suit counts in every conditional calculation. The exact enumerator visits every three-card subset of the remaining deck, counts its distinct suits and repeated ranks, and increments the selected event once. The notebook’s N is that favorable count. This is a small enough count to check exhaustively, and the same predicate is then tested by random dealing in the worker.
+
+A pencil count can check the monotone total independently: for each suit, choose three from the cards of that suit still available, then add the four disjoint suit cases. For two-tone, choose the doubled suit, choose two remaining cards from it, and choose one card from all the other suits. For rainbow, choose three different suits and multiply their remaining-card counts. These are the same multiplication and addition rules from chapters two and four, applied after card removal.
+
+The practice set varies your pocket pair’s rank and the suit pattern of the starting hand. Notice that an ace pair has no overcards, while a lower pair has many. The machinery is unchanged; only the favorable card set changes. Use the exact count to test a rough verbal estimate before relying on it.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Read rank texture and suit texture together, then count what your opponent could actually hold. A monotone board changes flush possibilities; a paired board introduces full-house possibilities. An overcard alone is not a reason to assume you have lost.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Several labels can describe the same observation, so adding their frequencies may double-count cases. Explicitly defining disjoint groups helps when grouping market outcomes too. Conditioning on a starting position can also change the balance between those groups.
+
+</QuantCorner>

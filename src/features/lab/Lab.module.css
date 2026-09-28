@@ -1,0 +1,307 @@
+.lab {
+  max-width: 1200px;
+  padding: 46px 32px 64px;
+  margin: auto;
+}
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-bottom: 38px;
+}
+.intro h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 5.8vw, 4.4rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+  margin: 16px 0;
+}
+.intro em {
+  font-weight: 400;
+  color: var(--accent);
+}
+.intro p {
+  max-width: 480px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 0.96rem;
+}
+.introAside {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-right: 30px;
+}
+.introAside p {
+  font-size: 0.8rem;
+}
+.orbit {
+  font-family: var(--serif);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: var(--gold);
+  transform: rotate(-12deg);
+}
+.orbit span {
+  font-size: 1.2rem;
+  margin-top: 25px;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.4fr);
+  gap: 24px;
+  align-items: start;
+}
+.setup {
+  padding: 24px;
+}
+.hands {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0 12px;
+}
+.hand :global(.section-head) {
+  min-height: 44px;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 8px;
+}
+.hand select {
+  font-size: 0.75rem;
+  max-width: 100%;
+  padding: 4px;
+}
+.cardRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+.randomHand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-height: 78px;
+  color: var(--muted);
+}
+.randomHand span {
+  font-size: 2rem;
+  font-family: var(--serif);
+}
+.randomHand p {
+  font-size: 0.75rem;
+}
+.board {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.board h3 {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.deadCards {
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.seed {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  margin-top: 20px;
+}
+.seed label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 8px;
+}
+.seed input {
+  width: 100%;
+  font-size: 0.76rem;
+  padding: 10px;
+  font-family: var(--mono);
+  letter-spacing: -0.025em;
+}
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+.controls button {
+  flex: 1;
+}
+.simButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  margin: 10px 0;
+}
+.results {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+.resultPanel,
+.chartPanel {
+  padding: 26px;
+}
+.liveDot {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.liveDot::before {
+  content: '';
+  display: inline-block;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+}
+.emptyResult {
+  text-align: center;
+  padding: 20px 0 26px;
+}
+.emptyNumber {
+  font: 5.8rem var(--serif);
+  color: var(--text);
+  letter-spacing: -0.04em;
+}
+.emptyNumber span {
+  font-size: 2.1rem;
+  color: var(--muted);
+  margin-left: 8px;
+}
+.emptyResult h3 {
+  font: 1.4rem var(--serif);
+  margin: 14px 0 6px;
+}
+.emptyResult p {
+  max-width: 310px;
+  margin: auto;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.emptyMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 30px;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+.emptyMetrics b {
+  display: block;
+  font: 1.4rem var(--serif);
+  margin-top: 12px;
+  color: var(--text);
+}
+.heroEquity {
+  padding: 18px 0;
+  text-align: center;
+}
+.heroEquity :global(.probability) strong {
+  font: 4.4rem var(--serif);
+  color: var(--accent);
+  letter-spacing: -0.04em;
+}
+.outcomes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.why {
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+  margin-top: 12px;
+}
+.why p,
+.why a {
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+.comparison {
+  font-size: 0.8rem;
+  padding: 12px;
+  background: var(--subtle);
+  border-radius: 6px;
+  color: var(--gold);
+}
+.allPlayers {
+  display: grid;
+  gap: 14px;
+}
+.opponentValues {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.footnote {
+  color: var(--muted);
+  text-align: center;
+  padding: 0 20px;
+  font-size: 0.75rem;
+  line-height: 1.65;
+}
+@media (max-width: 850px) {
+  .introAside {
+    display: none;
+  }
+  .workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .lab {
+    max-width: 660px;
+  }
+}
+@media (max-width: 450px) {
+  .lab {
+    padding: 30px 16px;
+  }
+  .intro {
+    padding-bottom: 20px;
+  }
+  .intro p {
+    font-size: 0.87rem;
+  }
+  .setup,
+  .resultPanel,
+  .chartPanel {
+    padding: 18px;
+  }
+  .hands {
+    gap: 10px;
+  }
+  .cardRow {
+    gap: 7px;
+  }
+  .outcomes {
+    gap: 8px;
+  }
+  .heroEquity :global(.probability) strong {
+    font-size: 3.8rem;
+  }
+  .chartPanel :global(.section-head) {
+    flex-wrap: wrap;
+  }
+}
+
+.why a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}

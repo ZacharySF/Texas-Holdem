@@ -1,0 +1,37 @@
+<Hook>
+
+A win-rate estimate without its uncertainty can make a tiny sample look decisive.
+
+</Hook>
+
+<Idea>
+
+A confidence interval is a procedure that covers a fixed population value in a stated proportion of repeated samples. It is not a probability distribution for that fixed value after you see one interval. For a mean, the normal approximation adds and subtracts a standard-normal cutoff times estimated standard error. For a binary proportion, Wilson’s score interval solves the normal score inequality without substituting the observed proportion into every variance term.
+
+The simulator repeatedly takes twenty binary observations, computes an interval, and asks whether it includes the known truth. The notebook sums the exact binomial probabilities of counts whose Wilson intervals cover that truth. The indicator symbol, a bold one with a condition beneath it, means use one when the condition holds and zero otherwise. Discrete counts explain why actual coverage need not equal the nominal target exactly.
+
+To plan a mean interval, set the desired half-width equal to the cutoff times SD divided by the square root of sample size, then solve for sample size. Stats reports win rate in big blinds per hundred hands and rescales the variance consistently. An estimated SD from a few hands is itself uncertain; a planning number cannot guarantee that an unstable game becomes stationary.
+
+<AdvancedExamples />
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Show the sample count and interval with every estimate. Avoid acting as though a narrow-looking value from a handful of hands establishes your win rate.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Standard error helps judge whether a backtested average is distinguishable from noise. Data reuse and changing conditions can invalidate an interval even when the arithmetic is correct.
+
+</QuantCorner>

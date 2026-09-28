@@ -1,0 +1,56 @@
+.arcade {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 28px 16px;
+}
+.arcade header {
+  margin-bottom: 28px;
+}
+.arcade h1 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+.arcade section {
+  margin-bottom: 20px;
+}
+.arcade label {
+  display: block;
+  margin-top: 16px;
+}
+.arcade input,
+.arcade select {
+  max-width: 100%;
+  min-height: 44px;
+}
+.arcade button {
+  min-height: 44px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.round form {
+  display: grid;
+  gap: 12px;
+  margin-block: 24px;
+}
+.solution {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.solution button {
+  display: block;
+  margin-top: 20px;
+}
+
+.arcade input {
+  width: 100%;
+}
+.arcade input[id='seed'] {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}

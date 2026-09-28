@@ -1,0 +1,37 @@
+<Hook>
+
+After several losses as a favorite, a win feels overdue. Is the next hand affected by those losses?
+
+</Hook>
+
+<Idea>
+
+For independent trials with a fixed success chance, multiply the chance of the past sequence by the chance of the next outcome. Conditioning on the past divides out that same sequence factor. The next success chance is unchanged. This statement assumes a fixed process: changing opponents, ranges, or tired decisions can change the next hand’s probability.
+
+The chance of a long run somewhere in many trials is a different event. Adding the chance of a run starting at each position double counts sequences with overlapping runs. Count only histories that have not yet reached the requested run length. Label each state by the number of consecutive successes at its end. A failure sends every surviving state to zero. A success moves state j to j plus one; a move reaching the target leaves the surviving states. After the final trial, subtract the surviving probability from one. This small probability tree is dynamic programming: combine histories with identical futures rather than list each history again.
+
+For a strong favorite repeated over many all-ins, losses are ordinary outcomes of the model. Count wins with the binomial model from chapter 10, or change success to failure in the streak counter. A claim about losing five consecutive hands is different from a claim about seeing such a run somewhere in a long session. Picking a dramatic interval after seeing all the hands further changes the question. Confirmation bias keeps memorable losses and forgets routine wins. State the event and observation window before testing a fairness claim.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+In Streak Trap, predict the next outcome from the stated process. Do not change a sound decision just to chase a loss or protect a streak.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+A backtest selected because it contains an unusual winning streak has already been filtered for luck. Record the selection rule before interpreting its statistical evidence.
+
+</QuantCorner>

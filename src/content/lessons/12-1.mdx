@@ -1,0 +1,37 @@
+<Hook>
+
+A toy all-in gains fifty chips on a win and loses fifty on a loss. How can its average be positive while some sessions lose?
+
+</Hook>
+
+<Idea>
+
+A random variable is a number assigned to an outcome. Here X is net chip change, measured after subtracting the new amount risked. Its expected value E[X] is the average obtained by weighting each possible number by its probability. It need not equal any one possible result. Multiply each payoff by its chance, then add the products.
+
+The compact notation E[X] = Σ p_i x_i says exactly that. Sigma means add; i labels a row of the outcome table; x_i is that row’s payoff and p_i its probability. The probabilities must sum to one. Start with the two rows here before using the notation for many river outcomes. If ties occur, add their distinct payoff row rather than counting them as either full wins or full losses.
+
+Expected values add across trials even when trials are dependent. Independence is needed for the simple binomial distribution and the simplest variance formulas, not for adding expectations. A positive average does not tell you the probability of finishing ahead, the worst loss, or the time required for results to stabilize. Those questions require the distribution too.
+
+<AdvancedExamples />
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Define what chips are new risk and what chips are already sunk. Compare action values from the same starting point.
+
+</AtTheTable>
+
+<QuantCorner>
+
+EV is expected profit and loss of a trade. A positive expected profit can coexist with a wide distribution and a serious loss in any individual realization.
+
+</QuantCorner>

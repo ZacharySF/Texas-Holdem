@@ -1,0 +1,253 @@
+.learn {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 24px 70px;
+  line-height: 1.75;
+}
+.learn-header h1 {
+  font: clamp(2.3rem, 6vw, 3.8rem) var(--serif);
+  letter-spacing: -0.04em;
+  margin: 12px 0;
+}
+.learn-header p,
+.learn .hint {
+  color: var(--muted);
+}
+.chapter-list {
+  display: grid;
+  gap: 20px;
+  margin-top: 24px;
+}
+.chapter-list h2 {
+  font: 1.5rem var(--serif);
+  margin: 8px 0;
+}
+.lesson-link {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--border);
+  align-items: center;
+}
+.lesson-link a,
+.lesson-nav a,
+.lesson-section a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.lesson-link span {
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.lesson-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 16px 0;
+}
+.lesson-nav span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.learn label {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 14px;
+}
+.learn #seed {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  padding: 10px;
+  font: 0.8rem var(--mono);
+  margin: 8px 0;
+}
+.lesson-section {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+}
+.lesson-section h2 {
+  font: 1.9rem var(--serif);
+  margin: 8px 0 20px;
+}
+.lesson-section h3 {
+  font: 1.3rem var(--serif);
+  margin-top: 32px;
+}
+.lesson-section p {
+  max-width: 72ch;
+}
+.notebook {
+  max-width: 100%;
+  overflow-x: auto;
+  border-left: 3px solid var(--accent);
+  padding: 12px 20px;
+  background: var(--subtle);
+  margin: 20px 0;
+}
+.notebook .katex-display {
+  text-align: left;
+  margin: 0;
+}
+.exact-value {
+  margin: 18px 0;
+  padding: 16px;
+  background: var(--subtle);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.exact-value h4 {
+  margin: 0 0 12px;
+  font-weight: 500;
+}
+.exact-value dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+.exact-value dt {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.exact-value dd {
+  margin: 2px 0;
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+.shortcut {
+  border: 1px solid var(--border);
+  padding: 16px 22px;
+  border-radius: 10px;
+  background: var(--subtle);
+}
+.shortcut h3 {
+  margin-top: 0;
+}
+.lesson-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.lesson-table {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+.lesson-table table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.82rem;
+}
+.lesson-table caption {
+  text-align: left;
+  color: var(--muted);
+  padding: 10px 0;
+}
+.lesson-table th,
+.lesson-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.card-text {
+  font-family: var(--mono);
+  white-space: nowrap;
+}
+.order-paths {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+.order-paths li {
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+.practice-question {
+  background: var(--panel);
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.practice-question h3 {
+  margin-top: 0;
+}
+.answer-row {
+  display: flex;
+  gap: 10px;
+}
+.answer-row input {
+  min-width: 0;
+  flex: 1;
+  padding: 10px;
+}
+.solution {
+  border-top: 1px solid var(--border);
+  margin-top: 20px;
+}
+.practice-score {
+  padding: 18px;
+  border-left: 3px solid var(--accent);
+  margin-top: 18px;
+}
+.manual-note {
+  color: var(--gold);
+}
+.learn .katex {
+  font-size: 1.07em;
+}
+.learn .sim-check figure {
+  max-width: 750px;
+}
+.learn button {
+  margin: 3px 0;
+}
+@media (max-width: 500px) {
+  .learn {
+    padding: 28px 16px 50px;
+  }
+  .exact-value dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .lesson-link {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 12px;
+  }
+  .answer-row {
+    flex-direction: column;
+  }
+  .learn .panel,
+  .practice-question {
+    padding: 16px;
+  }
+  .notebook {
+    padding: 10px 12px;
+  }
+  .lesson-section h2 {
+    font-size: 1.65rem;
+  }
+  .lesson-table th,
+  .lesson-table td {
+    padding: 9px;
+  }
+  .lesson-actions button {
+    flex: 1;
+  }
+}
+.sim-check label {
+  display: block;
+}
+.sim-check select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  margin-top: 8px;
+}

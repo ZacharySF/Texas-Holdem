@@ -1,0 +1,39 @@
+<Hook>
+
+You have As Ad against Ks Kd on 2c 3d 7h 9s and agree to deal two rivers from the remaining deck. How does splitting the pot change your result?
+
+</Hook>
+
+<Idea>
+
+Let X be your share if the first river settles a whole pot and Y the corresponding share on the second river. Splitting the pot makes your combined fractional share (X plus Y) divided by two. Linearity of expectation says its mean is the average of the two means; independence is not required. Each position in the remaining shuffled deck has the same marginal distribution, so both means equal the single-river equity.
+
+Variance needs more information. Expand the square of the centered average. The two squared terms contribute the individual variances; the cross terms contribute twice the covariance. Covariance is the average product of the two deviations from their means. Positive covariance means the deviations tend to point together. Negative covariance means they tend to offset.
+
+Here the second river cannot repeat the first physical card. Once a losing king appears, one fewer losing king remains. Enumerating ordered distinct river pairs gives covariance equal to minus the single-river population variance divided by the number of possible rivers minus one. The notebook uses that covariance. Pretending the rivers are independent overestimates the variance of the average in this particular one-card model. Multi-card runouts have more complicated dependence; do not reuse this one-card identity blindly.
+
+The table deals both completions without replacement, including burns, while retaining the already exposed board. Each side pot keeps its eligible seats. Shares from both boards are combined before rounding once per pot; remaining indivisible chips go clockwise left of the button among fractional recipients. Fractional-share expectation is preserved exactly. Individual integer-chip expectations can shift by less than one chip per pot through deterministic rounding.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Choose running twice before the deal. It changes short-run swings, not your underlying fractional equity, and requires the table’s agreement.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+Diversification reduces risk through covariance, not just through the number of positions. Two exposures to nearly the same outcome may add much less diversification than their count suggests.
+
+</QuantCorner>
