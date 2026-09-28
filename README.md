@@ -1,10 +1,16 @@
-# Monte Carlo Hold'em
+# neo-gospel
 
 A No-Limit Hold’em game with a probability course built around it. Open the poker room, take a seat against one or five bots, and learn through real hands. An optional walkthrough follows each betting street; deeper coaching, lessons, drills, and experiments stay within reach. Everything runs locally in your browser.
 
 Phases 0–9 are implemented locally. Learn contains 53 lessons across chapters 0–25. Play supports heads-up and 6-max tables, including running all-ins twice. The Lab covers equity, ranges, repeated events, bankroll paths, shuffles, insurance, push/fold, ICM, and Kelly. Arcade includes five drills and a playable AKQ game with a small CFR trainer. Stats summarizes completed hands and forecasts.
 
-**Play online:** [Monte Carlo Hold'em](https://zacharysf.github.io/Texas-Holdem/). **Source:** [Texas-Holdem on GitHub](https://github.com/ZacharySF/Texas-Holdem). The first deployment passed all checks and the live URL was verified on 2026-09-28. GitHub Actions deploys `dist/` after successful checks on `main`. Hash routes and relative assets support project Pages URLs and shared Lab links.
+**Play online:** [neo-gospel](https://zacharysf.github.io/neo-gospel/). **Source:** [neo-gospel on GitHub](https://github.com/ZacharySF/neo-gospel). The first deployment passed all checks and the live URL was verified on 2026-09-28. GitHub Actions deploys `dist/` after successful checks on `main`. Hash routes and relative assets support project Pages URLs and shared Lab links.
+
+## neo-gospel / poker after hours
+
+The interface uses cobalt and icy glass, a fine LED mesh, slow light streaks, reflected community cards, glass chips, and sparse amber actions. Both display themes use bundled Nunito and JetBrains Mono fonts with no runtime font requests. The coach, numbered course, games, experiments, and stored progress keep their existing behavior.
+
+**Theme file:** [`src/design-tokens.css`](src/design-tokens.css). All palette, spacing, type, radius, blur, and surface values live here. [`docs/VISUAL-DESIGN.md`](docs/VISUAL-DESIGN.md) lists changed files, screenshots, screen-by-screen comparisons, and accessibility checks. No engine, simulation, lesson-content, or test source changed in this visual pass. Existing benchmark measurements below were retained; performance benchmarks were not rerun.
 
 ## Start here
 

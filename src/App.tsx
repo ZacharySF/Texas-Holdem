@@ -114,6 +114,25 @@ export function App() {
   }, [settings]);
   return (
     <HashRouter>
+      <div className="terminal-scene" aria-hidden="true">
+        <div className="terminal-bleed terminal-bleed-top" />
+        <div className="terminal-bleed terminal-bleed-bottom" />
+        <div className="terminal-column" />
+        <div className="terminal-streak" />
+        <div className="terminal-travellers">
+          <i />
+          <i />
+          <i />
+        </div>
+      </div>
+      <svg className="theme-definitions" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="terminal-chart" x1="0" y1="1" x2="0" y2="0">
+            <stop offset={0} stopColor="var(--ultramarine)" />
+            <stop offset={1} stopColor="var(--accent)" />
+          </linearGradient>
+        </defs>
+      </svg>
       <a
         className="skip-link"
         href="#main-content"
@@ -128,7 +147,7 @@ export function App() {
         <NavLink to="/play" className="brand">
           <span className="brand-mark">♠</span>
           <span>
-            MONTE CARLO<strong>HOLD'EM</strong>
+            neo-gospel<strong>poker after hours</strong>
           </span>
         </NavLink>
         <nav aria-label="Main navigation">
@@ -280,8 +299,8 @@ export function App() {
         </Routes>
       </div>
       <footer className="app-footer">
-        <span>MONTE CARLO HOLD'EM</span>
-        <span>Count it. Deal it. Understand it.</span>
+        <span>neo-gospel / hold’em</span>
+        <span>one more hand. a little more clarity.</span>
       </footer>
     </HashRouter>
   );

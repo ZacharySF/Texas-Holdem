@@ -1,111 +1,126 @@
+@layer foundation {
+  .card {
+    width: var(--size-58px);
+    min-height: var(--size-78px);
+    flex-shrink: 0;
+    background: var(--card-gradient);
+    color: var(--ink);
+    border: var(--size-1px) solid var(--glass-shine);
+    border-radius: var(--radius-card);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: var(--size-8px) var(--size-12px);
+    font: 600 var(--type-1-4rem) var(--serif);
+    box-shadow: 0 var(--size-4px) var(--size-8px) var(--shadow-soft);
+    animation: deal var(--motion-deal) ease-out;
+  }
+  .card span:last-child {
+    align-self: flex-end;
+    font-size: var(--type-1-4rem);
+  }
+  .card.empty {
+    background: var(--clear);
+    color: var(--muted);
+    border: var(--size-1px) dashed var(--border);
+    box-shadow: none;
+    align-items: center;
+  }
+  .card.empty span {
+    align-self: center;
+  }
+  .card[data-suit='1'],
+  .card[data-suit='2'] {
+    color: var(--ink-warm);
+  }
+  :global([data-four-color='true']) .card[data-suit='0'] {
+    color: var(--ink-club);
+  }
+  :global([data-four-color='true']) .card[data-suit='1'] {
+    color: var(--ink-diamond);
+  }
+  .picker {
+    color: var(--text);
+    background: var(--panel);
+    border: var(--size-1px) solid var(--border);
+    border-radius: var(--size-18px);
+    padding: var(--size-20px);
+    width: min(var(--size-420px), calc(100vw - var(--size-24px)));
+    max-height: 90dvh;
+    overflow: auto;
+  }
+  .picker::backdrop {
+    background: var(--shadow-heavy);
+    backdrop-filter: blur(var(--size-4px));
+  }
+  .pickerHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--size-12px);
+  }
+  .pickerHead h2 {
+    margin: 0;
+    font-size: var(--type-1-3rem);
+  }
+  .ranks {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--size-6px);
+    margin: var(--size-18px) 0;
+  }
+  .ranks button[aria-pressed='true'] {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  .suits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--size-6px);
+    margin-bottom: var(--size-18px);
+  }
+  .suits button {
+    font-size: var(--type-1-5rem);
+    padding: var(--size-8px) 0;
+  }
+  .suits small {
+    display: block;
+    font: var(--type-0-65rem) var(--sans);
+  }
+  @keyframes deal {
+    from {
+      transform: translateX(calc(-1 * var(--size-5px)));
+      opacity: 0.5;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card {
+      animation: none;
+    }
+  }
+  @media (max-width: 390px) {
+    .card {
+      width: var(--size-49px);
+      min-height: var(--size-70px);
+      padding: var(--size-7px) var(--size-9px);
+    }
+  }
+}
+
 .card {
-  width: 58px;
-  min-height: 78px;
-  flex-shrink: 0;
-  background: var(--card);
-  color: #192a30;
-  border: 1px solid #ffffff30;
-  border-radius: 9px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 8px 12px;
-  font: 600 1.4rem var(--serif);
-  box-shadow: 0 4px 8px #0002;
-  animation: deal 220ms ease-out;
+  border-radius: var(--radius-card);
+  font-family: var(--mono);
+  box-shadow: var(--shadow-card);
 }
-.card span:last-child {
-  align-self: flex-end;
-  font-size: 1.4rem;
+.card:not(.empty):hover:not(:disabled) {
+  background: var(--card-gradient);
+  box-shadow: var(--shadow-card), var(--shadow-bloom);
 }
-.card.empty {
-  background: transparent;
-  color: var(--muted);
-  border: 1px dashed var(--border);
-  box-shadow: none;
-  align-items: center;
-}
-.card.empty span {
-  align-self: center;
-}
-.card[data-suit='1'],
-.card[data-suit='2'] {
-  color: #bc304b;
-}
-:global([data-four-color='true']) .card[data-suit='0'] {
-  color: #13744a;
-}
-:global([data-four-color='true']) .card[data-suit='1'] {
-  color: #2457ba;
-}
-.picker {
+.card.empty:hover:not(:disabled) {
   color: var(--text);
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 20px;
-  width: min(420px, calc(100vw - 24px));
-  max-height: 90dvh;
-  overflow: auto;
-}
-.picker::backdrop {
-  background: #0009;
-  backdrop-filter: blur(4px);
-}
-.pickerHead {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-.pickerHead h2 {
-  margin: 0;
-  font-size: 1.3rem;
-}
-.ranks {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-  margin: 18px 0;
-}
-.ranks button[aria-pressed='true'] {
-  background: var(--accent);
-  color: var(--on-accent);
-}
-.suits {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
-  margin-bottom: 18px;
-}
-.suits button {
-  font-size: 1.5rem;
-  padding: 8px 0;
-}
-.suits small {
-  display: block;
-  font: 0.65rem var(--sans);
-}
-@keyframes deal {
-  from {
-    transform: translateY(-5px);
-    opacity: 0.5;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .card {
-    animation: none;
-  }
-}
-@media (max-width: 390px) {
-  .card {
-    width: 49px;
-    min-height: 70px;
-    padding: 7px 9px;
-  }
 }

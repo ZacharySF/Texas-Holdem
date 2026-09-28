@@ -1,6 +1,6 @@
 # Working agreement
 
-Monte Carlo Hold'em teaches probability through a real poker game and reproducible experiments. Learners know fractions and algebra, but are new to probability. Read [SPEC](docs/SPEC.md), [ROADMAP](docs/ROADMAP.md), [CURRICULUM](docs/CURRICULUM.md), and [ARCHITECTURE](docs/ARCHITECTURE.md).
+neo-gospel teaches probability through a real poker game and reproducible experiments. Learners know fractions and algebra, but are new to probability. Read [SPEC](docs/SPEC.md), [ROADMAP](docs/ROADMAP.md), [CURRICULUM](docs/CURRICULUM.md), and [ARCHITECTURE](docs/ARCHITECTURE.md).
 
 ## Commands
 

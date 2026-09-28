@@ -42,14 +42,19 @@ export function Table({ game, persona }: { game: Game; persona: Persona }) {
       aria-label="Poker table"
     >
       <div className="table-brand" aria-hidden="true">
-        MONTE CARLO ♠
+        neo-gospel ♠
       </div>
       <div className="table-center">
         <span className="eyebrow">
           {game.complete ? 'HAND COMPLETE' : game.street.toUpperCase()}
         </span>
         <div className="community-cards">
-          <PlayingCards cards={game.board} />
+          <div className="community-dealt">
+            <PlayingCards cards={game.board} />
+            <div className="community-reflection" aria-hidden="true">
+              <PlayingCards cards={game.board} />
+            </div>
+          </div>
           {Array.from({ length: 5 - game.board.length }, (_, i) => (
             <span className="board-slot" key={i} aria-hidden="true">
               ♠

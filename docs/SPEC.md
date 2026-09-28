@@ -1,4 +1,4 @@
-# Monte Carlo Hold'em
+# neo-gospel
 
 Build a browser game that teaches probability through No-Limit Texas Hold'em: a playable game against bots, a course that derives ideas from basics and checks them through simulation, and carefully tested software. Static site; no backend, accounts, or runtime network calls. MIT, copyright Zachary Finley-Stubbs.
 
@@ -20,7 +20,7 @@ Strict TypeScript without any, React, Vite, npm, pinned Node LTS. HashRouter and
 
 src/engine is pure TypeScript without DOM or React: cards, RNG, shuffle, combinatorics, rational arithmetic, evaluator, equity, statistics; later game rules and bots. src/workers wraps the engine. Modes live in src/features/{learn,play,lab,arcade,stats}; shared UI in src/ui; lessons and facts in src/content. Settings and progress use localStorage; histories use IndexedDB starting Phase 3.
 
-Mobile first, playable at 375px; targets at least 44px and no hover-only controls. Dark felt theme plus light option; four-color deck option with suit symbols always visible. Deal and chip animations respect reduced motion.
+Mobile first, playable at 375px; targets at least 44px and no hover-only controls. Cobalt glass theme plus icy light option; four-color deck option with suit symbols always visible. Deal and chip animations respect reduced motion.
 
 ## Randomness
 
@@ -51,3 +51,7 @@ The subsequent user request authorizes making Play the default experience and te
 ## Guided navigation follow-up
 
 The latest request authorizes a simpler course path inspired by numbered tutorial sites, beginning at Chapter 1 and interleaving lessons with real games. Put accessible coaching beside play on desktop and behind an obvious phone control. Preserve the mathematical curriculum, simulations, practice questions, and game rules. Track reading and game participation separately from quiz mastery, and make returning from a completed practice hand to the same lesson straightforward.
+
+## neo-gospel visual pass
+
+The visual-only follow-up renames the project and GitHub repository to neo-gospel. Use a CSS-built transit-terminal scene, mesh, cold glass, sparse amber lighting, rounded UI typography, and tabular mono readouts. Centralize theme values in one CSS token file, preserve 375px layouts and reduced motion, and maintain readable contrast in both themes. Game rules, engine math, workers, lesson content, and test sources remain unchanged.

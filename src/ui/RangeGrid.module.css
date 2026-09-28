@@ -1,25 +1,35 @@
-.scroll {
-  overflow-x: auto;
-  max-width: 100%;
-  margin-block: 16px;
+@layer foundation {
+  .scroll {
+    overflow-x: auto;
+    max-width: 100%;
+    margin-block: var(--size-16px);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(13, minmax(var(--size-44px), 1fr));
+    min-width: var(--size-620px);
+    gap: var(--size-3px);
+  }
+  .grid button {
+    min-width: var(--size-44px);
+    min-height: var(--size-52px);
+    padding: var(--size-4px) var(--size-2px);
+  }
+  .grid small,
+  .grid strong {
+    display: block;
+    font-size: var(--type-0-72rem);
+  }
+  .selected {
+    border-color: var(--accent);
+    background: var(--selection-fill);
+  }
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(13, minmax(44px, 1fr));
-  min-width: 620px;
-  gap: 3px;
-}
+
 .grid button {
-  min-width: 44px;
-  min-height: 52px;
-  padding: 4px 2px;
+  border-radius: var(--radius-card);
 }
-.grid small,
-.grid strong {
-  display: block;
-  font-size: 0.72rem;
-}
-.selected {
-  border-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 20%, var(--panel));
+
+.grid button {
+  background-image: linear-gradient(var(--range-shade), var(--range-shade));
 }

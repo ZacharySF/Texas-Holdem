@@ -392,11 +392,11 @@ export default function Play() {
     <main className="play">
       <header className="play-header">
         <div>
-          <span className="eyebrow">THE MONTE CARLO POKER ROOM</span>
+          <span className="eyebrow">NEO-GOSPEL / THE POKER ROOM</span>
           <h1>
             {game ? 'A seat at the table.' : 'Your next hand starts here.'}
           </h1>
-          <p className="room-subtitle">Play the hand. Find your edge.</p>
+          <p className="room-subtitle">take a seat. find your rhythm.</p>
         </div>
         <div className="bankroll">
           <span>YOUR CHIPS · PLAY MONEY</span>

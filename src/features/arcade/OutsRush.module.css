@@ -1,56 +1,67 @@
-.arcade {
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 28px 16px;
-}
-.arcade header {
-  margin-bottom: 28px;
-}
-.arcade h1 {
-  font-family: Georgia, serif;
-  font-weight: 400;
-  font-size: clamp(2rem, 6vw, 3.5rem);
-}
-.arcade section {
-  margin-bottom: 20px;
-}
-.arcade label {
-  display: block;
-  margin-top: 16px;
-}
-.arcade input,
-.arcade select {
-  max-width: 100%;
-  min-height: 44px;
-}
-.arcade button {
-  min-height: 44px;
-}
-.actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 16px;
-}
-.round form {
-  display: grid;
-  gap: 12px;
-  margin-block: 24px;
-}
-.solution {
-  padding: 16px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-.solution button {
-  display: block;
-  margin-top: 20px;
+@layer foundation {
+  .arcade {
+    max-width: var(--size-880px);
+    margin: 0 auto;
+    padding: var(--size-28px) var(--size-16px);
+  }
+  .arcade header {
+    margin-bottom: var(--size-28px);
+  }
+  .arcade h1 {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: var(--type-fluid-2);
+  }
+  .arcade section {
+    margin-bottom: var(--size-20px);
+  }
+  .arcade label {
+    display: block;
+    margin-top: var(--size-16px);
+  }
+  .arcade input,
+  .arcade select {
+    max-width: 100%;
+    min-height: var(--size-44px);
+  }
+  .arcade button {
+    min-height: var(--size-44px);
+  }
+  .actions {
+    display: flex;
+    gap: var(--size-8px);
+    flex-wrap: wrap;
+    margin-top: var(--size-16px);
+  }
+  .round form {
+    display: grid;
+    gap: var(--size-12px);
+    margin-block: var(--size-24px);
+  }
+  .solution {
+    padding: var(--size-16px);
+    border: var(--size-1px) solid var(--border);
+    border-radius: var(--size-12px);
+  }
+  .solution button {
+    display: block;
+    margin-top: var(--size-20px);
+  }
+
+  .arcade input {
+    width: 100%;
+  }
+  .arcade input[id='seed'] {
+    font-family: var(--mono);
+    font-size: var(--type-0-8rem);
+  }
 }
 
-.arcade input {
-  width: 100%;
+.arcade {
+  background: var(--scene-shade);
 }
-.arcade input[id='seed'] {
-  font-family: var(--mono);
-  font-size: 0.8rem;
+.arcade h1 {
+  text-transform: lowercase;
+  font-weight: 450;
+  letter-spacing: var(--tracking-title);
 }

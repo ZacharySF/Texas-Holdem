@@ -20,7 +20,12 @@ export function SeriesChart({
             key={s.name}
             fill="none"
             stroke={
-              ['var(--accent)', 'var(--gold)', '#729fd1', '#be7ca0'][j % 4]
+              [
+                'var(--accent)',
+                'var(--gold)',
+                'var(--chart-third)',
+                'var(--chart-fourth)',
+              ][j % 4]
             }
             strokeWidth="2"
             strokeDasharray={j % 2 ? '5 3' : undefined}

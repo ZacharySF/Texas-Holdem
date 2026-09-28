@@ -10,7 +10,7 @@ The current delivery completes the explicitly requested unfinished Phase 8 and 9
 - [x] SPEC, ROADMAP, CURRICULUM, ARCHITECTURE, AGENTS saved.
 - [x] Acceptance: lint, typecheck, tests, build pass from npm ci.
 - [x] Connect the existing GitHub origin and confirm Pages uses Actions.
-- [x] Push the application and record the verified Pages deployment URL: https://zacharysf.github.io/Texas-Holdem/ (2026-09-28).
+- [x] Push the application and record the verified Pages deployment URL: https://zacharysf.github.io/neo-gospel/ (2026-09-28).
 
 ## Phase 1 — Engine and Equity Lab
 
@@ -56,7 +56,7 @@ The exhaustive pass took 19.607 seconds. All 1,000,000 seeded reference comparis
 
 Local acceptance checks and browser interaction review are complete. The Chromium review covered a 375px viewport without horizontal overflow, disabled used cards, custom seeds, URL replay, exact and sampled worker runs, exact reference comparison, cancellation, persisted display settings, and future-mode routes. No browser errors were observed. The permanent Playwright smoke suite was assigned to Phase 9 and is now completed below.
 
-The application is pushed to GitHub and Pages uses Actions. The [first deployment](https://github.com/ZacharySF/Texas-Holdem/actions/runs/36457275849) passed all checks and published the verified [live site](https://zacharysf.github.io/Texas-Holdem/) on 2026-09-28. Local delivery checks were rerun on that date: lint, typecheck, all 90 tests with engine coverage, production build, and all 10 Playwright smoke checks pass. Localhost startup also returned HTTP 200. Engine algorithms and measured benchmark results are unchanged.
+The application is pushed to GitHub and Pages uses Actions. The [first deployment](https://github.com/ZacharySF/neo-gospel/actions/runs/36457275849) passed all checks and published the verified [live site](https://zacharysf.github.io/neo-gospel/) on 2026-09-28. Local delivery checks were rerun on that date: lint, typecheck, all 90 tests with engine coverage, production build, and all 10 Playwright smoke checks pass. Localhost startup also returned HTTP 200. Engine algorithms and measured benchmark results are unchanged.
 
 ## Phase 2 — Learn framework and chapters 0–4
 
@@ -267,3 +267,16 @@ No engine algorithms or benchmarks changed. Active-hand recovery remains deferre
 - [x] Final lint, typecheck, 92 unit tests, production build, and all 20 desktop/phone browser checks pass. Checks cover the Chapter 1/game/return round trip, distinct reading and mastery records, course search and section focus, desktop coach placement, and phone opening, closing, and focus restoration.
 
 Partial quizzes and active hands remain session-only. Reading or playing a hand does not establish mastery. The mathematical curriculum and measured benchmarks are unchanged.
+
+## neo-gospel visual pass
+
+- [x] Rename the app, npm package metadata, and existing GitHub repository to neo-gospel while retaining history.
+- [x] Centralize theme values in one CSS token file; retain the existing React/CSS stack.
+- [x] Apply cobalt/ice exposure seams, LED mesh, scanlines, CSS light streaks, and blurred letterbox bands throughout the frontend.
+- [x] Replace felt with a glass slab; add aria-hidden card reflections, frosted cards, glass chips, amber primary controls, and tabular mono readouts.
+- [x] Bundle rounded UI and mono fonts with licenses, without runtime font requests or external images.
+- [x] Preserve course content, game logic, mathematical code, simulations, saved data formats, and every test source.
+- [x] Check both themes at 375px, reduced motion, and text against composited gradient backgrounds.
+- [x] Final lint, typecheck, all 92 unchanged unit tests, production build, and all 20 unchanged desktop/phone browser checks pass. The renamed repository retains Actions publication at https://zacharysf.github.io/neo-gospel/.
+
+Existing measured benchmarks are unchanged and were not rerun. No additional gameplay phase was implemented. Active hands and unfinished quizzes remain session-only; the visual pass does not change those limitations.

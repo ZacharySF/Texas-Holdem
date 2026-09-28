@@ -1,0 +1,352 @@
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(./assets/fonts/jetbrains-mono-latin.woff2) format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(./assets/fonts/nunito-latin.woff2) format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+/* neo-gospel — swap this file to retheme every screen.
+   Geometry tokens retain the tested table/card layout. Breakpoints remain literal
+   because CSS custom properties cannot be used in media-query conditions. */
+:root {
+  --navy: #06143f;
+  --cobalt: #0b2a8f;
+  --ultramarine: #1a3fbf;
+  --ice: #bcd8f5;
+  --frost: #e8f3ff;
+  --white: #f6fbff;
+  --amber: #f2c14e;
+  --sodium: #e8a93a;
+  --clear: transparent;
+  --sans:
+    'Nunito', 'M PLUS Rounded 1c', 'Zen Maru Gothic', ui-rounded, 'Avenir Next',
+    'Segoe UI', sans-serif;
+  --serif: var(--sans);
+  --mono:
+    'JetBrains Mono', 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+  --bg: var(--navy);
+  --panel: #102754;
+  --panel-cold: #19396a;
+  --panel-deep: #0b204b;
+  --text: var(--white);
+  --muted: #c3d5ed;
+  --accent: #bddfff;
+  --on-accent: var(--navy);
+  --gold: var(--amber);
+  --border: #6385b1;
+  --subtle: #bedfff0d;
+  --card: var(--frost);
+  --ink: #123980;
+  --ink-warm: #885208;
+  --ink-club: #375c70;
+  --ink-diamond: #8d441e;
+  --error: #ffd2af;
+  --chart-third: #90b8ee;
+  --chart-fourth: #d7e8ff;
+  --shadow: #06143f66;
+  --shadow-soft: #06143f33;
+  --shadow-heavy: #06143f99;
+  --glass-rim: #e8f3ff8c;
+  --glass-shine: #f6fbff33;
+  --glass-faint: #e8f3ff0d;
+  --scene-mesh: #e8f3ff12;
+  --panel-mesh: #bcd8f508;
+  --scene-shade: #06143fd9;
+  --light-cyan: #bfefff;
+  --light-amber: #f2c14e99;
+  --light-soft: #bfefff40;
+  --table-surface: #6690b826;
+  --table-dark: #0b2a8f59;
+  --seat-surface: #102754f5;
+  --range-shade: #06143fb3;
+  --floor: #8fbee766;
+  --primary: var(--amber);
+  --primary-ink: var(--navy);
+  --primary-hover: #f6d57c;
+  --radius-panel: 18px;
+  --radius-slab: 32px;
+  --radius-card: 9px;
+  --radius-pill: 999px;
+  --radius-round: 50%;
+  --blur-band: 18px;
+  --blur-glass: 12px;
+  --blur-streak: 3px;
+  --mesh-line: 1px;
+  --mesh-pitch: 4px;
+  --scan-pitch: 8px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --tracking-label: 0.16em;
+  --tracking-title: -0.035em;
+  --shadow-panel:
+    0 12px 40px var(--shadow-soft), inset 0 1px var(--glass-shine);
+  --shadow-card: 0 5px 14px var(--shadow), inset 0 1px var(--white);
+  --shadow-bloom: 0 0 22px var(--light-soft);
+  --number-glow: 0 0 16px var(--light-soft);
+  --surface-gradient: linear-gradient(
+    110deg,
+    var(--panel-deep),
+    var(--panel-cold)
+  );
+  --card-gradient: linear-gradient(135deg, var(--white), var(--ice));
+  --bar-gradient: linear-gradient(90deg, var(--ultramarine), var(--ice));
+  --mesh:
+    repeating-linear-gradient(
+      0deg,
+      var(--panel-mesh) 0 var(--mesh-line),
+      var(--clear) var(--mesh-line) var(--mesh-pitch)
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--panel-mesh) 0 var(--mesh-line),
+      var(--clear) var(--mesh-line) var(--mesh-pitch)
+    );
+  --scene-gradient: linear-gradient(
+    90deg,
+    var(--navy) 0%,
+    var(--cobalt) 49.8%,
+    var(--ice) 50%,
+    var(--ultramarine) 50.3%,
+    var(--frost) 85%,
+    var(--cobalt) 85.2%,
+    var(--ice) 86%,
+    var(--cobalt) 100%
+  );
+  --motion-drift: 32s;
+  --motion-deal: 320ms;
+  --motion-sweep: 700ms;
+}
+:root[data-theme='light'] {
+  --bg: var(--ice);
+  --panel: #e8f3ff;
+  --panel-cold: #daeaff;
+  --panel-deep: #e8f3ff;
+  --text: var(--navy);
+  --muted: #38517a;
+  --accent: #15469b;
+  --on-accent: var(--white);
+  --gold: #825207;
+  --border: #7895ba;
+  --subtle: #0b2a8f09;
+  --error: #883b18;
+  --chart-third: #32588c;
+  --chart-fourth: #556787;
+  --panel-mesh: #0b2a8f08;
+  --scene-shade: #e8f3ffdd;
+  --seat-surface: #e8f3fffa;
+  --range-shade: #e8f3ffcc;
+  --table-surface: #e8f3ffa6;
+  --table-dark: #bcd8f580;
+}
+
+/* Shared spacing, type and layout scale, including established responsive geometry. */
+:root {
+  --size-320px: 320px;
+  --size-4px: 4px;
+  --size-44px: 44px;
+  --size-1px: 1px;
+  --size-7px: 7px;
+  --size-10px: 10px;
+  --size-14px: 14px;
+  --size-2px: 2px;
+  --size-6px: 6px;
+  --type-0-75rem: 0.75rem;
+  --type-1-03rem: 1.03rem;
+  --size-1440px: 1440px;
+  --size-20px: 20px;
+  --size-48px: 48px;
+  --size-28px: 28px;
+  --size-12px: 12px;
+  --type-0-57rem: 0.57rem;
+  --type-0-18em: 0.18em;
+  --type-0-95rem: 0.95rem;
+  --size-3px: 3px;
+  --type-1-6rem: 1.6rem;
+  --size-8px: 8px;
+  --type-0-85rem: 0.85rem;
+  --type-0-8rem: 0.8rem;
+  --size-210px: 210px;
+  --size-30px: 30px;
+  --size-18px: 18px;
+  --size-24px: 24px;
+  --type-0-64rem: 0.64rem;
+  --type-0-13em: 0.13em;
+  --type-0-74rem: 0.74rem;
+  --size-5px: 5px;
+  --type-0-72rem: 0.72rem;
+  --type-1-8rem: 1.8rem;
+  --type-0-65rem: 0.65rem;
+  --size-190px: 190px;
+  --size-45px: 45px;
+  --size-46px: 46px;
+  --size-1136px: 1136px;
+  --size-36px: 36px;
+  --size-16px: 16px;
+  --type-0-08em: 0.08em;
+  --size-680px: 680px;
+  --size-80px: 80px;
+  --type-3-5rem: 3.5rem;
+  --size-15px: 15px;
+  --type-1-4rem: 1.4rem;
+  --type-0-6rem: 0.6rem;
+  --size-1060px: 1060px;
+  --size-150px: 150px;
+  --size-1100px: 1100px;
+  --size-40px: 40px;
+  --size-70px: 70px;
+  --size-22px: 22px;
+  --type-2-4rem: 2.4rem;
+  --type-3-8rem: 3.8rem;
+  --type-0-7rem: 0.7rem;
+  --type-2-8rem: 2.8rem;
+  --size-90px: 90px;
+  --size-26px: 26px;
+  --size-360px: 360px;
+  --type-1rem: 1rem;
+  --type-3rem: 3rem;
+  --size-300px: 300px;
+  --size-50px: 50px;
+  --type-1-3rem: 1.3rem;
+  --size-145px: 145px;
+  --size-1200px: 1200px;
+  --type-1-7rem: 1.7rem;
+  --type-2-7rem: 2.7rem;
+  --type-0-9rem: 0.9rem;
+  --type-1-9rem: 1.9rem;
+  --type-2-5rem: 2.5rem;
+  --type-4-3rem: 4.3rem;
+  --size-430px: 430px;
+  --type-0-88rem: 0.88rem;
+  --size-54px: 54px;
+  --size-410px: 410px;
+  --size-60px: 60px;
+  --type-0-16em: 0.16em;
+  --size-88px: 88px;
+  --size-125px: 125px;
+  --size-9px: 9px;
+  --type-2-1rem: 2.1rem;
+  --size-35px: 35px;
+  --type-0-78rem: 0.78rem;
+  --size-610px: 610px;
+  --size-180px: 180px;
+  --type-0-25em: 0.25em;
+  --size-370px: 370px;
+  --size-55px: 55px;
+  --size-78px: 78px;
+  --type-1-1rem: 1.1rem;
+  --size-17px: 17px;
+  --size-49px: 49px;
+  --size-32px: 32px;
+  --size-185px: 185px;
+  --size-51px: 51px;
+  --size-65px: 65px;
+  --size-670px: 670px;
+  --size-160px: 160px;
+  --size-780px: 780px;
+  --size-860px: 860px;
+  --size-130px: 130px;
+  --size-100px: 100px;
+  --size-38px: 38px;
+  --size-850px: 850px;
+  --type-1-5rem: 1.5rem;
+  --size-120px: 120px;
+  --type-1-55rem: 1.55rem;
+  --type-0-5rem: 0.5rem;
+  --type-0-48rem: 0.48rem;
+  --type-1-35rem: 1.35rem;
+  --size-64px: 64px;
+  --size-720px: 720px;
+  --size-87px: 87px;
+  --type-0-62rem: 0.62rem;
+  --size-43px: 43px;
+  --type-0-58rem: 0.58rem;
+  --size-76px: 76px;
+  --size-1500px: 1500px;
+  --type-0-87rem: 0.87rem;
+  --size-200px: 200px;
+  --size-350px: 350px;
+  --type-0-55rem: 0.55rem;
+  --type-0-82rem: 0.82rem;
+  --type-0-83rem: 0.83rem;
+  --size-13px: 13px;
+  --size-25px: 25px;
+  --size-440px: 440px;
+  --size-110px: 110px;
+  --type-0-04em: 0.04em;
+  --size-900px: 900px;
+  --type-2-3rem: 2.3rem;
+  --size-460px: 460px;
+  --type-1-07em: 1.07em;
+  --size-750px: 750px;
+  --type-1-65rem: 1.65rem;
+  --size-1340px: 1340px;
+  --size-285px: 285px;
+  --type-2-6rem: 2.6rem;
+  --type-4-4rem: 4.4rem;
+  --size-480px: 480px;
+  --type-0-96rem: 0.96rem;
+  --type-1-2rem: 1.2rem;
+  --type-2rem: 2rem;
+  --type-0-76rem: 0.76rem;
+  --type-0-1em: 0.1em;
+  --type-5-8rem: 5.8rem;
+  --size-310px: 310px;
+  --type-0-12em: 0.12em;
+  --size-660px: 660px;
+  --type-0-045em: 0.045em;
+  --type-0-025em: 0.025em;
+  --size-880px: 880px;
+  --size-47px: 47px;
+  --size-68px: 68px;
+  --size-58px: 58px;
+  --size-420px: 420px;
+  --size-620px: 620px;
+  --size-52px: 52px;
+}
+
+/* Presentation scale and semantic surface blends. */
+:root {
+  --size-79px: 79px;
+  --size-81px: 81px;
+  --size-42px: 42px;
+  --size-245px: 245px;
+  --size-230px: 230px;
+  --size-175px: 175px;
+  --accent-hover: color-mix(in srgb, var(--accent) 80%, var(--white));
+  --surface-hover: color-mix(in srgb, var(--accent) 15%, var(--panel));
+  --selection-fill: color-mix(in srgb, var(--accent) 20%, var(--panel));
+  --warm-selection: color-mix(in srgb, var(--gold) 9%, var(--panel));
+  --border-warm: color-mix(in srgb, var(--gold) 40%, var(--border));
+  --warm-panel: color-mix(in srgb, var(--gold) 5%, var(--panel));
+}
+
+:root {
+  --type-fluid-1: clamp(var(--type-2-5rem), 5vw, var(--type-4-4rem));
+  --type-fluid-2: clamp(var(--type-2rem), 6vw, var(--type-3-5rem));
+  --type-fluid-3: clamp(var(--type-2-3rem), 6vw, var(--type-3-8rem));
+  --type-fluid-4: clamp(var(--type-2-4rem), 5vw, var(--type-3-8rem));
+  --type-fluid-5: clamp(var(--type-1-7rem), 3.5vw, var(--type-2-7rem));
+  --type-fluid-6: clamp(var(--type-2-5rem), 5vw, var(--type-4-3rem));
+  --type-fluid-7: clamp(var(--type-2-6rem), 5.8vw, var(--type-4-4rem));
+}

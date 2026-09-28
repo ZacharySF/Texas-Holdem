@@ -18,7 +18,7 @@ All card state, seed, sample count, and chosen method are URL parameters under H
 
 ## Delivery constraints
 
-The existing GitHub repository is connected as origin and uses GitHub Actions for Pages. Its initial README commit is retained as the parent of the application delivery. Local startup uses the pinned Node version through nvm or Nix; localhost port 5173 supports browser storage and Web Crypto. No engine or product behavior changed for publication, and benchmark measurements were retained. The first workflow completed successfully and the published application responded at https://zacharysf.github.io/Texas-Holdem/ on 2026-09-28.
+The existing GitHub repository is connected as origin and uses GitHub Actions for Pages. Its initial README commit is retained as the parent of the application delivery. Local startup uses the pinned Node version through nvm or Nix; localhost port 5173 supports browser storage and Web Crypto. No engine or product behavior changed for publication, and benchmark measurements were retained. The first workflow completed successfully and the published application responded at https://zacharysf.github.io/neo-gospel/ on 2026-09-28.
 
 ## Verification and delivery record
 
@@ -175,3 +175,17 @@ A versioned course journey records the current lesson, lessons explicitly marked
 The coach sits alongside the table on wide screens, with a constrained, scrollable panel. Help, estimated odds, and decision feedback have separate buttons; the default view explains the current hand in plain language. Phones and smaller tablets use a persistent coach button and a modeless panel with its own close button. Opening focuses the panel; Escape and Back to table restore focus to the trigger. It does not block or restart the hand. The detailed coach retains its samples, uncertainty, range assumptions, and hidden-information boundary. Exam mode continues to hide estimates until the learner predicts.
 
 The course practice banner and coach preserve a return-to-lesson link once the hand is finished. The site navigation now describes the destinations as Play, Course, Drills, Tools, and Progress. Tool and drill pages include a short purpose statement and course link. Reading ahead remains available without a quiz gate. No engine, RNG, settlement, mathematical result, or benchmark implementation changed. Active-hand recovery remains deferred.
+
+## neo-gospel: presentation and repository rename
+
+The requested visual pass keeps React, CSS Modules, and plain CSS. `design-tokens.css` owns the palette, fonts, spacing/type/layout scale, radii, blur, surface blends, and motion timings. The established feature geometry remains in the `foundation` cascade layer; `softclub.css` supplies the shared terminal scene and visual treatment. Module-specific overrides stay in their owning stylesheets, so production class hashing cannot break them. Media-query breakpoints and proportional geometry remain structural literals because custom properties cannot be interpolated into media conditions.
+
+The fixed scene uses gradients for split exposures, mesh, scanlines, a bright column, amber/cyan streaks, and top/bottom blurred bands. Small CSS silhouettes and their faded reflections suggest a distant terminal. Only the two disjoint bleed bands use filter blur; only the table uses backdrop blur during play. The existing card-picker backdrop uses one additional blur in its separate tools flow. Streak drift, card arrival, and button sweeps animate transform/opacity only; reduced motion disables all animation and transitions. Opaque reading surfaces and tinted page scrims prevent the bright scene from washing out labels. Static gradients still render when backdrop filtering is unavailable.
+
+Community-card reflections duplicate display markup inside an aria-hidden, pointer-inert, absolutely positioned wrapper. They do not participate in table geometry or add accessible card announcements. Game state, probability calculations, charts' data, workers, seeded behavior, storage keys, lesson content, and test sources are unchanged. Suit symbols remain visible in both default and four-color decks; warm card ink is deliberately darker than the amber lighting accent for contrast.
+
+Nunito and JetBrains Mono Latin WOFF2 fonts are bundled under their SIL Open Font Licenses. The token file owns their font-face declarations. There are no external image assets or runtime font requests. Other symbols and mathematical notation retain appropriate fallback/KaTeX fonts.
+
+The project and existing GitHub repository were renamed to `neo-gospel`; history, Actions, and the public repository remain intact. The git remote and current Pages links use the new name. Relative asset URLs and hash routes need no routing change. Persisted browser progress is retained on the same Pages origin because existing storage keys remain unchanged. Bookmarks should use the new Pages path.
+
+Validation includes the unchanged unit and browser suites, 19 routes at 375px in both themes, reduced-motion inspection, and rendered-background contrast sampling. See VISUAL-DESIGN.md for scope and limits. Engine benchmarks were not rerun because no engine implementation changed. Active-hand recovery and partial quiz persistence remain deferred.
