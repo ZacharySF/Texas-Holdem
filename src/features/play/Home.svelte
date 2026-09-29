@@ -1,8 +1,8 @@
 <script lang="ts">
   import { SITE_NAME } from '../../decor/site';
   import HomeDecor from '../../decor/HomeDecor.svelte';
-  import GhostWord from '../../decor/GhostWord.svelte';
-  import CourseRunIn from '../../decor/CourseRunIn.svelte';
+  import HomeNavigation from '../../decor/HomeNavigation.svelte';
+  import CourseDirectory from '../../decor/CourseDirectory.svelte';
   import GradientMapImage from '../../ui/GradientMapImage.svelte';
   import AmbientCards from './AmbientCards.svelte';
   import { parallax } from '../../visual/parallax';
@@ -34,7 +34,6 @@
   <div class="home-title" use:parallax={visualConfig.motion.heroTitle}>
     <h1>{SITE_NAME}</h1>
     <p>heads-up or six-max. the math is on screen.</p>
-    <div class="decor-home-play"><GhostWord word="play" blur /></div>
     <div class="home-actions">
       <button
         class="primary start-game"
@@ -47,5 +46,6 @@
       >
     </div>
   </div>
+  <HomeNavigation {onplay} disabled={dealing || bankroll < 1} />
 </section>
-<CourseRunIn />
+<CourseDirectory />

@@ -1,43 +1,34 @@
+<!-- Spread layers: L0 void; L1 masked halftone slot 01 (normal); L2 scanline screen;
+ L3 night slab with knocked-out title; L4 12-column registration grid + ruler;
+ L5 existing play controls; L6 actual combination data + issue sticker; L7 global grain. -->
 <script lang="ts">
+  import TypeDevice from './TypeDevice.svelte';
+  import PhotoSlot from './gen/PhotoSlot.svelte';
+  import Ruler from './Ruler.svelte';
+  import Sticker from './Sticker.svelte';
+  import CropMarks from './CropMarks.svelte';
+  import ModularGrid from './ModularGrid.svelte';
   import { SITE_NAME } from './site';
-  import Masthead from './Masthead.svelte';
-  import MotionPhoto from './MotionPhoto.svelte';
-  import Swoosh from './Swoosh.svelte';
-  import Hairlines from './Hairlines.svelte';
-  import ThumbStack from './ThumbStack.svelte';
-  import MicroBlock from './MicroBlock.svelte';
-  import Chevrons from './Chevrons.svelte';
-  import IssueNumber from './IssueNumber.svelte';
-  import { assetUrl } from '../visual/config';
-  const photo = assetUrl('art/club-overpass.png');
+  import { COMBINATIONS, CLASSES } from './gen/mathGraphics';
 </script>
 
-<div class="decor-home-backdrop decor" aria-hidden="true">
-  <MotionPhoto src={photo} /><Swoosh />
+<div class="spread-home-scene decor" aria-hidden="true">
+  <PhotoSlot n={1} seed="home-01" width={1400} height={700} accent="#b1b7d0" />
 </div>
-<div class="decor-home-masthead decor" aria-hidden="true">
-  <Masthead word={SITE_NAME} />
+<div class="spread-home-screen decor" aria-hidden="true"></div>
+<div class="spread-home-masthead decor" aria-hidden="true">
+  <TypeDevice word={SITE_NAME} treatment="knockout" />
 </div>
-<div class="decor-home-grid decor" aria-hidden="true">
-  <Hairlines horizontal={['22%', '88%']} vertical={['3%', '72%']} />
+<div class="spread-home-structure decor" aria-hidden="true">
+  <ModularGrid /><Ruler /><CropMarks n="01" />
 </div>
-<div class="decor-home-edition decor decor-micro" aria-hidden="true">
-  <b>an independent study of chance</b><span
-    >issue 01 / probability &amp; play</span
-  ><span>52 cards · infinite decisions</span>
-</div>
-<div class="decor-home-notes decor" aria-hidden="true">
-  <MicroBlock /><Chevrons />
-</div>
-<div class="decor-home-thumbs decor" aria-hidden="true">
-  <div class="decor-soft">heads-up<br />six-max<br />outs<br />equity</div>
-  <ThumbStack srcs={[photo, photo, photo]} />
-</div>
-<div class="decor-home-caption decor decor-micro" aria-hidden="true">
-  <b>field study 001</b> / light, velocity, repetition<span
-    >observation precedes understanding &gt;&gt;&gt;</span
+<div class="spread-home-data decor decor-micro" aria-hidden="true">
+  <span>01 / probability through poker</span><span
+    >{COMBINATIONS} combinations / {CLASSES} classes</span
   >
 </div>
-<div class="decor-home-issue decor" aria-hidden="true">
-  <IssueNumber n="01" />
+<div class="spread-home-issue decor" aria-hidden="true">
+  <Sticker text="ISSUE 01" tilt={3} /><span class="decor-micro"
+    >one deck<br />many possible futures</span
+  >
 </div>
