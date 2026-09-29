@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Foundation from './decor/Foundation.svelte';
   import { onMount } from 'svelte';
   import Routes from './Routes.svelte';
   import { navigation, navigate } from './navigation.svelte';
@@ -75,6 +76,8 @@
     return () => window.removeEventListener('hashchange', change);
   });
 </script>
+
+<Foundation />
 
 <div class="page-atmosphere" aria-hidden="true">
   <div

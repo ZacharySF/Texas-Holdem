@@ -1,0 +1,16 @@
+:root {
+  --sodium: #e89a3c;
+  --lime: #b4c64a;
+  --cobalt: #3d6ec3;
+  --frost: #cddeea;
+  --powder: #9fc0df;
+  --decor-hairline: color-mix(in srgb, var(--dusk) 60%, transparent);
+  --decor-gap: 10px;
+  --decor-micro: 9px;
+  --decor-caption: 11px;
+  --decor-body: 15px;
+  --decor-heading: 24px;
+  --decor-masthead: clamp(120px, 18vw, 320px);
+  --soft-club: 'Michroma', var(--sans);
+  --masthead: 'Inter Tight', sans-serif;
+}
