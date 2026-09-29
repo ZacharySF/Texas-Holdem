@@ -357,3 +357,16 @@ Home-link verification: lint, typecheck, all 107 unit tests, coverage thresholds
 - [ ] Native route snapshot transition: deferred under the no-routing-change constraint.
 
 Before/removal/final captures and grid overlays are in `design/shots/`. Per-screen review and presentation exceptions are documented in `DESIGN_NOTES.md`. No engine code or benchmark measurements changed.
+
+## Pot-odds teaching and timed tournament
+
+- [x] Share a tested, detailed award/call/side-pot explanation between live coaching and lesson 12.2.
+- [x] Add an isolated six-player freezeout with absolute decision deadlines, rising blinds, automatic deals, eliminations and winner/result states.
+- [x] Preserve blind obligations after elimination and heads-up order; enforce existing no-limit raise and side-pot rules.
+- [x] Remove coaching, equity hints, folded-card reveals and practice bankroll integration from tournament play.
+- [x] Document house rules, automatic check/fold, session results and forfeiture on leaving/reloading.
+- [x] Add lifecycle and browser regression coverage, including keyboard and phone flows.
+
+This is a single-table local event against bots. Multiplayer, resumable tournaments, payouts, and physical floor procedures are outside this request's implementation. Existing evaluation/simulation benchmark measurements remain unchanged.
+
+Validation: 116 unit tests, all 46 desktop/phone browser tests, typecheck (no Svelte diagnostics), lint, production build and the palette contrast script pass. Engine coverage is 99.22% statements, 98.47% branches, 100% functions and 99.34% lines. New captures: `docs/screenshots/tournament-desktop.png` and `docs/screenshots/tournament-phone.png`.

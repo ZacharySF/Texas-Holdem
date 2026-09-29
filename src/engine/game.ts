@@ -11,6 +11,8 @@ export interface GameConfig {
   smallBlind: number;
   bigBlind: number;
   runItTwice?: boolean;
+  /** Explicit tournament blinds preserve dead-button obligations after elimination. */
+  tournamentBlinds?: { small: number | null; big: number; deadButton: boolean };
 }
 export interface Seat {
   stack: number;
@@ -72,6 +74,23 @@ function validate(config: GameConfig): void {
     bigBlind < smallBlind
   )
     throw new Error('Invalid table configuration.');
+  const blinds = config.tournamentBlinds;
+  if (
+    blinds &&
+    (!Number.isInteger(blinds.big) ||
+      blinds.big < 0 ||
+      blinds.big >= stacks.length ||
+      (blinds.small !== null &&
+        (!Number.isInteger(blinds.small) ||
+          blinds.small < 0 ||
+          blinds.small >= stacks.length ||
+          blinds.small === blinds.big)) ||
+      (stacks.length === 2 &&
+        (blinds.small !== button ||
+          blinds.big === button ||
+          blinds.deadButton)))
+  )
+    throw new Error('Invalid tournament blinds.');
 }
 export function legalActions(game: Game, seat = game.actor) {
   const player = game.players[seat];
@@ -261,6 +280,12 @@ function advance(game: Game, after: number) {
       return;
     }
     const able = alive.filter((i) => game.players[i].stack > 0);
+    if (game.config.tournamentBlinds && able.length === 1) {
+      game.bet = Math.min(
+        game.bet,
+        Math.max(...game.players.map((p) => p.round)),
+      );
+    }
     const pending = able.filter(
       (i) =>
         game.players[i].round < game.bet ||
@@ -338,9 +363,13 @@ export function newGame(config: GameConfig): Game {
     boards: { preflop: [] },
     returns: [],
   };
-  const sb = n === 2 ? config.button : next(config.button, n),
-    bb = next(sb, n);
-  pay(game, sb, config.smallBlind);
+  const sb = config.tournamentBlinds
+      ? config.tournamentBlinds.small
+      : n === 2
+        ? config.button
+        : next(config.button, n),
+    bb = config.tournamentBlinds?.big ?? next(sb!, n);
+  if (sb !== null) pay(game, sb, config.smallBlind);
   pay(game, bb, config.bigBlind);
   game.bet =
     n > 2 ? config.bigBlind : Math.max(...game.players.map((p) => p.round));

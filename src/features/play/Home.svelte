@@ -29,6 +29,8 @@
       <button disabled={dealing || bankroll < 1} onclick={() => onplay(6)}
         >Six-player table</button
       >
+      <a class="button" href="#/play/tournament">Tournament · timed, no coach</a
+      >
     </div>
   </div>
   <PhotoPlate />

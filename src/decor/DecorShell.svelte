@@ -20,4 +20,8 @@
       />{/if}{@render children()}
   </div>
 </div>
-<StatusBar path={navigation.path} {...readouts()} live />
+{#if navigation.path !== '/play/tournament'}<StatusBar
+    path={navigation.path}
+    {...readouts()}
+    live
+  />{/if}

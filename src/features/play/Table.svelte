@@ -9,6 +9,7 @@
     botDescription,
     seatName,
     actionText,
+    tournament = false,
   }: {
     game: Game;
     total: number;
@@ -16,6 +17,7 @@
     botDescription: string;
     seatName: (seat: number) => string;
     actionText: (action: Action) => string;
+    tournament?: boolean;
   } = $props();
   const last = $derived(game.history.at(-1));
 </script>
@@ -62,7 +64,7 @@
         <div>
           <h2>
             {seatName(seat)}
-            {#if game.config.button === seat}<span
+            {#if game.config.button === seat && !game.config.tournamentBlinds?.deadButton}<span
                 class="dealer-button"
                 title="Dealer button"
                 aria-label="Dealer button">D</span
@@ -72,8 +74,20 @@
         </div>
       </div>
       <PlayingCards
-        cards={seat === 0 || game.complete ? player.hand : []}
-        hidden={seat !== 0 && !game.complete ? 2 : 0}
+        cards={seat === 0 ||
+        (game.complete &&
+          (!tournament ||
+            (!player.folded &&
+              game.players.filter((p) => !p.folded).length > 1)))
+          ? player.hand
+          : []}
+        hidden={seat !== 0 &&
+        (!game.complete ||
+          (tournament &&
+            (player.folded ||
+              game.players.filter((p) => !p.folded).length === 1)))
+          ? 2
+          : 0}
       />
       <span class="seat-action"
         >{player.folded

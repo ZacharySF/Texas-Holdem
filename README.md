@@ -22,6 +22,14 @@ Cards are adapted from Byron Knoll’s public-domain [Vector Playing Cards](http
 
 The evaluator, equity calculations, and settlement remain unchanged. Existing routes remain available, with a new Hand charts route. Four lessons now include the requested chart and by-hand equity walkthroughs. The later authorized gameplay update replaces passive bot rules with sampled action comparisons and adds a tested pot-odds walkthrough. With user approval, browser tests now cover both dark palettes, the new coach, charts, lesson exercises, and one-click six-player entry.
 
+## Timed tournament and pot-odds explanations
+
+Choose **Tournament · timed, no coach** in Play, or open `#/play/tournament`. The six-player freezeout starts everyone with 2,000 separate tournament chips. Decisions have a 30-second deadline, blinds rise every three minutes between hands, and completed hands redeal after four seconds. Timeouts check a free option or fold facing a bet. There are no rebuys, antes, rake, breaks, coaching, equity hints, or run-it-twice. Eliminations carry stacks forward, including dead-button and heads-up blind rules. The event ends when you bust or hold every chip.
+
+Leaving the tournament route or reloading forfeits the event; switching browser tabs does not pause its decision deadline. Session storage keeps only the last result, not a resumable hand. Tournament chips do not change practice bankroll, XP, saved practice histories, or course progress. Bots use 400 sampled action comparisons in a dedicated worker and receive only their own cards and public information. A worker failure uses check/fold; the normal deadline also prevents stalled turns. This is a local single-table exercise, not online multiplayer or a complete simulation of physical floor procedures. The full house rules and blind schedule appear before entry.
+
+The live **Pot odds** coach and **lesson 12.2** now share a detailed walkthrough: how final pots include the new call, why side pots have different eligible winners, how sampled awards include wins/ties/losses, and why net value subtracts the new call exactly once. Worked examples come from tested facts functions. The lesson also distinguishes chip expectation from tournament prize value.
+
 ## Hand charts and calculating equity yourself
 
 **Tools → Hand charts** contains a complete starting-hand matrix and a heads-up small-blind shove/fold matrix. Tap a cell to inspect its combination count, equity, uncertainty, and modeled value. Change opponents, effective stack, calling range, or sample count and rebuild. The shove chart explicitly states its situation and models only shove versus fold; it is not an EP1 chart or a solved tournament strategy. A resource index links rules, rankings, ranges, draws, pot odds, bluffing, bankroll tools, and ICM.

@@ -6,5 +6,5 @@
 
 <header class="page-masthead">
   <div class="panel-label">{section.code} / {section.name}</div>
-  <h1>{section.name}</h1>
+  <h1>{path === '/play/tournament' ? 'tournament' : section.name}</h1>
 </header>

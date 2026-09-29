@@ -4,6 +4,10 @@
   let { homeVisit = 0 }: { homeVisit?: number } = $props();
   const routes: [RegExp, () => Promise<{ default: Component }>][] = [
     [/^\/play$/, () => import('./features/play/Play.svelte')],
+    [
+      /^\/play\/tournament$/,
+      () => import('./features/tournament/Tournament.svelte'),
+    ],
     [/^\/learn(?:\/[^/]+)?$/, () => import('./features/learn/Learn.svelte')],
     [/^\/lab$/, () => import('./features/lab/Lab.svelte')],
     [/^\/lab\/charts$/, () => import('./features/lab/HandCharts.svelte')],
