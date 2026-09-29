@@ -1,7 +1,6 @@
 :root {
   --sodium: #e89a3c;
   --lime: #b4c64a;
-  --cobalt: #3d6ec3;
   --frost: #cddeea;
   --powder: #9fc0df;
   --decor-hairline: color-mix(in srgb, var(--dusk) 60%, transparent);
@@ -13,4 +12,10 @@
   --decor-masthead: clamp(120px, 18vw, 320px);
   --soft-club: 'Michroma', var(--sans);
   --masthead: 'Inter Tight', sans-serif;
+}
+
+.decor-motion-photo,
+.decor-thumb-stack,
+.decor-swoosh {
+  --cobalt: #3d6ec3;
 }

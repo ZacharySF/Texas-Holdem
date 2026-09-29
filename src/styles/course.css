@@ -58,7 +58,7 @@
   .decor-lesson-margin {
     position: absolute;
     top: 240px;
-    right: -125px;
+    left: -125px;
     width: 100px;
   }
   .decor-lesson-margin .decor-microblock {
@@ -106,7 +106,7 @@
     padding-block: 18px;
   }
 }
-@media (max-width: 1500px) {
+@media (max-width: 1700px) {
   #root .decor-lesson-margin {
     display: none;
   }

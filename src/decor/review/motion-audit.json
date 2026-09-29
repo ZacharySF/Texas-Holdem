@@ -1,0 +1,13 @@
+{
+  "frames": {
+    "frames": 181,
+    "averageFrameMs": 16.656353591151987,
+    "maxFrameMs": 16.800000000000182
+  },
+  "wipeAfter350ms": "0",
+  "offscreen": {
+    "visible": "false",
+    "state": "paused"
+  },
+  "currentWorkspace": ["[2 course]"]
+}

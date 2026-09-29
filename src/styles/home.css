@@ -249,3 +249,14 @@
     }
   }
 }
+
+@media (min-width: 1600px) {
+  #root .decor-home-grid,
+  #root .decor-home-backdrop,
+  #root .decor-home-masthead {
+    width: 100vw;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}

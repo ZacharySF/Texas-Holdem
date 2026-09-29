@@ -14,7 +14,7 @@
   import Fetch from './Fetch.svelte';
   import IssueNumber from './IssueNumber.svelte';
   import { assetUrl } from '../visual/config';
-  const photo = assetUrl('art/hero.jpg');
+  const photo = assetUrl('art/club-overpass.png');
 </script>
 
 <main class="decor-lab" id="main-content" tabindex="-1">
@@ -66,7 +66,7 @@
     </section>
     <section>
       <h2>09 / MotionPhoto</h2>
-      <code>src='/art/hero.jpg' blur=3 ghost=true</code>
+      <code>src='/art/club-overpass.png' blur=3 ghost=true</code>
       <div class="decor-lab-photo"><MotionPhoto src={photo} /></div>
     </section>
     <section>
