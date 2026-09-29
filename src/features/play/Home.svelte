@@ -1,4 +1,7 @@
 <script lang="ts">
+  import HomeDecor from '../../decor/HomeDecor.svelte';
+  import GhostWord from '../../decor/GhostWord.svelte';
+  import CourseRunIn from '../../decor/CourseRunIn.svelte';
   import GradientMapImage from '../../ui/GradientMapImage.svelte';
   import AmbientCards from './AmbientCards.svelte';
   import { parallax } from '../../visual/parallax';
@@ -17,6 +20,7 @@
 </script>
 
 <section class="home-hero">
+  <HomeDecor />
   <div class="hero-art" aria-hidden="true">
     <div class="hero-photo" use:parallax={visualConfig.motion.heroPhoto}>
       <!-- Replace public/art/hero.jpg with your photo; this URL also works on project Pages. -->
@@ -29,6 +33,7 @@
   <div class="home-title" use:parallax={visualConfig.motion.heroTitle}>
     <h1>contemprorary</h1>
     <p>heads-up or six-max. the math is on screen.</p>
+    <div class="decor-home-play"><GhostWord word="play" blur /></div>
     <div class="home-actions">
       <button
         class="primary start-game"
@@ -42,3 +47,4 @@
     </div>
   </div>
 </section>
+<CourseRunIn />
