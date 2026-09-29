@@ -2,6 +2,7 @@
   import '../styles/decor.css';
   import displayFont from '../styles/fonts/archivo-latin.woff2?url';
   import { SITE_NAME } from './site';
+  import Atmosphere from '../lib/softclub/Atmosphere.svelte';
 </script>
 
 <svelte:head
@@ -15,6 +16,7 @@
 >
 
 <span aria-hidden="true" class="decor-foundation"></span>
+<Atmosphere />
 
 <style>
   .decor-foundation {

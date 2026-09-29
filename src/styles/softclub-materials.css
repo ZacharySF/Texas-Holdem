@@ -1,0 +1,73 @@
+#root .sc-glass {
+  background:
+    linear-gradient(180deg, var(--sc-glass-highlight), transparent 40%),
+    var(--sc-glass-fill);
+  border-color: var(--sc-edge);
+  box-shadow:
+    inset 0 1px 0 var(--sc-edge-hi),
+    inset 0 -1px 0 color-mix(in srgb, var(--sc-ink-0) 60%, transparent),
+    var(--sc-shadow);
+}
+#root .sc-glass--live {
+  backdrop-filter: blur(var(--sc-glass-blur)) saturate(1.25);
+  -webkit-backdrop-filter: blur(var(--sc-glass-blur)) saturate(1.25);
+}
+#root .sc-gel {
+  position: relative;
+  background:
+    linear-gradient(
+      180deg,
+      var(--sc-edge-hi) 0 1px,
+      color-mix(in srgb, var(--sc-white) 3%, transparent) 1px 46%,
+      transparent 47%
+    ),
+    linear-gradient(180deg, var(--sc-gel-top), var(--sc-ink-1));
+  border-color: color-mix(in srgb, var(--sc-key) 55%, transparent);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--sc-ink-0) 50%, transparent),
+    inset 0 -10px 18px -10px color-mix(in srgb, var(--sc-key) 60%, transparent),
+    0 0 calc(var(--sc-glow) * 18px)
+      color-mix(in srgb, var(--sc-key) 45%, transparent);
+  transition: --sc-glow var(--sc-dur) var(--sc-ease);
+}
+#root .sc-gel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent calc(var(--sc-sheen) - 12%),
+    color-mix(in srgb, var(--sc-white) 6%, transparent) var(--sc-sheen),
+    transparent calc(var(--sc-sheen) + 12%)
+  );
+  transition: --sc-sheen 600ms var(--sc-ease);
+}
+#root .sc-gel:is(:hover, :focus-visible):not(:disabled) {
+  --sc-glow: 1;
+}
+#root .sc-gel:is(:hover, :focus-visible):not(:disabled)::after {
+  --sc-sheen: 130%;
+}
+#root .sc-gel:is([aria-pressed='true'], [aria-selected='true'], .active) {
+  --sc-glow: 0.6;
+  box-shadow:
+    inset 0 -2px 0 var(--sc-cyan-ice),
+    0 0 10px color-mix(in srgb, var(--sc-key) 30%, transparent);
+}
+#root .sc-gel:active:not(:disabled) {
+  transform: translateY(1px);
+  --sc-glow: 0.3;
+}
+#root .sc-gel:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+#root .sc-lcd {
+  color: var(--sc-cyan-ice);
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  text-shadow:
+    0 0 1px currentColor,
+    0 0 8px color-mix(in srgb, currentColor 55%, transparent);
+}

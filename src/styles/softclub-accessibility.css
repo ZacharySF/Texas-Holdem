@@ -1,0 +1,69 @@
+@media (prefers-reduced-motion: reduce) {
+  .sc-atmosphere *,
+  #root .sc-plate *,
+  #root .sc-gel,
+  #root .sc-gel::after,
+  #root .sc-acrylic::after {
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+  #root .sc-gel:active {
+    transform: none;
+  }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  html:root {
+    --sc-glass-fill: var(--sc-ink-1);
+    --sc-glass-highlight: transparent;
+  }
+  #root .sc-glass--live {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .sc-atmosphere-haze {
+    opacity: 0.4;
+  }
+  .sc-atmosphere-mesh {
+    opacity: 0.2;
+  }
+  #root .sc-plate-overlay {
+    display: none;
+  }
+}
+@media (forced-colors: active) {
+  .sc-atmosphere,
+  #root .sc-plate {
+    display: none;
+  }
+  #root :is(.sc-glass, .sc-glass--live, .sc-lcd, .sc-acrylic, .sc-table) {
+    background: Canvas;
+    color: CanvasText;
+    border-color: CanvasText;
+    box-shadow: none;
+    text-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  #root .sc-gel {
+    background: ButtonFace;
+    color: ButtonText;
+    border-color: ButtonText;
+    box-shadow: none;
+  }
+  #root .sc-gel::after,
+  #root .sc-acrylic::after {
+    display: none;
+  }
+  #root [data-masthead] {
+    color: CanvasText;
+    -webkit-text-fill-color: CanvasText;
+    background: none;
+    -webkit-text-stroke: 0;
+    filter: none;
+    text-shadow: none;
+  }
+  #root .sc-gel:focus-visible {
+    outline-color: Highlight;
+  }
+}

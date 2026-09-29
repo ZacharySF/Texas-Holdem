@@ -1,0 +1,64 @@
+html:root {
+  --sc-ink-0: var(--ink-0);
+  --sc-ink-1: var(--ink-1);
+  --sc-ink-2: var(--ink-2);
+  --sc-ink-3: var(--ink-3);
+  --sc-violet-5: var(--ink-4);
+  --sc-violet-6: var(--ink-5);
+  --sc-haze: #776da2;
+  --sc-frost: var(--text);
+  --sc-red: var(--red);
+  --sc-cyan: var(--cyan);
+  --sc-cyan-ice: var(--cyan-hi);
+  --sc-sodium: var(--orange);
+  --sc-lime: var(--lime);
+  --sc-key: var(--ultraviolet);
+  --sc-key-deep: var(--ink-3);
+  /* The existing Blue theme's original steps, from design-tokens.css. */
+  --sc-blue-accent: #548ac7;
+  --sc-blue-deep: #234b73;
+  --sc-cobalt: #295a93;
+  --sc-white: #ffffff;
+  --sc-black: #000000;
+  --sc-chrome-top: #eef0fa;
+  --sc-chrome-low: #8f93b5;
+  --sc-chrome-high: #d9dcef;
+  --sc-well-top: #06041a;
+  --sc-well-bottom: #0b0826;
+  --sc-edge: color-mix(in srgb, var(--sc-frost) 14%, transparent);
+  --sc-edge-hi: color-mix(in srgb, var(--sc-white) 8%, transparent);
+  --sc-glass-alpha: 0.98;
+  --sc-glass-fill: color-mix(in srgb, var(--sc-ink-1) 98%, transparent);
+  --sc-glass-highlight: color-mix(in srgb, var(--sc-frost) 2%, transparent);
+  --sc-gel-top: color-mix(in srgb, var(--sc-key-deep) 65%, var(--sc-ink-1));
+  --sc-glass-blur: 14px;
+  --sc-shadow: 0 18px 48px -24px
+    color-mix(in srgb, var(--sc-ink-0) 90%, transparent);
+  --sc-dur-fast: 180ms;
+  --sc-dur: 240ms;
+  --sc-drift: 48s;
+  --sc-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --sc-scene-a: var(--sc-sodium);
+  --sc-scene-b: var(--sc-cyan);
+  --sc-light-weight: 38%;
+  --sc-stroke: color-mix(in srgb, var(--sc-frost) 85%, transparent);
+}
+html:root[data-theme='blue'] {
+  --sc-key: var(--sc-blue-accent);
+  --sc-key-deep: var(--sc-blue-deep);
+  --sc-ink-2: #102b49;
+  --sc-ink-3: var(--sc-blue-deep);
+  --sc-violet-5: var(--sc-cobalt);
+  --sc-violet-6: var(--sc-blue-accent);
+  --sc-light-weight: 46%;
+}
+@property --sc-glow {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+@property --sc-sheen {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: -30%;
+}

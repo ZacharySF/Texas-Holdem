@@ -1,0 +1,136 @@
+#root {
+  isolation: isolate;
+}
+.sc-atmosphere,
+.sc-atmosphere * {
+  pointer-events: none;
+}
+.sc-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  contain: strict;
+}
+.sc-atmosphere > div {
+  position: absolute;
+  inset: 0;
+}
+.sc-atmosphere-base {
+  background: linear-gradient(
+    180deg,
+    var(--sc-ink-0) 0%,
+    var(--sc-ink-0) 45%,
+    var(--sc-ink-1) 130%
+  );
+}
+.sc-atmosphere-light {
+  background:
+    radial-gradient(
+      38vw 14vh at var(--sc-light-origin),
+      color-mix(in srgb, var(--sc-scene-a) 16%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      52vw 42vh at 8% 96%,
+      color-mix(
+        in srgb,
+        var(--sc-violet-5) var(--sc-light-weight),
+        transparent
+      ),
+      transparent 70%
+    ),
+    radial-gradient(
+      28vw 28vh at 62% 38%,
+      color-mix(in srgb, var(--sc-scene-b) 5%, transparent),
+      transparent 70%
+    );
+  animation: sc-drift var(--sc-drift) ease-in-out infinite alternate;
+  will-change: transform;
+}
+.sc-haze-band {
+  position: absolute;
+  top: 36%;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    color-mix(in srgb, var(--sc-key) 20%, transparent),
+    transparent
+  );
+  filter: blur(40px);
+  opacity: 0.35;
+}
+.sc-streak {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--sc-scene-a),
+    transparent
+  );
+  box-shadow: 0 0 12px 1px
+    color-mix(in srgb, var(--sc-scene-a) 60%, transparent);
+  opacity: 0.35;
+}
+.sc-atmosphere-mesh {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    color-mix(in srgb, var(--sc-cyan-ice) 20%, transparent) 0.8px,
+    transparent 1.3px
+  );
+  background-size: 4px 4px;
+  mask-image: radial-gradient(
+    45% 40% at var(--sc-light-origin),
+    var(--sc-black),
+    transparent 72%
+  );
+  opacity: 0.5;
+}
+html:has(.sc-atmosphere[data-scene^='study']) {
+  --sc-scene-a: var(--sc-frost);
+  --sc-scene-b: var(--sc-cyan);
+}
+html:has(.sc-atmosphere[data-scene='tunnel']) {
+  --sc-scene-a: var(--sc-cyan);
+  --sc-scene-b: var(--sc-red);
+}
+html:has(.sc-atmosphere[data-scene='skyline']) {
+  --sc-scene-a: var(--sc-cobalt);
+  --sc-scene-b: var(--sc-frost);
+}
+html:has(.sc-atmosphere[data-scene='nightwindow']) {
+  --sc-scene-a: var(--sc-sodium);
+  --sc-scene-b: var(--sc-lime);
+}
+.sc-atmosphere[data-scene^='study'] .sc-atmosphere-light {
+  opacity: 0.7;
+}
+.sc-atmosphere[data-scene='study-quiet'] .sc-atmosphere-light {
+  opacity: 0.6;
+}
+.sc-atmosphere[data-scene='study-quiet'] .sc-atmosphere-mesh {
+  display: none;
+}
+.sc-atmosphere[data-paused='true'] .sc-atmosphere-light {
+  animation-play-state: paused;
+}
+#root .film-grain {
+  z-index: -1;
+}
+@keyframes sc-drift {
+  from {
+    transform: translate3d(-2vw, -1.5vh, 0);
+  }
+  to {
+    transform: translate3d(2vw, 1.5vh, 0);
+  }
+}
+@media (max-width: 767px) {
+  .sc-atmosphere-mesh,
+  .sc-streak:nth-of-type(n + 5) {
+    display: none;
+  }
+}
