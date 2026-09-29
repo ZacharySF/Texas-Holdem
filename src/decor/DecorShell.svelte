@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ModeDecor from './ModeDecor.svelte';
   import type { Snippet } from 'svelte';
   import { navigation } from '../navigation.svelte';
   let { children }: { children: Snippet } = $props();
@@ -7,4 +8,4 @@
 
 {#if import.meta.env.DEV && navigation.path === '/decor-lab'}
   {#await lab then module}{#if module}<module.default />{/if}{/await}
-{:else}{@render children()}{/if}
+{:else}<ModeDecor />{@render children()}{/if}
