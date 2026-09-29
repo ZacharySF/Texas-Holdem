@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { panelLabels } from './panelLabels';
   import PageMasthead from './PageMasthead.svelte';
   import StatusBar from './StatusBar.svelte';
   import SideIndex from './SideIndex.svelte';
@@ -10,7 +11,7 @@
 
 <div class="site-shell">
   <SideIndex />
-  <div class="site-main">
+  <div class="site-main" use:panelLabels>
     {#if !navigation.path.startsWith('/learn')}<PageMasthead
         path={navigation.path}
       />{/if}{@render children()}

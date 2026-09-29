@@ -83,3 +83,7 @@ The 28px status rail shows current route code, existing lifetime hands, chips, X
 Each page now has a single h1 masthead. Existing tool/game titles remain, with their text unchanged, as subordinate headings. The home brand heading also remains as a subordinate heading to preserve its existing accessible name and tests. Lesson titles are unchanged, cropped only by their own heading box; the full text remains accessible.
 
 Course has a real linked chapter index and numbered rows. Lessons retain their text, examples and original controls at 18px/27px with a 68ch reading limit. Existing previous/next navigation is enlarged. Play's readout receives existing equity, category-improvement outs and street values from CoachPanel; it neither computes new odds nor reveals unavailable values. Progress uses the existing completed-hand count as its large figure, plus saved per-lesson quiz scores and proportional bars. There is no overall-accuracy selector to bind.
+
+## Phase 5 — device limits
+
+The design vocabulary is limited to masthead, index line, panel label, real-value stripe band, photo plate and one global grain layer. Panel labels repeat existing headings in hidden, pointer-inert chrome. They do not modify source headings or handlers. Actual charts/ranges in tools and lessons remain instructional content, not new decoration. The grain is 4% and disabled for reduced transparency and forced colors. No backgrounds use stripes; stripe fills represent existing equity/quiz values only.

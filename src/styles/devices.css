@@ -1,0 +1,76 @@
+/* Six-device vocabulary: masthead, index line, panel label, data stripe,
+   photo plate and one global grain layer. Real application charts are content. */
+#root [data-panel-chrome] {
+  pointer-events: none;
+  border: 0;
+  margin: -12px 0 12px;
+}
+#root .panel-label {
+  color: var(--text);
+}
+#root .panel > .panel-label + h2 {
+  margin-top: 0;
+}
+#root .photo-plate {
+  margin: 0;
+  border: 1px solid var(--ink-4);
+  background: var(--ink-1);
+  pointer-events: none;
+}
+#root .photo-plate picture,
+#root .photo-plate img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+#root .photo-plate figcaption {
+  padding: 8px;
+  font: 11px/1.5 var(--f-mono);
+  color: var(--text);
+}
+#root .photo-plate.compact {
+  width: 64px;
+}
+#root .photo-plate.compact :is(picture, img) {
+  aspect-ratio: 1;
+}
+#root .photo-plate.compact figcaption {
+  display: none;
+}
+#root .film-grain {
+  position: fixed;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  mix-blend-mode: normal;
+}
+#root .stripe-value {
+  position: relative;
+  overflow: hidden;
+}
+#root .stripe-value > span {
+  max-width: 100%;
+}
+#root :is(.home-hero, .hero-art, .hero-blooms, .seat, .table-scene) {
+  background-image: none;
+}
+#root .home-hero::before,
+#root .home-hero::after {
+  content: none;
+}
+@media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+  #root .film-grain {
+    display: none;
+  }
+}
+@media (forced-colors: active) {
+  #root .stripe-value > span {
+    background: CanvasText;
+    forced-color-adjust: none;
+  }
+  #root
+    :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline-color: Highlight;
+  }
+}
