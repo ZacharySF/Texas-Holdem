@@ -1,4 +1,5 @@
 <script lang="ts">
+  import DecorShell from './decor/DecorShell.svelte';
   import Foundation from './decor/Foundation.svelte';
   import { onMount } from 'svelte';
   import Routes from './Routes.svelte';
@@ -148,4 +149,4 @@
     </div>
   </details>
 </header>
-<Routes {homeVisit} />
+<DecorShell><Routes {homeVisit} /></DecorShell>
