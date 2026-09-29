@@ -16,32 +16,61 @@ export function attachCallout(
       if (target) resize.observe(target);
     }
     node.style.display = 'none';
-    if (!target || innerWidth < 1700) return;
+    if (!target) return;
+    const demo = target.closest('.graphic-objects');
+    if (innerWidth < 1700 && !demo) return;
     const r = target.getBoundingClientRect();
-    if (r.width === 0 || r.top < 35 || r.bottom > innerHeight - 40) return;
-    const labelX = r.left - 160;
-    if (labelX < 12) return;
-    // Only use an actual outer gutter, never cross a reading column or controls.
-    const content = target.closest('.course-main,.coach-sidebar');
-    const boundary = content?.getBoundingClientRect();
-    if (!boundary || boundary.left - 140 < 0) return;
-    const x = boundary.left - 140,
+    if (
+      r.width === 0 ||
+      r.height === 0 ||
+      r.top < 35 ||
+      r.bottom > innerHeight - 40
+    )
+      return;
+    const content = target.closest(
+      '.course-main,.coach-sidebar,.graphic-objects',
+    );
+    if (!content) return;
+    const boundary = content.getBoundingClientRect(),
+      right = content.classList.contains('coach-sidebar'),
       y = r.top + r.height / 2;
-    if (content?.classList.contains('coach-sidebar')) return;
+    if (r.top < boundary.top || r.bottom > boundary.bottom) return;
+    const x = demo
+      ? r.left - 110
+      : right
+        ? boundary.right + 16
+        : boundary.left - 140;
+    if (x < 10 || x + 130 > innerWidth) return;
+    const origin = right ? r.right + 4 : r.left - 4;
+    const elbow = right ? boundary.right + 8 : boundary.left - 10;
     node.style.display = 'block';
     line.setAttribute(
       'd',
-      `M ${x},${y - 10} H ${boundary.left - 14} V ${y} H ${r.left - 5}`,
+      demo
+        ? `M ${x},${y} H ${origin}`
+        : `M ${origin},${y} H ${elbow} V ${y - 12} H ${x}`,
     );
     text.setAttribute('x', String(x));
-    text.setAttribute('y', String(y - 18));
-    text.textContent = `${options.label} / ${target.textContent?.trim().slice(0, 32) ?? ''}`;
+    text.setAttribute('y', String(y - 20));
+    text.textContent = `${options.label} / ${target.textContent?.trim().slice(0, 25) ?? ''}`;
   };
   const schedule = () => {
     if (!frame) frame = requestAnimationFrame(paint);
   };
   const resize = new ResizeObserver(schedule);
-  const mutations = new MutationObserver(schedule);
+  const mutations = new MutationObserver((records) => {
+    if (
+      records.some(
+        (record) =>
+          !(
+            record.target instanceof Element
+              ? record.target
+              : record.target.parentElement
+          )?.closest('.graphic-callout'),
+      )
+    )
+      schedule();
+  });
   const main = document.getElementById('main-content');
   if (main)
     mutations.observe(main, {
@@ -49,7 +78,7 @@ export function attachCallout(
       childList: true,
       characterData: true,
     });
-  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('scroll', schedule, { passive: true, capture: true });
   window.addEventListener('resize', schedule, { passive: true });
   schedule();
   return {
@@ -57,7 +86,7 @@ export function attachCallout(
       resize.disconnect();
       mutations.disconnect();
       cancelAnimationFrame(frame);
-      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('scroll', schedule, true);
       window.removeEventListener('resize', schedule);
     },
   };

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import TableEdge from '../../decor/TableEdge.svelte';
   import { sitePath } from '../../decor/site';
   import PlayDecor from '../../decor/PlayDecor.svelte';
   import WindowFrame from '../../decor/WindowFrame.svelte';
@@ -571,7 +572,12 @@
 </script>
 
 <main class={`play ${game ? 'in-game' : 'home-page'}`}>
-  {#if game}<PlayDecor />
+  {#if game}<PlayDecor
+      hand={game.players[0].hand}
+      board={game.board}
+      seed={game.complete ? game.config.seed : undefined}
+      street={game.street}
+    />
     <header class="play-header">
       <h1>Poker</h1>
     </header>{/if}{#if !game && !pending}<div class="svelte-view">
@@ -656,7 +662,10 @@
   <div class={game ? 'poker-workspace' : undefined}>
     <div class="table-column">
       {#if game}<WindowFrame title={sitePath('play/table')} active
-          ><Table {game} {persona}></Table></WindowFrame
+          ><TableEdge hand={game.players[0].hand} board={game.board} /><Table
+            {game}
+            {persona}
+          ></Table></WindowFrame
         >{/if}{#if game?.complete}<section
           class="hand-result"
           aria-label="Hand result"
