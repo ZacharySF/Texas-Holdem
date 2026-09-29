@@ -1,4 +1,5 @@
 <script lang="ts">
+  import WindowChrome from '../../decor/WindowChrome.svelte';
   import { chapters, lessons } from '../../content/lessons';
   import { mastered, type Progress } from './progress.svelte';
   import type { Journey } from './journey.svelte';
@@ -36,6 +37,7 @@
 </script>
 
 <aside class="course-contents" aria-label="Course contents">
+  <WindowChrome title="~/contemporary/course/index" />
   <div class="contents-heading">
     <h2>Course contents</h2>
     <a href="#/learn">Overview</a>
@@ -56,7 +58,7 @@
       type="search"
       value={search}
       oninput={(e) => setSearch(e.currentTarget.value)}
-      placeholder="Try “outs” or “1.1”"
+      placeholder="❯ try outs or 1.1"
     />{#each [...chapters.keys()]
       .filter((c) => c > 0)
       .concat(0) as c, entryIndex (entryIndex)}{@const found = matches.filter(
