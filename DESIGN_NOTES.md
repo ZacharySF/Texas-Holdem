@@ -65,3 +65,9 @@ Legacy `Hairlines`, `Chevrons`, `GhostWord`, `Masthead`, `MicroBlock`, `Stripes`
 ## Phase 1 — removal
 
 Removed the old device components, generators, associated styles/fonts, old artwork and obsolete review assets. Useful home navigation remains as ordinary links/buttons. The original data charts and interactive range tools remain. The real-data status readouts remain; fake window paths, FPS telemetry and workspace polybar are gone. Pixi decoration is hidden through presentation CSS; its implementation remains unchanged.
+
+## Phase 2 — tokens
+
+All new palette, type, spacing and grid tokens are in `src/styles/tokens.css`. Latin Archivo variable (width 62.5–125, weight 100–900) and IBM Plex Mono 400/500 are self-hosted: 119,700 bytes total. The optional LED font is omitted. Font resources and licenses are assets supporting that single token file; the required contrast verifier lives in `scripts/contrast-check.mjs`.
+
+Contrast exposes two conflicts in the brief: ink-4 on ink-0 is only 2.35:1, so it cannot be the sole essential control boundary. Essential input boundaries use text color; decorative rules retain ink-2/ink-4. Ink-3 is also too dim for meaningful masthead text, so mastheads use ink-5. Body text is never placed on ink-4/ink-5 fills (text on ink-4 is only 4.45:1). These exceptions preserve AA rather than changing the supplied colors.

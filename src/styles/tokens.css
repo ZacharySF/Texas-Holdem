@@ -1,21 +1,173 @@
-:root {
-  --sodium: #e89a3c;
-  --lime: #b4c64a;
-  --frost: #cddeea;
-  --powder: #9fc0df;
-  --decor-hairline: color-mix(in srgb, var(--dusk) 60%, transparent);
-  --decor-gap: 10px;
-  --decor-micro: 9px;
-  --decor-caption: 11px;
-  --decor-body: 15px;
-  --decor-heading: 24px;
-  --decor-masthead: clamp(120px, 18vw, 320px);
-  --soft-club: 'Michroma', var(--sans);
-  --masthead: 'Inter Tight', sans-serif;
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62.5% 125%;
+  font-display: swap;
+  src: url('./fonts/archivo-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
 }
-
-.decor-motion-photo,
-.decor-thumb-stack,
-.decor-swoosh {
-  --cobalt: #3d6ec3;
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./fonts/ibm-plex-mono-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('./fonts/ibm-plex-mono-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Archivo Fallback';
+  src: local('Arial');
+  size-adjust: 102%;
+  ascent-override: 96%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Plex Fallback';
+  src: local('Courier New');
+  size-adjust: 100%;
+  ascent-override: 100%;
+  descent-override: 30%;
+  line-gap-override: 0%;
+}
+html:root,
+html:root[data-theme='blue'] {
+  --ink-0: #020107;
+  --ink-1: #0e0930;
+  --ink-2: #231757;
+  --ink-3: #36287d;
+  --ink-4: #4835ab;
+  --ink-5: #6449d7;
+  --text-dim: #776da2;
+  --text: #b1b7d0;
+  --red: #d4526d;
+  --cyan: #1ed3f0;
+  --cyan-hi: #aef7fc;
+  --orange: #e89a3c;
+  --lime: #b4c64a;
+  --f-display: 'Archivo', 'Archivo Fallback', sans-serif;
+  --f-body: 'Archivo', 'Archivo Fallback', sans-serif;
+  --f-mono: 'IBM Plex Mono', 'Plex Fallback', monospace;
+  --type-label: 11px;
+  --type-caption: 13px;
+  --type-control: 16px;
+  --type-body: 18px;
+  --type-heading: 24px;
+  --type-question: 40px;
+  --type-title: 72px;
+  --type-masthead: clamp(72px, 11vw, 200px);
+  --type-lesson: clamp(72px, 9vw, 128px);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --row: 27px;
+  --gutter: 24px;
+  --outer: 32px;
+  --page-max: 1440px;
+  /* Presentation aliases let existing features use the single palette unchanged. */
+  --void: var(--ink-0);
+  --ink: var(--ink-1);
+  --night: var(--ink-2);
+  --dusk: var(--ink-2);
+  --violet: var(--ink-4);
+  --ultraviolet: var(--ink-5);
+  --haze: var(--text);
+  --mist: var(--text);
+  --ice: var(--cyan-hi);
+  --signal: var(--cyan);
+  --glow: var(--red);
+  --glow-deep: var(--red);
+  --display: var(--f-display);
+  --sans: var(--f-body);
+  --mono: var(--f-mono);
+  --serif: var(--f-body);
+  --bg: var(--ink-0);
+  --panel: var(--ink-1);
+  --panel-cold: var(--ink-2);
+  --panel-deep: var(--ink-1);
+  --muted: var(--text);
+  --accent: var(--text);
+  --on-accent: var(--text);
+  --border: var(--ink-2);
+  --error: var(--red);
+  --subtle: var(--ink-1);
+  --card: var(--ink-1);
+  --gold: var(--orange);
+  --amber: var(--orange);
+  --white: var(--text);
+  --navy: var(--ink-0);
+  --cobalt: var(--ink-4);
+  --ultramarine: var(--ink-5);
+  --frost: var(--ink-1);
+  --ink-warm: var(--red);
+  --ink-club: var(--text);
+  --ink-diamond: var(--red);
+  --radius-panel: 0px;
+  --radius-slab: 0px;
+  --radius-card: 0px;
+  --radius-pill: 0px;
+  --radius-round: 0px;
+  --shadow-panel: none;
+  --shadow-card: none;
+  --shadow-bloom: none;
+  --number-glow: none;
+  --surface-hover: var(--ink-3);
+  --selection-fill: var(--ink-2);
+  --accent-hover: var(--ink-3);
+  --surface-gradient: none;
+  --card-gradient: none;
+  --mesh: none;
+  --tracking-title: -0.02em;
+  --grain-opacity: 0.04;
+}
+@media (max-width: 767px) {
+  html:root,
+  html:root[data-theme='blue'] {
+    --gutter: 16px;
+    --outer: 16px;
+  }
+}
+html body {
+  font: 18px/1.5 var(--f-body);
+  font-variation-settings: 'wdth' 100;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+#root h1 {
+  font-family: var(--f-display);
+  font-variation-settings: 'wdth' 125;
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: -0.02em;
+}
+#root :is(h2, h3, h4) {
+  font-family: var(--f-body);
+  font-variation-settings: 'wdth' 100;
+  font-weight: 500;
+}
+#root :is(button, input, select, textarea) {
+  font-family: var(--f-body);
+  font-variation-settings: 'wdth' 100;
+  font-size: 16px;
+}
+#root :is(small, .hint, .field-label) {
+  font-size: 13px;
+  color: var(--text);
 }
