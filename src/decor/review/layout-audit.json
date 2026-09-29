@@ -41,6 +41,24 @@
     "statusHeight": 26
   },
   {
+    "name": "drills",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "viewport": 1440,
+    "decorFocusables": 0,
+    "liveAnimations": 0,
+    "statusHeight": 26
+  },
+  {
+    "name": "tools",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "viewport": 1440,
+    "decorFocusables": 0,
+    "liveAnimations": 0,
+    "statusHeight": 26
+  },
+  {
     "name": "progress",
     "width": 1440,
     "scrollWidth": 1440,
@@ -56,7 +74,7 @@
     "viewport": 1440,
     "decorFocusables": 0,
     "liveAnimations": 0,
-    "statusHeight": 72.1875
+    "statusHeight": 26
   },
   {
     "name": "home",
@@ -100,6 +118,24 @@
     "statusHeight": 26
   },
   {
+    "name": "drills",
+    "width": 375,
+    "scrollWidth": 375,
+    "viewport": 375,
+    "decorFocusables": 0,
+    "liveAnimations": 0,
+    "statusHeight": 26
+  },
+  {
+    "name": "tools",
+    "width": 375,
+    "scrollWidth": 375,
+    "viewport": 375,
+    "decorFocusables": 0,
+    "liveAnimations": 0,
+    "statusHeight": 26
+  },
+  {
     "name": "progress",
     "width": 375,
     "scrollWidth": 375,
@@ -115,6 +151,6 @@
     "viewport": 375,
     "decorFocusables": 0,
     "liveAnimations": 0,
-    "statusHeight": 63.546875
+    "statusHeight": 26
   }
 ]

@@ -1,4 +1,5 @@
 import { readouts } from './readouts';
+import { lessons } from '../content/lessons';
 /** Updates decorative text only. No stores, dispatches, history or persistence writes. */
 export function liveReadout(
   node: HTMLElement,
@@ -59,4 +60,24 @@ export function frameMeter(node: HTMLElement) {
       document.removeEventListener('visibilitychange', sync);
     },
   };
+}
+
+/** Read-only ring repaint, on data changes only. No transition or application writes. */
+export function liveRing(node: SVGCircleElement, key: 'xp' | 'lessons') {
+  let previous = -1;
+  const paint = () => {
+    if (document.hidden) return;
+    const stats = readouts(),
+      value = stats[key];
+    if (value === previous) return;
+    previous = value;
+    const max =
+      key === 'lessons'
+        ? lessons.length
+        : Math.max(100, Math.ceil(value / 100) * 100);
+    node.setAttribute('stroke-dasharray', `${(value / max) * 100} 100`);
+  };
+  paint();
+  const timer = window.setInterval(paint, 1000);
+  return { destroy: () => clearInterval(timer) };
 }

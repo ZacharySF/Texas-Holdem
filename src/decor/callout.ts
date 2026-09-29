@@ -11,7 +11,10 @@ export function attachCallout(
     frame = 0;
     const next =
       [...document.querySelectorAll<HTMLElement>(options.selector)].find(
-        (element) => /\d/.test(element.textContent ?? ''),
+        (element) =>
+          /\d/.test(element.textContent ?? '') &&
+          (!options.selector.includes('.katex-html') ||
+            element.children.length === 0),
       ) ?? null;
     if (next !== target) {
       if (target) resize.unobserve(target);
@@ -55,7 +58,11 @@ export function attachCallout(
     );
     text.setAttribute('x', String(x));
     text.setAttribute('y', String(y - 20));
-    text.textContent = `${options.label} / ${target.textContent?.trim().slice(0, 25) ?? ''}`;
+    const samples = target
+      .closest('.probability')
+      ?.querySelector('.field-label')
+      ?.textContent?.match(/([\d,]+) SAMPLES/);
+    text.textContent = `${options.label} / ${target.textContent?.trim().slice(0, 25) ?? ''}${samples ? ` / n=${samples[1]}` : ''}`;
   };
   const schedule = () => {
     if (!frame) frame = requestAnimationFrame(paint);

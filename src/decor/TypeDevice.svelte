@@ -98,7 +98,7 @@
     >
   {:else}<span
       style:background-image={treatment === 'image'
-        ? `url('${url}')`
+        ? `linear-gradient(#b1b7d0b3, #b1b7d0b3), url('${url}')`
         : undefined}>{word}</span
     >{/if}
 </div>

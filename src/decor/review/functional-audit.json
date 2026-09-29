@@ -1,0 +1,210 @@
+[
+  {
+    "width": 1440,
+    "thumbnailNavigation": true,
+    "keyboardSixMax": true,
+    "publicCardsOnly": true,
+    "brandReturnsHome": true
+  },
+  {
+    "width": 375,
+    "thumbnailNavigation": true,
+    "keyboardSixMax": true,
+    "publicCardsOnly": true,
+    "brandReturnsHome": true
+  },
+  {
+    "labPreviewStateIsolated": true,
+    "cache": {
+      "equal": true,
+      "renders": 1,
+      "hits": 1,
+      "pixelWidth": 200,
+      "pixelHeight": 160
+    },
+    "scrollRasterizations": 0,
+    "images": [
+      {
+        "kind": "RangeMatrix",
+        "source": "generator",
+        "ready": true
+      },
+      {
+        "kind": "DeckGrid",
+        "source": "generator",
+        "ready": true
+      },
+      {
+        "kind": "Distribution",
+        "source": "generator",
+        "ready": true
+      },
+      {
+        "kind": "MonteCarloScatter",
+        "source": "generator",
+        "ready": true
+      },
+      {
+        "kind": "Halftone",
+        "source": "generator fallback / slot 1",
+        "ready": true
+      },
+      {
+        "kind": "Dither",
+        "source": "generator fallback / slot 1",
+        "ready": true
+      },
+      {
+        "kind": "SlitScan",
+        "source": "generator fallback / slot 1",
+        "ready": true
+      },
+      {
+        "kind": "Ascii",
+        "source": "generator fallback / slot 1",
+        "ready": true
+      },
+      {
+        "kind": "Barcode",
+        "source": "generator",
+        "ready": true
+      },
+      {
+        "kind": "NoiseField",
+        "source": "generator",
+        "ready": true
+      },
+      {
+        "kind": "Halftone",
+        "source": "generator fallback / slot 1",
+        "ready": true
+      },
+      {
+        "kind": "Dither",
+        "source": "generator fallback / slot 2",
+        "ready": true
+      },
+      {
+        "kind": "SlitScan",
+        "source": "generator fallback / slot 3",
+        "ready": true
+      },
+      {
+        "kind": "SlitScan",
+        "source": "generator fallback / slot 4",
+        "ready": true
+      },
+      {
+        "kind": "Ascii",
+        "source": "generator fallback / slot 5",
+        "ready": true
+      },
+      {
+        "kind": "Halftone",
+        "source": "generator fallback / slot 6",
+        "ready": true
+      },
+      {
+        "kind": "NoiseField",
+        "source": "generator",
+        "ready": true
+      }
+    ]
+  },
+  {
+    "route": "play",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "learn",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "learn/1-1",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "arcade",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "lab",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "stats",
+    "width": 768,
+    "overflow": false
+  },
+  {
+    "route": "play",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "learn",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "learn/1-1",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "arcade",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "lab",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "stats",
+    "width": 1024,
+    "overflow": false
+  },
+  {
+    "route": "play",
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "route": "learn",
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "route": "learn/1-1",
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "route": "arcade",
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "route": "lab",
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "route": "stats",
+    "width": 1920,
+    "overflow": false
+  },
+  {
+    "recordedHandMatrix": true
+  },
+  {
+    "runtimeErrors": []
+  }
+]

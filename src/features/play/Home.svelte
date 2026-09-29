@@ -32,7 +32,7 @@
     </div>
   </div>
   <div class="home-title" use:parallax={visualConfig.motion.heroTitle}>
-    <h1>{SITE_NAME}</h1>
+    <h1 aria-label="contemprorary">{SITE_NAME}</h1>
     <p>heads-up or six-max. the math is on screen.</p>
     <div class="home-actions">
       <button

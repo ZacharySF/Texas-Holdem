@@ -1,13 +1,65 @@
 {
   "frames": {
     "frames": 181,
-    "averageFrameMs": 16.656353591151987,
+    "averageFrameMs": 16.633701657470915,
     "maxFrameMs": 16.800000000000182
   },
   "wipeAfter350ms": "0",
-  "offscreen": {
-    "visible": "false",
-    "state": "paused"
+  "ticker": {
+    "visible": "running",
+    "offscreen": "paused",
+    "reducedMotionAnimations": 0
   },
-  "currentWorkspace": ["[2 course]"]
+  "variants": [
+    {
+      "kind": "RangeMatrix",
+      "variants": 3,
+      "distinct": 3
+    },
+    {
+      "kind": "DeckGrid",
+      "variants": 2,
+      "distinct": 2
+    },
+    {
+      "kind": "Distribution",
+      "variants": 3,
+      "distinct": 3
+    },
+    {
+      "kind": "MonteCarloScatter",
+      "variants": 2,
+      "distinct": 2
+    },
+    {
+      "kind": "Halftone",
+      "variants": 2,
+      "distinct": 2
+    },
+    {
+      "kind": "Dither",
+      "variants": 2,
+      "distinct": 2
+    },
+    {
+      "kind": "SlitScan",
+      "variants": 2,
+      "distinct": 2
+    },
+    {
+      "kind": "Ascii",
+      "variants": 2,
+      "distinct": 2
+    },
+    {
+      "kind": "Barcode",
+      "variants": 2,
+      "distinct": 2
+    },
+    {
+      "kind": "NoiseField",
+      "variants": 2,
+      "distinct": 2
+    }
+  ]
 }

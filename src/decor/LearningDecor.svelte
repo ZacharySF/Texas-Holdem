@@ -7,6 +7,7 @@
   import Ruler from './Ruler.svelte';
   import Callout from './Callout.svelte';
   import Sticker from './Sticker.svelte';
+  import RunIn from './RunIn.svelte';
   import { chapters, lessons } from '../content/lessons';
   let {
     chapter,
@@ -22,6 +23,16 @@
       >
     </div>
     <TypeDevice word={title} treatment="image" seed={lessonId} /><Ruler />
+    <RunIn
+      items={[
+        {
+          category: `Chapter ${chapter}`,
+          entries: lessons
+            .filter((lesson) => lesson.chapter === chapter)
+            .map((lesson) => lesson.title),
+        },
+      ]}
+    />
     <div class="lesson-margin-ruler"><Ruler vertical count={10} /></div>
   </div>
   <Callout selector=".notebook .katex-html .mord" label="worked value" />

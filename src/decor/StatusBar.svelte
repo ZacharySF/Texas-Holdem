@@ -1,4 +1,7 @@
 <script lang="ts">
+  import RingGauge from './RingGauge.svelte';
+  import { lessons as courseLessons } from '../content/lessons';
+  import { readouts } from './readouts';
   import { SITE_NAME } from './site';
   import { liveReadout, frameMeter } from './live';
   let {
@@ -40,6 +43,21 @@
   <span class="decor-status-path decor" aria-hidden="true"
     >~/{SITE_NAME}{path}</span
   >
+  <div class="status-rings decor" aria-hidden="true">
+    <RingGauge
+      value={xp}
+      max={Math.max(100, Math.ceil(xp / 100) * 100)}
+      label="XP"
+      compact
+      live={live ? 'xp' : undefined}
+    /><RingGauge
+      value={readouts().lessons}
+      max={courseLessons.length}
+      label="lessons"
+      compact
+      live={live ? 'lessons' : undefined}
+    />
+  </div>
   <span class="decor-status-readouts decor" aria-hidden="true">
     {#if live}<b
         ><span use:liveReadout={'chips'}>{chips.toLocaleString()}</span> chips</b

@@ -1,9 +1,8 @@
 src/App.svelte: 11 original interactive/queryable elements unchanged
 src/features/learn/CourseContents.svelte: 7 original interactive/queryable elements unchanged
-src/features/learn/CourseIndex.svelte: 7 original interactive/queryable elements unchanged
 src/features/learn/Learn.svelte: 26 original interactive/queryable elements unchanged
 src/features/play/CoachSidebar.svelte: 6 original interactive/queryable elements unchanged
 src/features/play/Home.svelte: 2 original interactive/queryable elements unchanged
 src/features/play/Play.svelte: 45 original interactive/queryable elements unchanged
 src/features/stats/Stats.svelte: 9 original interactive/queryable elements unchanged
-PASS: 113 existing interactive/queryable elements retain attributes and source order (one explicitly requested search placeholder excluded).
+PASS: 106 existing interactive/queryable elements retain attributes and source order.

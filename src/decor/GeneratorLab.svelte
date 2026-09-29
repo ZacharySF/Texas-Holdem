@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { COMBINATIONS, CLASSES } from './gen/mathGraphics';
   import Generator from './gen/Generator.svelte';
   import PhotoSlot from './gen/PhotoSlot.svelte';
   import { generatorKinds, variants } from './gen/types';
@@ -71,14 +72,15 @@
   <div class="generator-lab-grid">
     {#each treatments as treatment (treatment)}<section class="type-specimen">
         <h3>{treatment}</h3>
-        <Generator
-          kind="NoiseField"
-          seed={treatment}
-          width={480}
-          height={200}
-        /><TypeDevice
+        {#if treatment === 'knockout'}
+          <Generator
+            kind="NoiseField"
+            seed={treatment}
+            width={480}
+            height={200}
+          />{/if}<TypeDevice
           word={treatment === 'ticker'
-            ? '1326 combinations + 169 classes'
+            ? `${COMBINATIONS} combinations + ${CLASSES} classes`
             : SITE_NAME}
           {treatment}
           {seed}
@@ -95,7 +97,9 @@
       max={52}
       label="visible cards"
     /><Caution />
-    <div class="lab-callout-target"><strong>1326</strong> combinations</div>
+    <div class="lab-callout-target">
+      <strong>{COMBINATIONS}</strong> combinations
+    </div>
     <Callout selector=".lab-callout-target strong" label="combinations" />
   </div>
 </section>

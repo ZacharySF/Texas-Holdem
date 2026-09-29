@@ -56,7 +56,12 @@ export function barcode(
   const text = o.text || o.seed || 'page',
     random = decorRng(text),
     bars = Array.from(
-      { length: Math.min(180, 24 + text.length * 6) },
+      {
+        length: Math.min(
+          o.variant === 'compact' ? 64 : 180,
+          24 + text.length * 6,
+        ),
+      },
       () => 1 + Math.floor(random() * 3),
     ),
     unit = (w - 20) / bars.reduce((a, b) => a + b, 0);
@@ -65,7 +70,12 @@ export function barcode(
     const width = bar * unit;
     if (i % 2 === 0) {
       ctx.fillStyle = accent;
-      ctx.fillRect(x, 8, Math.max(0.6, width), h - 28);
+      ctx.fillRect(
+        x,
+        8,
+        Math.max(0.6, width),
+        h - (o.variant === 'compact' ? 40 : 28),
+      );
     }
     x += width;
   });

@@ -119,17 +119,21 @@ export async function treatedPhoto(
     ctx.drawImage(colored, 0, 0);
   } else if (kind === 'Halftone') {
     const pitch = o.variant === 'fine' ? 5 : 9;
-    for (let y = 0; y < h; y += pitch)
-      for (let x = 0; x < w; x += pitch) {
-        const xx = x + ((Math.floor(y / pitch) % 2) * pitch) / 2;
-        const radius = Math.sqrt(luminance(xx, y)) * pitch * 0.7;
+    const extent = w + h;
+    for (let v = -extent; v < extent; v += pitch)
+      for (let u = -extent; u < extent; u += pitch) {
+        const x = u * 0.8660254 - v * 0.5 + w / 2,
+          y = u * 0.5 + v * 0.8660254 + h / 2;
+        if (x < 0 || x >= w || y < 0 || y >= h) continue;
+        const radius = Math.sqrt(luminance(x, y)) * pitch * 0.7;
         ctx.beginPath();
-        ctx.arc(xx, y, radius, 0, Math.PI * 2);
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
         ctx.fill();
       }
   } else if (kind === 'Dither') {
+    if (o.variant === 'violet') ctx.fillStyle = '#6449d7';
     const matrix = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5],
-      pixel = 3;
+      pixel = o.variant === 'light' ? 2 : 3;
     for (let y = 0; y < h; y += pixel)
       for (let x = 0; x < w; x += pixel)
         if (
@@ -138,7 +142,7 @@ export async function treatedPhoto(
             (Math.floor(y / pixel) % 4) * 4 + (Math.floor(x / pixel) % 4)
           ] +
             0.5) /
-            24
+            16
         )
           ctx.fillRect(x, y, pixel, pixel);
   } else if (kind === 'Ascii') {

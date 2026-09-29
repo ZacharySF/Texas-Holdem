@@ -19,7 +19,8 @@
 
 {#if tools || navigation.path.startsWith('/arcade')}
   <div
-    class="spread-mode"
+    class="spread-mode decor"
+    aria-hidden="true"
     class:spread-tools={tools}
     class:spread-drills={!tools}
   >

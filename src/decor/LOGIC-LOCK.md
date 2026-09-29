@@ -1,8 +1,8 @@
 # Protected logic inventory
 
-Recorded before the visual redesign, at `00e10a61f9a0de894bee526342c20ea6fba52a11`. All 173 files were checked by SHA-256 after each phase and remain byte-for-byte unchanged.
+Recorded before this second design pass, at `65619d107c2c7ec466a175147ff9283bb7829cdb`. All 173 files are checked by SHA-256 after every phase. They remain byte-for-byte unchanged.
 
-Existing Svelte page scripts are also unchanged except for imports from `src/decor/`. The existing router, engine, lessons, state handlers, tests, dependencies, and build configuration were not edited. The only existing input attribute change is the explicitly requested course-search placeholder.
+Existing non-decor Svelte scripts also retain their application code; only decor imports differ. The engine, probability math, simulations, lesson content, stores, storage, routing, state handlers, tests, dependencies and build configuration are protected. Existing interactive elements retain their attributes and source order. The home heading retains its prior accessible name while its displayed name comes from `SITE_NAME`.
 
 - `.prettierrc.json`
 - `e2e/charts.spec.ts`

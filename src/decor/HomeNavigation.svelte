@@ -10,21 +10,27 @@
 <!-- Requested functional navigation: only artwork is hidden/inert. Table buttons delegate existing actions. -->
 <nav class="home-graphic-nav" aria-label="Explore poker">
   <div class="home-graphic-tile tile-play">
-    <div class="tile-visual">
-      <Generator
-        kind="Dither"
-        seed="tables-02"
-        photo={2}
-        width={240}
-        height={150}
-        accent="#b1b7d0"
-      /><CropMarks n="01" />
-    </div>
+    <button
+      class="tile-primary-button"
+      aria-label="heads-up"
+      {disabled}
+      onclick={() => onplay(2)}
+    >
+      <span class="tile-visual"
+        ><Generator
+          kind="Dither"
+          seed="tables-02"
+          photo={2}
+          width={240}
+          height={150}
+          accent="#b1b7d0"
+        /><CropMarks n="01" /></span
+      >
+      <span class="tile-name">heads-up <span aria-hidden="true">↗</span></span>
+    </button>
     <div class="tile-starts">
-      <button {disabled} onclick={() => onplay(2)}
-        >heads-up <span>↗</span></button
-      ><button {disabled} onclick={() => onplay(6)}
-        >six-max <span>↗</span></button
+      <button {disabled} onclick={() => onplay(6)}
+        >six-max <span aria-hidden="true">↗</span></button
       >
     </div>
     <span class="tile-caption decor decor-micro" aria-hidden="true"

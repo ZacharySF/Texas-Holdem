@@ -1,73 +1,80 @@
- public/art/club-overpass.png              | Bin 0 -> 2260997 bytes
- src/App.svelte                            |   6 +-
- src/decor/ChapterMark.svelte              |  10 +
- src/decor/Chevrons.svelte                 |  15 ++
- src/decor/CourseRunIn.svelte              |  27 ++
- src/decor/DecorLab.svelte                 | 106 ++++++++
- src/decor/DecorShell.svelte               |  27 ++
- src/decor/Fetch.svelte                    |  27 ++
- src/decor/Foundation.svelte               |  12 +
- src/decor/GhostWord.svelte                |  18 ++
- src/decor/Hairlines.svelte                |  20 ++
- src/decor/HomeDecor.svelte                |  42 ++++
- src/decor/IssueNumber.svelte              |   9 +
- src/decor/LOGIC-LOCK.md                   | 179 ++++++++++++++
- src/decor/LearningDecor.svelte            |  16 ++
- src/decor/Masthead.svelte                 |   9 +
- src/decor/MicroBlock.svelte               |   8 +
- src/decor/ModeDecor.svelte                |  28 +++
- src/decor/MotionPhoto.svelte              |  34 +++
- src/decor/PlayDecor.svelte                |  19 ++
- src/decor/ProgressDecor.svelte            |  15 ++
- src/decor/README.md                       |  52 ++++
- src/decor/RouteWipe.svelte                |  12 +
- src/decor/RunIn.svelte                    |  13 +
- src/decor/StatusBar.svelte                |  55 +++++
- src/decor/Stripes.svelte                  |   4 +
- src/decor/Swoosh.svelte                   |   7 +
- src/decor/ThumbStack.svelte               |  12 +
- src/decor/WindowChrome.svelte             |   7 +
- src/decor/WindowFrame.svelte              |  15 ++
- src/decor/copy.ts                         |   8 +
- src/decor/live.ts                         |  62 +++++
- src/decor/motion.ts                       |  28 +++
- src/decor/readouts.ts                     |  32 +++
- src/decor/review/accessibility-audit.json |  62 +++++
- src/decor/review/course-1440.png          | Bin 0 -> 1979854 bytes
- src/decor/review/course-375.png           | Bin 0 -> 434550 bytes
- src/decor/review/course-index-1440.png    | Bin 0 -> 1990198 bytes
- src/decor/review/decor-lab-1440.png       | Bin 0 -> 2215408 bytes
- src/decor/review/decor-lab-375.png        | Bin 0 -> 600349 bytes
- src/decor/review/diff-stat.txt            |  73 ++++++
- src/decor/review/home-1440.png            | Bin 0 -> 2027094 bytes
- src/decor/review/home-375.png             | Bin 0 -> 427099 bytes
- src/decor/review/layout-audit.json        | 120 +++++++++
- src/decor/review/lesson-1440.png          | Bin 0 -> 1970434 bytes
- src/decor/review/lesson-375.png           | Bin 0 -> 428231 bytes
- src/decor/review/motion-audit.json        |  13 +
- src/decor/review/play-1440.png            | Bin 0 -> 1987557 bytes
- src/decor/review/play-375.png             | Bin 0 -> 436981 bytes
- src/decor/review/progress-1440.png        | Bin 0 -> 1924611 bytes
- src/decor/review/progress-375.png         | Bin 0 -> 428210 bytes
- src/decor/review/source-audit.txt         |   9 +
- src/features/learn/CourseContents.svelte  |   4 +-
- src/features/learn/CourseIndex.svelte     |   2 +
- src/features/learn/Learn.svelte           |   2 +
- src/features/play/CoachSidebar.svelte     |   2 +
- src/features/play/Home.svelte             |   6 +
- src/features/play/Play.svelte             |  10 +-
- src/features/stats/Stats.svelte           |   2 +
- src/styles/chrome.css                     | 217 ++++++++++++++++
- src/styles/course.css                     | 141 +++++++++++
- src/styles/decor.css                      |   8 +
- src/styles/fonts/Inter-Tight-OFL.txt      |  93 +++++++
- src/styles/fonts/Michroma-OFL.txt         |  93 +++++++
- src/styles/fonts/inter-tight-800.ttf      | Bin 0 -> 303868 bytes
- src/styles/fonts/michroma-400.ttf         | Bin 0 -> 61440 bytes
- src/styles/home.css                       | 262 ++++++++++++++++++++
- src/styles/modes.css                      | 108 ++++++++
- src/styles/play.css                       |  78 ++++++
- src/styles/primitives.css                 | 394 ++++++++++++++++++++++++++++++
- src/styles/tokens.css                     |  21 ++
- src/styles/typography.css                 |  24 ++
- 72 files changed, 2673 insertions(+), 5 deletions(-)
+ src/App.svelte                           |   3 +-
+ src/decor/Callout.svelte                 |  10 +
+ src/decor/Caution.svelte                 |   7 +
+ src/decor/ChapterMark.svelte             |  34 ++-
+ src/decor/CourseDirectory.svelte         |  32 +++
+ src/decor/CropMarks.svelte               |   7 +
+ src/decor/DecorLab.svelte                | 112 ++-------
+ src/decor/DecorShell.svelte              |   3 +-
+ src/decor/Fetch.svelte                   |   3 +-
+ src/decor/Foundation.svelte              |   3 +
+ src/decor/GeneratorLab.svelte            | 105 +++++++++
+ src/decor/HomeDecor.svelte               |  78 +++---
+ src/decor/HomeNavigation.svelte          |  71 ++++++
+ src/decor/IssueNumber.svelte             |   3 +-
+ src/decor/LOGIC-LOCK.md                  |   4 +-
+ src/decor/LearningDecor.svelte           |  52 +++-
+ src/decor/ModeDecor.svelte               |  80 +++++--
+ src/decor/ModularGrid.svelte             |   9 +
+ src/decor/PlayDecor.svelte               |  58 +++--
+ src/decor/ProgressDecor.svelte           |  73 +++++-
+ src/decor/README.md                      | 101 +++++---
+ src/decor/RingGauge.svelte               |  38 +++
+ src/decor/Ruler.svelte                   |  10 +
+ src/decor/StatusBar.svelte               |  21 +-
+ src/decor/Sticker.svelte                 |   9 +
+ src/decor/TableEdge.svelte               |  26 ++
+ src/decor/TypeDevice.svelte              | 104 ++++++++
+ src/decor/callout.ts                     | 103 ++++++++
+ src/decor/copy.ts                        |  13 +-
+ src/decor/gen/Generator.svelte           |  66 ++++++
+ src/decor/gen/PhotoSlot.svelte           |  42 ++++
+ src/decor/gen/abstract.ts                |  86 +++++++
+ src/decor/gen/budget.ts                  |  26 ++
+ src/decor/gen/mathGraphics.ts            | 214 +++++++++++++++++
+ src/decor/gen/photos.ts                  | 197 ++++++++++++++++
+ src/decor/gen/render.ts                  |  56 +++++
+ src/decor/gen/rng.ts                     |  11 +
+ src/decor/gen/types.ts                   |  43 ++++
+ src/decor/live.ts                        |  21 ++
+ src/decor/playedClasses.ts               |  20 ++
+ src/decor/review/callout-audit.json      |  21 ++
+ src/decor/review/checks.txt              |  14 ++
+ src/decor/review/course-1440.png         | Bin 1979854 -> 1987962 bytes
+ src/decor/review/course-375.png          | Bin 434550 -> 434599 bytes
+ src/decor/review/course-index-1440.png   | Bin 1990198 -> 2014419 bytes
+ src/decor/review/decor-lab-1440.png      | Bin 2215408 -> 4028150 bytes
+ src/decor/review/decor-lab-375.png       | Bin 600349 -> 1256959 bytes
+ src/decor/review/diff-stat.txt           | 153 ++++++------
+ src/decor/review/drills-1440.png         | Bin 0 -> 1946743 bytes
+ src/decor/review/drills-375.png          | Bin 0 -> 440465 bytes
+ src/decor/review/functional-audit.json   | 210 +++++++++++++++++
+ src/decor/review/home-1440.png           | Bin 2027094 -> 2076691 bytes
+ src/decor/review/home-375.png            | Bin 427099 -> 468706 bytes
+ src/decor/review/layout-audit.json       |  40 +++-
+ src/decor/review/lesson-1440.png         | Bin 1970434 -> 1983522 bytes
+ src/decor/review/lesson-375.png          | Bin 428231 -> 430371 bytes
+ src/decor/review/motion-audit.json       |  62 ++++-
+ src/decor/review/play-1440.png           | Bin 1987557 -> 1987256 bytes
+ src/decor/review/play-375.png            | Bin 436981 -> 435509 bytes
+ src/decor/review/progress-1440.png       | Bin 1924611 -> 1928334 bytes
+ src/decor/review/progress-375.png        | Bin 428210 -> 424894 bytes
+ src/decor/review/source-audit.txt        |   3 +-
+ src/decor/review/tools-1440.png          | Bin 0 -> 1935467 bytes
+ src/decor/review/tools-375.png           | Bin 0 -> 428624 bytes
+ src/decor/site.ts                        |   4 +
+ src/features/learn/CourseContents.svelte |   3 +-
+ src/features/learn/Learn.svelte          |   6 +-
+ src/features/play/CoachSidebar.svelte    |   3 +-
+ src/features/play/Home.svelte            |  11 +-
+ src/features/play/Play.svelte            |  16 +-
+ src/features/stats/Stats.svelte          |   2 +-
+ src/styles/decor.css                     |   7 +
+ src/styles/devices.css                   | 381 ++++++++++++++++++++++++++++++
+ src/styles/generators.css                |  32 +++
+ src/styles/spread-course.css             | 155 ++++++++++++
+ src/styles/spread-finish.css             |  98 ++++++++
+ src/styles/spread-home.css               | 393 +++++++++++++++++++++++++++++++
+ src/styles/spread-modes.css              | 160 +++++++++++++
+ src/styles/spread-play.css               |  86 +++++++
+ 79 files changed, 3482 insertions(+), 332 deletions(-)

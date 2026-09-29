@@ -10,13 +10,27 @@
   import ModularGrid from './ModularGrid.svelte';
   import { SITE_NAME } from './site';
   import { COMBINATIONS, CLASSES } from './gen/mathGraphics';
+  import { parallax } from '../visual/parallax';
+  import { visualConfig } from '../visual/config';
 </script>
 
 <div class="spread-home-scene decor" aria-hidden="true">
-  <PhotoSlot n={1} seed="home-01" width={1400} height={700} accent="#b1b7d0" />
+  <div use:parallax={visualConfig.motion.heroPhoto}>
+    <PhotoSlot
+      n={1}
+      seed="home-01"
+      width={1400}
+      height={700}
+      accent="#b1b7d0"
+    />
+  </div>
 </div>
 <div class="spread-home-screen decor" aria-hidden="true"></div>
-<div class="spread-home-masthead decor" aria-hidden="true">
+<div
+  class="spread-home-masthead decor"
+  aria-hidden="true"
+  use:parallax={visualConfig.motion.heroTitle}
+>
   <TypeDevice word={SITE_NAME} treatment="knockout" />
 </div>
 <div class="spread-home-structure decor" aria-hidden="true">
