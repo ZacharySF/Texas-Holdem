@@ -1,4 +1,5 @@
 <script lang="ts">
+  import WindowChrome from '../../decor/WindowChrome.svelte';
   import { untrack, type Snippet } from 'svelte';
 
   let {
@@ -55,6 +56,7 @@
   aria-label="Table coach"
   tabindex="-1"
 >
+  <WindowChrome title="~/contemporary/play/coach" />
   <header>
     <div><h2>Your coach</h2></div>
     <button class="close-coach" onclick={close}>Back to table</button>

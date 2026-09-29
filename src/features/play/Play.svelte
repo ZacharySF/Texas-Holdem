@@ -1,4 +1,6 @@
 <script lang="ts">
+  import PlayDecor from '../../decor/PlayDecor.svelte';
+  import WindowFrame from '../../decor/WindowFrame.svelte';
   import { readForecasts, forecastXp } from '../arcade/forecastStorage';
   import { readDrill, drillXp } from '../arcade/progress';
   import { lessonById, lessons } from '../../content/lessons';
@@ -568,7 +570,8 @@
 </script>
 
 <main class={`play ${game ? 'in-game' : 'home-page'}`}>
-  {#if game}<header class="play-header">
+  {#if game}<PlayDecor />
+    <header class="play-header">
       <h1>Poker</h1>
     </header>{/if}{#if !game && !pending}<div class="svelte-view">
       <Home
@@ -651,8 +654,9 @@
     </section>{/if}
   <div class={game ? 'poker-workspace' : undefined}>
     <div class="table-column">
-      {#if game}<Table {game} {persona}
-        ></Table>{/if}{#if game?.complete}<section
+      {#if game}<WindowFrame title="~/contemporary/play/table" active
+          ><Table {game} {persona}></Table></WindowFrame
+        >{/if}{#if game?.complete}<section
           class="hand-result"
           aria-label="Hand result"
         >
