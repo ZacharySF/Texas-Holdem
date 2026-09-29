@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { sitePath } from './site';
+  import GeneratorLab from './GeneratorLab.svelte';
   import Hairlines from './Hairlines.svelte';
   import Chevrons from './Chevrons.svelte';
   import GhostWord from './GhostWord.svelte';
@@ -20,6 +22,7 @@
 <main class="decor-lab" id="main-content" tabindex="-1">
   <h1>Decor laboratory</h1>
   <p>Development only. Decorative layers never change the application state.</p>
+  <GeneratorLab />
   <div class="decor-lab-grid">
     <section>
       <h2>01 / Hairlines</h2>
@@ -77,8 +80,8 @@
     </section>
     <section>
       <h2>11 / WindowFrame</h2>
-      <code>title='~/contemporary/lab' active=true</code><WindowFrame
-        title="~/contemporary/lab"
+      <code>title={sitePath('lab')} active=true</code><WindowFrame
+        title={sitePath('lab')}
         active><p>Readable content. Untouched children.</p></WindowFrame
       >
     </section>

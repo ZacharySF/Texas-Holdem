@@ -1,0 +1,381 @@
+.type-device {
+  position: relative;
+  color: var(--mist);
+  font: 800 clamp(70px, 13vw, 210px)/0.88 var(--masthead);
+  letter-spacing: -0.055em;
+}
+.type-device svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+.type-knockout {
+  height: clamp(110px, 18vw, 260px);
+}
+.type-knockout text {
+  font-family: var(--masthead);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.type-image span {
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-color: var(--ice);
+}
+.type-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--mist);
+}
+.type-overprint-a,
+.type-overprint-b,
+.type-echo-copy {
+  position: absolute;
+  inset: 0;
+}
+.type-overprint-a {
+  color: var(--glow);
+  transform: translate(-3px, 1px);
+  mix-blend-mode: screen;
+}
+.type-overprint-b {
+  color: var(--ultraviolet);
+  transform: translate(3px, -1px);
+  mix-blend-mode: screen;
+}
+.type-split span {
+  background: linear-gradient(var(--mist) 50%, var(--ultraviolet) 50%);
+  background-clip: text;
+  color: transparent;
+}
+.type-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font: 24px var(--soft-club);
+}
+.type-path {
+  height: 65px;
+  font: 9px var(--mono);
+  letter-spacing: 0.14em;
+}
+.type-path text {
+  fill: var(--ice);
+  font-size: 10px;
+}
+.type-echo {
+  padding-bottom: 36px;
+  font: 24px/1.15 var(--soft-club);
+  letter-spacing: -0.02em;
+}
+.type-ticker {
+  overflow: hidden;
+  font: 10px/2 var(--mono);
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+.type-ticker-track {
+  display: block;
+  width: max-content;
+  animation: spread-ticker 42s linear infinite;
+}
+@keyframes spread-ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.graphic-ruler {
+  display: flex;
+  justify-content: space-between;
+  color: var(--haze);
+  height: 20px;
+  border-top: 1px solid var(--dusk);
+}
+.graphic-ruler span {
+  flex: 1;
+  border-left: 1px solid var(--dusk);
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 19%,
+    var(--dusk) 19% 20%
+  );
+  background-size: 100% 4px;
+  background-repeat: no-repeat;
+}
+.graphic-ruler b {
+  font-weight: 400;
+  font-size: 7px;
+  padding: 5px;
+  display: block;
+}
+.graphic-ruler.vertical {
+  width: 20px;
+  height: 100%;
+  flex-direction: column;
+  border-top: 0;
+  border-left: 1px solid var(--dusk);
+}
+.graphic-ruler.vertical span {
+  border-top: 1px solid var(--dusk);
+  border-left: 0;
+  background: none;
+}
+.graphic-sticker {
+  display: inline-block;
+  border: 1px solid currentColor;
+  color: var(--spread-accent, var(--sodium));
+  padding: 7px 11px;
+  background: var(--ink);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+.graphic-crops {
+  position: absolute;
+  inset: 0;
+}
+.graphic-crops i {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid var(--haze);
+  border-left: 1px solid var(--haze);
+}
+.graphic-crops i:nth-child(1) {
+  top: -4px;
+  left: -4px;
+}
+.graphic-crops i:nth-child(2) {
+  top: -4px;
+  right: -4px;
+  rotate: 90deg;
+}
+.graphic-crops i:nth-child(3) {
+  bottom: -4px;
+  right: -4px;
+  rotate: 180deg;
+}
+.graphic-crops i:nth-child(4) {
+  bottom: -4px;
+  left: -4px;
+  rotate: 270deg;
+}
+.graphic-crops > span {
+  position: absolute;
+  right: 14px;
+  bottom: 4px;
+  font-size: 8px;
+  color: var(--haze);
+}
+.graphic-caution {
+  height: 24px;
+  background: repeating-linear-gradient(
+    125deg,
+    var(--sodium) 0 4px,
+    var(--void) 4px 11px
+  );
+  color: var(--sodium);
+}
+.graphic-caution span {
+  display: inline-block;
+  padding: 3px 15px;
+  background: var(--void);
+}
+.graphic-ring {
+  width: 110px;
+  text-align: center;
+  color: var(--mist);
+}
+.graphic-ring svg {
+  width: 100%;
+  height: auto;
+}
+.graphic-ring circle {
+  fill: none;
+  stroke: var(--dusk);
+  stroke-width: 2;
+}
+.graphic-ring .ring-value {
+  stroke: var(--spread-accent, var(--ultraviolet));
+  stroke-width: 3;
+}
+.graphic-ring text {
+  fill: var(--mist);
+  font: 16px var(--mono);
+}
+.graphic-ring > span {
+  font-size: 8px;
+}
+.graphic-ring.compact {
+  width: 19px;
+}
+.graphic-ring.compact > span,
+.graphic-ring.compact text {
+  display: none;
+}
+.graphic-callout {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  display: none;
+}
+.graphic-callout path {
+  fill: none;
+  stroke: var(--spread-accent, var(--haze));
+  stroke-width: 1;
+}
+.graphic-callout text {
+  fill: var(--haze);
+  font: 8px var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.graphic-modular-grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  z-index: -1;
+}
+.graphic-modular-grid i {
+  border-left: 1px solid color-mix(in srgb, var(--dusk) 25%, transparent);
+  font-style: normal;
+}
+.graphic-modular-grid i:nth-child(3n) {
+  border-left-color: color-mix(in srgb, var(--dusk) 50%, transparent);
+}
+.graphic-modular-grid span {
+  display: none;
+  font: 8px var(--mono);
+  color: var(--haze);
+  padding: 4px;
+}
+.graphic-modular-grid.show span {
+  display: block;
+}
+.graphic-modular-grid.show {
+  z-index: 0;
+}
+.generator-lab-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  isolation: isolate;
+}
+.generator-lab-grid > section {
+  position: relative;
+  min-width: 0;
+  border: 1px solid var(--dusk);
+  padding: 18px;
+  background: var(--void);
+}
+.generator-specimen header {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+.generator-lab label {
+  display: block;
+  font-size: 13px;
+}
+.generator-lab select,
+.generator-lab input {
+  padding: 10px;
+  min-height: 40px;
+  max-width: 100%;
+}
+.lab-seed {
+  margin-block: 24px;
+}
+.lab-seed input {
+  margin-left: 10px;
+}
+.generator-lab h2 {
+  margin-block: 40px 20px;
+}
+.generator-lab .type-specimen {
+  min-height: 240px;
+  overflow: hidden;
+}
+.type-specimen > .gen-art {
+  position: absolute;
+  inset: 65px 0 0;
+  height: 180px;
+  opacity: 0.5;
+}
+.type-specimen > .type-device {
+  margin-top: 35px;
+}
+.type-small {
+  font-size: 64px;
+}
+.type-small.type-knockout {
+  height: 120px;
+}
+.type-small.type-path {
+  font-size: 10px;
+}
+.type-small.type-ticker {
+  font-size: 10px;
+}
+.type-small.type-echo {
+  font-size: 23px;
+}
+.type-small.type-vertical {
+  font-size: 25px;
+}
+.graphic-objects {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 250px;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+.graphic-objects > .graphic-ruler {
+  position: absolute;
+  inset: 0 0 auto;
+}
+.graphic-objects > .graphic-ruler.vertical {
+  inset: 0 auto 0 0;
+}
+.graphic-objects > .graphic-caution {
+  flex-basis: 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .type-device,
+  .type-device * {
+    animation: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .generator-lab-grid {
+    grid-template-columns: 1fr;
+  }
+  .graphic-callout {
+    display: none !important;
+  }
+  .graphic-ruler.vertical {
+    display: none;
+  }
+  .generator-specimen header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .type-small {
+    font-size: 36px;
+  }
+  .graphic-objects {
+    padding: 25px;
+  }
+  .type-small.type-echo {
+    font-size: 16px;
+  }
+}
