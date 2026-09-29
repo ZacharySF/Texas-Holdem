@@ -1,4 +1,5 @@
 <script lang="ts">
+  import PhotoPlate from '../../decor/PhotoPlate.svelte';
   import { SITE_NAME } from '../../decor/site';
   import HomeNavigation from '../../decor/HomeNavigation.svelte';
   let {
@@ -30,5 +31,6 @@
       >
     </div>
   </div>
+  <PhotoPlate />
   <HomeNavigation {onplay} disabled={dealing || bankroll < 1} />
 </section>

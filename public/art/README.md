@@ -1,0 +1,1 @@
+Static GrainGradient plate. Built with @paper-design/shaders-react 0.0.81 (Apache-2.0) using scripts/build-plates.mjs. No React, shader package, WebGL or animation is shipped to the application. Palette: ink-0, ink-2, ink-5. User photos were unavailable.

@@ -1,0 +1,59 @@
+/* Routing remains untouched. A correct native transition requires ownership of
+   the router's update transaction; until authorized, route swaps stay instant. */
+#root .photo-plate {
+  display: block;
+}
+#root .plate-caption {
+  display: block;
+  padding: 8px;
+  font: 11px/1.5 var(--f-mono);
+  text-transform: uppercase;
+}
+#root .home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  align-items: start;
+}
+#root .home-graphic-nav {
+  grid-column: 1/-1;
+}
+#root .course-index-number .photo-plate {
+  margin-bottom: 8px;
+}
+#root .course-index-number {
+  min-width: 64px;
+}
+#root .course-index-chapter li > a {
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+}
+#root *,
+#root *::before,
+#root *::after {
+  animation: none;
+  transition-property: color, opacity, transform;
+  transition-duration: 160ms;
+  transition-timing-function: ease-out;
+}
+@media (max-width: 900px) {
+  #root .home-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #root .home-hero > .photo-plate {
+    width: min(100%, 320px);
+  }
+}
+@media (max-width: 767px) {
+  #root .course-index-chapter li > a {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #root *,
+  #root *::before,
+  #root *::after {
+    animation: none !important;
+    transition-property: color, opacity;
+    transition-duration: 120ms;
+  }
+}

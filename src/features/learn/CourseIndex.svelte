@@ -1,4 +1,5 @@
 <script lang="ts">
+  import PhotoPlate from '../../decor/PhotoPlate.svelte';
   import { chapters, lessons } from '../../content/lessons';
   import { readingGuides } from '../../content/readingGuides';
   import type { Journey } from './journey.svelte';
@@ -58,7 +59,7 @@
             <li>
               <a href={`#/learn/${lesson.id}`}>
                 <span class="course-index-number"
-                  >{lesson.id.replace('-', '.')}</span
+                  ><PhotoPlate compact />{lesson.id.replace('-', '.')}</span
                 >
                 <span
                   ><strong>{lesson.title}</strong><small

@@ -87,3 +87,9 @@ Course has a real linked chapter index and numbered rows. Lessons retain their t
 ## Phase 5 — device limits
 
 The design vocabulary is limited to masthead, index line, panel label, real-value stripe band, photo plate and one global grain layer. Panel labels repeat existing headings in hidden, pointer-inert chrome. They do not modify source headings or handlers. Actual charts/ranges in tools and lessons remain instructional content, not new decoration. The grain is 4% and disabled for reduced transparency and forced colors. No backgrounds use stripes; stripe fills represent existing equity/quiz values only.
+
+## Phase 6 — static imagery and motion
+
+No user photo directory exists. One GrainGradient plate was rendered offline with pinned `@paper-design/shaders-react@0.0.81`, then exported to 640/1280 AVIF and WebP. The build recipe is `scripts/build-plates.mjs`; its tool dependencies are isolated outside the application. The running site remains Svelte, with no React or shader runtime dependency. The plate appears once in the lobby and as 64px course-list thumbnails, never underneath text. Images have explicit dimensions and lazy loading.
+
+Native route transitions are blocked by the no-routing-change rule: starting a correct old/new snapshot transaction requires wrapping the existing router's update. Merely observing a changed DOM would capture the wrong old view. Routing is therefore left unchanged and swaps remain instant. No scroll reveals, shader canvases, or perpetual animation are introduced. Presentation transitions are 160ms; reduced motion limits them to color/opacity at 120ms.
