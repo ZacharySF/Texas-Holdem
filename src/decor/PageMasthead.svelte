@@ -4,7 +4,15 @@
   let section = $derived(sectionFor(path));
 </script>
 
-<header class="page-masthead">
+<header class="page-masthead sc-masthead-surface">
   <div class="panel-label">{section.code} / {section.name}</div>
-  <h1>{path === '/play/tournament' ? 'tournament' : section.name}</h1>
+  <h1
+    data-masthead={path.startsWith('/lab')
+      ? 'glass'
+      : path.startsWith('/arcade')
+        ? 'glow'
+        : 'chrome'}
+  >
+    {path === '/play/tournament' ? 'tournament' : section.name}
+  </h1>
 </header>

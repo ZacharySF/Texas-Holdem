@@ -1,4 +1,13 @@
-#root .sc-glass {
+#root
+  :is(
+    .sc-glass,
+    .panel,
+    .coach-sidebar,
+    .course-contents,
+    .lesson-part,
+    .course-index-chapter,
+    .tool-fields
+  ) {
   background:
     linear-gradient(180deg, var(--sc-glass-highlight), transparent 40%),
     var(--sc-glass-fill);
@@ -9,10 +18,10 @@
     var(--sc-shadow);
 }
 #root .sc-glass--live {
-  backdrop-filter: blur(var(--sc-glass-blur)) saturate(1.25);
   -webkit-backdrop-filter: blur(var(--sc-glass-blur)) saturate(1.25);
+  backdrop-filter: blur(var(--sc-glass-blur)) saturate(1.25);
 }
-#root .sc-gel {
+#root :is(.sc-gel, button, .button, .home-graphic-nav a) {
   position: relative;
   background:
     linear-gradient(
@@ -30,7 +39,7 @@
       color-mix(in srgb, var(--sc-key) 45%, transparent);
   transition: --sc-glow var(--sc-dur) var(--sc-ease);
 }
-#root .sc-gel::after {
+#root :is(.sc-gel, button, .button, .home-graphic-nav a)::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -43,23 +52,36 @@
   );
   transition: --sc-sheen 600ms var(--sc-ease);
 }
-#root .sc-gel:is(:hover, :focus-visible):not(:disabled) {
+#root
+  :is(.sc-gel, button, .button, .home-graphic-nav a):is(
+    :hover,
+    :focus-visible
+  ):not(:disabled) {
   --sc-glow: 1;
 }
-#root .sc-gel:is(:hover, :focus-visible):not(:disabled)::after {
+#root
+  :is(.sc-gel, button, .button, .home-graphic-nav a):is(
+    :hover,
+    :focus-visible
+  ):not(:disabled)::after {
   --sc-sheen: 130%;
 }
-#root .sc-gel:is([aria-pressed='true'], [aria-selected='true'], .active) {
+#root
+  :is(.sc-gel, button, .button, .home-graphic-nav a):is(
+    [aria-pressed='true'],
+    [aria-selected='true'],
+    .active
+  ) {
   --sc-glow: 0.6;
   box-shadow:
     inset 0 -2px 0 var(--sc-cyan-ice),
     0 0 10px color-mix(in srgb, var(--sc-key) 30%, transparent);
 }
-#root .sc-gel:active:not(:disabled) {
+#root :is(.sc-gel, button, .button, .home-graphic-nav a):active:not(:disabled) {
   transform: translateY(1px);
   --sc-glow: 0.3;
 }
-#root .sc-gel:focus-visible {
+#root :is(.sc-gel, button, .button, .home-graphic-nav a):focus-visible {
   outline: 2px solid var(--cyan);
   outline-offset: 2px;
 }
@@ -70,4 +92,208 @@
   text-shadow:
     0 0 1px currentColor,
     0 0 8px color-mix(in srgb, currentColor 55%, transparent);
+}
+
+/* Existing chrome and controls: no size, grid, source-order or typography-scale changes. */
+#root .app-header nav a[aria-current] {
+  background: linear-gradient(90deg, transparent, var(--sc-key), transparent)
+    bottom / 100% 2px no-repeat;
+  box-shadow: inset 0 -1px 0 color-mix(in srgb, var(--sc-key) 70%, transparent);
+}
+#root .display-menu {
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--sc-white) 12%, transparent),
+    var(--sc-shadow);
+}
+#root .sc-spine::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--sc-edge) 20%,
+    var(--sc-key) 50%,
+    var(--sc-edge) 80%,
+    transparent
+  );
+}
+#root .panel-label {
+  background: repeating-linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--sc-frost) 5%, transparent) 0 2px,
+    transparent 2px 5px
+  );
+}
+#root .sc-led-rail {
+  background:
+    radial-gradient(
+        circle at 1px 1px,
+        color-mix(in srgb, var(--sc-cyan-ice) 12%, transparent) 0.8px,
+        transparent 1.3px
+      )
+      0 0 / 4px 4px,
+    var(--sc-glass-fill);
+}
+#root
+  :is(
+    .bankroll strong,
+    .seat-stack,
+    .pot-chip strong,
+    .spec-readout dd:not(.street-readout),
+    .probability strong,
+    .equity-equation strong,
+    .progress-figure,
+    .tournament-readout strong
+  ) {
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+  text-shadow:
+    0 0 1px currentColor,
+    0 0 8px color-mix(in srgb, currentColor 55%, transparent);
+}
+#root
+  :is(
+    .bankroll strong,
+    .seat-stack,
+    .pot-chip strong,
+    .probability strong,
+    .equity-equation strong
+  ) {
+  color: var(--sc-cyan-ice);
+}
+#root .spec-readout .outs-number {
+  color: var(--orange);
+}
+#root
+  :is(
+    .pot-chip,
+    .spec-readout,
+    .tournament-readout,
+    input:not([type='checkbox']):not([type='radio']):not([type='range']),
+    select,
+    textarea
+  ) {
+  background: linear-gradient(
+    180deg,
+    var(--sc-well-top),
+    var(--sc-well-bottom)
+  );
+  box-shadow:
+    inset 0 1px 3px color-mix(in srgb, var(--sc-black) 80%, transparent),
+    inset 0 0 0 1px var(--sc-edge-hi);
+}
+#root .sc-acrylic {
+  position: relative;
+  border-color: color-mix(in srgb, var(--sc-frost) 35%, transparent);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--sc-white) 60%, transparent),
+    0 10px 24px -12px color-mix(in srgb, var(--sc-scene-a) 35%, var(--sc-ink-0));
+}
+#root .sc-acrylic::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    125deg,
+    transparent 25%,
+    var(--sc-white) 48%,
+    transparent 63%
+  );
+  opacity: 0.08;
+}
+#root .sc-acrylic.card-back {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--sc-white) 5%, transparent) 0 2px,
+      transparent 2px 6px
+    ),
+    linear-gradient(160deg, var(--sc-ink-3), var(--sc-ink-1));
+  box-shadow:
+    inset 0 0 0 6px var(--sc-edge),
+    inset 0 1px 0 var(--sc-edge-hi),
+    var(--sc-shadow);
+}
+#root .sc-acrylic.card-back::after {
+  opacity: 1;
+  background: repeating-linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--sc-white) 5%, transparent) 0 2px,
+    transparent 2px 6px
+  );
+  box-shadow: inset 0 0 0 6px var(--sc-edge);
+}
+#root .sc-table {
+  background:
+    radial-gradient(
+      60% 70% at 50% 60%,
+      color-mix(in srgb, var(--sc-key) 22%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      40% 30% at 50% 100%,
+      color-mix(in srgb, var(--sc-sodium) 10%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+        circle at 1px 1px,
+        color-mix(in srgb, var(--sc-cyan-ice) 6%, transparent) 0.8px,
+        transparent 1.3px
+      )
+      0 0 / 4px 4px,
+    var(--sc-ink-1);
+  box-shadow:
+    inset 0 0 0 1px var(--sc-edge),
+    inset 0 1px 0 var(--sc-edge-hi),
+    inset 0 0 60px color-mix(in srgb, var(--sc-ink-0) 70%, transparent);
+}
+#root .sc-masthead-surface {
+  background-color: var(--sc-ink-0);
+}
+#root h1[data-masthead='chrome'] {
+  background: linear-gradient(
+    180deg,
+    var(--sc-chrome-top) 0%,
+    var(--sc-frost) 36%,
+    var(--sc-key) 50%,
+    var(--sc-haze) 57%,
+    var(--sc-chrome-high) 80%,
+    var(--sc-chrome-low) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(
+      0 1px 0 color-mix(in srgb, var(--sc-white) 22%, transparent)
+    )
+    drop-shadow(0 0 28px color-mix(in srgb, var(--sc-key) 30%, transparent));
+}
+#root h1[data-masthead='glow'] {
+  color: var(--sc-key);
+  text-shadow:
+    0 0 1px currentColor,
+    0 0 12px color-mix(in srgb, var(--sc-key) 55%, transparent),
+    0 0 40px color-mix(in srgb, var(--sc-key) 35%, transparent),
+    0 0 90px color-mix(in srgb, var(--sc-violet-5) 30%, transparent);
+}
+#root h1[data-masthead='glass'] {
+  color: color-mix(in srgb, var(--sc-frost) 10%, transparent);
+  -webkit-text-stroke: 1px var(--sc-stroke);
+  text-shadow: 0 1px 0 color-mix(in srgb, var(--sc-white) 6%, transparent);
+}
+
+#root .progress-figure span {
+  text-shadow: none;
+}
+
+/* Backdrop filtering creates a stacking context: keep the menu above page finishes. */
+#root .app-header {
+  position: relative;
+  z-index: 60;
 }

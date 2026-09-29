@@ -48,7 +48,7 @@
   });
 </script>
 
-<aside class="side-index" aria-label="Section index">
+<aside class="side-index sc-glass sc-spine" aria-label="Section index">
   <div class="panel-label">{section.code} / index</div>
   <nav aria-label="Page sections">
     {#each entries as entry, i (entry.label + i)}

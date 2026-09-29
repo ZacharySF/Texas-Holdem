@@ -19,17 +19,19 @@
   } = $props();
 </script>
 
-<footer class="status-rail">
+<footer class="status-rail sc-glass sc-led-rail">
   <span>{sectionFor(path).code} / {sectionFor(path).name}</span>
   {#if live}
-    <span>hands <span use:liveReadout={'hands'}>{hands}</span></span>
-    <span class="status-secondary"
-      >chips <span use:liveReadout={'chips'}>{chips}</span></span
+    <span
+      >hands <span class="sc-lcd" use:liveReadout={'hands'}>{hands}</span></span
     >
     <span class="status-secondary"
-      >XP <span use:liveReadout={'xp'}>{xp}</span></span
+      >chips <span class="sc-lcd" use:liveReadout={'chips'}>{chips}</span></span
     >
-    <span use:liveReadout={'clock'}>{clock}</span>
+    <span class="status-secondary"
+      >XP <span class="sc-lcd" use:liveReadout={'xp'}>{xp}</span></span
+    >
+    <span class="sc-lcd" use:liveReadout={'clock'}>{clock}</span>
   {:else}<span>hands {hands}</span><span class="status-secondary"
       >chips {chips}</span
     ><span class="status-secondary">XP {xp}</span><span>{clock}</span>{/if}

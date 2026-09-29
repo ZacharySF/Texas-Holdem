@@ -23,7 +23,7 @@
 </script>
 
 <section
-  class={`felt-table table-${game.players.length}${game.runouts ? ' has-runouts' : ''}`}
+  class={`felt-table sc-table table-${game.players.length}${game.runouts ? ' has-runouts' : ''}`}
   aria-label="Poker table"
 >
   <PixiTable />

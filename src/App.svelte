@@ -106,7 +106,7 @@
     document.getElementById('main-content')?.focus();
   }}>Skip to content</a
 >
-<header class="app-header">
+<header class="app-header sc-glass sc-glass--live">
   <a
     href="#/play"
     class="brand"
@@ -123,7 +123,7 @@
   </nav>
   <details class="settings">
     <summary>Display</summary>
-    <div class="display-menu">
+    <div class="display-menu sc-glass sc-glass--live">
       <span>Dark theme</span>
       <div class="theme-options" role="group" aria-label="Color theme">
         <button

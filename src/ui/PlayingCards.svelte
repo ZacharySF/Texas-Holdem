@@ -19,7 +19,7 @@
   {#each cards as c (c)}
     <span
       class:out-card={highlight.includes(c)}
-      class="playing-card"
+      class="playing-card sc-acrylic"
       data-suit={suit(c)}
       aria-label={`${formatCard(c)}, ${suits[suit(c)]}`}
     >
@@ -27,7 +27,9 @@
     </span>
   {/each}
   {#each Array.from({ length: hidden }, (_, i) => i) as i (i)}
-    <span class="playing-card card-back" aria-label="Hidden opponent card"
+    <span
+      class="playing-card card-back sc-acrylic"
+      aria-label="Hidden opponent card"
       ><img src={cardAsset()} alt="" draggable="false" /></span
     >
   {/each}

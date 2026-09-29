@@ -129,9 +129,9 @@
   <div class="course-main">
     {#if storageError || journeyError}<p role="alert">
         Progress works for this visit, but this browser cannot save it.
-      </p>{/if}{#if !lessonId}<header class="learn-header">
+      </p>{/if}{#if !lessonId}<header class="learn-header sc-masthead-surface">
         <div class="panel-label">02 / course</div>
-        <h1>Course</h1>
+        <h1 data-masthead="glass">Course</h1>
         <p>
           Welcome to the probability course. We’ll build the ideas from ordinary
           playing cards, explaining each new term before using it. You only need
@@ -202,11 +202,11 @@
         >
           <a href="#/learn">Course</a><span> / Chapter {lesson.chapter}</span>
         </nav>
-        <header class="learn-header">
+        <header class="learn-header sc-masthead-surface">
           <p class="lesson-number panel-label">
             Lesson {lesson.id.replace('-', '.')}
           </p>
-          <h1>{lesson.title}</h1>
+          <h1 data-masthead="glow">{lesson.title}</h1>
           <p>
             {guide?.introduction}
           </p>
