@@ -346,3 +346,14 @@ Validation: lint and typecheck pass with no Svelte diagnostics; all 107 unit tes
 - [x] Preserve stored profile/progress and native modified-click behavior; check repeated returns and keyboard activation on desktop and phone.
 
 Home-link verification: lint, typecheck, all 107 unit tests, coverage thresholds, production build, and all 40 desktop/phone browser tests pass. Engine coverage is 99.2% statements, 98.4% branches, 100% functions, and 99.32% lines. No engine algorithms or benchmark measurements changed.
+
+## Presentation-only redesign
+
+- [x] Remove the previous generated decorative chart, barcode, ASCII, sticker and ruler system.
+- [x] Add canonical palette/type tokens, numbered shell, existing-data readouts and static image plates.
+- [x] Preserve the 173 protected files and the native Svelte runtime.
+- [x] Pass 107 unit tests, typecheck, lint, 40 browser checks and desktop course Lighthouse (100).
+- [ ] Compare against supplied reference files: `design/refs/` is absent.
+- [ ] Native route snapshot transition: deferred under the no-routing-change constraint.
+
+Before/removal/final captures and grid overlays are in `design/shots/`. Per-screen review and presentation exceptions are documented in `DESIGN_NOTES.md`. No engine code or benchmark measurements changed.

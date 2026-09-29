@@ -1,4 +1,4 @@
-/* global document, getComputedStyle, innerWidth */
+/* global document, getComputedStyle, innerWidth, performance */
 import { chromium } from '@playwright/test';
 import process from 'node:process';
 import console from 'node:console';
@@ -6,16 +6,18 @@ import { readFileSync, writeFileSync } from 'node:fs';
 const b = await chromium.launch({ executablePath: process.env.CHROME_PATH });
 const manifest = JSON.parse(readFileSync('design/shots/before/audit.json'));
 const out = [];
-for (const width of [1440, 390]) {
-  const p = await b.newPage({
-    viewport: { width, height: 900 },
-    reducedMotion: 'reduce',
-  });
+for (const width of [1440, 1024, 390]) {
   for (const { name, route } of manifest.filter((r) => r.width === 1440)) {
+    const p = await b.newPage({
+      viewport: { width, height: 900 },
+      reducedMotion: 'reduce',
+    });
     await p.goto(
       `${process.env.UI_BASE_URL || 'http://localhost:5175'}/#/${route}`,
     );
     await p.locator('.site-main h1').waitFor();
+    if (route.startsWith('learn/'))
+      await p.locator('[data-part="hook"]').waitFor();
     if (name === 'play') {
       await p
         .getByRole('button', { name: 'Six-player table', exact: true })
@@ -99,11 +101,16 @@ for (const width of [1440, 390]) {
           .slice(0, 8)
           .map((e) => [e.tagName, e.className]),
         smallest,
+        fontBytes: performance
+          .getEntriesByType('resource')
+          .filter((r) => /\.woff2/.test(r.name))
+          .reduce((sum, r) => sum + r.decodedBodySize, 0),
         largest,
         scale: largest / smallest,
       };
     });
     out.push({ name, route, width, ...scan });
+    await p.close();
     if (scan.violations.length || scan.overflow)
       console.log(
         name,
@@ -115,10 +122,10 @@ for (const width of [1440, 390]) {
         }),
       );
   }
-  await p.close();
   console.log(width, 'complete');
 }
 await b.close();
 writeFileSync('design/rendered-audit.json', JSON.stringify(out, null, 2));
 
-if (out.some((r) => r.violations.length || r.overflow)) process.exitCode = 1;
+if (out.some((r) => r.violations.length || r.overflow || r.fontBytes > 150000))
+  process.exitCode = 1;

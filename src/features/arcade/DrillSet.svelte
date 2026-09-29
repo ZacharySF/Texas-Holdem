@@ -1,4 +1,5 @@
 <script lang="ts">
+  import DataStripe from '../../decor/DataStripe.svelte';
   import { advancedFacts } from '../../content/facts';
   import {
     decisionProblems,
@@ -252,6 +253,7 @@
         setPaused(!paused);
       }}>{paused ? 'Resume' : 'Pause'}</button
     >{/if}
+  <DataStripe value={index + 1} total={5} />
   <h2>Question {index + 1} of 5</h2>
   {#if mode === 'call'}<p>
       Pot including the bet: {q.pot} chips. Call: {q.call}. Rake deducted from

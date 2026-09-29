@@ -1,0 +1,912 @@
+Diff against b7d7cf385e8ec197f1e03ff2f06940bf8c912836
+This manifest excludes itself.
+
+ DESIGN_NOTES.md                                    |   396 +
+ README.md                                          |     4 +-
+ .../review => design}/accessibility-audit.json     |    12 +-
+ design/lighthouse-course.json                      |  5677 +++++++++
+ design/protected-audit.json                        |   872 ++
+ design/rendered-audit.json                         | 12128 +++++++++++++++++++
+ design/script-audit.json                           |   367 +
+ design/shots/README.md                             |    15 +
+ design/shots/after-removal/audit.json              |  1170 ++
+ design/shots/after-removal/course-1440.png         |   Bin 0 -> 1400272 bytes
+ design/shots/after-removal/course-390.png          |   Bin 0 -> 333441 bytes
+ design/shots/after-removal/drills-1440.png         |   Bin 0 -> 1203797 bytes
+ design/shots/after-removal/drills-390.png          |   Bin 0 -> 299730 bytes
+ design/shots/after-removal/drills-akq-1440.png     |   Bin 0 -> 1241268 bytes
+ design/shots/after-removal/drills-akq-390.png      |   Bin 0 -> 311313 bytes
+ design/shots/after-removal/drills-call-1440.png    |   Bin 0 -> 1152066 bytes
+ design/shots/after-removal/drills-call-390.png     |   Bin 0 -> 310145 bytes
+ design/shots/after-removal/drills-combo-1440.png   |   Bin 0 -> 1170142 bytes
+ design/shots/after-removal/drills-combo-390.png    |   Bin 0 -> 304287 bytes
+ design/shots/after-removal/drills-guess-1440.png   |   Bin 0 -> 1160725 bytes
+ design/shots/after-removal/drills-guess-390.png    |   Bin 0 -> 306429 bytes
+ design/shots/after-removal/drills-streak-1440.png  |   Bin 0 -> 1199847 bytes
+ design/shots/after-removal/drills-streak-390.png   |   Bin 0 -> 313653 bytes
+ design/shots/after-removal/home-1440.png           |   Bin 0 -> 1304448 bytes
+ design/shots/after-removal/home-390.png            |   Bin 0 -> 328587 bytes
+ design/shots/after-removal/lesson-0-1-1440.png     |   Bin 0 -> 1274755 bytes
+ design/shots/after-removal/lesson-0-1-390.png      |   Bin 0 -> 327046 bytes
+ design/shots/after-removal/lesson-0-2-1440.png     |   Bin 0 -> 1274393 bytes
+ design/shots/after-removal/lesson-0-2-390.png      |   Bin 0 -> 324700 bytes
+ design/shots/after-removal/lesson-1-1-1440.png     |   Bin 0 -> 1282233 bytes
+ design/shots/after-removal/lesson-1-1-390.png      |   Bin 0 -> 328179 bytes
+ design/shots/after-removal/lesson-1-2-1440.png     |   Bin 0 -> 1281359 bytes
+ design/shots/after-removal/lesson-1-2-390.png      |   Bin 0 -> 325654 bytes
+ design/shots/after-removal/lesson-10-1-1440.png    |   Bin 0 -> 1281653 bytes
+ design/shots/after-removal/lesson-10-1-390.png     |   Bin 0 -> 328741 bytes
+ design/shots/after-removal/lesson-10-2-1440.png    |   Bin 0 -> 1285067 bytes
+ design/shots/after-removal/lesson-10-2-390.png     |   Bin 0 -> 329888 bytes
+ design/shots/after-removal/lesson-11-1-1440.png    |   Bin 0 -> 1283373 bytes
+ design/shots/after-removal/lesson-11-1-390.png     |   Bin 0 -> 327127 bytes
+ design/shots/after-removal/lesson-11-2-1440.png    |   Bin 0 -> 1285213 bytes
+ design/shots/after-removal/lesson-11-2-390.png     |   Bin 0 -> 329375 bytes
+ design/shots/after-removal/lesson-12-1-1440.png    |   Bin 0 -> 1301061 bytes
+ design/shots/after-removal/lesson-12-1-390.png     |   Bin 0 -> 329474 bytes
+ design/shots/after-removal/lesson-12-2-1440.png    |   Bin 0 -> 1291072 bytes
+ design/shots/after-removal/lesson-12-2-390.png     |   Bin 0 -> 327094 bytes
+ design/shots/after-removal/lesson-13-1-1440.png    |   Bin 0 -> 1287243 bytes
+ design/shots/after-removal/lesson-13-1-390.png     |   Bin 0 -> 327759 bytes
+ design/shots/after-removal/lesson-13-2-1440.png    |   Bin 0 -> 1292683 bytes
+ design/shots/after-removal/lesson-13-2-390.png     |   Bin 0 -> 328470 bytes
+ design/shots/after-removal/lesson-14-1-1440.png    |   Bin 0 -> 1287455 bytes
+ design/shots/after-removal/lesson-14-1-390.png     |   Bin 0 -> 328489 bytes
+ design/shots/after-removal/lesson-14-2-1440.png    |   Bin 0 -> 1317906 bytes
+ design/shots/after-removal/lesson-14-2-390.png     |   Bin 0 -> 328490 bytes
+ design/shots/after-removal/lesson-15-1-1440.png    |   Bin 0 -> 1310900 bytes
+ design/shots/after-removal/lesson-15-1-390.png     |   Bin 0 -> 326662 bytes
+ design/shots/after-removal/lesson-15-2-1440.png    |   Bin 0 -> 1295124 bytes
+ design/shots/after-removal/lesson-15-2-390.png     |   Bin 0 -> 329704 bytes
+ design/shots/after-removal/lesson-16-1-1440.png    |   Bin 0 -> 1292354 bytes
+ design/shots/after-removal/lesson-16-1-390.png     |   Bin 0 -> 327536 bytes
+ design/shots/after-removal/lesson-16-2-1440.png    |   Bin 0 -> 1293435 bytes
+ design/shots/after-removal/lesson-16-2-390.png     |   Bin 0 -> 327453 bytes
+ design/shots/after-removal/lesson-17-1-1440.png    |   Bin 0 -> 1321382 bytes
+ design/shots/after-removal/lesson-17-1-390.png     |   Bin 0 -> 328912 bytes
+ design/shots/after-removal/lesson-17-2-1440.png    |   Bin 0 -> 1284889 bytes
+ design/shots/after-removal/lesson-17-2-390.png     |   Bin 0 -> 329342 bytes
+ design/shots/after-removal/lesson-18-1-1440.png    |   Bin 0 -> 1321863 bytes
+ design/shots/after-removal/lesson-18-1-390.png     |   Bin 0 -> 325919 bytes
+ design/shots/after-removal/lesson-18-2-1440.png    |   Bin 0 -> 1288329 bytes
+ design/shots/after-removal/lesson-18-2-390.png     |   Bin 0 -> 326426 bytes
+ design/shots/after-removal/lesson-19-1-1440.png    |   Bin 0 -> 1291795 bytes
+ design/shots/after-removal/lesson-19-1-390.png     |   Bin 0 -> 326874 bytes
+ design/shots/after-removal/lesson-19-2-1440.png    |   Bin 0 -> 1306199 bytes
+ design/shots/after-removal/lesson-19-2-390.png     |   Bin 0 -> 327077 bytes
+ design/shots/after-removal/lesson-2-1-1440.png     |   Bin 0 -> 1276700 bytes
+ design/shots/after-removal/lesson-2-1-390.png      |   Bin 0 -> 325245 bytes
+ design/shots/after-removal/lesson-2-2-1440.png     |   Bin 0 -> 1275573 bytes
+ design/shots/after-removal/lesson-2-2-390.png      |   Bin 0 -> 326178 bytes
+ design/shots/after-removal/lesson-20-1-1440.png    |   Bin 0 -> 1312385 bytes
+ design/shots/after-removal/lesson-20-1-390.png     |   Bin 0 -> 327187 bytes
+ design/shots/after-removal/lesson-20-2-1440.png    |   Bin 0 -> 1315074 bytes
+ design/shots/after-removal/lesson-20-2-390.png     |   Bin 0 -> 328179 bytes
+ design/shots/after-removal/lesson-21-1-1440.png    |   Bin 0 -> 1301081 bytes
+ design/shots/after-removal/lesson-21-1-390.png     |   Bin 0 -> 328551 bytes
+ design/shots/after-removal/lesson-21-2-1440.png    |   Bin 0 -> 1302263 bytes
+ design/shots/after-removal/lesson-21-2-390.png     |   Bin 0 -> 325640 bytes
+ design/shots/after-removal/lesson-22-1-1440.png    |   Bin 0 -> 1284726 bytes
+ design/shots/after-removal/lesson-22-1-390.png     |   Bin 0 -> 325490 bytes
+ design/shots/after-removal/lesson-22-2-1440.png    |   Bin 0 -> 1289520 bytes
+ design/shots/after-removal/lesson-22-2-390.png     |   Bin 0 -> 328769 bytes
+ design/shots/after-removal/lesson-23-1-1440.png    |   Bin 0 -> 1289605 bytes
+ design/shots/after-removal/lesson-23-1-390.png     |   Bin 0 -> 326313 bytes
+ design/shots/after-removal/lesson-23-2-1440.png    |   Bin 0 -> 1315196 bytes
+ design/shots/after-removal/lesson-23-2-390.png     |   Bin 0 -> 327166 bytes
+ design/shots/after-removal/lesson-24-1-1440.png    |   Bin 0 -> 1290120 bytes
+ design/shots/after-removal/lesson-24-1-390.png     |   Bin 0 -> 327396 bytes
+ design/shots/after-removal/lesson-24-2-1440.png    |   Bin 0 -> 1315789 bytes
+ design/shots/after-removal/lesson-24-2-390.png     |   Bin 0 -> 328002 bytes
+ design/shots/after-removal/lesson-25-1-1440.png    |   Bin 0 -> 1284220 bytes
+ design/shots/after-removal/lesson-25-1-390.png     |   Bin 0 -> 327774 bytes
+ design/shots/after-removal/lesson-25-2-1440.png    |   Bin 0 -> 1281751 bytes
+ design/shots/after-removal/lesson-25-2-390.png     |   Bin 0 -> 328857 bytes
+ design/shots/after-removal/lesson-3-1-1440.png     |   Bin 0 -> 1276632 bytes
+ design/shots/after-removal/lesson-3-1-390.png      |   Bin 0 -> 326843 bytes
+ design/shots/after-removal/lesson-3-2-1440.png     |   Bin 0 -> 1279191 bytes
+ design/shots/after-removal/lesson-3-2-390.png      |   Bin 0 -> 326224 bytes
+ design/shots/after-removal/lesson-4-1-1440.png     |   Bin 0 -> 1275654 bytes
+ design/shots/after-removal/lesson-4-1-390.png      |   Bin 0 -> 325956 bytes
+ design/shots/after-removal/lesson-4-2-1440.png     |   Bin 0 -> 1277801 bytes
+ design/shots/after-removal/lesson-4-2-390.png      |   Bin 0 -> 327054 bytes
+ design/shots/after-removal/lesson-5-1-1440.png     |   Bin 0 -> 1284899 bytes
+ design/shots/after-removal/lesson-5-1-390.png      |   Bin 0 -> 325743 bytes
+ design/shots/after-removal/lesson-5-2-1440.png     |   Bin 0 -> 1305193 bytes
+ design/shots/after-removal/lesson-5-2-390.png      |   Bin 0 -> 324562 bytes
+ design/shots/after-removal/lesson-6-1-1440.png     |   Bin 0 -> 1308507 bytes
+ design/shots/after-removal/lesson-6-1-390.png      |   Bin 0 -> 326302 bytes
+ design/shots/after-removal/lesson-6-2-1440.png     |   Bin 0 -> 1273644 bytes
+ design/shots/after-removal/lesson-6-2-390.png      |   Bin 0 -> 327757 bytes
+ design/shots/after-removal/lesson-6-3-1440.png     |   Bin 0 -> 1276619 bytes
+ design/shots/after-removal/lesson-6-3-390.png      |   Bin 0 -> 327863 bytes
+ design/shots/after-removal/lesson-7-1-1440.png     |   Bin 0 -> 1316037 bytes
+ design/shots/after-removal/lesson-7-1-390.png      |   Bin 0 -> 326791 bytes
+ design/shots/after-removal/lesson-7-2-1440.png     |   Bin 0 -> 1310459 bytes
+ design/shots/after-removal/lesson-7-2-390.png      |   Bin 0 -> 328066 bytes
+ design/shots/after-removal/lesson-8-1-1440.png     |   Bin 0 -> 1283363 bytes
+ design/shots/after-removal/lesson-8-1-390.png      |   Bin 0 -> 328154 bytes
+ design/shots/after-removal/lesson-8-2-1440.png     |   Bin 0 -> 1287413 bytes
+ design/shots/after-removal/lesson-8-2-390.png      |   Bin 0 -> 327574 bytes
+ design/shots/after-removal/lesson-9-1-1440.png     |   Bin 0 -> 1311774 bytes
+ design/shots/after-removal/lesson-9-1-390.png      |   Bin 0 -> 324648 bytes
+ design/shots/after-removal/lesson-9-2-1440.png     |   Bin 0 -> 1300744 bytes
+ design/shots/after-removal/lesson-9-2-390.png      |   Bin 0 -> 329100 bytes
+ design/shots/after-removal/play-1440.png           |   Bin 0 -> 1003325 bytes
+ design/shots/after-removal/play-390.png            |   Bin 0 -> 262684 bytes
+ design/shots/after-removal/progress-1440.png       |   Bin 0 -> 1182209 bytes
+ design/shots/after-removal/progress-390.png        |   Bin 0 -> 315230 bytes
+ design/shots/after-removal/tools-1440.png          |   Bin 0 -> 1140965 bytes
+ design/shots/after-removal/tools-390.png           |   Bin 0 -> 298260 bytes
+ design/shots/after-removal/tools-bankroll-1440.png |   Bin 0 -> 1283384 bytes
+ design/shots/after-removal/tools-bankroll-390.png  |   Bin 0 -> 283579 bytes
+ design/shots/after-removal/tools-charts-1440.png   |   Bin 0 -> 1358450 bytes
+ design/shots/after-removal/tools-charts-390.png    |   Bin 0 -> 337183 bytes
+ design/shots/after-removal/tools-events-1440.png   |   Bin 0 -> 1253276 bytes
+ design/shots/after-removal/tools-events-390.png    |   Bin 0 -> 304294 bytes
+ design/shots/after-removal/tools-ranges-1440.png   |   Bin 0 -> 1218280 bytes
+ design/shots/after-removal/tools-ranges-390.png    |   Bin 0 -> 316215 bytes
+ design/shots/after-removal/tools-shuffle-1440.png  |   Bin 0 -> 1320951 bytes
+ design/shots/after-removal/tools-shuffle-390.png   |   Bin 0 -> 340685 bytes
+ .../shots/after-removal/tools-tools-icm-1440.png   |   Bin 0 -> 1292273 bytes
+ design/shots/after-removal/tools-tools-icm-390.png |   Bin 0 -> 337171 bytes
+ .../after-removal/tools-tools-insurance-1440.png   |   Bin 0 -> 1291423 bytes
+ .../after-removal/tools-tools-insurance-390.png    |   Bin 0 -> 344413 bytes
+ .../shots/after-removal/tools-tools-push-1440.png  |   Bin 0 -> 1350425 bytes
+ .../shots/after-removal/tools-tools-push-390.png   |   Bin 0 -> 328270 bytes
+ .../after-removal/tools-tools-sizing-1440.png      |   Bin 0 -> 1323298 bytes
+ .../shots/after-removal/tools-tools-sizing-390.png |   Bin 0 -> 331715 bytes
+ design/shots/after/audit.json                      |  5210 ++++++++
+ design/shots/after/course-1024.png                 |   Bin 0 -> 988428 bytes
+ design/shots/after/course-1440.png                 |   Bin 0 -> 1560517 bytes
+ design/shots/after/course-390.png                  |   Bin 0 -> 410612 bytes
+ design/shots/after/drills-1024.png                 |   Bin 0 -> 898242 bytes
+ design/shots/after/drills-1440.png                 |   Bin 0 -> 1461032 bytes
+ design/shots/after/drills-390.png                  |   Bin 0 -> 391862 bytes
+ design/shots/after/drills-akq-1024.png             |   Bin 0 -> 888582 bytes
+ design/shots/after/drills-akq-1440.png             |   Bin 0 -> 1442566 bytes
+ design/shots/after/drills-akq-390.png              |   Bin 0 -> 387499 bytes
+ design/shots/after/drills-call-1024.png            |   Bin 0 -> 896178 bytes
+ design/shots/after/drills-call-1440.png            |   Bin 0 -> 1443299 bytes
+ design/shots/after/drills-call-390.png             |   Bin 0 -> 390574 bytes
+ design/shots/after/drills-combo-1024.png           |   Bin 0 -> 896593 bytes
+ design/shots/after/drills-combo-1440.png           |   Bin 0 -> 1443844 bytes
+ design/shots/after/drills-combo-390.png            |   Bin 0 -> 391336 bytes
+ design/shots/after/drills-guess-1024.png           |   Bin 0 -> 897613 bytes
+ design/shots/after/drills-guess-1440.png           |   Bin 0 -> 1444977 bytes
+ design/shots/after/drills-guess-390.png            |   Bin 0 -> 391726 bytes
+ design/shots/after/drills-streak-1024.png          |   Bin 0 -> 890090 bytes
+ design/shots/after/drills-streak-1440.png          |   Bin 0 -> 1440136 bytes
+ design/shots/after/drills-streak-390.png           |   Bin 0 -> 386278 bytes
+ design/shots/after/home-1024.png                   |   Bin 0 -> 885553 bytes
+ design/shots/after/home-1440.png                   |   Bin 0 -> 1435063 bytes
+ design/shots/after/home-390.png                    |   Bin 0 -> 380422 bytes
+ design/shots/after/lesson-0-1-1024.png             |   Bin 0 -> 922589 bytes
+ design/shots/after/lesson-0-1-1440.png             |   Bin 0 -> 1497067 bytes
+ design/shots/after/lesson-0-1-390.png              |   Bin 0 -> 375781 bytes
+ design/shots/after/lesson-0-2-1024.png             |   Bin 0 -> 924115 bytes
+ design/shots/after/lesson-0-2-1440.png             |   Bin 0 -> 1493454 bytes
+ design/shots/after/lesson-0-2-390.png              |   Bin 0 -> 381536 bytes
+ design/shots/after/lesson-1-1-1024.png             |   Bin 0 -> 928020 bytes
+ design/shots/after/lesson-1-1-1440.png             |   Bin 0 -> 1505271 bytes
+ design/shots/after/lesson-1-1-390.png              |   Bin 0 -> 379002 bytes
+ design/shots/after/lesson-1-2-1024.png             |   Bin 0 -> 930348 bytes
+ design/shots/after/lesson-1-2-1440.png             |   Bin 0 -> 1503827 bytes
+ design/shots/after/lesson-1-2-390.png              |   Bin 0 -> 382232 bytes
+ design/shots/after/lesson-10-1-1024.png            |   Bin 0 -> 917703 bytes
+ design/shots/after/lesson-10-1-1440.png            |   Bin 0 -> 1501814 bytes
+ design/shots/after/lesson-10-1-390.png             |   Bin 0 -> 383397 bytes
+ design/shots/after/lesson-10-2-1024.png            |   Bin 0 -> 917443 bytes
+ design/shots/after/lesson-10-2-1440.png            |   Bin 0 -> 1504938 bytes
+ design/shots/after/lesson-10-2-390.png             |   Bin 0 -> 384580 bytes
+ design/shots/after/lesson-11-1-1024.png            |   Bin 0 -> 915777 bytes
+ design/shots/after/lesson-11-1-1440.png            |   Bin 0 -> 1497058 bytes
+ design/shots/after/lesson-11-1-390.png             |   Bin 0 -> 382095 bytes
+ design/shots/after/lesson-11-2-1024.png            |   Bin 0 -> 915334 bytes
+ design/shots/after/lesson-11-2-1440.png            |   Bin 0 -> 1496811 bytes
+ design/shots/after/lesson-11-2-390.png             |   Bin 0 -> 384767 bytes
+ design/shots/after/lesson-12-1-1024.png            |   Bin 0 -> 926309 bytes
+ design/shots/after/lesson-12-1-1440.png            |   Bin 0 -> 1503634 bytes
+ design/shots/after/lesson-12-1-390.png             |   Bin 0 -> 387292 bytes
+ design/shots/after/lesson-12-2-1024.png            |   Bin 0 -> 928030 bytes
+ design/shots/after/lesson-12-2-1440.png            |   Bin 0 -> 1498354 bytes
+ design/shots/after/lesson-12-2-390.png             |   Bin 0 -> 382558 bytes
+ design/shots/after/lesson-13-1-1024.png            |   Bin 0 -> 918664 bytes
+ design/shots/after/lesson-13-1-1440.png            |   Bin 0 -> 1502742 bytes
+ design/shots/after/lesson-13-1-390.png             |   Bin 0 -> 384456 bytes
+ design/shots/after/lesson-13-2-1024.png            |   Bin 0 -> 929190 bytes
+ design/shots/after/lesson-13-2-1440.png            |   Bin 0 -> 1498588 bytes
+ design/shots/after/lesson-13-2-390.png             |   Bin 0 -> 382607 bytes
+ design/shots/after/lesson-14-1-1024.png            |   Bin 0 -> 918050 bytes
+ design/shots/after/lesson-14-1-1440.png            |   Bin 0 -> 1501756 bytes
+ design/shots/after/lesson-14-1-390.png             |   Bin 0 -> 384374 bytes
+ design/shots/after/lesson-14-2-1024.png            |   Bin 0 -> 915276 bytes
+ design/shots/after/lesson-14-2-1440.png            |   Bin 0 -> 1505355 bytes
+ design/shots/after/lesson-14-2-390.png             |   Bin 0 -> 384203 bytes
+ design/shots/after/lesson-15-1-1024.png            |   Bin 0 -> 921515 bytes
+ design/shots/after/lesson-15-1-1440.png            |   Bin 0 -> 1506560 bytes
+ design/shots/after/lesson-15-1-390.png             |   Bin 0 -> 386315 bytes
+ design/shots/after/lesson-15-2-1024.png            |   Bin 0 -> 919434 bytes
+ design/shots/after/lesson-15-2-1440.png            |   Bin 0 -> 1505194 bytes
+ design/shots/after/lesson-15-2-390.png             |   Bin 0 -> 385319 bytes
+ design/shots/after/lesson-16-1-1024.png            |   Bin 0 -> 915794 bytes
+ design/shots/after/lesson-16-1-1440.png            |   Bin 0 -> 1501174 bytes
+ design/shots/after/lesson-16-1-390.png             |   Bin 0 -> 384184 bytes
+ design/shots/after/lesson-16-2-1024.png            |   Bin 0 -> 924033 bytes
+ design/shots/after/lesson-16-2-1440.png            |   Bin 0 -> 1502519 bytes
+ design/shots/after/lesson-16-2-390.png             |   Bin 0 -> 383135 bytes
+ design/shots/after/lesson-17-1-1024.png            |   Bin 0 -> 919944 bytes
+ design/shots/after/lesson-17-1-1440.png            |   Bin 0 -> 1508734 bytes
+ design/shots/after/lesson-17-1-390.png             |   Bin 0 -> 385843 bytes
+ design/shots/after/lesson-17-2-1024.png            |   Bin 0 -> 919211 bytes
+ design/shots/after/lesson-17-2-1440.png            |   Bin 0 -> 1500827 bytes
+ design/shots/after/lesson-17-2-390.png             |   Bin 0 -> 387118 bytes
+ design/shots/after/lesson-18-1-1024.png            |   Bin 0 -> 918614 bytes
+ design/shots/after/lesson-18-1-1440.png            |   Bin 0 -> 1507163 bytes
+ design/shots/after/lesson-18-1-390.png             |   Bin 0 -> 382694 bytes
+ design/shots/after/lesson-18-2-1024.png            |   Bin 0 -> 935239 bytes
+ design/shots/after/lesson-18-2-1440.png            |   Bin 0 -> 1503314 bytes
+ design/shots/after/lesson-18-2-390.png             |   Bin 0 -> 384756 bytes
+ design/shots/after/lesson-19-1-1024.png            |   Bin 0 -> 916767 bytes
+ design/shots/after/lesson-19-1-1440.png            |   Bin 0 -> 1500251 bytes
+ design/shots/after/lesson-19-1-390.png             |   Bin 0 -> 382832 bytes
+ design/shots/after/lesson-19-2-1024.png            |   Bin 0 -> 922863 bytes
+ design/shots/after/lesson-19-2-1440.png            |   Bin 0 -> 1499920 bytes
+ design/shots/after/lesson-19-2-390.png             |   Bin 0 -> 383624 bytes
+ design/shots/after/lesson-2-1-1024.png             |   Bin 0 -> 932011 bytes
+ design/shots/after/lesson-2-1-1440.png             |   Bin 0 -> 1498304 bytes
+ design/shots/after/lesson-2-1-390.png              |   Bin 0 -> 382759 bytes
+ design/shots/after/lesson-2-2-1024.png             |   Bin 0 -> 924199 bytes
+ design/shots/after/lesson-2-2-1440.png             |   Bin 0 -> 1494254 bytes
+ design/shots/after/lesson-2-2-390.png              |   Bin 0 -> 379051 bytes
+ design/shots/after/lesson-20-1-1024.png            |   Bin 0 -> 927008 bytes
+ design/shots/after/lesson-20-1-1440.png            |   Bin 0 -> 1503058 bytes
+ design/shots/after/lesson-20-1-390.png             |   Bin 0 -> 379534 bytes
+ design/shots/after/lesson-20-2-1024.png            |   Bin 0 -> 931890 bytes
+ design/shots/after/lesson-20-2-1440.png            |   Bin 0 -> 1506820 bytes
+ design/shots/after/lesson-20-2-390.png             |   Bin 0 -> 385121 bytes
+ design/shots/after/lesson-21-1-1024.png            |   Bin 0 -> 932197 bytes
+ design/shots/after/lesson-21-1-1440.png            |   Bin 0 -> 1499814 bytes
+ design/shots/after/lesson-21-1-390.png             |   Bin 0 -> 382966 bytes
+ design/shots/after/lesson-21-2-1024.png            |   Bin 0 -> 931841 bytes
+ design/shots/after/lesson-21-2-1440.png            |   Bin 0 -> 1499252 bytes
+ design/shots/after/lesson-21-2-390.png             |   Bin 0 -> 382999 bytes
+ design/shots/after/lesson-22-1-1024.png            |   Bin 0 -> 914338 bytes
+ design/shots/after/lesson-22-1-1440.png            |   Bin 0 -> 1497878 bytes
+ design/shots/after/lesson-22-1-390.png             |   Bin 0 -> 380777 bytes
+ design/shots/after/lesson-22-2-1024.png            |   Bin 0 -> 929583 bytes
+ design/shots/after/lesson-22-2-1440.png            |   Bin 0 -> 1496096 bytes
+ design/shots/after/lesson-22-2-390.png             |   Bin 0 -> 381241 bytes
+ design/shots/after/lesson-23-1-1024.png            |   Bin 0 -> 930659 bytes
+ design/shots/after/lesson-23-1-1440.png            |   Bin 0 -> 1499276 bytes
+ design/shots/after/lesson-23-1-390.png             |   Bin 0 -> 383805 bytes
+ design/shots/after/lesson-23-2-1024.png            |   Bin 0 -> 923709 bytes
+ design/shots/after/lesson-23-2-1440.png            |   Bin 0 -> 1504659 bytes
+ design/shots/after/lesson-23-2-390.png             |   Bin 0 -> 384825 bytes
+ design/shots/after/lesson-24-1-1024.png            |   Bin 0 -> 919894 bytes
+ design/shots/after/lesson-24-1-1440.png            |   Bin 0 -> 1495632 bytes
+ design/shots/after/lesson-24-1-390.png             |   Bin 0 -> 379604 bytes
+ design/shots/after/lesson-24-2-1024.png            |   Bin 0 -> 915940 bytes
+ design/shots/after/lesson-24-2-1440.png            |   Bin 0 -> 1506394 bytes
+ design/shots/after/lesson-24-2-390.png             |   Bin 0 -> 383206 bytes
+ design/shots/after/lesson-25-1-1024.png            |   Bin 0 -> 914912 bytes
+ design/shots/after/lesson-25-1-1440.png            |   Bin 0 -> 1497942 bytes
+ design/shots/after/lesson-25-1-390.png             |   Bin 0 -> 384079 bytes
+ design/shots/after/lesson-25-2-1024.png            |   Bin 0 -> 925314 bytes
+ design/shots/after/lesson-25-2-1440.png            |   Bin 0 -> 1495295 bytes
+ design/shots/after/lesson-25-2-390.png             |   Bin 0 -> 383292 bytes
+ design/shots/after/lesson-3-1-1024.png             |   Bin 0 -> 930989 bytes
+ design/shots/after/lesson-3-1-1440.png             |   Bin 0 -> 1495983 bytes
+ design/shots/after/lesson-3-1-390.png              |   Bin 0 -> 382537 bytes
+ design/shots/after/lesson-3-2-1024.png             |   Bin 0 -> 924950 bytes
+ design/shots/after/lesson-3-2-1440.png             |   Bin 0 -> 1495871 bytes
+ design/shots/after/lesson-3-2-390.png              |   Bin 0 -> 382241 bytes
+ design/shots/after/lesson-4-1-1024.png             |   Bin 0 -> 925871 bytes
+ design/shots/after/lesson-4-1-1440.png             |   Bin 0 -> 1501490 bytes
+ design/shots/after/lesson-4-1-390.png              |   Bin 0 -> 381825 bytes
+ design/shots/after/lesson-4-2-1024.png             |   Bin 0 -> 926780 bytes
+ design/shots/after/lesson-4-2-1440.png             |   Bin 0 -> 1502105 bytes
+ design/shots/after/lesson-4-2-390.png              |   Bin 0 -> 381049 bytes
+ design/shots/after/lesson-5-1-1024.png             |   Bin 0 -> 927442 bytes
+ design/shots/after/lesson-5-1-1440.png             |   Bin 0 -> 1493963 bytes
+ design/shots/after/lesson-5-1-390.png              |   Bin 0 -> 379056 bytes
+ design/shots/after/lesson-5-2-1024.png             |   Bin 0 -> 929212 bytes
+ design/shots/after/lesson-5-2-1440.png             |   Bin 0 -> 1502490 bytes
+ design/shots/after/lesson-5-2-390.png              |   Bin 0 -> 379533 bytes
+ design/shots/after/lesson-6-1-1024.png             |   Bin 0 -> 926930 bytes
+ design/shots/after/lesson-6-1-1440.png             |   Bin 0 -> 1506142 bytes
+ design/shots/after/lesson-6-1-390.png              |   Bin 0 -> 382330 bytes
+ design/shots/after/lesson-6-2-1024.png             |   Bin 0 -> 929129 bytes
+ design/shots/after/lesson-6-2-1440.png             |   Bin 0 -> 1502223 bytes
+ design/shots/after/lesson-6-2-390.png              |   Bin 0 -> 384006 bytes
+ design/shots/after/lesson-6-3-1024.png             |   Bin 0 -> 927438 bytes
+ design/shots/after/lesson-6-3-1440.png             |   Bin 0 -> 1499957 bytes
+ design/shots/after/lesson-6-3-390.png              |   Bin 0 -> 381252 bytes
+ design/shots/after/lesson-7-1-1024.png             |   Bin 0 -> 927726 bytes
+ design/shots/after/lesson-7-1-1440.png             |   Bin 0 -> 1505111 bytes
+ design/shots/after/lesson-7-1-390.png              |   Bin 0 -> 381739 bytes
+ design/shots/after/lesson-7-2-1024.png             |   Bin 0 -> 924398 bytes
+ design/shots/after/lesson-7-2-1440.png             |   Bin 0 -> 1507608 bytes
+ design/shots/after/lesson-7-2-390.png              |   Bin 0 -> 384566 bytes
+ design/shots/after/lesson-8-1-1024.png             |   Bin 0 -> 926463 bytes
+ design/shots/after/lesson-8-1-1440.png             |   Bin 0 -> 1499840 bytes
+ design/shots/after/lesson-8-1-390.png              |   Bin 0 -> 380627 bytes
+ design/shots/after/lesson-8-2-1024.png             |   Bin 0 -> 930131 bytes
+ design/shots/after/lesson-8-2-1440.png             |   Bin 0 -> 1504523 bytes
+ design/shots/after/lesson-8-2-390.png              |   Bin 0 -> 382631 bytes
+ design/shots/after/lesson-9-1-1024.png             |   Bin 0 -> 919305 bytes
+ design/shots/after/lesson-9-1-1440.png             |   Bin 0 -> 1507689 bytes
+ design/shots/after/lesson-9-1-390.png              |   Bin 0 -> 388159 bytes
+ design/shots/after/lesson-9-2-1024.png             |   Bin 0 -> 922552 bytes
+ design/shots/after/lesson-9-2-1440.png             |   Bin 0 -> 1501871 bytes
+ design/shots/after/lesson-9-2-390.png              |   Bin 0 -> 384009 bytes
+ design/shots/after/play-1024.png                   |   Bin 0 -> 878444 bytes
+ design/shots/after/play-1440.png                   |   Bin 0 -> 1469154 bytes
+ design/shots/after/play-390.png                    |   Bin 0 -> 380019 bytes
+ design/shots/after/progress-1024.png               |   Bin 0 -> 880483 bytes
+ design/shots/after/progress-1440.png               |   Bin 0 -> 1433327 bytes
+ design/shots/after/progress-390.png                |   Bin 0 -> 387153 bytes
+ design/shots/after/tools-1024.png                  |   Bin 0 -> 895903 bytes
+ design/shots/after/tools-1440.png                  |   Bin 0 -> 1450713 bytes
+ design/shots/after/tools-390.png                   |   Bin 0 -> 383533 bytes
+ design/shots/after/tools-bankroll-1024.png         |   Bin 0 -> 903355 bytes
+ design/shots/after/tools-bankroll-1440.png         |   Bin 0 -> 1486739 bytes
+ design/shots/after/tools-bankroll-390.png          |   Bin 0 -> 389480 bytes
+ design/shots/after/tools-charts-1024.png           |   Bin 0 -> 910972 bytes
+ design/shots/after/tools-charts-1440.png           |   Bin 0 -> 1474318 bytes
+ design/shots/after/tools-charts-390.png            |   Bin 0 -> 394738 bytes
+ design/shots/after/tools-events-1024.png           |   Bin 0 -> 913211 bytes
+ design/shots/after/tools-events-1440.png           |   Bin 0 -> 1470973 bytes
+ design/shots/after/tools-events-390.png            |   Bin 0 -> 396976 bytes
+ design/shots/after/tools-ranges-1024.png           |   Bin 0 -> 911399 bytes
+ design/shots/after/tools-ranges-1440.png           |   Bin 0 -> 1471188 bytes
+ design/shots/after/tools-ranges-390.png            |   Bin 0 -> 398605 bytes
+ design/shots/after/tools-shuffle-1024.png          |   Bin 0 -> 905287 bytes
+ design/shots/after/tools-shuffle-1440.png          |   Bin 0 -> 1460252 bytes
+ design/shots/after/tools-shuffle-390.png           |   Bin 0 -> 394223 bytes
+ design/shots/after/tools-tools-icm-1024.png        |   Bin 0 -> 911357 bytes
+ design/shots/after/tools-tools-icm-1440.png        |   Bin 0 -> 1469248 bytes
+ design/shots/after/tools-tools-icm-390.png         |   Bin 0 -> 389787 bytes
+ design/shots/after/tools-tools-insurance-1024.png  |   Bin 0 -> 918007 bytes
+ design/shots/after/tools-tools-insurance-1440.png  |   Bin 0 -> 1469932 bytes
+ design/shots/after/tools-tools-insurance-390.png   |   Bin 0 -> 393032 bytes
+ design/shots/after/tools-tools-push-1024.png       |   Bin 0 -> 908458 bytes
+ design/shots/after/tools-tools-push-1440.png       |   Bin 0 -> 1490161 bytes
+ design/shots/after/tools-tools-push-390.png        |   Bin 0 -> 389873 bytes
+ design/shots/after/tools-tools-sizing-1024.png     |   Bin 0 -> 908072 bytes
+ design/shots/after/tools-tools-sizing-1440.png     |   Bin 0 -> 1498979 bytes
+ design/shots/after/tools-tools-sizing-390.png      |   Bin 0 -> 391764 bytes
+ design/shots/before/audit.json                     |  1170 ++
+ design/shots/before/course-1440.png                |   Bin 0 -> 1775960 bytes
+ design/shots/before/course-390.png                 |   Bin 0 -> 467644 bytes
+ design/shots/before/drills-1440.png                |   Bin 0 -> 1764094 bytes
+ design/shots/before/drills-390.png                 |   Bin 0 -> 466915 bytes
+ design/shots/before/drills-akq-1440.png            |   Bin 0 -> 1757237 bytes
+ design/shots/before/drills-akq-390.png             |   Bin 0 -> 475510 bytes
+ design/shots/before/drills-call-1440.png           |   Bin 0 -> 1753694 bytes
+ design/shots/before/drills-call-390.png            |   Bin 0 -> 476198 bytes
+ design/shots/before/drills-combo-1440.png          |   Bin 0 -> 1768591 bytes
+ design/shots/before/drills-combo-390.png           |   Bin 0 -> 473510 bytes
+ design/shots/before/drills-guess-1440.png          |   Bin 0 -> 1767085 bytes
+ design/shots/before/drills-guess-390.png           |   Bin 0 -> 472516 bytes
+ design/shots/before/drills-streak-1440.png         |   Bin 0 -> 1770930 bytes
+ design/shots/before/drills-streak-390.png          |   Bin 0 -> 467337 bytes
+ design/shots/before/home-1440.png                  |   Bin 0 -> 1879543 bytes
+ design/shots/before/home-390.png                   |   Bin 0 -> 499182 bytes
+ design/shots/before/lesson-0-1-1440.png            |   Bin 0 -> 1783787 bytes
+ design/shots/before/lesson-0-1-390.png             |   Bin 0 -> 458979 bytes
+ design/shots/before/lesson-0-2-1440.png            |   Bin 0 -> 1781745 bytes
+ design/shots/before/lesson-0-2-390.png             |   Bin 0 -> 460778 bytes
+ design/shots/before/lesson-1-1-1440.png            |   Bin 0 -> 1786626 bytes
+ design/shots/before/lesson-1-1-390.png             |   Bin 0 -> 461834 bytes
+ design/shots/before/lesson-1-2-1440.png            |   Bin 0 -> 1793445 bytes
+ design/shots/before/lesson-1-2-390.png             |   Bin 0 -> 461465 bytes
+ design/shots/before/lesson-10-1-1440.png           |   Bin 0 -> 1794545 bytes
+ design/shots/before/lesson-10-1-390.png            |   Bin 0 -> 464822 bytes
+ design/shots/before/lesson-10-2-1440.png           |   Bin 0 -> 1794656 bytes
+ design/shots/before/lesson-10-2-390.png            |   Bin 0 -> 465574 bytes
+ design/shots/before/lesson-11-1-1440.png           |   Bin 0 -> 1792329 bytes
+ design/shots/before/lesson-11-1-390.png            |   Bin 0 -> 463714 bytes
+ design/shots/before/lesson-11-2-1440.png           |   Bin 0 -> 1792925 bytes
+ design/shots/before/lesson-11-2-390.png            |   Bin 0 -> 465599 bytes
+ design/shots/before/lesson-12-1-1440.png           |   Bin 0 -> 1795635 bytes
+ design/shots/before/lesson-12-1-390.png            |   Bin 0 -> 464582 bytes
+ design/shots/before/lesson-12-2-1440.png           |   Bin 0 -> 1792071 bytes
+ design/shots/before/lesson-12-2-390.png            |   Bin 0 -> 463729 bytes
+ design/shots/before/lesson-13-1-1440.png           |   Bin 0 -> 1791347 bytes
+ design/shots/before/lesson-13-1-390.png            |   Bin 0 -> 460997 bytes
+ design/shots/before/lesson-13-2-1440.png           |   Bin 0 -> 1795093 bytes
+ design/shots/before/lesson-13-2-390.png            |   Bin 0 -> 464453 bytes
+ design/shots/before/lesson-14-1-1440.png           |   Bin 0 -> 1793567 bytes
+ design/shots/before/lesson-14-1-390.png            |   Bin 0 -> 465486 bytes
+ design/shots/before/lesson-14-2-1440.png           |   Bin 0 -> 1794066 bytes
+ design/shots/before/lesson-14-2-390.png            |   Bin 0 -> 464211 bytes
+ design/shots/before/lesson-15-1-1440.png           |   Bin 0 -> 1797827 bytes
+ design/shots/before/lesson-15-1-390.png            |   Bin 0 -> 463831 bytes
+ design/shots/before/lesson-15-2-1440.png           |   Bin 0 -> 1796726 bytes
+ design/shots/before/lesson-15-2-390.png            |   Bin 0 -> 465365 bytes
+ design/shots/before/lesson-16-1-1440.png           |   Bin 0 -> 1795370 bytes
+ design/shots/before/lesson-16-1-390.png            |   Bin 0 -> 462788 bytes
+ design/shots/before/lesson-16-2-1440.png           |   Bin 0 -> 1794947 bytes
+ design/shots/before/lesson-16-2-390.png            |   Bin 0 -> 465098 bytes
+ design/shots/before/lesson-17-1-1440.png           |   Bin 0 -> 1795045 bytes
+ design/shots/before/lesson-17-1-390.png            |   Bin 0 -> 463807 bytes
+ design/shots/before/lesson-17-2-1440.png           |   Bin 0 -> 1794650 bytes
+ design/shots/before/lesson-17-2-390.png            |   Bin 0 -> 464724 bytes
+ design/shots/before/lesson-18-1-1440.png           |   Bin 0 -> 1800298 bytes
+ design/shots/before/lesson-18-1-390.png            |   Bin 0 -> 464866 bytes
+ design/shots/before/lesson-18-2-1440.png           |   Bin 0 -> 1799636 bytes
+ design/shots/before/lesson-18-2-390.png            |   Bin 0 -> 465534 bytes
+ design/shots/before/lesson-19-1-1440.png           |   Bin 0 -> 1790352 bytes
+ design/shots/before/lesson-19-1-390.png            |   Bin 0 -> 462538 bytes
+ design/shots/before/lesson-19-2-1440.png           |   Bin 0 -> 1792760 bytes
+ design/shots/before/lesson-19-2-390.png            |   Bin 0 -> 464646 bytes
+ design/shots/before/lesson-2-1-1440.png            |   Bin 0 -> 1785550 bytes
+ design/shots/before/lesson-2-1-390.png             |   Bin 0 -> 458608 bytes
+ design/shots/before/lesson-2-2-1440.png            |   Bin 0 -> 1790770 bytes
+ design/shots/before/lesson-2-2-390.png             |   Bin 0 -> 462839 bytes
+ design/shots/before/lesson-20-1-1440.png           |   Bin 0 -> 1791392 bytes
+ design/shots/before/lesson-20-1-390.png            |   Bin 0 -> 463603 bytes
+ design/shots/before/lesson-20-2-1440.png           |   Bin 0 -> 1796526 bytes
+ design/shots/before/lesson-20-2-390.png            |   Bin 0 -> 461600 bytes
+ design/shots/before/lesson-21-1-1440.png           |   Bin 0 -> 1789293 bytes
+ design/shots/before/lesson-21-1-390.png            |   Bin 0 -> 463394 bytes
+ design/shots/before/lesson-21-2-1440.png           |   Bin 0 -> 1789865 bytes
+ design/shots/before/lesson-21-2-390.png            |   Bin 0 -> 463135 bytes
+ design/shots/before/lesson-22-1-1440.png           |   Bin 0 -> 1789726 bytes
+ design/shots/before/lesson-22-1-390.png            |   Bin 0 -> 459467 bytes
+ design/shots/before/lesson-22-2-1440.png           |   Bin 0 -> 1795578 bytes
+ design/shots/before/lesson-22-2-390.png            |   Bin 0 -> 465577 bytes
+ design/shots/before/lesson-23-1-1440.png           |   Bin 0 -> 1792562 bytes
+ design/shots/before/lesson-23-1-390.png            |   Bin 0 -> 463573 bytes
+ design/shots/before/lesson-23-2-1440.png           |   Bin 0 -> 1789241 bytes
+ design/shots/before/lesson-23-2-390.png            |   Bin 0 -> 461903 bytes
+ design/shots/before/lesson-24-1-1440.png           |   Bin 0 -> 1791713 bytes
+ design/shots/before/lesson-24-1-390.png            |   Bin 0 -> 463686 bytes
+ design/shots/before/lesson-24-2-1440.png           |   Bin 0 -> 1792247 bytes
+ design/shots/before/lesson-24-2-390.png            |   Bin 0 -> 463609 bytes
+ design/shots/before/lesson-25-1-1440.png           |   Bin 0 -> 1792039 bytes
+ design/shots/before/lesson-25-1-390.png            |   Bin 0 -> 464553 bytes
+ design/shots/before/lesson-25-2-1440.png           |   Bin 0 -> 1791100 bytes
+ design/shots/before/lesson-25-2-390.png            |   Bin 0 -> 464382 bytes
+ design/shots/before/lesson-3-1-1440.png            |   Bin 0 -> 1785711 bytes
+ design/shots/before/lesson-3-1-390.png             |   Bin 0 -> 460855 bytes
+ design/shots/before/lesson-3-2-1440.png            |   Bin 0 -> 1784461 bytes
+ design/shots/before/lesson-3-2-390.png             |   Bin 0 -> 461831 bytes
+ design/shots/before/lesson-4-1-1440.png            |   Bin 0 -> 1785790 bytes
+ design/shots/before/lesson-4-1-390.png             |   Bin 0 -> 461582 bytes
+ design/shots/before/lesson-4-2-1440.png            |   Bin 0 -> 1791015 bytes
+ design/shots/before/lesson-4-2-390.png             |   Bin 0 -> 463158 bytes
+ design/shots/before/lesson-5-1-1440.png            |   Bin 0 -> 1790396 bytes
+ design/shots/before/lesson-5-1-390.png             |   Bin 0 -> 462232 bytes
+ design/shots/before/lesson-5-2-1440.png            |   Bin 0 -> 1794868 bytes
+ design/shots/before/lesson-5-2-390.png             |   Bin 0 -> 459452 bytes
+ design/shots/before/lesson-6-1-1440.png            |   Bin 0 -> 1793843 bytes
+ design/shots/before/lesson-6-1-390.png             |   Bin 0 -> 459542 bytes
+ design/shots/before/lesson-6-2-1440.png            |   Bin 0 -> 1794956 bytes
+ design/shots/before/lesson-6-2-390.png             |   Bin 0 -> 464890 bytes
+ design/shots/before/lesson-6-3-1440.png            |   Bin 0 -> 1795700 bytes
+ design/shots/before/lesson-6-3-390.png             |   Bin 0 -> 464372 bytes
+ design/shots/before/lesson-7-1-1440.png            |   Bin 0 -> 1789320 bytes
+ design/shots/before/lesson-7-1-390.png             |   Bin 0 -> 461722 bytes
+ design/shots/before/lesson-7-2-1440.png            |   Bin 0 -> 1797299 bytes
+ design/shots/before/lesson-7-2-390.png             |   Bin 0 -> 462714 bytes
+ design/shots/before/lesson-8-1-1440.png            |   Bin 0 -> 1798106 bytes
+ design/shots/before/lesson-8-1-390.png             |   Bin 0 -> 464062 bytes
+ design/shots/before/lesson-8-2-1440.png            |   Bin 0 -> 1799275 bytes
+ design/shots/before/lesson-8-2-390.png             |   Bin 0 -> 464937 bytes
+ design/shots/before/lesson-9-1-1440.png            |   Bin 0 -> 1791317 bytes
+ design/shots/before/lesson-9-1-390.png             |   Bin 0 -> 463891 bytes
+ design/shots/before/lesson-9-2-1440.png            |   Bin 0 -> 1798476 bytes
+ design/shots/before/lesson-9-2-390.png             |   Bin 0 -> 465417 bytes
+ design/shots/before/play-1440.png                  |   Bin 0 -> 1778358 bytes
+ design/shots/before/play-390.png                   |   Bin 0 -> 469590 bytes
+ design/shots/before/progress-1440.png              |   Bin 0 -> 1744324 bytes
+ design/shots/before/progress-390.png               |   Bin 0 -> 462692 bytes
+ design/shots/before/tools-1440.png                 |   Bin 0 -> 1740176 bytes
+ design/shots/before/tools-390.png                  |   Bin 0 -> 462023 bytes
+ design/shots/before/tools-bankroll-1440.png        |   Bin 0 -> 1749847 bytes
+ design/shots/before/tools-bankroll-390.png         |   Bin 0 -> 464415 bytes
+ design/shots/before/tools-charts-1440.png          |   Bin 0 -> 1749819 bytes
+ design/shots/before/tools-charts-390.png           |   Bin 0 -> 460950 bytes
+ design/shots/before/tools-events-1440.png          |   Bin 0 -> 1756001 bytes
+ design/shots/before/tools-events-390.png           |   Bin 0 -> 462856 bytes
+ design/shots/before/tools-ranges-1440.png          |   Bin 0 -> 1755039 bytes
+ design/shots/before/tools-ranges-390.png           |   Bin 0 -> 461635 bytes
+ design/shots/before/tools-shuffle-1440.png         |   Bin 0 -> 1756276 bytes
+ design/shots/before/tools-shuffle-390.png          |   Bin 0 -> 460606 bytes
+ design/shots/before/tools-tools-icm-1440.png       |   Bin 0 -> 1758537 bytes
+ design/shots/before/tools-tools-icm-390.png        |   Bin 0 -> 464029 bytes
+ design/shots/before/tools-tools-insurance-1440.png |   Bin 0 -> 1753828 bytes
+ design/shots/before/tools-tools-insurance-390.png  |   Bin 0 -> 465163 bytes
+ design/shots/before/tools-tools-push-1440.png      |   Bin 0 -> 1760171 bytes
+ design/shots/before/tools-tools-push-390.png       |   Bin 0 -> 461141 bytes
+ design/shots/before/tools-tools-sizing-1440.png    |   Bin 0 -> 1762712 bytes
+ design/shots/before/tools-tools-sizing-390.png     |   Bin 0 -> 463659 bytes
+ design/shots/details/drill-question-1024.png       |   Bin 0 -> 885866 bytes
+ design/shots/details/drill-question-1440.png       |   Bin 0 -> 1425960 bytes
+ design/shots/details/drill-question-390.png        |   Bin 0 -> 383283 bytes
+ design/shots/details/lesson-reading-1024.png       |   Bin 0 -> 965918 bytes
+ design/shots/details/lesson-reading-1440.png       |   Bin 0 -> 1555918 bytes
+ design/shots/details/lesson-reading-390.png        |   Bin 0 -> 411808 bytes
+ design/shots/details/play-table-1024.png           |   Bin 0 -> 897279 bytes
+ design/shots/details/play-table-1440.png           |   Bin 0 -> 1526176 bytes
+ design/shots/details/play-table-390.png            |   Bin 0 -> 385785 bytes
+ design/shots/grid/course-1024.png                  |   Bin 0 -> 1016364 bytes
+ design/shots/grid/course-1440.png                  |   Bin 0 -> 1612124 bytes
+ design/shots/grid/course-390.png                   |   Bin 0 -> 424371 bytes
+ design/shots/grid/drills-1024.png                  |   Bin 0 -> 932743 bytes
+ design/shots/grid/drills-1440.png                  |   Bin 0 -> 1514312 bytes
+ design/shots/grid/drills-390.png                   |   Bin 0 -> 404492 bytes
+ design/shots/grid/drills-akq-1024.png              |   Bin 0 -> 925152 bytes
+ design/shots/grid/drills-akq-1440.png              |   Bin 0 -> 1501302 bytes
+ design/shots/grid/drills-akq-390.png               |   Bin 0 -> 399566 bytes
+ design/shots/grid/drills-call-1024.png             |   Bin 0 -> 930786 bytes
+ design/shots/grid/drills-call-1440.png             |   Bin 0 -> 1503821 bytes
+ design/shots/grid/drills-call-390.png              |   Bin 0 -> 402991 bytes
+ design/shots/grid/drills-combo-1024.png            |   Bin 0 -> 931273 bytes
+ design/shots/grid/drills-combo-1440.png            |   Bin 0 -> 1504415 bytes
+ design/shots/grid/drills-combo-390.png             |   Bin 0 -> 404115 bytes
+ design/shots/grid/drills-guess-1024.png            |   Bin 0 -> 932029 bytes
+ design/shots/grid/drills-guess-1440.png            |   Bin 0 -> 1505107 bytes
+ design/shots/grid/drills-guess-390.png             |   Bin 0 -> 404337 bytes
+ design/shots/grid/drills-streak-1024.png           |   Bin 0 -> 926748 bytes
+ design/shots/grid/drills-streak-1440.png           |   Bin 0 -> 1501374 bytes
+ design/shots/grid/drills-streak-390.png            |   Bin 0 -> 399524 bytes
+ design/shots/grid/home-1024.png                    |   Bin 0 -> 918689 bytes
+ design/shots/grid/home-1440.png                    |   Bin 0 -> 1495949 bytes
+ design/shots/grid/home-390.png                     |   Bin 0 -> 389547 bytes
+ design/shots/grid/lesson-0-1-1024.png              |   Bin 0 -> 955203 bytes
+ design/shots/grid/lesson-0-1-1440.png              |   Bin 0 -> 1552775 bytes
+ design/shots/grid/lesson-0-1-390.png               |   Bin 0 -> 392090 bytes
+ design/shots/grid/lesson-0-2-1024.png              |   Bin 0 -> 957610 bytes
+ design/shots/grid/lesson-0-2-1440.png              |   Bin 0 -> 1550098 bytes
+ design/shots/grid/lesson-0-2-390.png               |   Bin 0 -> 396676 bytes
+ design/shots/grid/lesson-1-1-1024.png              |   Bin 0 -> 960117 bytes
+ design/shots/grid/lesson-1-1-1440.png              |   Bin 0 -> 1558628 bytes
+ design/shots/grid/lesson-1-1-390.png               |   Bin 0 -> 394957 bytes
+ design/shots/grid/lesson-1-2-1024.png              |   Bin 0 -> 962962 bytes
+ design/shots/grid/lesson-1-2-1440.png              |   Bin 0 -> 1556242 bytes
+ design/shots/grid/lesson-1-2-390.png               |   Bin 0 -> 397560 bytes
+ design/shots/grid/lesson-10-1-1024.png             |   Bin 0 -> 950823 bytes
+ design/shots/grid/lesson-10-1-1440.png             |   Bin 0 -> 1557797 bytes
+ design/shots/grid/lesson-10-1-390.png              |   Bin 0 -> 398093 bytes
+ design/shots/grid/lesson-10-2-1024.png             |   Bin 0 -> 949875 bytes
+ design/shots/grid/lesson-10-2-1440.png             |   Bin 0 -> 1560574 bytes
+ design/shots/grid/lesson-10-2-390.png              |   Bin 0 -> 399647 bytes
+ design/shots/grid/lesson-11-1-1024.png             |   Bin 0 -> 948274 bytes
+ design/shots/grid/lesson-11-1-1440.png             |   Bin 0 -> 1551960 bytes
+ design/shots/grid/lesson-11-1-390.png              |   Bin 0 -> 397235 bytes
+ design/shots/grid/lesson-11-2-1024.png             |   Bin 0 -> 948229 bytes
+ design/shots/grid/lesson-11-2-1440.png             |   Bin 0 -> 1552527 bytes
+ design/shots/grid/lesson-11-2-390.png              |   Bin 0 -> 399693 bytes
+ design/shots/grid/lesson-12-1-1024.png             |   Bin 0 -> 958835 bytes
+ design/shots/grid/lesson-12-1-1440.png             |   Bin 0 -> 1559915 bytes
+ design/shots/grid/lesson-12-1-390.png              |   Bin 0 -> 402220 bytes
+ design/shots/grid/lesson-12-2-1024.png             |   Bin 0 -> 958372 bytes
+ design/shots/grid/lesson-12-2-1440.png             |   Bin 0 -> 1554146 bytes
+ design/shots/grid/lesson-12-2-390.png              |   Bin 0 -> 397704 bytes
+ design/shots/grid/lesson-13-1-1024.png             |   Bin 0 -> 950999 bytes
+ design/shots/grid/lesson-13-1-1440.png             |   Bin 0 -> 1559012 bytes
+ design/shots/grid/lesson-13-1-390.png              |   Bin 0 -> 399685 bytes
+ design/shots/grid/lesson-13-2-1024.png             |   Bin 0 -> 959131 bytes
+ design/shots/grid/lesson-13-2-1440.png             |   Bin 0 -> 1554964 bytes
+ design/shots/grid/lesson-13-2-390.png              |   Bin 0 -> 397580 bytes
+ design/shots/grid/lesson-14-1-1024.png             |   Bin 0 -> 951465 bytes
+ design/shots/grid/lesson-14-1-1440.png             |   Bin 0 -> 1557918 bytes
+ design/shots/grid/lesson-14-1-390.png              |   Bin 0 -> 399803 bytes
+ design/shots/grid/lesson-14-2-1024.png             |   Bin 0 -> 947640 bytes
+ design/shots/grid/lesson-14-2-1440.png             |   Bin 0 -> 1562478 bytes
+ design/shots/grid/lesson-14-2-390.png              |   Bin 0 -> 399471 bytes
+ design/shots/grid/lesson-15-1-1024.png             |   Bin 0 -> 953647 bytes
+ design/shots/grid/lesson-15-1-1440.png             |   Bin 0 -> 1564591 bytes
+ design/shots/grid/lesson-15-1-390.png              |   Bin 0 -> 401317 bytes
+ design/shots/grid/lesson-15-2-1024.png             |   Bin 0 -> 952286 bytes
+ design/shots/grid/lesson-15-2-1440.png             |   Bin 0 -> 1562639 bytes
+ design/shots/grid/lesson-15-2-390.png              |   Bin 0 -> 400505 bytes
+ design/shots/grid/lesson-16-1-1024.png             |   Bin 0 -> 948449 bytes
+ design/shots/grid/lesson-16-1-1440.png             |   Bin 0 -> 1558446 bytes
+ design/shots/grid/lesson-16-1-390.png              |   Bin 0 -> 399099 bytes
+ design/shots/grid/lesson-16-2-1024.png             |   Bin 0 -> 956925 bytes
+ design/shots/grid/lesson-16-2-1440.png             |   Bin 0 -> 1559293 bytes
+ design/shots/grid/lesson-16-2-390.png              |   Bin 0 -> 397643 bytes
+ design/shots/grid/lesson-17-1-1024.png             |   Bin 0 -> 952278 bytes
+ design/shots/grid/lesson-17-1-1440.png             |   Bin 0 -> 1567190 bytes
+ design/shots/grid/lesson-17-1-390.png              |   Bin 0 -> 400905 bytes
+ design/shots/grid/lesson-17-2-1024.png             |   Bin 0 -> 950776 bytes
+ design/shots/grid/lesson-17-2-1440.png             |   Bin 0 -> 1555350 bytes
+ design/shots/grid/lesson-17-2-390.png              |   Bin 0 -> 401934 bytes
+ design/shots/grid/lesson-18-1-1024.png             |   Bin 0 -> 951596 bytes
+ design/shots/grid/lesson-18-1-1440.png             |   Bin 0 -> 1565156 bytes
+ design/shots/grid/lesson-18-1-390.png              |   Bin 0 -> 398487 bytes
+ design/shots/grid/lesson-18-2-1024.png             |   Bin 0 -> 965085 bytes
+ design/shots/grid/lesson-18-2-1440.png             |   Bin 0 -> 1559079 bytes
+ design/shots/grid/lesson-18-2-390.png              |   Bin 0 -> 399436 bytes
+ design/shots/grid/lesson-19-1-1024.png             |   Bin 0 -> 949148 bytes
+ design/shots/grid/lesson-19-1-1440.png             |   Bin 0 -> 1556867 bytes
+ design/shots/grid/lesson-19-1-390.png              |   Bin 0 -> 397895 bytes
+ design/shots/grid/lesson-19-2-1024.png             |   Bin 0 -> 956187 bytes
+ design/shots/grid/lesson-19-2-1440.png             |   Bin 0 -> 1557360 bytes
+ design/shots/grid/lesson-19-2-390.png              |   Bin 0 -> 398947 bytes
+ design/shots/grid/lesson-2-1-1024.png              |   Bin 0 -> 960784 bytes
+ design/shots/grid/lesson-2-1-1440.png              |   Bin 0 -> 1552813 bytes
+ design/shots/grid/lesson-2-1-390.png               |   Bin 0 -> 398040 bytes
+ design/shots/grid/lesson-2-2-1024.png              |   Bin 0 -> 956974 bytes
+ design/shots/grid/lesson-2-2-1440.png              |   Bin 0 -> 1549557 bytes
+ design/shots/grid/lesson-2-2-390.png               |   Bin 0 -> 394926 bytes
+ design/shots/grid/lesson-20-1-1024.png             |   Bin 0 -> 958160 bytes
+ design/shots/grid/lesson-20-1-1440.png             |   Bin 0 -> 1561155 bytes
+ design/shots/grid/lesson-20-1-390.png              |   Bin 0 -> 395735 bytes
+ design/shots/grid/lesson-20-2-1024.png             |   Bin 0 -> 962212 bytes
+ design/shots/grid/lesson-20-2-1440.png             |   Bin 0 -> 1565484 bytes
+ design/shots/grid/lesson-20-2-390.png              |   Bin 0 -> 400718 bytes
+ design/shots/grid/lesson-21-1-1024.png             |   Bin 0 -> 965351 bytes
+ design/shots/grid/lesson-21-1-1440.png             |   Bin 0 -> 1557096 bytes
+ design/shots/grid/lesson-21-1-390.png              |   Bin 0 -> 398338 bytes
+ design/shots/grid/lesson-21-2-1024.png             |   Bin 0 -> 964104 bytes
+ design/shots/grid/lesson-21-2-1440.png             |   Bin 0 -> 1555680 bytes
+ design/shots/grid/lesson-21-2-390.png              |   Bin 0 -> 397968 bytes
+ design/shots/grid/lesson-22-1-1024.png             |   Bin 0 -> 946445 bytes
+ design/shots/grid/lesson-22-1-1440.png             |   Bin 0 -> 1554003 bytes
+ design/shots/grid/lesson-22-1-390.png              |   Bin 0 -> 396042 bytes
+ design/shots/grid/lesson-22-2-1024.png             |   Bin 0 -> 962585 bytes
+ design/shots/grid/lesson-22-2-1440.png             |   Bin 0 -> 1552739 bytes
+ design/shots/grid/lesson-22-2-390.png              |   Bin 0 -> 396408 bytes
+ design/shots/grid/lesson-23-1-1024.png             |   Bin 0 -> 960547 bytes
+ design/shots/grid/lesson-23-1-1440.png             |   Bin 0 -> 1555619 bytes
+ design/shots/grid/lesson-23-1-390.png              |   Bin 0 -> 398529 bytes
+ design/shots/grid/lesson-23-2-1024.png             |   Bin 0 -> 956307 bytes
+ design/shots/grid/lesson-23-2-1440.png             |   Bin 0 -> 1561475 bytes
+ design/shots/grid/lesson-23-2-390.png              |   Bin 0 -> 399571 bytes
+ design/shots/grid/lesson-24-1-1024.png             |   Bin 0 -> 953296 bytes
+ design/shots/grid/lesson-24-1-1440.png             |   Bin 0 -> 1552689 bytes
+ design/shots/grid/lesson-24-1-390.png              |   Bin 0 -> 395412 bytes
+ design/shots/grid/lesson-24-2-1024.png             |   Bin 0 -> 948273 bytes
+ design/shots/grid/lesson-24-2-1440.png             |   Bin 0 -> 1564032 bytes
+ design/shots/grid/lesson-24-2-390.png              |   Bin 0 -> 398244 bytes
+ design/shots/grid/lesson-25-1-1024.png             |   Bin 0 -> 948040 bytes
+ design/shots/grid/lesson-25-1-1440.png             |   Bin 0 -> 1553484 bytes
+ design/shots/grid/lesson-25-1-390.png              |   Bin 0 -> 399409 bytes
+ design/shots/grid/lesson-25-2-1024.png             |   Bin 0 -> 957944 bytes
+ design/shots/grid/lesson-25-2-1440.png             |   Bin 0 -> 1551079 bytes
+ design/shots/grid/lesson-25-2-390.png              |   Bin 0 -> 399356 bytes
+ design/shots/grid/lesson-3-1-1024.png              |   Bin 0 -> 960149 bytes
+ design/shots/grid/lesson-3-1-1440.png              |   Bin 0 -> 1550890 bytes
+ design/shots/grid/lesson-3-1-390.png               |   Bin 0 -> 398039 bytes
+ design/shots/grid/lesson-3-2-1024.png              |   Bin 0 -> 959651 bytes
+ design/shots/grid/lesson-3-2-1440.png              |   Bin 0 -> 1551113 bytes
+ design/shots/grid/lesson-3-2-390.png               |   Bin 0 -> 397853 bytes
+ design/shots/grid/lesson-4-1-1024.png              |   Bin 0 -> 960014 bytes
+ design/shots/grid/lesson-4-1-1440.png              |   Bin 0 -> 1554321 bytes
+ design/shots/grid/lesson-4-1-390.png               |   Bin 0 -> 397248 bytes
+ design/shots/grid/lesson-4-2-1024.png              |   Bin 0 -> 959940 bytes
+ design/shots/grid/lesson-4-2-1440.png              |   Bin 0 -> 1553941 bytes
+ design/shots/grid/lesson-4-2-390.png               |   Bin 0 -> 396414 bytes
+ design/shots/grid/lesson-5-1-1024.png              |   Bin 0 -> 959797 bytes
+ design/shots/grid/lesson-5-1-1440.png              |   Bin 0 -> 1549244 bytes
+ design/shots/grid/lesson-5-1-390.png               |   Bin 0 -> 394509 bytes
+ design/shots/grid/lesson-5-2-1024.png              |   Bin 0 -> 961558 bytes
+ design/shots/grid/lesson-5-2-1440.png              |   Bin 0 -> 1556279 bytes
+ design/shots/grid/lesson-5-2-390.png               |   Bin 0 -> 394940 bytes
+ design/shots/grid/lesson-6-1-1024.png              |   Bin 0 -> 957855 bytes
+ design/shots/grid/lesson-6-1-1440.png              |   Bin 0 -> 1559737 bytes
+ design/shots/grid/lesson-6-1-390.png               |   Bin 0 -> 397908 bytes
+ design/shots/grid/lesson-6-2-1024.png              |   Bin 0 -> 959218 bytes
+ design/shots/grid/lesson-6-2-1440.png              |   Bin 0 -> 1555823 bytes
+ design/shots/grid/lesson-6-2-390.png               |   Bin 0 -> 399285 bytes
+ design/shots/grid/lesson-6-3-1024.png              |   Bin 0 -> 957549 bytes
+ design/shots/grid/lesson-6-3-1440.png              |   Bin 0 -> 1553348 bytes
+ design/shots/grid/lesson-6-3-390.png               |   Bin 0 -> 396284 bytes
+ design/shots/grid/lesson-7-1-1024.png              |   Bin 0 -> 958552 bytes
+ design/shots/grid/lesson-7-1-1440.png              |   Bin 0 -> 1559738 bytes
+ design/shots/grid/lesson-7-1-390.png               |   Bin 0 -> 397204 bytes
+ design/shots/grid/lesson-7-2-1024.png              |   Bin 0 -> 957423 bytes
+ design/shots/grid/lesson-7-2-1440.png              |   Bin 0 -> 1562680 bytes
+ design/shots/grid/lesson-7-2-390.png               |   Bin 0 -> 400085 bytes
+ design/shots/grid/lesson-8-1-1024.png              |   Bin 0 -> 957953 bytes
+ design/shots/grid/lesson-8-1-1440.png              |   Bin 0 -> 1555642 bytes
+ design/shots/grid/lesson-8-1-390.png               |   Bin 0 -> 396398 bytes
+ design/shots/grid/lesson-8-2-1024.png              |   Bin 0 -> 959621 bytes
+ design/shots/grid/lesson-8-2-1440.png              |   Bin 0 -> 1558905 bytes
+ design/shots/grid/lesson-8-2-390.png               |   Bin 0 -> 397636 bytes
+ design/shots/grid/lesson-9-1-1024.png              |   Bin 0 -> 951882 bytes
+ design/shots/grid/lesson-9-1-1440.png              |   Bin 0 -> 1563646 bytes
+ design/shots/grid/lesson-9-1-390.png               |   Bin 0 -> 403370 bytes
+ design/shots/grid/lesson-9-2-1024.png              |   Bin 0 -> 956664 bytes
+ design/shots/grid/lesson-9-2-1440.png              |   Bin 0 -> 1557740 bytes
+ design/shots/grid/lesson-9-2-390.png               |   Bin 0 -> 399690 bytes
+ design/shots/grid/play-1024.png                    |   Bin 0 -> 914269 bytes
+ design/shots/grid/play-1440.png                    |   Bin 0 -> 1517057 bytes
+ design/shots/grid/play-390.png                     |   Bin 0 -> 390911 bytes
+ design/shots/grid/progress-1024.png                |   Bin 0 -> 919573 bytes
+ design/shots/grid/progress-1440.png                |   Bin 0 -> 1501362 bytes
+ design/shots/grid/progress-390.png                 |   Bin 0 -> 402503 bytes
+ design/shots/grid/tools-1024.png                   |   Bin 0 -> 929008 bytes
+ design/shots/grid/tools-1440.png                   |   Bin 0 -> 1505802 bytes
+ design/shots/grid/tools-390.png                    |   Bin 0 -> 395236 bytes
+ design/shots/grid/tools-bankroll-1024.png          |   Bin 0 -> 932158 bytes
+ design/shots/grid/tools-bankroll-1440.png          |   Bin 0 -> 1539320 bytes
+ design/shots/grid/tools-bankroll-390.png           |   Bin 0 -> 399990 bytes
+ design/shots/grid/tools-charts-1024.png            |   Bin 0 -> 943002 bytes
+ design/shots/grid/tools-charts-1440.png            |   Bin 0 -> 1528723 bytes
+ design/shots/grid/tools-charts-390.png             |   Bin 0 -> 408978 bytes
+ design/shots/grid/tools-events-1024.png            |   Bin 0 -> 944101 bytes
+ design/shots/grid/tools-events-1440.png            |   Bin 0 -> 1525660 bytes
+ design/shots/grid/tools-events-390.png             |   Bin 0 -> 409034 bytes
+ design/shots/grid/tools-ranges-1024.png            |   Bin 0 -> 948260 bytes
+ design/shots/grid/tools-ranges-1440.png            |   Bin 0 -> 1527165 bytes
+ design/shots/grid/tools-ranges-390.png             |   Bin 0 -> 412334 bytes
+ design/shots/grid/tools-shuffle-1024.png           |   Bin 0 -> 940780 bytes
+ design/shots/grid/tools-shuffle-1440.png           |   Bin 0 -> 1520750 bytes
+ design/shots/grid/tools-shuffle-390.png            |   Bin 0 -> 408127 bytes
+ design/shots/grid/tools-tools-icm-1024.png         |   Bin 0 -> 942665 bytes
+ design/shots/grid/tools-tools-icm-1440.png         |   Bin 0 -> 1526954 bytes
+ design/shots/grid/tools-tools-icm-390.png          |   Bin 0 -> 403547 bytes
+ design/shots/grid/tools-tools-insurance-1024.png   |   Bin 0 -> 950166 bytes
+ design/shots/grid/tools-tools-insurance-1440.png   |   Bin 0 -> 1526031 bytes
+ design/shots/grid/tools-tools-insurance-390.png    |   Bin 0 -> 405722 bytes
+ design/shots/grid/tools-tools-push-1024.png        |   Bin 0 -> 939910 bytes
+ design/shots/grid/tools-tools-push-1440.png        |   Bin 0 -> 1542995 bytes
+ design/shots/grid/tools-tools-push-390.png         |   Bin 0 -> 403041 bytes
+ design/shots/grid/tools-tools-sizing-1024.png      |   Bin 0 -> 940884 bytes
+ design/shots/grid/tools-tools-sizing-1440.png      |   Bin 0 -> 1551848 bytes
+ design/shots/grid/tools-tools-sizing-390.png       |   Bin 0 -> 405235 bytes
+ design/shots/review-loop-1.json                    |  5210 ++++++++
+ design/shots/review-loop-2.json                    |  4972 ++++++++
+ docs/ARCHITECTURE.md                               |     4 +
+ docs/ROADMAP.md                                    |    11 +
+ docs/VISUAL-DESIGN.md                              |   174 +-
+ public/art/README.md                               |     1 +
+ public/art/club-overpass.png                       |   Bin 2260997 -> 0 bytes
+ public/art/hero.jpg                                |   Bin 27473 -> 0 bytes
+ public/art/plate-1280.avif                         |   Bin 0 -> 62196 bytes
+ public/art/plate-1280.webp                         |   Bin 0 -> 93886 bytes
+ public/art/plate-640.avif                          |   Bin 0 -> 3925 bytes
+ public/art/plate-640.webp                          |   Bin 0 -> 7714 bytes
+ scripts/audit-presentation.mjs                     |   131 +
+ scripts/build-plates.mjs                           |    70 +
+ scripts/capture-design.mjs                         |   102 +
+ scripts/contrast-check.mjs                         |    82 +
+ src/App.svelte                                     |    13 +-
+ src/decor/Callout.svelte                           |    10 -
+ src/decor/Caution.svelte                           |     7 -
+ src/decor/ChapterMark.svelte                       |    34 -
+ src/decor/Chevrons.svelte                          |    15 -
+ src/decor/CourseDirectory.svelte                   |    32 -
+ src/decor/CourseIndexLine.svelte                   |    23 +
+ src/decor/CourseRunIn.svelte                       |    27 -
+ src/decor/CropMarks.svelte                         |     7 -
+ src/decor/DataStripe.svelte                        |     9 +
+ src/decor/DecorLab.svelte                          |    22 -
+ src/decor/DecorShell.svelte                        |    33 +-
+ src/decor/Fetch.svelte                             |    28 -
+ src/decor/Foundation.svelte                        |    11 +-
+ src/decor/GeneratorLab.svelte                      |   105 -
+ src/decor/GhostWord.svelte                         |    18 -
+ src/decor/Hairlines.svelte                         |    20 -
+ src/decor/HomeDecor.svelte                         |    48 -
+ src/decor/HomeNavigation.svelte                    |    66 +-
+ src/decor/IssueNumber.svelte                       |    10 -
+ src/decor/LOGIC-LOCK.md                            |     2 +-
+ src/decor/LearningDecor.svelte                     |    44 -
+ src/decor/Masthead.svelte                          |     9 -
+ src/decor/MicroBlock.svelte                        |     8 -
+ src/decor/ModeDecor.svelte                         |    76 -
+ src/decor/ModularGrid.svelte                       |     9 -
+ src/decor/MotionPhoto.svelte                       |    34 -
+ src/decor/PageMasthead.svelte                      |    10 +
+ src/decor/PhotoPlate.svelte                        |    24 +
+ src/decor/PlayDecor.svelte                         |    47 -
+ src/decor/ProgressDecor.svelte                     |    74 -
+ src/decor/ProgressOverview.svelte                  |    30 +
+ src/decor/README.md                                |    82 +-
+ src/decor/Readout.svelte                           |    30 +
+ src/decor/RingGauge.svelte                         |    38 -
+ src/decor/RouteWipe.svelte                         |    12 -
+ src/decor/Ruler.svelte                             |    10 -
+ src/decor/RunIn.svelte                             |    13 -
+ src/decor/SideIndex.svelte                         |    76 +
+ src/decor/StatusBar.svelte                         |    72 +-
+ src/decor/Sticker.svelte                           |     9 -
+ src/decor/Stripes.svelte                           |     4 -
+ src/decor/Swoosh.svelte                            |     7 -
+ src/decor/TableEdge.svelte                         |    26 -
+ src/decor/ThumbStack.svelte                        |    12 -
+ src/decor/TypeDevice.svelte                        |   104 -
+ src/decor/WindowChrome.svelte                      |     7 -
+ src/decor/WindowFrame.svelte                       |    15 -
+ src/decor/callout.ts                               |   103 -
+ src/decor/copy.ts                                  |     9 -
+ src/decor/gen/Generator.svelte                     |    66 -
+ src/decor/gen/PhotoSlot.svelte                     |    42 -
+ src/decor/gen/abstract.ts                          |    86 -
+ src/decor/gen/budget.ts                            |    26 -
+ src/decor/gen/mathGraphics.ts                      |   214 -
+ src/decor/gen/photos.ts                            |   197 -
+ src/decor/gen/render.ts                            |    56 -
+ src/decor/gen/rng.ts                               |    11 -
+ src/decor/gen/types.ts                             |    43 -
+ src/decor/live.ts                                  |    62 -
+ src/decor/motion.ts                                |    28 -
+ src/decor/panelLabels.ts                           |    40 +
+ src/decor/playedClasses.ts                         |    20 -
+ src/decor/review/callout-audit.json                |    21 -
+ src/decor/review/checks.txt                        |    14 -
+ src/decor/review/course-1440.png                   |   Bin 1987962 -> 0 bytes
+ src/decor/review/course-375.png                    |   Bin 434599 -> 0 bytes
+ src/decor/review/course-index-1440.png             |   Bin 2014419 -> 0 bytes
+ src/decor/review/decor-lab-1440.png                |   Bin 4028150 -> 0 bytes
+ src/decor/review/decor-lab-375.png                 |   Bin 1256959 -> 0 bytes
+ src/decor/review/diff-stat.txt                     |    80 -
+ src/decor/review/drills-1440.png                   |   Bin 1946743 -> 0 bytes
+ src/decor/review/drills-375.png                    |   Bin 440465 -> 0 bytes
+ src/decor/review/functional-audit.json             |   210 -
+ src/decor/review/home-1440.png                     |   Bin 2076691 -> 0 bytes
+ src/decor/review/home-375.png                      |   Bin 468706 -> 0 bytes
+ src/decor/review/layout-audit.json                 |   156 -
+ src/decor/review/lesson-1440.png                   |   Bin 1983522 -> 0 bytes
+ src/decor/review/lesson-375.png                    |   Bin 430371 -> 0 bytes
+ src/decor/review/motion-audit.json                 |    65 -
+ src/decor/review/play-1440.png                     |   Bin 1987256 -> 0 bytes
+ src/decor/review/play-375.png                      |   Bin 435509 -> 0 bytes
+ src/decor/review/progress-1440.png                 |   Bin 1928334 -> 0 bytes
+ src/decor/review/progress-375.png                  |   Bin 424894 -> 0 bytes
+ src/decor/review/source-audit.txt                  |     8 -
+ src/decor/review/tools-1440.png                    |   Bin 1935467 -> 0 bytes
+ src/decor/review/tools-375.png                     |   Bin 428624 -> 0 bytes
+ src/decor/sections.ts                              |    10 +
+ src/features/arcade/Akq.svelte                     |     2 +-
+ src/features/arcade/DecisionDrills.svelte          |     4 +-
+ src/features/arcade/DrillSet.svelte                |     2 +
+ src/features/arcade/OutsRush.svelte                |     2 +-
+ src/features/arcade/Round.svelte                   |     2 +
+ src/features/arcade/Set.svelte                     |     2 +
+ src/features/arcade/StreakTrap.svelte              |     2 +-
+ src/features/lab/BankrollLab.svelte                |     2 +-
+ src/features/lab/EventBuilder.svelte               |     2 +-
+ src/features/lab/FinalCalculators.svelte           |     4 +-
+ src/features/lab/HandCharts.svelte                 |     2 +-
+ src/features/lab/Lab.svelte                        |     2 +-
+ src/features/lab/RangeLab.svelte                   |     2 +-
+ src/features/lab/ShuffleLab.svelte                 |     2 +-
+ src/features/learn/CourseContents.svelte           |     3 -
+ src/features/learn/CourseIndex.svelte              |     5 +-
+ src/features/learn/Learn.svelte                    |    11 +-
+ src/features/play/AmbientCards.svelte              |    84 -
+ src/features/play/CoachPanel.svelte                |     7 +
+ src/features/play/CoachSidebar.svelte              |     3 -
+ src/features/play/Home.svelte                      |    23 +-
+ src/features/play/Play.svelte                      |    21 +-
+ src/features/stats/Stats.svelte                    |     6 +-
+ src/styles/accessibility.css                       |   187 +
+ src/styles/chrome.css                              |   217 -
+ src/styles/course.css                              |   141 -
+ src/styles/decor.css                               |    19 +-
+ src/styles/devices.css                             |   413 +-
+ .../fonts/{Inter-Tight-OFL.txt => Archivo-OFL.txt} |     4 +-
+ src/styles/fonts/BUILD.md                          |    14 +
+ .../{Michroma-OFL.txt => IBM-Plex-Mono-OFL.txt}    |   186 +-
+ src/styles/fonts/archivo-latin.woff2               |   Bin 0 -> 56948 bytes
+ src/styles/fonts/ibm-plex-mono-400.woff2           |   Bin 0 -> 14708 bytes
+ src/styles/fonts/ibm-plex-mono-500.woff2           |   Bin 0 -> 14888 bytes
+ src/styles/fonts/inter-tight-800.ttf               |   Bin 303868 -> 0 bytes
+ src/styles/fonts/michroma-400.ttf                  |   Bin 61440 -> 0 bytes
+ src/styles/generators.css                          |    32 -
+ src/styles/home.css                                |   262 -
+ src/styles/modes.css                               |   108 -
+ src/styles/motion.css                              |    59 +
+ src/styles/pages.css                               |   406 +
+ src/styles/play.css                                |    78 -
+ src/styles/primitives.css                          |   394 -
+ src/styles/reset.css                               |    51 +
+ src/styles/review.css                              |    96 +
+ src/styles/shell.css                               |   271 +
+ src/styles/spread-course.css                       |   155 -
+ src/styles/spread-finish.css                       |    98 -
+ src/styles/spread-home.css                         |   393 -
+ src/styles/spread-modes.css                        |   160 -
+ src/styles/spread-play.css                         |    86 -
+ src/styles/tokens.css                              |   190 +-
+ src/styles/typography.css                          |    24 -
+ src/ui/GradientMapImage.svelte                     |    30 -
+ 908 files changed, 39355 insertions(+), 5681 deletions(-)

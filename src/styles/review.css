@@ -1,0 +1,96 @@
+/* Review corrections: give seats and the live board separate clear areas. */
+#root .table-6 {
+  min-height: 702px;
+}
+#root .table-6 .table-center {
+  top: 52%;
+}
+#root .table-6.has-runouts {
+  min-height: 864px;
+}
+#root .table-6.has-runouts .table-center {
+  top: 40%;
+}
+#root .coach-sidebar > header h2 {
+  margin: 0;
+}
+#root .coach-sidebar .coach-intro {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 8px 0 12px;
+}
+#root .coach-topic > p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 12px 0;
+}
+#root .coach-topic {
+  padding-top: 12px;
+}
+#root .coach-tabs {
+  margin-block: 8px;
+}
+#root main > div[class*='workspace'] {
+  gap: 24px;
+}
+@media (max-width: 1179px) {
+  #root .poker-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #root .mobile-coach-button {
+    justify-self: start;
+  }
+}
+@media (max-width: 767px) {
+  #root .table-6 {
+    min-height: 864px;
+  }
+  #root .table-6 .table-center {
+    top: 56%;
+  }
+  #root .table-6 .seat :is(h2, h3) {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  #root .table-6 :is(.seat-stack, .seat-action) {
+    font-size: 11px;
+  }
+  #root .table-6.has-runouts {
+    min-height: 1080px;
+  }
+  #root .table-6.has-runouts .table-center {
+    top: 50%;
+  }
+}
+#root *,
+#root *::before,
+#root *::after {
+  border-width: 1px;
+}
+#root .panel:has(#outs-answer) > h2 {
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+#root .drill-stripe {
+  margin-block: 16px;
+}
+#root .drill-stripe + h2 {
+  font-size: 40px;
+  line-height: 1.2;
+}
+#root .play-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 24px;
+  padding-block: 8px;
+}
+#root .play-header .bankroll {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+#root :is(strong, b) {
+  font-weight: 600;
+}

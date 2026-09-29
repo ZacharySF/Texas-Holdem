@@ -265,3 +265,5 @@ Measured September 28, 2026 local time (September 29 UTC), Node 24.20.0, Intel C
 | Bot decision, six seats          |       10.81 ms/decision |
 
 The previous evaluator/equity/payout algorithms remain unchanged. Relative to the September 27 measurement, throughput was +1.8% evaluation, +1.7% random equity, −0.4% weighted equity, −1.9% lesson trials, and +1.5% payouts. These small differences are single-run timing variation, not evidence of an algorithmic change. Bot decision timings are new workloads with no earlier comparable baseline.
+
+The latest presentation audit and limitations are in [DESIGN_NOTES.md](DESIGN_NOTES.md). Before/removal/after screenshots and grid overlays are under `design/shots/`; contrast, accessibility and Lighthouse reports are under `design/`. The UI remains Svelte; image plates are generated offline and add no React runtime.

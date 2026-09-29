@@ -39,6 +39,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 86544,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -73,12 +74,6 @@
         "ratio": 3.441755554152011
       },
       {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
         "fg": "rgb(177, 183, 208)",
         "bg": [14, 9, 48],
         "minimum": 3,
@@ -88,6 +83,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 10.4,
+    "fontBytes": 86544,
     "largest": 158.4,
     "scale": 15.23076923076923
   },
@@ -143,6 +139,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -190,12 +187,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -204,6 +195,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -251,12 +243,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -265,6 +251,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -312,12 +299,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -326,6 +307,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -373,12 +355,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -387,6 +363,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -434,12 +411,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -448,6 +419,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -495,12 +467,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -509,6 +475,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -556,12 +523,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -570,6 +531,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -617,12 +579,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -631,6 +587,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -678,12 +635,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -692,6 +643,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -739,12 +691,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -753,6 +699,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -800,12 +747,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -814,6 +755,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -861,12 +803,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -875,6 +811,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -922,12 +859,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -936,6 +867,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -983,12 +915,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -997,6 +923,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1044,12 +971,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -1058,6 +979,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1105,12 +1027,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -1119,6 +1035,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1166,12 +1083,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -1180,6 +1091,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1227,12 +1139,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -1241,6 +1147,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1288,12 +1195,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -1302,6 +1203,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1349,12 +1251,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -1363,6 +1259,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1410,12 +1307,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -1424,6 +1315,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119576,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1471,12 +1363,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -1485,6 +1371,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1532,12 +1419,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -1546,6 +1427,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1599,12 +1481,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -1613,6 +1489,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1660,12 +1537,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -1674,6 +1545,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1721,12 +1593,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -1735,6 +1601,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1782,12 +1649,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -1796,6 +1657,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1851,6 +1713,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1906,6 +1769,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -1961,6 +1825,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2016,6 +1881,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2063,12 +1929,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2077,6 +1937,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2124,12 +1985,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2138,6 +1993,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2185,12 +2041,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2199,6 +2049,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 144900,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2246,12 +2097,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2260,6 +2105,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 144900,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2307,12 +2153,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2321,6 +2161,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2368,12 +2209,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2382,6 +2217,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2429,12 +2265,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2443,6 +2273,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2490,12 +2321,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2504,6 +2329,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2551,12 +2377,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2565,6 +2385,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2612,12 +2433,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2626,6 +2441,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2673,12 +2489,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2687,6 +2497,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2734,12 +2545,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2748,6 +2553,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2803,6 +2609,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2858,6 +2665,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2905,12 +2713,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2919,6 +2721,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -2966,12 +2769,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -2980,6 +2777,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -3035,6 +2833,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -3090,6 +2889,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -3137,12 +2937,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -3151,6 +2945,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -3198,12 +2993,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -3212,6 +3001,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -3259,12 +3049,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -3273,6 +3057,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -3320,12 +3105,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -3334,6 +3113,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 128,
     "scale": 11.636363636363637
   },
@@ -3389,6 +3169,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 9.6,
+    "fontBytes": 86544,
     "largest": 158.4,
     "scale": 16.5
   },
@@ -3432,12 +3213,13 @@
         "fg": "rgb(177, 183, 208)",
         "bg": [0, 0, 0],
         "minimum": 4.5,
-        "ratio": 10.549563072673365
+        "ratio": 10.549777922471653
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -3482,17 +3264,12 @@
         "bg": [14, 9, 48],
         "minimum": 3,
         "ratio": 9.590483477718408
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -3536,6 +3313,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -3585,6 +3363,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -3628,6 +3407,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 86544,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -3672,17 +3452,12 @@
         "bg": [14, 9, 48],
         "minimum": 3,
         "ratio": 9.590483477718408
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -3726,6 +3501,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 86544,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -3770,17 +3546,12 @@
         "bg": [14, 9, 48],
         "minimum": 3,
         "ratio": 9.590483477718408
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -3825,17 +3596,12 @@
         "bg": [14, 9, 48],
         "minimum": 3,
         "ratio": 9.590483477718408
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -3885,6 +3651,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -3929,23 +3696,12 @@
         "bg": [14, 9, 48],
         "minimum": 3,
         "ratio": 9.590483477718408
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 3,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 86544,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -3995,6 +3751,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -4044,6 +3801,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -4088,17 +3846,12 @@
         "bg": [14, 9, 48],
         "minimum": 3,
         "ratio": 9.590483477718408
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -4148,6 +3901,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 158.4,
     "scale": 14.4
   },
@@ -4197,8 +3951,3977 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 200,
     "scale": 18.181818181818183
+  },
+  {
+    "name": "home",
+    "route": "play",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 86544,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "play",
+    "route": "play",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 10.4,
+    "fontBytes": 86544,
+    "largest": 112.64,
+    "scale": 10.83076923076923
+  },
+  {
+    "name": "course",
+    "route": "learn",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "lesson-0-1",
+    "route": "learn/0-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-0-2",
+    "route": "learn/0-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-1-1",
+    "route": "learn/1-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-1-2",
+    "route": "learn/1-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-2-1",
+    "route": "learn/2-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-2-2",
+    "route": "learn/2-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-3-1",
+    "route": "learn/3-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-3-2",
+    "route": "learn/3-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-4-1",
+    "route": "learn/4-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-4-2",
+    "route": "learn/4-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-5-1",
+    "route": "learn/5-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-5-2",
+    "route": "learn/5-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-6-1",
+    "route": "learn/6-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-6-2",
+    "route": "learn/6-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-6-3",
+    "route": "learn/6-3",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-7-1",
+    "route": "learn/7-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-7-2",
+    "route": "learn/7-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-8-1",
+    "route": "learn/8-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-8-2",
+    "route": "learn/8-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-9-1",
+    "route": "learn/9-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [
+      ["semantics", ""],
+      ["mtable", ""],
+      ["mtr", ""],
+      ["mtd", ""],
+      ["mtr", ""],
+      ["mtd", ""],
+      ["mstyle", ""],
+      ["mrow", ""]
+    ],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-9-2",
+    "route": "learn/9-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119576,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-10-1",
+    "route": "learn/10-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-10-2",
+    "route": "learn/10-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-11-1",
+    "route": "learn/11-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [35, 23, 87],
+        "minimum": 4.5,
+        "ratio": 7.925243597533631
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-11-2",
+    "route": "learn/11-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-12-1",
+    "route": "learn/12-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-12-2",
+    "route": "learn/12-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-13-1",
+    "route": "learn/13-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-13-2",
+    "route": "learn/13-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-14-1",
+    "route": "learn/14-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-14-2",
+    "route": "learn/14-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-15-1",
+    "route": "learn/15-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-15-2",
+    "route": "learn/15-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-16-1",
+    "route": "learn/16-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 144900,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-16-2",
+    "route": "learn/16-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 144900,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-17-1",
+    "route": "learn/17-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-17-2",
+    "route": "learn/17-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-18-1",
+    "route": "learn/18-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 119836,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-18-2",
+    "route": "learn/18-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-19-1",
+    "route": "learn/19-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-19-2",
+    "route": "learn/19-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-20-1",
+    "route": "learn/20-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-20-2",
+    "route": "learn/20-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-21-1",
+    "route": "learn/21-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-21-2",
+    "route": "learn/21-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-22-1",
+    "route": "learn/22-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-22-2",
+    "route": "learn/22-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-23-1",
+    "route": "learn/23-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [
+      ["semantics", ""],
+      ["mtable", ""],
+      ["mtr", ""],
+      ["mtd", ""],
+      ["mtr", ""],
+      ["mtd", ""],
+      ["mstyle", ""],
+      ["mrow", ""]
+    ],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-23-2",
+    "route": "learn/23-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-24-1",
+    "route": "learn/24-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-24-2",
+    "route": "learn/24-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-25-1",
+    "route": "learn/25-1",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "lesson-25-2",
+    "route": "learn/25-2",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [72, 53, 171],
+        "minimum": 4.5,
+        "ratio": 7.379215652182094
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 114368,
+    "largest": 92.16,
+    "scale": 8.378181818181817
+  },
+  {
+    "name": "tools",
+    "route": "lab",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [35, 23, 87],
+        "minimum": 4.5,
+        "ratio": 7.925243597533631
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 9.6,
+    "fontBytes": 86544,
+    "largest": 112.64,
+    "scale": 11.733333333333334
+  },
+  {
+    "name": "tools-charts",
+    "route": "lab/charts",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [0, 0, 0],
+        "minimum": 4.5,
+        "ratio": 10.549921157285603
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "tools-events",
+    "route": "lab/events",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "tools-bankroll",
+    "route": "lab/bankroll",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "tools-ranges",
+    "route": "lab/ranges",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "tools-shuffle",
+    "route": "lab/shuffle",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 86544,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "tools-tools-insurance",
+    "route": "lab/tools/insurance",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "tools-tools-push",
+    "route": "lab/tools/push",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 86544,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "tools-tools-icm",
+    "route": "lab/tools/icm",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "tools-tools-sizing",
+    "route": "lab/tools/sizing",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "drills",
+    "route": "arcade",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "drills-call",
+    "route": "arcade/call",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 86544,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "drills-guess",
+    "route": "arcade/guess",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "drills-combo",
+    "route": "arcade/combo",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "drills-streak",
+    "route": "arcade/streak",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "drills-akq",
+    "route": "arcade/akq",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 112.64,
+    "scale": 10.24
+  },
+  {
+    "name": "progress",
+    "route": "stats",
+    "width": 1024,
+    "violations": [],
+    "pairs": [
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 4.5,
+        "ratio": 9.590483477718408
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(174, 247, 252)",
+        "bg": [2, 1, 7],
+        "minimum": 4.5,
+        "ratio": 17.336487834726615
+      },
+      {
+        "fg": "rgb(100, 73, 215)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 3.441755554152011
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [2, 1, 7],
+        "minimum": 3,
+        "ratio": 10.449232948199272
+      },
+      {
+        "fg": "rgb(177, 183, 208)",
+        "bg": [14, 9, 48],
+        "minimum": 3,
+        "ratio": 9.590483477718408
+      }
+    ],
+    "overflow": false,
+    "overflowNodes": [],
+    "smallest": 11,
+    "fontBytes": 71656,
+    "largest": 163.84,
+    "scale": 14.894545454545455
   },
   {
     "name": "home",
@@ -4240,6 +7963,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 86544,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -4272,17 +7996,12 @@
         "bg": [2, 1, 7],
         "minimum": 3,
         "ratio": 3.441755554152011
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 9.6,
+    "fontBytes": 86544,
     "largest": 72,
     "scale": 7.5
   },
@@ -4338,6 +8057,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -4385,12 +8105,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -4399,6 +8113,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -4446,12 +8161,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -4460,6 +8169,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -4507,12 +8217,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -4521,6 +8225,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -4568,12 +8273,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -4582,6 +8281,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -4629,12 +8329,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -4643,6 +8337,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -4690,12 +8385,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -4704,6 +8393,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -4751,12 +8441,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -4765,6 +8449,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -4812,12 +8497,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -4826,6 +8505,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -4873,12 +8553,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -4887,6 +8561,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -4934,12 +8609,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -4957,6 +8626,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5004,12 +8674,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5018,6 +8682,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5065,12 +8730,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5079,6 +8738,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5126,12 +8786,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5149,6 +8803,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5196,12 +8851,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5219,6 +8868,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5266,12 +8916,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5280,6 +8924,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5327,12 +8972,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5341,6 +8980,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5388,12 +9028,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5402,6 +9036,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5449,12 +9084,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5463,6 +9092,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5510,12 +9140,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5533,6 +9157,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5580,12 +9205,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5603,6 +9222,7 @@
       ["mi", ""]
     ],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5650,12 +9270,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5673,6 +9287,7 @@
       ["mo", ""]
     ],
     "smallest": 11,
+    "fontBytes": 119576,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5720,12 +9335,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5743,6 +9352,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5790,12 +9400,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5804,6 +9408,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5857,12 +9462,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5880,6 +9479,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5927,12 +9527,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -5950,6 +9544,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -5997,12 +9592,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -6020,6 +9609,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6067,12 +9657,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -6090,6 +9674,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6154,6 +9739,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6218,6 +9804,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6282,6 +9869,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6346,6 +9934,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6393,12 +9982,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -6407,6 +9990,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6454,12 +10038,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -6468,6 +10046,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6515,12 +10094,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -6538,6 +10111,7 @@
       ["mi", ""]
     ],
     "smallest": 11,
+    "fontBytes": 144900,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6585,12 +10159,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -6608,6 +10176,7 @@
       ["mi", ""]
     ],
     "smallest": 11,
+    "fontBytes": 144900,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6655,12 +10224,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -6669,6 +10232,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6716,12 +10280,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -6730,6 +10288,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6777,12 +10336,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -6791,6 +10344,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 119836,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6838,12 +10392,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -6852,6 +10400,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6899,12 +10448,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -6922,6 +10465,7 @@
       ["mi", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -6969,12 +10513,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -6983,6 +10521,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7030,12 +10569,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -7044,6 +10577,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7091,12 +10625,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -7105,6 +10633,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7169,6 +10698,7 @@
       ["mi", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7233,6 +10763,7 @@
       ["mo", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7280,12 +10811,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -7294,6 +10819,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7341,12 +10867,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -7364,6 +10884,7 @@
       ["mtd", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7428,6 +10949,7 @@
       ["mi", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7492,6 +11014,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7539,12 +11062,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -7553,6 +11070,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7600,12 +11118,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -7623,6 +11135,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7670,12 +11183,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -7693,6 +11200,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7740,12 +11248,6 @@
       },
       {
         "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
         "bg": [72, 53, 171],
         "minimum": 4.5,
         "ratio": 7.379215652182094
@@ -7763,6 +11265,7 @@
       ["mrow", ""]
     ],
     "smallest": 11,
+    "fontBytes": 114368,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7818,6 +11321,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 9.6,
+    "fontBytes": 86544,
     "largest": 92.8,
     "scale": 9.666666666666666
   },
@@ -7876,6 +11380,7 @@
       ["BUTTON", ""]
     ],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7920,17 +11425,12 @@
         "bg": [14, 9, 48],
         "minimum": 3,
         "ratio": 9.590483477718408
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -7974,6 +11474,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -8032,6 +11533,7 @@
       ["BUTTON", ""]
     ],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -8075,6 +11577,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 86544,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -8119,17 +11622,12 @@
         "bg": [14, 9, 48],
         "minimum": 3,
         "ratio": 9.590483477718408
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -8173,6 +11671,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 86544,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -8217,17 +11716,12 @@
         "bg": [14, 9, 48],
         "minimum": 3,
         "ratio": 9.590483477718408
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -8272,17 +11766,12 @@
         "bg": [14, 9, 48],
         "minimum": 3,
         "ratio": 9.590483477718408
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -8332,6 +11821,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -8376,17 +11866,12 @@
         "bg": [14, 9, 48],
         "minimum": 3,
         "ratio": 9.590483477718408
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 10.4,
+    "fontBytes": 86544,
     "largest": 72,
     "scale": 6.9230769230769225
   },
@@ -8436,6 +11921,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -8485,6 +11971,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -8529,17 +12016,12 @@
         "bg": [14, 9, 48],
         "minimum": 3,
         "ratio": 9.590483477718408
-      },
-      {
-        "fg": "rgb(174, 247, 252)",
-        "bg": [14, 9, 48],
-        "minimum": 4.5,
-        "ratio": 15.911722991041602
       }
     ],
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -8589,6 +12071,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 72,
     "scale": 6.545454545454546
   },
@@ -8638,6 +12121,7 @@
     "overflow": false,
     "overflowNodes": [],
     "smallest": 11,
+    "fontBytes": 71656,
     "largest": 128,
     "scale": 11.636363636363637
   }

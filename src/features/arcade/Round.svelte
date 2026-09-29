@@ -1,4 +1,5 @@
 <script lang="ts">
+  import DataStripe from '../../decor/DataStripe.svelte';
   import { makeOutsRush, scoreOuts, outsSolution } from '../../engine/outsRush';
   import PlayingCards from '../../ui/PlayingCards.svelte';
   import Probability from '../../ui/Probability.svelte';
@@ -123,6 +124,7 @@
   {#if !submitted && limit !== null}<button onclick={pause}
       >{paused ? 'Resume timer' : 'Pause timer'}</button
     >{/if}
+  <DataStripe value={index + 1} total={questions.length} />
   <h2>{question.label}</h2>
   <p>Your hand</p>
   <PlayingCards cards={question.hand}></PlayingCards>

@@ -1,0 +1,367 @@
+{
+  "baseline": "b7d7cf385e8ec197f1e03ff2f06940bf8c912836",
+  "count": 90,
+  "comparison": "Svelte script contents, excluding decor imports and the removed home/App image/parallax imports; whitespace normalized.",
+  "files": [
+    {
+      "file": "src/App.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/Routes.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/Probability.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/CardPicker.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/RangeGrid.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/CfrChart.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/SeedInput.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/FinalExperiment.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/CardFace.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/Card.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/SeriesChart.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/EquityExperiment.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/MeanChart.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/Histogram.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/ExperimentChart.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/ConvergenceChart.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/ui/PlayingCards.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/stats/Stats.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/arcade/Akq.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/arcade/Round.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/arcade/Set.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/arcade/DrillSet.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/arcade/Hand.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/arcade/StreakTrap.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/arcade/OutsRush.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/arcade/DecisionDrills.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/LessonTestHost.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/Matchups.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/CountingExamples.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/RealizationInputs.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/CourseContents.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/CourseIndex.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/ModelCheck.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/Count.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/ProbabilityTree.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/EquityByHand.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/PracticeSet.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/Hook.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/Endpoints.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/LessonBody.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/AdvancedSimulation.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/Idea.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/WorkedDerivation.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/ConversionExamples.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/AdvancedWorked.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/FinalSimulation.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/AtTheTable.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/ExactValue.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/Learn.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/Section.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/NotebookBlock.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/AdvancedExamples.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/OutsExamples.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/Shortcut.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/ChartWalkthrough.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/FinalShortcut.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/QuantCorner.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/FinalLinks.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/SimCheck.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/RangeExampleExperiment.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/FinalWorked.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/FrequencyCounts.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/CombinationExamples.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/CourseExamples.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/StartingFacts.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/ReadingCheck.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/AdvancedShortcut.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/Orders.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/BasicSimCheck.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/SuppliedChance.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/RankingTable.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/Formula.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/learn/ClassTable.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/play/PixiTable.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/play/CoachSidebar.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/play/Table.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/play/PotOdds.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/play/CoachPanel.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/play/HistoryPanel.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/play/Play.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/play/Home.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/play/PokerTable.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/play/EquityWalkthrough.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/lab/EventBuilder.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/lab/RangeLab.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/lab/Lab.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/lab/ShuffleLab.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/lab/BankrollLab.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/lab/FinalCalculators.svelte",
+      "applicationScriptUnchanged": true
+    },
+    {
+      "file": "src/features/lab/HandCharts.svelte",
+      "applicationScriptUnchanged": true
+    }
+  ]
+}

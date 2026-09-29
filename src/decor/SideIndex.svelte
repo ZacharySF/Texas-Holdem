@@ -20,7 +20,9 @@
             href: node.getAttribute('href') ?? '',
           }))
         : [...host.querySelectorAll<HTMLElement>('main h2')]
-            .filter((node) => node.getClientRects().length)
+            .filter(
+              (node) => node.getClientRects().length && !node.closest('.seat'),
+            )
             .slice(0, 12)
             .map((node) => ({ label: node.textContent?.trim() ?? '', node }));
       if (

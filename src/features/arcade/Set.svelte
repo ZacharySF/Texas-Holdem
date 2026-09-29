@@ -1,4 +1,5 @@
 <script lang="ts">
+  import DataStripe from '../../decor/DataStripe.svelte';
   import { Rng } from '../../engine/rng';
   import { finalFacts } from '../../content/facts';
   import ExactValue from '../learn/ExactValue.svelte';
@@ -71,6 +72,7 @@
 </script>
 
 <section class="panel">
+  <DataStripe value={index + 1} total={5} />
   <h2>Question {index + 1} of 5</h2>
   <p>
     Each independent fresh trial has win chance {truth.toString()}. You just {q.lost

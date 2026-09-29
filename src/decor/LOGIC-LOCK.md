@@ -1,6 +1,6 @@
 # Protected logic inventory
 
-Recorded before this second design pass, at `65619d107c2c7ec466a175147ff9283bb7829cdb`. All 173 files are checked by SHA-256 after every phase. They remain byte-for-byte unchanged.
+The 173-file inventory is unchanged from the earlier design pass and has been rechecked against the current redesign baseline, `b7d7cf385e8ec197f1e03ff2f06940bf8c912836`. All files remain byte-for-byte unchanged; final hashes are in `design/protected-audit.json`.
 
 Existing non-decor Svelte scripts also retain their application code; only decor imports differ. The engine, probability math, simulations, lesson content, stores, storage, routing, state handlers, tests, dependencies and build configuration are protected. Existing interactive elements retain their attributes and source order. The home heading retains its prior accessible name while its displayed name comes from `SITE_NAME`.
 
