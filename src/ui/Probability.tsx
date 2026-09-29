@@ -17,7 +17,7 @@ export function Probability({
   ).display();
   return (
     <div className="probability">
-      <span className="eyebrow">{label}</span>
+      <span className="field-label">{label}</span>
       <strong>{display.percent}</strong>
       <span className="fraction">{display.fraction}</span>
       <span>{display.oneIn}</span>

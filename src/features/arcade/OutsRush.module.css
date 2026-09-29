@@ -58,10 +58,12 @@
 }
 
 .arcade {
-  background: var(--scene-shade);
+  background: none;
 }
 .arcade h1 {
-  text-transform: lowercase;
-  font-weight: 450;
+  font-family: var(--display);
+  font-size: var(--title-size);
+  text-transform: none;
+  font-weight: 400;
   letter-spacing: var(--tracking-title);
 }

@@ -53,7 +53,7 @@ export function CourseContents({
                 key={`${c}-${chapter}-${!!search}`}
                 open={!!search || c === chapter}
               >
-                <summary>
+                <summary className="chapter-title-row">
                   {c === 0 ? 'Optional: poker basics' : `${c}. ${chapters[c]}`}
                 </summary>
                 {found.map((l) => (

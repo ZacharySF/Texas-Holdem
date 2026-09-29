@@ -71,7 +71,6 @@ function BasicSimCheck() {
   const last = points[points.length - 1];
   return (
     <section data-part="simulation" className="lesson-section sim-check">
-      <span className="eyebrow">04 / CHECK IT</span>
       <h2>Run the experiment</h2>
       {lesson.experiments && (
         <>

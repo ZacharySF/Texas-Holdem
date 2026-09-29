@@ -1,6 +1,6 @@
 # Working agreement
 
-neo-gospel teaches probability through a real poker game and reproducible experiments. Learners know fractions and algebra, but are new to probability. Read [SPEC](docs/SPEC.md), [ROADMAP](docs/ROADMAP.md), [CURRICULUM](docs/CURRICULUM.md), and [ARCHITECTURE](docs/ARCHITECTURE.md).
+contemprorary teaches probability through a real poker game and reproducible experiments. Learners know fractions and algebra, but are new to probability. Read [SPEC](docs/SPEC.md), [ROADMAP](docs/ROADMAP.md), [CURRICULUM](docs/CURRICULUM.md), and [ARCHITECTURE](docs/ARCHITECTURE.md).
 
 ## Commands
 

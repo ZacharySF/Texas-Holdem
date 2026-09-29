@@ -1,4 +1,4 @@
-# neo-gospel
+# contemprorary
 
 Build a browser game that teaches probability through No-Limit Texas Hold'em: a playable game against bots, a course that derives ideas from basics and checks them through simulation, and carefully tested software. Static site; no backend, accounts, or runtime network calls. MIT, copyright Zachary Finley-Stubbs.
 
@@ -16,7 +16,7 @@ No hand-typed UI or lesson probabilities. Values come from engine computations o
 
 ## Stack and boundaries
 
-Strict TypeScript without any, React, Vite, npm, pinned Node LTS. HashRouter and Vite base './'. Vitest, coverage-v8, fast-check; at least 90% engine coverage enforced by CI. Plain CSS variables and CSS Modules; hand-built SVG charts. MDX and KaTeX begin Phase 2. All simulation runs in Web Workers via a typed protocol. ESLint and Prettier. GitHub Actions checks lint, typecheck, tests, build on pushes and PRs and deploys Pages on main.
+Strict TypeScript without any, Svelte 5 for the shell and new visual components, existing React/MDX controllers behind adapters, Vite, npm, pinned Node LTS. HashRouter and Vite base './'. Vitest, coverage-v8, fast-check; at least 90% engine coverage enforced by CI. Plain CSS variables and CSS Modules; hand-built SVG charts. MDX and KaTeX begin Phase 2. All simulation runs in Web Workers via a typed protocol. ESLint and Prettier. GitHub Actions checks lint, typecheck, tests, build on pushes and PRs and deploys Pages on main.
 
 src/engine is pure TypeScript without DOM or React: cards, RNG, shuffle, combinatorics, rational arithmetic, evaluator, equity, statistics; later game rules and bots. src/workers wraps the engine. Modes live in src/features/{learn,play,lab,arcade,stats}; shared UI in src/ui; lessons and facts in src/content. Settings and progress use localStorage; histories use IndexedDB starting Phase 3.
 
@@ -52,6 +52,10 @@ The subsequent user request authorizes making Play the default experience and te
 
 The latest request authorizes a simpler course path inspired by numbered tutorial sites, beginning at Chapter 1 and interleaving lessons with real games. Put accessible coaching beside play on desktop and behind an obvious phone control. Preserve the mathematical curriculum, simulations, practice questions, and game rules. Track reading and game participation separately from quiz mastery, and make returning from a completed practice hand to the same lesson straightforward.
 
-## neo-gospel visual pass
+## contemprorary visual pass
 
-The visual-only follow-up renames the project and GitHub repository to neo-gospel. Use a CSS-built transit-terminal scene, mesh, cold glass, sparse amber lighting, rounded UI typography, and tabular mono readouts. Centralize theme values in one CSS token file, preserve 375px layouts and reduced motion, and maintain readable contrast in both themes. Game rules, engine math, workers, lesson content, and test sources remain unchanged.
+The visual-only follow-up renames the project and GitHub repository to contemprorary. Use a CSS-built transit-terminal scene, mesh, cold glass, sparse amber lighting, rounded UI typography, and tabular mono readouts. Centralize theme values in one CSS token file, preserve 375px layouts and reduced motion, and maintain readable contrast in both themes. Game rules, engine math, workers, lesson content, and test sources remain unchanged.
+
+## Dark Svelte redesign and current name
+
+The later visual request supersedes the light/glass theme above. Use Svelte for the shell and new presentation, a flat void/ink/violet theme, a Pixi table, public-domain SVG playing cards, and configurable sparse motion. Preserve existing React/MDX controllers through an adapter during this migration so game logic, math, lesson content, routing, and tests remain unchanged. Add randomly fading aces, court cards, and jokers behind the home logo; jokers are decorative only. The requested project and GitHub name is `contemprorary` (spelled as requested).

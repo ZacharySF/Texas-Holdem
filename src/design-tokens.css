@@ -1,95 +1,110 @@
 @font-face {
-  font-family: 'JetBrains Mono';
+  font-family: 'Syncopate';
   font-style: normal;
-  font-weight: 400 600;
+  font-weight: 400;
   font-display: swap;
-  src: url(./assets/fonts/jetbrains-mono-latin.woff2) format('woff2');
+  src: url(./assets/fonts/syncopate-400.woff2) format('woff2');
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
     U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
     U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Zen Kaku Gothic New';
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 400;
   font-display: swap;
-  src: url(./assets/fonts/nunito-latin.woff2) format('woff2');
+  src: url(./assets/fonts/zen-kaku-400.woff2) format('woff2');
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
     U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
     U+2215, U+FEFF, U+FFFD;
 }
-
-/* neo-gospel — swap this file to retheme every screen.
-   Geometry tokens retain the tested table/card layout. Breakpoints remain literal
-   because CSS custom properties cannot be used in media-query conditions. */
+@font-face {
+  font-family: 'Zen Kaku Gothic New';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(./assets/fonts/zen-kaku-500.woff2) format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Zen Kaku Gothic New';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(./assets/fonts/zen-kaku-700.woff2) format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Departure Mono';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('./assets/fonts/departure-mono.woff2') format('woff2');
+}
 :root {
-  --navy: #06143f;
-  --cobalt: #0b2a8f;
-  --ultramarine: #1a3fbf;
-  --ice: #bcd8f5;
-  --frost: #e8f3ff;
-  --white: #f6fbff;
-  --amber: #f2c14e;
-  --sodium: #e8a93a;
-  --clear: transparent;
-  --sans:
-    'Nunito', 'M PLUS Rounded 1c', 'Zen Maru Gothic', ui-rounded, 'Avenir Next',
-    'Segoe UI', sans-serif;
+  --void: #020107;
+  --ink: #0e0930;
+  --night: #231757;
+  --dusk: #36287d;
+  --violet: #4835ab;
+  --ultraviolet: #6449d7;
+  /* Original haze (#776da2) fails AA on ink/night. This replacement passes both. */
+  --haze: #9287b8;
+  --mist: #b1b7d0;
+  --ice: #aef7fc;
+  --signal: #1ed3f0;
+  --glow: #d4526d;
+  --glow-deep: #b14766;
+  --display: 'Syncopate', sans-serif;
+  --sans: 'Zen Kaku Gothic New', sans-serif;
+  --mono: 'Departure Mono', monospace;
   --serif: var(--sans);
-  --mono:
-    'JetBrains Mono', 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
-  --bg: var(--navy);
-  --panel: #102754;
-  --panel-cold: #19396a;
-  --panel-deep: #0b204b;
-  --text: var(--white);
-  --muted: #c3d5ed;
-  --accent: #bddfff;
-  --on-accent: var(--navy);
-  --gold: var(--amber);
-  --border: #6385b1;
-  --subtle: #bedfff0d;
-  --card: var(--frost);
-  --ink: #123980;
-  --ink-warm: #885208;
-  --ink-club: #375c70;
-  --ink-diamond: #8d441e;
-  --error: #ffd2af;
-  --chart-third: #90b8ee;
-  --chart-fourth: #d7e8ff;
-  --shadow: #06143f66;
-  --shadow-soft: #06143f33;
-  --shadow-heavy: #06143f99;
-  --glass-rim: #e8f3ff8c;
-  --glass-shine: #f6fbff33;
-  --glass-faint: #e8f3ff0d;
-  --scene-mesh: #e8f3ff12;
-  --panel-mesh: #bcd8f508;
-  --scene-shade: #06143fd9;
-  --light-cyan: #bfefff;
-  --light-amber: #f2c14e99;
-  --light-soft: #bfefff40;
-  --table-surface: #6690b826;
-  --table-dark: #0b2a8f59;
-  --seat-surface: #102754f5;
-  --range-shade: #06143fb3;
-  --floor: #8fbee766;
-  --primary: var(--amber);
-  --primary-ink: var(--navy);
-  --primary-hover: #f6d57c;
-  --radius-panel: 18px;
-  --radius-slab: 32px;
-  --radius-card: 9px;
-  --radius-pill: 999px;
-  --radius-round: 50%;
-  --blur-band: 18px;
-  --blur-glass: 12px;
-  --blur-streak: 3px;
-  --mesh-line: 1px;
-  --mesh-pitch: 4px;
-  --scan-pitch: 8px;
+  --bg: var(--void);
+  --panel: var(--ink);
+  --panel-cold: var(--night);
+  --panel-deep: var(--ink);
+  --text: var(--mist);
+  --muted: var(--haze);
+  --accent: var(--mist);
+  --on-accent: var(--ice);
+  --gold: var(--ice);
+  --border: var(--dusk);
+  --subtle: #6449d70d;
+  --card: var(--ink);
+  --ink-warm: var(--glow);
+  --ink-club: var(--signal);
+  --ink-diamond: var(--ultraviolet);
+  --error: #e891a4;
+  --chart-third: var(--signal);
+  --chart-fourth: var(--glow);
+  --clear: transparent;
+  --navy: var(--void);
+  --cobalt: var(--violet);
+  --ultramarine: var(--ultraviolet);
+  --white: var(--mist);
+  --frost: var(--ink);
+  --amber: var(--ice);
+  --shadow: #02010780;
+  --shadow-soft: #02010740;
+  --shadow-heavy: #020107cc;
+  --glass-rim: var(--dusk);
+  --glass-shine: var(--clear);
+  --glass-faint: var(--clear);
+  --seat-surface: var(--ink);
+  --range-shade: #0e0930bb;
+  --radius-panel: 2px;
+  --radius-slab: 2px;
+  --radius-card: 2px;
+  --radius-pill: 2px;
+  --radius-round: 2px;
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
@@ -97,69 +112,32 @@
   --space-xl: 32px;
   --space-2xl: 48px;
   --space-3xl: 64px;
-  --tracking-label: 0.16em;
-  --tracking-title: -0.035em;
-  --shadow-panel:
-    0 12px 40px var(--shadow-soft), inset 0 1px var(--glass-shine);
-  --shadow-card: 0 5px 14px var(--shadow), inset 0 1px var(--white);
-  --shadow-bloom: 0 0 22px var(--light-soft);
-  --number-glow: 0 0 16px var(--light-soft);
-  --surface-gradient: linear-gradient(
-    110deg,
-    var(--panel-deep),
-    var(--panel-cold)
-  );
-  --card-gradient: linear-gradient(135deg, var(--white), var(--ice));
-  --bar-gradient: linear-gradient(90deg, var(--ultramarine), var(--ice));
-  --mesh:
-    repeating-linear-gradient(
-      0deg,
-      var(--panel-mesh) 0 var(--mesh-line),
-      var(--clear) var(--mesh-line) var(--mesh-pitch)
-    ),
-    repeating-linear-gradient(
-      90deg,
-      var(--panel-mesh) 0 var(--mesh-line),
-      var(--clear) var(--mesh-line) var(--mesh-pitch)
-    );
-  --scene-gradient: linear-gradient(
-    90deg,
-    var(--navy) 0%,
-    var(--cobalt) 49.8%,
-    var(--ice) 50%,
-    var(--ultramarine) 50.3%,
-    var(--frost) 85%,
-    var(--cobalt) 85.2%,
-    var(--ice) 86%,
-    var(--cobalt) 100%
-  );
-  --motion-drift: 32s;
-  --motion-deal: 320ms;
-  --motion-sweep: 700ms;
+  --hero-card-width: clamp(110px, 15vw, 210px);
+  --hero-card-opacity: 0.36;
+  --hero-card-still-opacity: 0.18;
+  --mesh-line: 1px;
+  --mesh: none;
+  --surface-gradient: none;
+  --card-gradient: none;
+  --shadow-panel: none;
+  --shadow-card: none;
+  --shadow-bloom: none;
+  --number-glow: 0 0 8px #6449d759;
+  --tracking-title: -0.045em;
+  --surface-hover: var(--night);
+  --selection-fill: var(--night);
+  --warm-selection: var(--night);
+  --border-warm: var(--ultraviolet);
+  --warm-panel: var(--ink);
+  --accent-hover: var(--ultraviolet);
+  --motion-deal: 450ms;
+  --tunnel: #4835ab1f;
+  --corner-bloom: #d4526d0d;
+  --grain-opacity: 0.06;
+  --chapter-ghost: #36287d66;
+  --title-size: clamp(1.7rem, 3.6vw, 3rem);
+  --home-title-size: clamp(1.35rem, 6.3vw, 6rem);
 }
-:root[data-theme='light'] {
-  --bg: var(--ice);
-  --panel: #e8f3ff;
-  --panel-cold: #daeaff;
-  --panel-deep: #e8f3ff;
-  --text: var(--navy);
-  --muted: #38517a;
-  --accent: #15469b;
-  --on-accent: var(--white);
-  --gold: #825207;
-  --border: #7895ba;
-  --subtle: #0b2a8f09;
-  --error: #883b18;
-  --chart-third: #32588c;
-  --chart-fourth: #556787;
-  --panel-mesh: #0b2a8f08;
-  --scene-shade: #e8f3ffdd;
-  --seat-surface: #e8f3fffa;
-  --range-shade: #e8f3ffcc;
-  --table-surface: #e8f3ffa6;
-  --table-dark: #bcd8f580;
-}
-
 /* Shared spacing, type and layout scale, including established responsive geometry. */
 :root {
   --size-320px: 320px;
@@ -205,6 +183,11 @@
   --size-16px: 16px;
   --type-0-08em: 0.08em;
   --size-680px: 680px;
+  --table-six-height: 740px;
+  --table-six-runouts-phone-height: 960px;
+  --card-hero-height: 92px;
+  --card-bot-height: 61px;
+  --card-bot-width: 42px;
   --size-80px: 80px;
   --type-3-5rem: 3.5rem;
   --size-15px: 15px;
@@ -325,22 +308,6 @@
   --size-52px: 52px;
 }
 
-/* Presentation scale and semantic surface blends. */
-:root {
-  --size-79px: 79px;
-  --size-81px: 81px;
-  --size-42px: 42px;
-  --size-245px: 245px;
-  --size-230px: 230px;
-  --size-175px: 175px;
-  --accent-hover: color-mix(in srgb, var(--accent) 80%, var(--white));
-  --surface-hover: color-mix(in srgb, var(--accent) 15%, var(--panel));
-  --selection-fill: color-mix(in srgb, var(--accent) 20%, var(--panel));
-  --warm-selection: color-mix(in srgb, var(--gold) 9%, var(--panel));
-  --border-warm: color-mix(in srgb, var(--gold) 40%, var(--border));
-  --warm-panel: color-mix(in srgb, var(--gold) 5%, var(--panel));
-}
-
 :root {
   --type-fluid-1: clamp(var(--type-2-5rem), 5vw, var(--type-4-4rem));
   --type-fluid-2: clamp(var(--type-2rem), 6vw, var(--type-3-5rem));
@@ -349,4 +316,48 @@
   --type-fluid-5: clamp(var(--type-1-7rem), 3.5vw, var(--type-2-7rem));
   --type-fluid-6: clamp(var(--type-2-5rem), 5vw, var(--type-4-3rem));
   --type-fluid-7: clamp(var(--type-2-6rem), 5.8vw, var(--type-4-4rem));
+}
+
+:root {
+  --layout-580px: 580px;
+  --layout-170px: 170px;
+  --layout-1-25rem: 1.25rem;
+  --layout-275px: 275px;
+  --layout-5rem: 5rem;
+  --layout-390px: 390px;
+  --layout-270px: 270px;
+}
+
+:root {
+  --chart-rail-width: 280px;
+  --chart-cell-min: 44px;
+  --chart-grid-gap: 2px;
+  --chart-grid-min: 596px;
+  --chart-cell-height: 56px;
+  --chart-caption-size: 0.62rem;
+  --chart-rule: 3px;
+  --chart-card-width: 48px;
+  --chart-card-height: 68px;
+}
+
+:root[data-theme='blue'] {
+  --void: #030c18;
+  --ink: #07172b;
+  --night: #102b49;
+  --dusk: #234b73;
+  --violet: #295a93;
+  --ultraviolet: #548ac7;
+  --haze: #9aaccc;
+  --mist: #cedbe8;
+  --ice: #b9f0ff;
+  --signal: #58d1ee;
+  --glow: #f092a4;
+  --tunnel: #295a932b;
+  --corner-bloom: #58d1ee0d;
+  --number-glow: 0 0 8px #548ac759;
+  --subtle: #548ac70d;
+}
+
+:root {
+  --display-menu-width: 240px;
 }

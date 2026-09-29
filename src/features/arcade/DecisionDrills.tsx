@@ -418,7 +418,6 @@ export default function DecisionDrills() {
   }, [params, seed, setParams]);
   return (
     <main className="tool-page">
-      <span className="eyebrow">ARCADE / {mode.toUpperCase()}</span>
       <h1>
         {mode === 'call'
           ? 'Call or Fold'

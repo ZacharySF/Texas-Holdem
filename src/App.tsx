@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense } from 'react';
 import {
   HashRouter,
   useLocation,
@@ -11,6 +11,7 @@ import { Lab } from './features/lab/Lab';
 const DecisionDrills = lazy(() => import('./features/arcade/DecisionDrills'));
 const EventBuilder = lazy(() => import('./features/lab/EventBuilder'));
 const BankrollLab = lazy(() => import('./features/lab/BankrollLab'));
+const HandCharts = lazy(() => import('./features/lab/HandCharts'));
 const RangeLab = lazy(() => import('./features/lab/RangeLab'));
 const Stats = lazy(() => import('./features/stats/Stats'));
 const Arcade = lazy(() => import('./features/arcade/OutsRush'));
@@ -20,41 +21,12 @@ const ShuffleLab = lazy(() => import('./features/lab/ShuffleLab'));
 const FinalCalculators = lazy(() => import('./features/lab/FinalCalculators'));
 const StreakTrap = lazy(() => import('./features/arcade/StreakTrap'));
 const Akq = lazy(() => import('./features/arcade/Akq'));
-interface Settings {
-  theme: 'dark' | 'light';
-  fourColor: boolean;
-}
-function readSettings(): Settings {
-  try {
-    const s: unknown = JSON.parse(
-      localStorage.getItem('holdem-settings') ?? 'null',
-    );
-    if (
-      s &&
-      typeof s === 'object' &&
-      'theme' in s &&
-      'fourColor' in s &&
-      (s.theme === 'dark' || s.theme === 'light') &&
-      typeof s.fourColor === 'boolean'
-    )
-      return s as Settings;
-  } catch {
-    /* Storage may be unavailable. */
-  }
-  return { theme: 'dark', fourColor: false };
-}
-const modes = [
-  ['play', 'Play', 3],
-  ['learn', 'Course', 2],
-  ['arcade', 'Drills', 4],
-  ['lab', 'Tools', 1],
-  ['stats', 'Progress', 6],
-] as const;
 function ToolNavigation() {
   const { pathname } = useLocation();
   const links = pathname.startsWith('/lab')
     ? [
         ['/lab', 'Equity'],
+        ['/lab/charts', 'Hand charts'],
         ['/lab/events', 'Event builder'],
         ['/lab/bankroll', 'Bankroll paths'],
         ['/lab/ranges', 'Ranges'],
@@ -101,91 +73,10 @@ function ToolNavigation() {
     </>
   );
 }
+/** Existing routing and React/MDX behavior, hosted by the Svelte shell. */
 export function App() {
-  const [settings, setSettings] = useState(readSettings);
-  useEffect(() => {
-    document.documentElement.dataset.theme = settings.theme;
-    document.documentElement.dataset.fourColor = String(settings.fourColor);
-    try {
-      localStorage.setItem('holdem-settings', JSON.stringify(settings));
-    } catch {
-      /* Keep settings in memory when storage is blocked. */
-    }
-  }, [settings]);
   return (
     <HashRouter>
-      <div className="terminal-scene" aria-hidden="true">
-        <div className="terminal-bleed terminal-bleed-top" />
-        <div className="terminal-bleed terminal-bleed-bottom" />
-        <div className="terminal-column" />
-        <div className="terminal-streak" />
-        <div className="terminal-travellers">
-          <i />
-          <i />
-          <i />
-        </div>
-      </div>
-      <svg className="theme-definitions" aria-hidden="true" focusable="false">
-        <defs>
-          <linearGradient id="terminal-chart" x1="0" y1="1" x2="0" y2="0">
-            <stop offset={0} stopColor="var(--ultramarine)" />
-            <stop offset={1} stopColor="var(--accent)" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <a
-        className="skip-link"
-        href="#main-content"
-        onClick={(e) => {
-          e.preventDefault();
-          document.getElementById('main-content')?.focus();
-        }}
-      >
-        Skip to content
-      </a>
-      <header className="app-header">
-        <NavLink to="/play" className="brand">
-          <span className="brand-mark">♠</span>
-          <span>
-            neo-gospel<strong>poker after hours</strong>
-          </span>
-        </NavLink>
-        <nav aria-label="Main navigation">
-          {modes.map(([path, name]) => (
-            <NavLink key={path} to={`/${path}`}>
-              {name}
-            </NavLink>
-          ))}
-        </nav>
-        <details className="settings">
-          <summary>Display</summary>
-          <div>
-            <label>
-              <input
-                type="checkbox"
-                checked={settings.theme === 'light'}
-                onChange={(e) =>
-                  setSettings({
-                    ...settings,
-                    theme: e.target.checked ? 'light' : 'dark',
-                  })
-                }
-              />{' '}
-              Light theme
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={settings.fourColor}
-                onChange={(e) =>
-                  setSettings({ ...settings, fourColor: e.target.checked })
-                }
-              />{' '}
-              Four-color deck
-            </label>
-          </div>
-        </details>
-      </header>
       <div id="main-content" tabIndex={-1}>
         <ToolNavigation />
         <Routes>
@@ -222,6 +113,14 @@ export function App() {
             }
           />
 
+          <Route
+            path="/lab/charts"
+            element={
+              <Suspense fallback={<p>Loading charts…</p>}>
+                <HandCharts />
+              </Suspense>
+            }
+          />
           <Route path="/lab" element={<Lab />} />
           <Route
             path="/play"
@@ -298,10 +197,6 @@ export function App() {
           <Route path="*" element={<Navigate to="/play" replace />} />
         </Routes>
       </div>
-      <footer className="app-footer">
-        <span>neo-gospel / hold’em</span>
-        <span>one more hand. a little more clarity.</span>
-      </footer>
     </HashRouter>
   );
 }

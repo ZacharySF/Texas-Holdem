@@ -322,131 +322,9 @@
   .bankroll strong {
     font: 600 var(--type-1-9rem) var(--sans);
   }
-  .game-lobby {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    overflow: hidden;
-    border: var(--size-1px) solid var(--border);
-    border-radius: var(--size-24px);
-    background:
-      radial-gradient(ellipse at 80% 50%, var(--glass-faint), var(--clear) 65%),
-      var(--panel);
-  }
-  .lobby-copy {
-    padding: var(--size-44px);
-  }
-  .lobby-copy h2 {
-    font: var(--type-fluid-6)/1.05 var(--serif);
-    margin: var(--size-18px) 0;
-    letter-spacing: calc(-1 * var(--type-0-04em));
-  }
-  .lobby-copy > p {
-    color: var(--muted);
-    max-width: var(--size-430px);
-    font-size: var(--type-0-9rem);
-  }
-  .table-picker {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--size-10px);
-    margin-block: var(--size-24px);
-  }
-  .table-picker button {
-    text-align: left;
-    padding: var(--size-16px) var(--size-12px);
-  }
-  .table-picker button[aria-pressed='true'] {
-    border-color: var(--gold);
-    background: var(--warm-selection);
-  }
-  .table-picker strong,
-  .table-picker span {
-    display: block;
-  }
-  .table-picker strong {
-    font-size: var(--type-0-88rem);
-  }
-  .table-picker span {
-    font-size: var(--type-0-72rem);
-    line-height: 1.6;
-    color: var(--muted);
-    margin-top: var(--size-8px);
-  }
   .start-game {
     min-height: var(--size-54px);
     width: 100%;
-  }
-  .lobby-table {
-    display: grid;
-    place-items: center;
-    padding: var(--size-40px) var(--size-30px) var(--size-40px) 0;
-  }
-  .lobby-orbit {
-    width: 100%;
-    aspect-ratio: 1;
-    max-width: var(--size-410px);
-    border-radius: var(--radius-round);
-    border: var(--size-14px) solid var(--panel-cold);
-    outline: var(--size-1px) solid var(--glass-rim);
-    box-shadow:
-      inset 0 0 0 var(--size-2px) var(--glass-shine),
-      inset 0 0 var(--size-50px) var(--shadow),
-      0 var(--size-30px) var(--size-60px) var(--shadow);
-    background: radial-gradient(ellipse, var(--ultramarine), var(--panel-deep));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--muted);
-  }
-  .lobby-orbit > span {
-    color: var(--muted);
-    font-size: var(--type-2-5rem);
-  }
-  .lobby-orbit p {
-    font-size: var(--type-0-6rem);
-    letter-spacing: var(--type-0-16em);
-  }
-  .lobby-cards {
-    display: flex;
-    padding: var(--size-10px);
-  }
-  .lobby-cards > span {
-    display: flex;
-    flex-direction: column;
-    width: var(--size-88px);
-    height: var(--size-125px);
-    padding: var(--size-12px);
-    background: var(--card);
-    border-radius: var(--size-9px);
-    font: var(--type-2-1rem) var(--serif);
-    color: var(--ink);
-    transform: rotate(-12deg);
-    box-shadow: 0 var(--size-8px) var(--size-20px) var(--shadow);
-  }
-  .lobby-cards > span + span {
-    color: var(--ink-warm);
-    transform: rotate(12deg) translateY(var(--size-6px));
-  }
-  .lobby-cards small {
-    align-self: flex-end;
-    font-size: var(--type-2-5rem);
-  }
-  .lobby-chips {
-    display: flex;
-    margin: var(--size-14px) 0 var(--size-4px);
-  }
-  .lobby-chips i {
-    width: var(--size-35px);
-    height: var(--size-35px);
-    margin-left: calc(-1 * var(--size-9px));
-    border-radius: var(--radius-round);
-    border: var(--size-4px) dashed var(--glass-rim);
-    background: var(--cobalt);
-    box-shadow: 0 var(--size-3px) 0 var(--navy);
-  }
-  .lobby-chips i:nth-child(2) {
-    background: var(--ultramarine);
   }
   .session-toolbar {
     display: flex;
@@ -482,17 +360,6 @@
       inset 0 0 0 var(--size-2px) var(--glass-shine),
       inset 0 0 var(--size-80px) var(--shadow),
       0 var(--size-15px) var(--size-30px) var(--shadow-soft);
-  }
-  .felt-table .eyebrow {
-    color: var(--muted);
-  }
-  .table-brand {
-    position: absolute;
-    top: 36%;
-    width: 100%;
-    color: var(--muted);
-    font-size: var(--type-0-75rem);
-    letter-spacing: var(--type-0-25em);
   }
   .table-center {
     position: absolute;
@@ -567,17 +434,6 @@
     gap: var(--size-8px);
     text-align: left;
     margin-bottom: var(--size-8px);
-  }
-  .seat-avatar {
-    width: var(--size-28px);
-    height: var(--size-28px);
-    flex-shrink: 0;
-    border-radius: var(--radius-round);
-    display: grid;
-    place-items: center;
-    background: var(--panel-cold);
-    color: var(--text);
-    font: var(--type-0-9rem) var(--serif);
   }
   .seat h2 {
     font-size: var(--type-0-85rem);
@@ -832,34 +688,7 @@
   .review-drawer[open] > summary {
     margin-bottom: var(--size-12px);
   }
-  .room-paths {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--size-30px);
-    padding: var(--size-20px) var(--size-4px);
-  }
-  .room-paths h2 {
-    margin-top: var(--size-15px);
-  }
-  .room-paths p {
-    color: var(--muted);
-    font-size: var(--type-0-85rem);
-  }
   @media (max-width: 800px) {
-    .lobby-copy {
-      padding: var(--size-28px);
-    }
-    .lobby-table {
-      padding: var(--size-20px) var(--size-20px) var(--size-20px) 0;
-    }
-    .lobby-cards > span {
-      width: var(--size-60px);
-      height: var(--size-90px);
-      font-size: var(--type-1-5rem);
-    }
-    .lobby-cards small {
-      font-size: var(--type-1-7rem);
-    }
     .bot-seat {
       width: var(--size-120px);
     }
@@ -886,9 +715,6 @@
     .play-header h1 {
       font-size: var(--type-1-55rem);
     }
-    .play-header .eyebrow {
-      font-size: var(--type-0-5rem);
-    }
     .room-subtitle {
       font-size: var(--type-0-72rem);
     }
@@ -905,26 +731,6 @@
     .bankroll small {
       font-size: var(--type-0-6rem);
     }
-    .game-lobby {
-      grid-template-columns: 1fr;
-    }
-    .lobby-copy {
-      padding: var(--size-26px) var(--size-22px);
-    }
-    .lobby-copy h2 {
-      font-size: var(--type-3rem);
-    }
-    .lobby-table {
-      display: none;
-    }
-    .room-paths {
-      grid-template-columns: 1fr;
-      gap: var(--size-15px);
-    }
-    .room-paths > div {
-      border-top: var(--size-1px) solid var(--border);
-      padding-top: var(--size-20px);
-    }
     .felt-table {
       border-width: var(--size-6px);
       border-radius: var(--size-90px);
@@ -933,10 +739,6 @@
     .table-center {
       width: 100%;
       top: 48%;
-    }
-    .table-brand {
-      font-size: var(--type-0-6rem);
-      top: 35%;
     }
     .community-cards {
       gap: var(--size-5px);
@@ -960,9 +762,6 @@
     .table-6 .hero-seat {
       width: var(--size-150px);
       bottom: var(--size-40px);
-    }
-    .table-6 .seat-avatar {
-      display: none;
     }
     .table-6 .seat-identity {
       justify-content: center;
@@ -1004,13 +803,6 @@
     .table-6 .table-center {
       top: 55%;
       width: 100%;
-    }
-    .table-6 .table-brand {
-      top: 33%;
-      width: var(--size-80px);
-      left: calc(50% - var(--size-40px));
-      font-size: var(--type-0-5rem);
-      line-height: 2;
     }
     .table-status {
       font-size: var(--type-0-7rem);
@@ -1149,9 +941,6 @@
     font: var(--type-1-8rem) var(--serif);
     margin-top: var(--size-6px);
   }
-  .coach-sidebar .eyebrow {
-    font-size: var(--type-0-55rem);
-  }
   .coach-intro {
     color: var(--muted);
     font-size: var(--type-0-85rem);
@@ -1185,10 +974,6 @@
     border: 0;
     background: var(--clear);
     padding: 0;
-  }
-  .coach-sidebar .hand-guide .coach-avatar,
-  .coach-sidebar .hand-guide .eyebrow {
-    display: none;
   }
   .coach-sidebar .guide-heading {
     flex-wrap: wrap;

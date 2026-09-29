@@ -76,7 +76,6 @@ export default function EventBuilder() {
   }
   return (
     <main className="tool-page">
-      <span className="eyebrow">LAB / EVENT BUILDER</span>
       <h1>How often does it happen?</h1>
       <p>
         Choose one card event, then repeat complete independent hands. Within a

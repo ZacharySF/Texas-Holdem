@@ -10,7 +10,7 @@ The current delivery completes the explicitly requested unfinished Phase 8 and 9
 - [x] SPEC, ROADMAP, CURRICULUM, ARCHITECTURE, AGENTS saved.
 - [x] Acceptance: lint, typecheck, tests, build pass from npm ci.
 - [x] Connect the existing GitHub origin and confirm Pages uses Actions.
-- [x] Push the application and record the verified Pages deployment URL: https://zacharysf.github.io/neo-gospel/ (2026-09-28).
+- [x] Push the application and record the verified Pages deployment URL: https://zacharysf.github.io/contemprorary/ (2026-09-28).
 
 ## Phase 1 — Engine and Equity Lab
 
@@ -56,7 +56,7 @@ The exhaustive pass took 19.607 seconds. All 1,000,000 seeded reference comparis
 
 Local acceptance checks and browser interaction review are complete. The Chromium review covered a 375px viewport without horizontal overflow, disabled used cards, custom seeds, URL replay, exact and sampled worker runs, exact reference comparison, cancellation, persisted display settings, and future-mode routes. No browser errors were observed. The permanent Playwright smoke suite was assigned to Phase 9 and is now completed below.
 
-The application is pushed to GitHub and Pages uses Actions. The [first deployment](https://github.com/ZacharySF/neo-gospel/actions/runs/36457275849) passed all checks and published the verified [live site](https://zacharysf.github.io/neo-gospel/) on 2026-09-28. Local delivery checks were rerun on that date: lint, typecheck, all 90 tests with engine coverage, production build, and all 10 Playwright smoke checks pass. Localhost startup also returned HTTP 200. Engine algorithms and measured benchmark results are unchanged.
+The application is pushed to GitHub and Pages uses Actions. The [first deployment](https://github.com/ZacharySF/contemprorary/actions/runs/36457275849) passed all checks and published the verified [live site](https://zacharysf.github.io/contemprorary/) on 2026-09-28. Local delivery checks were rerun on that date: lint, typecheck, all 90 tests with engine coverage, production build, and all 10 Playwright smoke checks pass. Localhost startup also returned HTTP 200. Engine algorithms and measured benchmark results are unchanged.
 
 ## Phase 2 — Learn framework and chapters 0–4
 
@@ -268,15 +268,49 @@ No engine algorithms or benchmarks changed. Active-hand recovery remains deferre
 
 Partial quizzes and active hands remain session-only. Reading or playing a hand does not establish mastery. The mathematical curriculum and measured benchmarks are unchanged.
 
-## neo-gospel visual pass
+## contemprorary visual pass
 
-- [x] Rename the app, npm package metadata, and existing GitHub repository to neo-gospel while retaining history.
+- [x] Rename the app, npm package metadata, and existing GitHub repository to contemprorary while retaining history.
 - [x] Centralize theme values in one CSS token file; retain the existing React/CSS stack.
 - [x] Apply cobalt/ice exposure seams, LED mesh, scanlines, CSS light streaks, and blurred letterbox bands throughout the frontend.
 - [x] Replace felt with a glass slab; add aria-hidden card reflections, frosted cards, glass chips, amber primary controls, and tabular mono readouts.
 - [x] Bundle rounded UI and mono fonts with licenses, without runtime font requests or external images.
 - [x] Preserve course content, game logic, mathematical code, simulations, saved data formats, and every test source.
 - [x] Check both themes at 375px, reduced motion, and text against composited gradient backgrounds.
-- [x] Final lint, typecheck, all 92 unchanged unit tests, production build, and all 20 unchanged desktop/phone browser checks pass. The renamed repository retains Actions publication at https://zacharysf.github.io/neo-gospel/.
+- [x] Final lint, typecheck, all 92 unchanged unit tests, production build, and all 20 unchanged desktop/phone browser checks pass. This was the earlier glass pass; its publication predates the current repository rename and dark redesign.
 
 Existing measured benchmarks are unchanged and were not rerun. No additional gameplay phase was implemented. Active hands and unfinished quizzes remain session-only; the visual pass does not change those limitations.
+
+## Dark Svelte redesign
+
+- [x] Replace the glass theme and illustrated split hero with flat dark panels, thin rules, plain titles, and a minimal photo slot.
+- [x] Move the shell and new visual components to Svelte while retaining tested React/MDX controllers through adapters.
+- [x] Add a Pixi table, public-domain SVG cards, self-hosted fonts, and shared configurable filters/parallax.
+- [x] Add the requested random, fading ace/court-card/joker artwork behind the home logo, with visibility and reduced-motion switches.
+- [x] Preserve evaluator, equity math, and existing routes; implement the requested bot decisions, lesson additions, chart route, and authorized test updates.
+- [x] Add reduced-motion/touch/mobile switches, a semantic HTML fallback, and automatic filter shedding.
+- [x] Add and pass deterministic bot-action and live pot-odds tests; all 105 unit tests pass.
+- [x] Update obsolete Light-theme and Explain-the-hand assertions with user approval.
+- [x] Finish final verification: lint, typecheck, 105 unit tests, engine coverage, build, and all 20 browser checks.
+- [x] Prepare the complete redesign and gameplay follow-up for GitHub.
+- [x] Retain checked GitHub Actions publication from main to the renamed Pages path.
+
+This is a staged Svelte migration. A full rewrite of the React controllers and MDX experiments has not been performed. The bot/coach follow-up is complete locally; benchmark results and final verification are recorded in VISUAL-DESIGN.md.
+
+- [x] Rename the current project metadata, UI branding, documentation, and GitHub repository to `contemprorary`, as requested.
+
+- [x] Replace random bot raise gates with sampled legal-action chip-return comparisons.
+- [x] Remove Explain the hand and default the coach to a visual live pot-odds walkthrough.
+- [x] Keep advanced equity analysis available in a disclosure and run the dev server on localhost.
+
+## Reference and usability follow-up
+
+- [x] Add starting-hand equity and conditional shove/fold matrices, selection details, reproducible workers, and resource links.
+- [x] Explain the graphs in lessons 7.1, 18.1, and 23.1, preserving their seven-part contract.
+- [x] Add live equity arithmetic and self-checks to the coach; add the enumerable river exercise to lesson 11.1.
+- [x] Remove the separate poker dictionary and clipped decorative chapter numbers.
+- [x] Make Six-player table deal immediately, and verify actual six-seat play.
+- [x] Add persistent Violet/Blue dark themes and restyle the Display menu; update the Pixi surface in place.
+- [x] Pass 105 unit tests, typecheck, lint, coverage, and build after these follow-ups.
+- [x] Pass all 26 desktop/phone browser checks, including new chart and coaching workflows.
+- [x] Prepare the final GitHub delivery with updated screenshots and measured validation.

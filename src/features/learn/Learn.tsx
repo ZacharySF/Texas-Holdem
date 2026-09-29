@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect, useState, type ComponentType } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router';
 import type { MDXProps } from 'mdx/types';
-import { chapters, lessons, lessonById } from '../../content/lessons';
+import { lessons, lessonById } from '../../content/lessons';
 import { learningFacts } from '../../content/facts';
 import { Rng } from '../../engine/rng';
 import { newSeed } from '../lab/state';
@@ -94,14 +94,7 @@ export default function Learn() {
         {!lessonId ? (
           <>
             <header className="learn-header">
-              <span className="eyebrow">THE HOLD’EM COURSE</span>
-              <h1>
-                Learn a little.
-                <br />
-                Play a hand.
-                <br />
-                Build from there.
-              </h1>
+              <h1>Course</h1>
               <p>
                 Start with Chapter 1. We’ll explain one idea at a time, then
                 help you notice it in a real game. You only need fractions and
@@ -109,7 +102,6 @@ export default function Learn() {
               </p>
             </header>
             <section className="course-start panel">
-              <span className="eyebrow">YOUR FIRST STEP</span>
               <h2>Chapter 1 · Probability from one deck</h2>
               <p>
                 Learn what “chance” means using ordinary playing cards. No
@@ -198,9 +190,6 @@ export default function Learn() {
               </span>
             </nav>
             <header className="learn-header">
-              <span className="eyebrow">
-                CHAPTER {lesson.chapter} · {chapters[lesson.chapter]}
-              </span>
               <h1>{lesson.title}</h1>
               <p>
                 {lesson.chapter === 1
@@ -292,7 +281,6 @@ export default function Learn() {
               </Suspense>
             </LessonContext.Provider>
             <section className="lesson-game-stop panel">
-              <span className="eyebrow">PUT THE BOOK DOWN FOR A HAND</span>
               <h2>Try this at the table</h2>
               <p>{practiceFocus(lesson.chapter)}</p>
               <Link

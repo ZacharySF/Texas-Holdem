@@ -74,7 +74,7 @@ function Round({
   }
   return (
     <section className={`panel ${styles.round}`}>
-      <p className="eyebrow">
+      <p className="field-label">
         QUESTION {index + 1} OF {questions.length}
       </p>
       <p aria-live="off">
@@ -201,8 +201,7 @@ export default function OutsRush() {
   return (
     <main className={styles.arcade}>
       <header>
-        <span className="eyebrow">ARCADE / OUTS RUSH</span>
-        <h1>Count the cards that help.</h1>
+        <h1>Outs Rush</h1>
         <p>
           Five seeded card spots. Name the target, remove known cards, and count
           each out once.

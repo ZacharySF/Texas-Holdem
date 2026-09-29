@@ -80,14 +80,14 @@ test('Chapter 1 to a coached game and back preserves the lesson and distinct pro
     ).toBeFocused();
     await openCoach(page);
   }
-  await page.getByRole('button', { name: 'Odds & why', exact: true }).click();
+  await page.getByRole('button', { name: 'Pot odds', exact: true }).click();
   await expect(
     page.getByRole('heading', { name: 'Coach · your visible information' }),
   ).toBeVisible();
   await width(page);
-  await page
-    .getByRole('button', { name: 'Explain the hand', exact: true })
-    .click();
+  await expect(
+    page.getByRole('region', { name: 'Pot odds calculation' }),
+  ).toBeVisible();
   await closeCoach(page);
   await page.getByRole('button', { name: /^Fold / }).click();
   await expect(page.getByRole('region', { name: 'Hand result' })).toBeVisible();

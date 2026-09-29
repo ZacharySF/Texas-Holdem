@@ -219,25 +219,10 @@ export function Lab() {
     <main className={styles.lab}>
       <header className={styles.intro}>
         <div>
-          <span className="eyebrow">EXPERIMENT 01 / EQUITY LAB</span>
-          <h1>
-            Put the odds
-            <br />
-            <em>on the table.</em>
-          </h1>
+          <h1>Equity</h1>
           <p>
             Choose the cards. Count every possible finish, or deal thousands of
             boards and watch the answer take shape.
-          </p>
-        </div>
-        <div className={styles.introAside}>
-          <span className={styles.orbit}>
-            A<span>♠</span>
-          </span>
-          <p>
-            One deck. Many futures.
-            <br />
-            Every result reproducible.
           </p>
         </div>
       </header>
@@ -256,7 +241,7 @@ export function Lab() {
             {state.players.map((hand, p) => (
               <div className={styles.hand} key={p}>
                 <div className="section-head">
-                  <label className="eyebrow" htmlFor={`player-${p}`}>
+                  <label className="field-label" htmlFor={`player-${p}`}>
                     {p === 0 ? 'YOUR HAND' : `OPPONENT ${p}`}
                   </label>
                   {p > 0 && (
@@ -427,7 +412,6 @@ export function Lab() {
                 ? `${prepared.plan.assignments.toLocaleString()} possible deals. Exact counting is available.`
                 : `${prepared.plan?.assignments.toLocaleString()} possible deals. Exact is disabled above the interactive work budget; use simulation.`)}
           </p>
-          <span className="eyebrow">SIMULATE BOARDS</span>
           <div className={styles.simButtons}>
             {[1000, 10000, 100000, 1000000].map((n) => (
               <button
@@ -615,7 +599,6 @@ export function Lab() {
           <div className={`panel ${styles.chartPanel}`}>
             <div className="section-head">
               <h2>Watch it converge</h2>
-              <span className="eyebrow">SAMPLE → ESTIMATE</span>
             </div>
             <ConvergenceChart
               history={history}
@@ -626,7 +609,6 @@ export function Lab() {
             state.players[0] !== 'random' &&
             state.players[0].length === 2 && (
               <div className="panel">
-                <span className="eyebrow">YOUR HAND RIGHT NOW</span>
                 <h3>
                   {
                     evaluateReference([...state.players[0], ...state.board])

@@ -35,7 +35,6 @@ export function PracticeSet() {
   }
   return (
     <section data-part="practice" className="lesson-section practice">
-      <span className="eyebrow">05 / YOUR TURN</span>
       <h2>Check your understanding</h2>
       <p>
         Five questions, one attempt per question. Mastery requires{' '}

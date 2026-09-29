@@ -1,9 +1,13 @@
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
+import { svelte } from '@sveltejs/vite-plugin-svelte';
 import mdx from '@mdx-js/rollup';
 export default defineConfig({
   base: './',
+  // DOM component tests mount the same Svelte client components as the browser.
+  resolve: { conditions: ['browser'] },
   plugins: [
+    svelte(),
     { enforce: 'pre', ...mdx() },
     react({ include: /\.(mdx|jsx|tsx)$/ }),
   ],

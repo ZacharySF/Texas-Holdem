@@ -24,8 +24,7 @@ export default function Akq() {
   }, [params, seed, setParams]);
   return (
     <main className="tool-page">
-      <span className="eyebrow">ARCADE / AKQ</span>
-      <h1>One card. One bet.</h1>
+      <h1>AKQ</h1>
       <p>
         Q &lt; K &lt; A. Each player antes one chip and receives one distinct
         card. Check or bet one; facing a bet, fold or call. No raises. Payoffs

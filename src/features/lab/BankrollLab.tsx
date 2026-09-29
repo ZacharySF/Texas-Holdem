@@ -62,7 +62,6 @@ export default function BankrollLab() {
   }
   return (
     <main className="tool-page">
-      <span className="eyebrow">LAB / VARIANCE AND BANKROLL</span>
       <h1>The spread around a win rate</h1>
       <section className="panel tool-fields">
         {(Object.keys(values) as (keyof typeof values)[]).map((k) => (

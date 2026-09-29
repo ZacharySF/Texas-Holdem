@@ -1,3 +1,6 @@
+import EquityByHandView from './EquityByHand.svelte';
+import ChartWalkthroughView from './ChartWalkthrough.svelte';
+import { SvelteView } from '../../bridge/SvelteView';
 import { FinalWorked, FinalShortcut, FinalLinks } from './FinalLesson';
 import {
   AdvancedWorked,
@@ -43,8 +46,11 @@ function Section({
   children: ReactNode;
 }) {
   return (
-    <section data-part={part} className="lesson-section">
-      <span className="eyebrow">{number}</span>
+    <section
+      data-part={part}
+      data-part-label={number}
+      className="lesson-section"
+    >
       <h2>{title}</h2>
       {children}
     </section>
@@ -348,7 +354,19 @@ export function RankingTable() {
     </div>
   );
 }
+export function EquityByHand() {
+  return <SvelteView component={EquityByHandView} props={{}} />;
+}
+export function ChartWalkthrough({
+  mode = 'starting',
+}: {
+  mode?: 'starting' | 'ranges' | 'shove';
+}) {
+  return <SvelteView component={ChartWalkthroughView} props={{ mode }} />;
+}
 export const mdxComponents = {
+  EquityByHand,
+  ChartWalkthrough,
   FinalLinks,
   AdvancedExamples,
   SuppliedChance,

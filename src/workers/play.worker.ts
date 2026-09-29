@@ -24,7 +24,7 @@ scope.onmessage = (event: MessageEvent<PlayRequest>) => {
       ? equity({ ...input, method: 'exact' })
       : undefined;
     const options =
-      view.players.length > 2
+      !bot && view.players.length > 2
         ? tableOptions(
             view,
             view.players.map((p, i) =>
@@ -38,9 +38,7 @@ scope.onmessage = (event: MessageEvent<PlayRequest>) => {
             raiseTo ?? Math.min(view.legal.minRaiseTo, view.legal.maxRaiseTo),
           )
         : undefined;
-    const decision = bot
-      ? chooseBot(view, persona, result.players[0].equity.value, seed)
-      : {};
+    const decision = bot ? chooseBot(view, persona, seed) : {};
     scope.postMessage({
       type: 'result',
       equity: result,

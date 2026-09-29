@@ -48,7 +48,6 @@ export default function Stats() {
     bins = calibration(forecasts);
   return (
     <main className="tool-page">
-      <span className="eyebrow">STATS / THIS DEVICE</span>
       <h1>Results and uncertainty</h1>
       <p>
         Completed saved hands only. An unfinished hand is not counted. Rates use

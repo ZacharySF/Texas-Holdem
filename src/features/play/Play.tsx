@@ -36,6 +36,8 @@ import { CoachSidebar } from './CoachSidebar';
 import { CoachPanel, type Assessment } from './CoachPanel';
 import { HistoryPanel } from './HistoryPanel';
 import './play.css';
+import { SvelteView } from '../../bridge/SvelteView';
+import Home from './Home.svelte';
 function readProfile(): Profile {
   try {
     return parseProfile(localStorage.getItem(PROFILE_KEY));
@@ -261,23 +263,24 @@ export default function Play() {
       ),
     );
   }, [game, commitment, persona, courseLesson, markPlayed]);
-  async function prepare(manual = false) {
+  async function prepare(manual = false, tableSeats = seats) {
     if (preparing.current || active || pending) return;
     preparing.current = true;
     setDealing(true);
     try {
       setError('');
+      setSeats(tableSeats);
       const seed = newSeed(),
         config: GameConfig = {
           seed,
-          stacks: Array.from({ length: seats }, (_, i) =>
+          stacks: Array.from({ length: tableSeats }, (_, i) =>
             i === 0
               ? Math.min(profile.bankroll, bigBlind * 200)
-              : bigBlind * (seats === 2 ? 200 : 80 + i * 20),
+              : bigBlind * (tableSeats === 2 ? 200 : 80 + i * 20),
           ),
           button: game
-            ? (game.config.button + 1) % seats
-            : profile.hands % seats,
+            ? (game.config.button + 1) % tableSeats
+            : profile.hands % tableSeats,
           smallBlind: Math.floor(bigBlind / 2),
           bigBlind,
           runItTwice: twice,
@@ -389,52 +392,38 @@ export default function Play() {
       ? raiseTo
       : Math.min(legal?.minRaiseTo ?? 0, legal?.maxRaiseTo ?? 0);
   return (
-    <main className="play">
-      <header className="play-header">
-        <div>
-          <span className="eyebrow">NEO-GOSPEL / THE POKER ROOM</span>
-          <h1>
-            {game ? 'A seat at the table.' : 'Your next hand starts here.'}
-          </h1>
-          <p className="room-subtitle">take a seat. find your rhythm.</p>
-        </div>
+    <main className={`play ${game ? 'in-game' : 'home-page'}`}>
+      {game && (
+        <header className="play-header">
+          <h1>Poker</h1>
+        </header>
+      )}
+      {!game && !pending && (
+        <SvelteView
+          component={Home}
+          props={{
+            seats,
+            dealing,
+            bankroll: profile.bankroll,
+            onplay: (tableSeats: number) => void prepare(false, tableSeats),
+          }}
+        />
+      )}
+      <div className="home-stats">
         <div className="bankroll">
-          <span>YOUR CHIPS · PLAY MONEY</span>
+          <span>chips</span>
           <strong>{profile.bankroll.toLocaleString()}</strong>
           <small>
             {xp} XP · {profile.hands} hands played
           </small>
         </div>
-      </header>
-      {!game && !courseLesson && (
-        <section className="course-invitation">
-          <div>
-            <span className="eyebrow">NOT SURE WHERE TO BEGIN?</span>
-            <h2>Start at Chapter 1. We’ll guide you.</h2>
-            <p>
-              Read a short lesson, play a hand with the coach, then pick up
-              where you left off.
-            </p>
-          </div>
-          <div>
-            <Link className="course-primary" to="/learn/1-1">
-              Start Chapter 1 →
-            </Link>
-            <Link
-              to={
-                journey.current === '1-1'
-                  ? '/learn'
-                  : `/learn/${journey.current}`
-              }
-            >
-              {journey.current === '1-1'
-                ? 'Browse the course'
-                : 'Continue learning'}{' '}
-              →
-            </Link>
-          </div>
-        </section>
-      )}
+        {!game && !courseLesson && (
+          <Link to="/learn/1-1">Start Chapter 1 →</Link>
+        )}
+        {!game && !courseLesson && journey.current !== '1-1' && (
+          <Link to={`/learn/${journey.current}`}>Continue learning →</Link>
+        )}
+      </div>
       {courseStorageError && (
         <p role="status" className="hint">
           Your course progress works for this visit, but this browser could not
@@ -443,7 +432,6 @@ export default function Play() {
       )}
       {courseLesson && (
         <section className="course-practice-banner">
-          <span className="eyebrow">COURSE → PLAY → BACK TO YOUR LESSON</span>
           <h2>
             Practice for {courseLesson.id.replace('-', '.')} ·{' '}
             {courseLesson.title}
@@ -474,68 +462,6 @@ export default function Play() {
           )}
         </section>
       )}
-      {!game && !pending && (
-        <section className="game-lobby">
-          <div className="lobby-copy">
-            <span className="eyebrow">PULL UP A CHAIR</span>
-            <h2>
-              Real hands.
-              <br />
-              Your decisions.
-            </h2>
-            <p>
-              Take on the bots in no-limit Hold’em. Find your rhythm at a quiet
-              table, or join five opponents. Your coach walks through the game
-              with you.
-            </p>
-            <div className="table-picker" aria-label="Choose your table">
-              {[2, 6].map((count) => (
-                <button
-                  key={count}
-                  aria-pressed={seats === count}
-                  onClick={() => setSeats(count)}
-                >
-                  <strong>
-                    {count === 2 ? 'Heads-up' : 'Six-player table'}
-                  </strong>
-                  <span>
-                    {count === 2
-                      ? 'You + one bot · room to learn'
-                      : 'You + five bots · more action'}
-                  </span>
-                </button>
-              ))}
-            </div>
-            <button
-              className="primary start-game"
-              disabled={dealing || profile.bankroll < 1}
-              onClick={() => void prepare()}
-            >
-              {dealing ? 'Shuffling…' : 'Take a seat & play'}
-            </button>
-            <p className="hint">No buy-in. No timer. Just play-money poker.</p>
-          </div>
-          <div className="lobby-table" aria-hidden="true">
-            <div className="lobby-orbit">
-              <span>♠</span>
-              <div className="lobby-cards">
-                <span>
-                  A<small>♠</small>
-                </span>
-                <span>
-                  K<small>♥</small>
-                </span>
-              </div>
-              <div className="lobby-chips">
-                <i />
-                <i />
-                <i />
-              </div>
-              <p>THE NEXT MOVE IS YOURS</p>
-            </div>
-          </div>
-        </section>
-      )}
       <div className="session-toolbar">
         <span>
           {seats === 2 ? 'Heads-up' : 'Six-player'} · {bigBlind / 2} /{' '}
@@ -547,7 +473,7 @@ export default function Play() {
             checked={guided}
             onChange={(e) => setGuided(e.target.checked)}
           />{' '}
-          Walk me through the hand
+          Explain action buttons
         </label>
       </div>
       {error && (
@@ -592,13 +518,12 @@ export default function Play() {
           {game?.complete && (
             <section className="hand-result" aria-label="Hand result">
               <div>
-                <span className="eyebrow">HAND COMPLETE</span>
                 <h2>
                   {game.players[0].stack > game.config.stacks[0]
-                    ? 'Chips coming your way.'
+                    ? 'Hand won'
                     : game.players[0].stack < game.config.stacks[0]
-                      ? 'A fresh hand awaits.'
-                      : 'Back where you started.'}
+                      ? 'Hand lost'
+                      : 'Hand tied'}
                 </h2>
                 <p>
                   <strong>
@@ -755,13 +680,11 @@ export default function Play() {
         </div>
         {game && (
           <CoachSidebar
-            game={game}
-            guided={guided}
             feedback={grade}
             course={
               courseLesson && (
                 <section className="coach-course-focus">
-                  <span className="eyebrow">
+                  <span className="course-reference">
                     LESSON {courseLesson.id.replace('-', '.')} · YOUR FOCUS
                   </span>
                   <p>{practiceFocus(courseLesson.chapter)}</p>
@@ -771,9 +694,10 @@ export default function Play() {
                 </section>
               )
             }
-            odds={
+            odds={(topic) =>
               showCoach ? (
                 <CoachPanel
+                  topic={topic}
                   view={playerView(game, 0)}
                   assessment={assessment}
                   raiseTo={modelRaiseTo}
@@ -790,7 +714,7 @@ export default function Play() {
                         ? 'Turn on Coach in Table settings to see the estimates.'
                         : heroTurn && thinking
                           ? 'Updating your estimate. You can still act while it loads.'
-                          : 'I’ll show your odds when it is your turn. For now, follow the action in Explain the hand.'}
+                          : 'Your pot-odds calculation appears when it is your turn. Watch the bets change the price.'}
                 </p>
               )
             }
@@ -948,29 +872,6 @@ export default function Play() {
           </p>
         )}
       </details>
-      {!game && (
-        <div className="room-paths">
-          <div>
-            <span className="eyebrow">01 / TAKE YOUR SEAT</span>
-            <h2>Play against the bots</h2>
-            <p>
-              Every opponent acts on their own cards and the action they can
-              see.
-            </p>
-          </div>
-          <div>
-            <span className="eyebrow">02 / LEARN IN THE HAND</span>
-            <h2>A little help when it matters</h2>
-            <p>Follow the walkthrough, or switch it off and trust your read.</p>
-          </div>
-          <div>
-            <span className="eyebrow">03 / GO DEEPER</span>
-            <h2>Bring your questions</h2>
-            <p>Replay a hand, explore the odds, or open a lesson.</p>
-            <Link to="/learn">Visit the learning room →</Link>
-          </div>
-        </div>
-      )}
     </main>
   );
 }

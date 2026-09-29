@@ -141,8 +141,10 @@ export default function RangeLab() {
   const selected = cells[inspect];
   return (
     <main className="tool-page">
-      <span className="eyebrow">LAB / RANGES AND BLOCKERS</span>
-      <h1>Weight the possible hands.</h1>
+      <h1>Range editor</h1>
+      <p>
+        <Link to="/lab/charts">Starting-hand charts & reference →</Link>
+      </p>
       <p>
         Pairs lie on the diagonal, suited hands above it, offsuit below it. Each
         cell is a hand class, not one equally likely outcome. The numbers show

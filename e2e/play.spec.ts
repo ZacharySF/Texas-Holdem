@@ -46,7 +46,7 @@ async function closeCoach(page: Page) {
   if (await button.isVisible()) await button.click();
 }
 
-test('game entry, guided streets, result, replay and next hand', async ({
+test('game entry, visual pot odds, legal play, result, replay and next hand', async ({
   page,
 }, testInfo) => {
   await setup(page);
@@ -73,25 +73,52 @@ test('game entry, guided streets, result, replay and next hand', async ({
   ).toHaveCount(2);
   await openCoach(page);
   await expect(
-    page.getByRole('heading', { name: 'Start with your two cards' }),
+    page.getByRole('heading', { name: 'Pot odds, step by step' }),
   ).toBeVisible();
+  await expect(
+    page.getByRole('region', { name: 'Pot odds calculation' }),
+  ).toContainText('5 ÷ 20 = 25.00%');
+  await page.getByRole('button', { name: 'Equity', exact: true }).click();
+  await expect(
+    page.getByRole('region', { name: 'Equity calculation' }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('region', { name: 'Equity calculation' }),
+  ).toContainText('3,000');
+  await expect(
+    page.getByText('What do the poker words mean?', { exact: true }),
+  ).toHaveCount(0);
+  const equityAnswer = await page
+    .locator('.equity-equation strong')
+    .innerText();
+  await page
+    .getByLabel('Your calculation (%)', { exact: true })
+    .fill(equityAnswer.replace('%', ''));
+  await page
+    .getByRole('button', { name: 'Check my calculation', exact: true })
+    .click();
+  await expect(
+    page
+      .getByRole('region', { name: 'Calculate your current equity' })
+      .getByRole('status'),
+  ).toContainText('Correct');
+
+  await page.screenshot({
+    path: `docs/screenshots/equity-coach-${testInfo.project.name}.png`,
+    fullPage: true,
+  });
+  await page.getByRole('button', { name: 'Pot odds', exact: true }).click();
   await closeCoach(page);
   await expect(page.getByRole('button', { name: /^Call / })).toBeEnabled();
   await page.getByRole('button', { name: /^Call / }).click();
   await openCoach(page);
-  await expect(
-    page.getByRole('heading', { name: 'Meet the shared cards' }),
-  ).toBeVisible();
-  await closeCoach(page);
   await page.getByRole('button', { name: /^(Check|Call) / }).waitFor();
-  await openCoach(page);
-  await page.getByRole('button', { name: 'Odds & why', exact: true }).click();
   await expect(
-    page.getByRole('heading', { name: 'Coach · your visible information' }),
+    page.getByRole('region', { name: 'Pot odds calculation' }),
   ).toBeVisible();
-  await page
-    .getByRole('button', { name: 'Explain the hand', exact: true })
-    .click();
+  await expect(
+    page.getByRole('button', { name: 'Explain the hand', exact: true }),
+  ).toHaveCount(0);
   await closeCoach(page);
   const heroCards = await page
     .locator('.hero-seat .playing-card')
@@ -110,19 +137,32 @@ test('game entry, guided streets, result, replay and next hand', async ({
     path: `docs/screenshots/poker-table-${testInfo.project.name}.png`,
   });
   await noOverflow(page);
-  await page.getByRole('button', { name: /^(Check|Call) / }).click();
-  await openCoach(page);
-  await expect(
-    page.getByRole('heading', { name: 'One card still to come' }),
-  ).toBeVisible();
-  await closeCoach(page);
-  await page.getByRole('button', { name: /^(Check|Call) / }).click();
-  await openCoach(page);
-  await expect(
-    page.getByRole('heading', { name: 'Make your final decision' }),
-  ).toBeVisible();
-  await closeCoach(page);
-  await page.getByRole('button', { name: /^(Check|Call) / }).click();
+  for (let turn = 0; turn < 30; turn++) {
+    await expect(
+      page
+        .locator('.hand-result, .action-panel button')
+        .filter({ visible: true })
+        .first(),
+    ).toBeVisible();
+    if (await page.getByRole('region', { name: 'Hand result' }).isVisible())
+      break;
+    const move = page.getByRole('button', { name: /^(Check|Call) / });
+    await expect(move).toBeEnabled({ timeout: 30000 });
+    await move.click();
+    await expect
+      .poll(
+        async () =>
+          (await page
+            .getByRole('region', { name: 'Hand result' })
+            .isVisible()) ||
+          (await page
+            .getByRole('button', { name: /^(Check|Call) / })
+            .isEnabled()
+            .catch(() => false)),
+        { timeout: 30000 },
+      )
+      .toBe(true);
+  }
   await expect(page.getByRole('region', { name: 'Hand result' })).toBeVisible();
   await expect(page.locator('.bankroll small')).toContainText('1 hands played');
   await expect(
@@ -144,13 +184,12 @@ test('game entry, guided streets, result, replay and next hand', async ({
   await noOverflow(page);
 });
 
-test('six seats, optional walkthrough, and actions without waiting for coach', async ({
+test('six seats, optional action captions, and actions without waiting for coach', async ({
   page,
 }, testInfo) => {
   await setup(page);
+  await page.getByLabel('Explain action buttons').uncheck();
   await page.getByRole('button', { name: /^Six-player table/ }).click();
-  await page.getByLabel('Walk me through the hand').uncheck();
-  await page.getByRole('button', { name: 'Take a seat & play' }).click();
   await expect(page.locator('.bot-seat')).toHaveCount(5);
   await expect(
     page.locator('.bot-seat [aria-label="Hidden opponent card"]'),

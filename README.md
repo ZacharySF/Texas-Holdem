@@ -1,16 +1,32 @@
-# neo-gospel
+# contemprorary
 
-A No-Limit Hold’em game with a probability course built around it. Open the poker room, take a seat against one or five bots, and learn through real hands. An optional walkthrough follows each betting street; deeper coaching, lessons, drills, and experiments stay within reach. Everything runs locally in your browser.
+A No-Limit Hold’em game with a probability course built around it. Open the poker room, take a seat against one or five bots, and learn through real hands. A side coach walks through the live pot-odds calculation; lessons, drills, and experiments stay within reach. Everything runs locally in your browser.
 
 Phases 0–9 are implemented locally. Learn contains 53 lessons across chapters 0–25. Play supports heads-up and 6-max tables, including running all-ins twice. The Lab covers equity, ranges, repeated events, bankroll paths, shuffles, insurance, push/fold, ICM, and Kelly. Arcade includes five drills and a playable AKQ game with a small CFR trainer. Stats summarizes completed hands and forecasts.
 
-**Play online:** [neo-gospel](https://zacharysf.github.io/neo-gospel/). **Source:** [neo-gospel on GitHub](https://github.com/ZacharySF/neo-gospel). The first deployment passed all checks and the live URL was verified on 2026-09-28. GitHub Actions deploys `dist/` after successful checks on `main`. Hash routes and relative assets support project Pages URLs and shared Lab links.
+**Source:** [contemprorary on GitHub](https://github.com/ZacharySF/contemprorary). The repository has been renamed with its history intact. Pushes to main run the checks and publish to the [Pages site](https://zacharysf.github.io/contemprorary/). Hash routes and relative assets support project Pages URLs and shared Lab links.
 
-## neo-gospel / poker after hours
+## Dark Svelte presentation
 
-The interface uses cobalt and icy glass, a fine LED mesh, slow light streaks, reflected community cards, glass chips, and sparse amber actions. Both display themes use bundled Nunito and JetBrains Mono fonts with no runtime font requests. The coach, numbered course, games, experiments, and stored progress keep their existing behavior.
+The application shell, home, playing cards, table, gradient-mapped image, hand charts, and coaching walkthroughs use Svelte 5. The existing React controllers, hash router, MDX lessons, and experiments remain behind a small adapter to preserve their tested behavior. This is a staged migration, not a complete removal of React.
 
-**Theme file:** [`src/design-tokens.css`](src/design-tokens.css). All palette, spacing, type, radius, blur, and surface values live here. [`docs/VISUAL-DESIGN.md`](docs/VISUAL-DESIGN.md) lists changed files, screenshots, screen-by-screen comparisons, and accessibility checks. No engine, simulation, lesson-content, or test source changed in this visual pass. Existing benchmark measurements below were retained; performance benchmarks were not rerun.
+Display offers two dark palettes: Violet and a lighter dark Blue. Both use flat panels, thin rules, and limited bright highlights; the choice persists across reloads and updates the Pixi table. A lazily loaded Pixi canvas draws the poker table and the same visible cards announced by the accessible HTML. If WebGL is unavailable, HTML keeps the table playable. Effects turn off after sustained slow frames; reduced motion stops animation entirely.
+
+- Theme: [`src/design-tokens.css`](src/design-tokens.css).
+- Pixi colors, filters, performance budget, and all parallax magnitudes: [`src/visual/config.ts`](src/visual/config.ts).
+- Shared page motion: [`src/visual/parallax.ts`](src/visual/parallax.ts).
+- Replace `public/art/hero.jpg` with your photo. The reusable `GradientMapImage.svelte` component maps its shadows, midtones, and highlights to the theme. The bundled JPEG is a neutral placeholder. Random aces, court cards, and jokers fade over this slot; `visualConfig.motion.heroCards` controls their timing and placement. Jokers are decorative only.
+- Screenshots, before/after descriptions, exact changed-file list, and validation limits: [`docs/VISUAL-DESIGN.md`](docs/VISUAL-DESIGN.md).
+
+Cards are adapted from Byron Knoll’s public-domain [Vector Playing Cards](https://byronknoll.blogspot.com/2011/03/vector-playing-cards.html), with 52 default faces, 52 four-color variants, and a custom geometric back in `public/cards/`. The source/license note is [here](public/cards/LICENSE.md). Syncopate (Apache 2.0), Zen Kaku Gothic New (OFL), and Departure Mono (OFL) are self-hosted; their license files are in `src/assets/fonts/`.
+
+The evaluator, equity calculations, and settlement remain unchanged. Existing routes remain available, with a new Hand charts route. Four lessons now include the requested chart and by-hand equity walkthroughs. The later authorized gameplay update replaces passive bot rules with sampled action comparisons and adds a tested pot-odds walkthrough. With user approval, browser tests now cover both dark palettes, the new coach, charts, lesson exercises, and one-click six-player entry.
+
+## Hand charts and calculating equity yourself
+
+**Tools → Hand charts** contains a complete starting-hand matrix and a heads-up small-blind shove/fold matrix. Tap a cell to inspect its combination count, equity, uncertainty, and modeled value. Change opponents, effective stack, calling range, or sample count and rebuild. The shove chart explicitly states its situation and models only shove versus fold; it is not an EP1 chart or a solved tournament strategy. A resource index links rules, rankings, ranges, draws, pot odds, bluffing, bankroll tools, and ICM.
+
+The coach's **Equity** tab shows actual wins, ties, losses, shared-pot credit, and division by the sample count. Its self-check accepts your calculated percentage. The optional by-hand exercise exposes both hands, lists every possible river, and checks your answer before revealing the arithmetic. Lessons **7.1**, **18.1**, and **23.1** walk through chart notation, range weights, and shove assumptions. Lesson **11.1** includes the same by-hand equity exercise. Existing seven-part lesson structure and mastery remain intact.
 
 ## Start here
 
@@ -18,7 +34,7 @@ Choose **Start Chapter 1** in the poker room, or open **Course**. The course has
 
 Each lesson gives you a card example, an explanation, an experiment, and a chance to practice. **Play a practice hand** takes that lesson’s focus to a real bot game. Finish the hand, then **Return to lesson** to pick up the same lesson and experiment code. Your place, read lessons, and played practice hands save on this device; quiz mastery is tracked separately. Unfinished quiz answers reset when you leave.
 
-The **coach sits beside the table** on desktop. On a phone, use **Open coach · help with this hand**. Choose **Explain the hand**, **Odds & why**, or **Last decision**. Plain definitions are available in the coach. Close it with **Back to table** or Escape; opening it does not restart your game.
+The **coach sits beside the table** on desktop. On a phone, use **Open coach · help with this hand**. **Pot odds** opens by default; **Equity** explains the current estimate step by step and lets you check your own calculation. **Last decision** reviews your choice. The standalone poker-word dictionary and Explain the hand tabs have been removed. Close it with **Back to table** or Escape; opening it does not restart your game.
 
 The top navigation is **Play** (bot games), **Course** (numbered lessons), **Drills** (short practice games), **Tools** (experiments and calculators), and **Progress** (completed hands and forecasts).
 
@@ -28,9 +44,11 @@ The top navigation is **Play** (bot games), **Course** (numbered lessons), **Dri
 
 ## Play first, learn as you go
 
-The app opens in the poker room. Choose heads-up or a six-player table and press **Take a seat & play**. The table shows named bots, concealed hole cards, the dealer button, stack sizes, bets, and whose turn it is. Opponents pause briefly so their actions are readable. Choose fold, check, call, or raise; use the slider or enter an exact raise total.
+The app opens in the poker room. Press **Take a seat & play** for the selected table or **Six-player table** to deal directly against five bots. The table shows named bots, concealed hole cards, the dealer button, stack sizes, bets, and whose turn it is. Opponents pause briefly so their actions are readable. Choose fold, check, call, or raise; use the slider or enter an exact raise total.
 
-**Walk me through the hand** introduces your cards, the flop, the turn, and the river as they actually arrive. Switch it off for uninterrupted play. **Odds & why** in the side coach opens the full odds and decision analysis. Ordinary actions stay available while estimates load; actions made before an estimate arrives are saved without a model grade. Exam mode still requires an estimate before acting.
+**Explain action buttons** toggles short button captions. The side coach shows the current pot, call cost, final pot, and the division that gives break-even equity. Multiway hands show each pot’s expected award separately. **Equity, raises, and deeper analysis** opens the detailed estimates. Ordinary actions stay available while estimates load; actions made before an estimate arrives are saved without a model grade. Exam mode still requires an estimate before acting.
+
+Bots compare folding, checking/calling, minimum raises, half-pot raises, pot-sized raises, and all-in (where legal). They choose the greatest estimated net chip return across 800 shared sampled deals. The raise model guesses whether each opponent continues using current-street strength, price, and the chosen range profile; it never reads actual hidden cards or future dealt cards. Side pots and uncalled chips use the existing settlement rules. This is a one-decision model without re-raises or later betting, not a claim of optimal poker. Completed hand reviews show the compared values.
 
 A result panel shows the net chip change and **Deal next hand**. Expand **Review this hand** for replay, revealed cards, bot reasoning, and runouts. Table settings, manual seed commitments, and saved histories live in expandable panels. Learn, Lab, Arcade, and Stats remain available in the main navigation. Finish a hand before navigating away: active hands are still session-only.
 
@@ -66,7 +84,7 @@ Leave the terminal running while using the app; press Ctrl+C to stop it. Later s
 | `npm run test:smoke`   | Production Playwright checks (build and install Chromium first)             |
 | `npm run coverage`     | Same suite with enforced engine coverage thresholds                         |
 | `npm run lint`         | ESLint and Prettier checks                                                  |
-| `npm run typecheck`    | Strict TypeScript checks                                                    |
+| `npm run typecheck`    | TypeScript and Svelte checks                                                |
 | `npm run build`        | Typecheck and production build                                              |
 | `npm run bench`        | Evaluator and Monte Carlo throughput with machine details                   |
 | `npm run verify:7card` | Exhaust all seven-card hands and compare one million hands to the reference |
@@ -84,7 +102,7 @@ Equity measures pot share: a tie divides the pot among all winners. A sampled fr
 
 For feasible setups, simulation also computes an exact reference and displays the gap. The SVG chart shows the running estimate, uncertainty band, and reference. Exact feasibility uses a conservative budget of 120,000 hand evaluations per request, accounting for random opponents as well as boards. It is intended to stay interactive on phones; the pure engine permits larger enumerations for verification.
 
-Dark and light themes, an optional four-color deck, suit symbols, keyboard focus, reduced-motion handling, and phone-sized card controls are included. Display settings stay in localStorage. No accounts, backend, analytics, external fonts, or application-data network requests.
+The dark theme includes an optional four-color deck, suit symbols, keyboard focus, reduced-motion handling, and phone-sized card controls. Display settings stay in localStorage. No accounts, backend, analytics, external fonts, or application-data network requests.
 
 ## Learn: chapters 0–25
 
@@ -106,7 +124,7 @@ The drawing lessons explicitly distinguish a rank-hit set-mining event from ever
 
 1. Select heads-up or six players and press **Take a seat & play**. Table settings contain bot styles and blinds. Each deal is committed automatically before cards are dealt; the advanced **Commit next deal** option lets you inspect the hash before dealing manually. Your seed stays hidden until the hand ends.
 2. Check, call, fold, or raise to a total contribution for the current round. Legal controls enforce the minimum increment, stack caps, and short-all-in restrictions. The button rotates between hands.
-3. Follow the optional hand walkthrough. Choose **Odds & why** in the side coach for weighted-range equity, separate win/tie/loss estimates, pot odds, highlighted category-improvement cards, and direct EV comparisons. Exam mode asks for your equity estimate before revealing the coach.
+3. Open **Pot odds** in the side coach, then **Equity, raises, and deeper analysis** for weighted-range equity, separate win/tie/loss estimates, pot odds, highlighted category-improvement cards, and direct EV comparisons. Exam mode asks for your equity estimate before revealing the coach.
 4. Choose **Last decision** in the coach after acting when an estimate was available. The model ignores future betting, depends on a heuristic range estimate, and uses your displayed fold-response assumption for a raise. Known uncallable overbets are excluded when pricing a short-stack call. The highlighted cards improve a made-hand category; they are not guaranteed winners.
 5. After the hand, inspect all hands and every bot reason, verify the revealed seed, replay the recorded actions, or run any encountered street out 10,000 times. Outcome histograms show net chip awards after each main and side pot is settled with the final matched contributions held fixed.
 
@@ -162,7 +180,7 @@ On NixOS, point `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` at the installed Chromium 
 
 ```mermaid
 flowchart TD
-    UI[React Learn, Play, Lab, Arcade, Stats] --> URL[HashRouter: lessons, cards, seeds]
+    UI[Svelte shell and visuals + React/MDX controllers] --> URL[HashRouter: lessons, cards, seeds]
     UI --> Course[MDX and KaTeX lessons]
     UI --> Game[Pure betting state machine and bot views]
     UI --> History[IndexedDB: completed hands and replay]
@@ -200,7 +218,7 @@ See [architecture decisions](docs/ARCHITECTURE.md), [product specification](docs
 - Fifty-three MDX lessons render with the seven-part contract and valid formulas; hundreds of seeded practice variants are checked. Tests cover answer normalization, delayed solutions, completed-set scoring, mastery/unlocks, corrupt progress data, SHA-256 verification, and IndexedDB round trips.
 - A production Chromium review passed at 375px: all ten lessons, seeded simulation replay, 80% mastery and reload, unlocking, pre-deal commitment, hidden bot cards, exam gating, a full hand to showdown, hash verification, action replay, turn runouts, saved-history reload, and no horizontal overflow or browser errors.
 - Phase 4 tests cover every drawing anchor, independent suit-texture counts, probability-tree conservation, clean/dirty and overlapping outs, rare-event simulations, and seeded drill answers. The 375px production review passed all nine new lessons, expanded notebooks, simulation selection/replay, mastery reload, a full Outs Rush set, persisted scores, pause/resume, light/four-color display, and Play XP/coach links with no page errors or overflow. Timer expiry and replay without duplicate XP also have component tests.
-- CI enforces at least 90% engine statements, branches, functions, and lines. The expanded suite tests engine distributions, seeded drills, all 53 lesson contracts, and six-seat pot accounting. Validation passed 90 tests across 18 files, lint, strict typecheck, production build, and 10 permanent Playwright tests. Engine coverage is 99.22% statements, 98.24% branches, 100% functions, and 99.31% lines; the same coverage floor remains enforced.
+- CI enforces at least 90% engine statements, branches, functions, and lines. The expanded suite tests engine distributions, seeded drills, all 53 lesson contracts, and six-seat pot accounting. Validation passed 105 tests across 23 files, lint, strict TypeScript/Svelte checks, production build, and 26 permanent Playwright checks. Engine coverage is 99.20% statements, 98.40% branches, 100% functions, and 99.32% lines; the same coverage floor remains enforced.
 
 The [anchor-to-test index](docs/ROADMAP.md#final-audit-anchor-to-test-index) maps every roadmap anchor to its test file and exact name. The audit replaced approximate checks for exact probabilities, ICM prize totals, and two-river moments with rational equality; it also asserts sample counts and mastery boundaries explicitly. Regression tests reject machine-specific paths, literal percentage labels in presentation code, stale test references, and CI configurations that omit their own Chromium installation. Lesson examples and shared confidence labels now read their values from the same code that computes the experiment. No engine algorithm changed in this audit; the measured benchmark results below remain the Phase 9 measurements.
 
@@ -229,3 +247,19 @@ The seed and inputs reproduce the same results for this algorithm version. This 
 ## License
 
 [MIT](LICENSE), copyright Zachary Finley-Stubbs.
+
+## Bot follow-up benchmark
+
+Measured September 28, 2026 local time (September 29 UTC), Node 24.20.0, Intel Core Ultra 7 256V, 8 logical CPUs, 15.2 GiB RAM, Linux 7.2.5 x64. The browser checks were stopped for this run. Each bot measurement averages 20 repeated preflop decisions after warmup, 800 shared samples per decision; worker startup and UI delay are excluded.
+
+| Workload                         |                Measured |
+| -------------------------------- | ----------------------: |
+| Fast seven-card evaluation       |  4,735,221 hands/second |
+| Monte Carlo, one random opponent |   933,869 trials/second |
+| Monte Carlo, weighted range      |   194,785 trials/second |
+| Lesson category experiment       | 2,756,477 trials/second |
+| Six-seat side-pot awards         |   115,809 trials/second |
+| Bot decision, heads-up           |        4.34 ms/decision |
+| Bot decision, six seats          |       10.81 ms/decision |
+
+The previous evaluator/equity/payout algorithms remain unchanged. Relative to the September 27 measurement, throughput was +1.8% evaluation, +1.7% random equity, −0.4% weighted equity, −1.9% lesson trials, and +1.5% payouts. These small differences are single-run timing variation, not evidence of an algorithmic change. Bot decision timings are new workloads with no earlier comparable baseline.

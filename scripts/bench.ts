@@ -1,7 +1,7 @@
 import { payouts } from '../src/engine/payouts';
 import { simulateExperiment } from '../src/engine/experiments';
 import { newGame, playerView } from '../src/engine/game';
-import { estimatedRange } from '../src/engine/bots';
+import { chooseBot, estimatedRange } from '../src/engine/bots';
 import os from 'node:os';
 import { performance } from 'node:perf_hooks';
 import { deck, parseCards, type Hand } from '../src/engine/cards';
@@ -70,6 +70,22 @@ const multiway = payouts({
   method: 'monteCarlo',
 });
 const payoutRate = multiway.samples / ((performance.now() - start) / 1000);
+const botTimings = [2, 6].map((seats) => {
+  const botView = playerView(
+    newGame({
+      seed,
+      stacks: Array(seats).fill(1000),
+      button: 0,
+      smallBlind: 5,
+      bigBlind: 10,
+    }),
+    seats === 2 ? 0 : 3,
+  );
+  chooseBot(botView, 'equity-driven', seed);
+  const started = performance.now();
+  for (let i = 0; i < 20; i++) chooseBot(botView, 'equity-driven', seed);
+  return Number(((performance.now() - started) / 20).toFixed(2));
+});
 console.log(
   JSON.stringify(
     {
@@ -84,6 +100,8 @@ console.log(
       weightedRangeSamplesPerSecond: Math.round(rangeRate),
       lessonTrialsPerSecond: Math.round(lessonRate),
       sixSeatPayoutsPerSecond: Math.round(payoutRate),
+      botHeadsUpMs: botTimings[0],
+      botSixSeatMs: botTimings[1],
       seed,
       checksum,
     },

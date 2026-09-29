@@ -22,8 +22,7 @@ export default function ShuffleLab() {
   }, [params, seed, setParams]);
   return (
     <main className="tool-page">
-      <span className="eyebrow">LAB / SHUFFLES</span>
-      <h1>Count the paths, then shuffle.</h1>
+      <h1>Shuffle Lab</h1>
       <p>
         Three labeled cards, 0, 1, and 2. Each random index has equally likely
         choices. Exhaustive enumeration visits every possible index sequence.

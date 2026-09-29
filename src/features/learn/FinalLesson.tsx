@@ -8,7 +8,6 @@ export function FinalWorked() {
     e = finalExample(lesson.id, lesson.id === '24-2' ? 2 : 5);
   return (
     <section data-part="derivation" className="lesson-section">
-      <span className="eyebrow">03 / THE NOTEBOOK</span>
       <h2>One step at a time</h2>
       <p>
         {e.label}. The symbol E denotes a probability-weighted mean; Var denotes
@@ -53,7 +52,6 @@ export function FinalSimulation() {
   const { lesson, seed } = useLesson();
   return (
     <section data-part="simulation" className="lesson-section">
-      <span className="eyebrow">04 / CHECK IT</span>
       <h2>Run the experiment</h2>
       <p>
         {lesson.experimentLabel} Trials restart the stated model. Sampled means

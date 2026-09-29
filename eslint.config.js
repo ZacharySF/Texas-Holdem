@@ -1,6 +1,7 @@
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import hooks from 'eslint-plugin-react-hooks';
+import svelte from 'eslint-plugin-svelte';
 export default tseslint.config(
   {
     ignores: [
@@ -13,6 +14,24 @@ export default tseslint.config(
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
+  ...svelte.configs['flat/recommended'],
+  {
+    files: ['**/*.svelte'],
+    rules: { 'no-undef': 'off' },
+    languageOptions: {
+      parserOptions: {
+        parser: tseslint.parser,
+        extraFileExtensions: ['.svelte'],
+      },
+      globals: {
+        document: 'readonly',
+        window: 'readonly',
+        location: 'readonly',
+        localStorage: 'readonly',
+        AbortController: 'readonly',
+      },
+    },
+  },
   {
     files: ['src/**/*.{ts,tsx}'],
     plugins: { 'react-hooks': hooks },

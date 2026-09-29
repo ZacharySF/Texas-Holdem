@@ -5,9 +5,6 @@
     color: var(--text);
     background: var(--bg);
   }
-  :root[data-theme='light'] {
-    color-scheme: light;
-  }
   * {
     box-sizing: border-box;
   }
@@ -175,12 +172,6 @@
     border: var(--size-1px) solid var(--border);
     border-radius: var(--size-14px);
     padding: var(--size-24px);
-  }
-  .eyebrow {
-    font-size: var(--type-0-64rem);
-    letter-spacing: var(--type-0-13em);
-    color: var(--muted);
-    font-weight: 500;
   }
   .section-head {
     display: flex;

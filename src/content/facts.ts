@@ -249,3 +249,12 @@ export {
 export { finalFacts } from './finalFacts';
 
 export { finalExample, finalRequest, riverExample } from './finalLessonFacts';
+
+export { potOddsFacts } from './potOddsFacts';
+
+export { handChartCell, handClassFacts, shoveScenario } from './handChartFacts';
+export {
+  equityCoachFacts,
+  equityByHandExample,
+  checkEquityCalculation,
+} from './equityCoachFacts';

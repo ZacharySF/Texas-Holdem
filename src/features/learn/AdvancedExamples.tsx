@@ -21,7 +21,6 @@ export function AdvancedWorked() {
     value = modelTruth(e.model);
   return (
     <section data-part="derivation" className="lesson-section">
-      <span className="eyebrow">03 / THE NOTEBOOK</span>
       <h2>One step at a time</h2>
       <p>
         {e.title}. E means expected value; P means probability. A bar over X

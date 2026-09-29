@@ -61,7 +61,6 @@ export function ModelCheck({
     probability = binaryModel(model) || model.type === 'means';
   return (
     <section data-part="simulation" className="lesson-section">
-      <span className="eyebrow">04 / CHECK IT</span>
       <h2>Run the experiment</h2>
       <p>
         Each trial resets this model. The seed reproduces the same draws. A

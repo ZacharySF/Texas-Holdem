@@ -143,10 +143,10 @@ test('Streak Trap and AKQ play, replay, solver, and display settings', async ({
       fullPage: true,
     });
   await page.getByText('Display', { exact: true }).click();
-  await page.getByLabel('Light theme').check();
+  await expect(page.getByLabel('Light theme')).toHaveCount(0);
   await page.getByLabel('Four-color deck').check();
   await page.reload();
-  await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await expect(page.locator('html')).toHaveAttribute('data-four-color', 'true');
   await width(page);
 });
@@ -160,7 +160,8 @@ test('run-it-twice table, saved history, and Stats', async ({ page }) => {
     Object.defineProperty(crypto, 'getRandomValues', {
       value: (array: ArrayBufferView<ArrayBuffer>) => {
         if (array instanceof Uint32Array) {
-          array.fill(1);
+          // This deal gives the bot a profitable all-in call under its range model.
+          array.fill(6);
           return array;
         }
         return original(array);

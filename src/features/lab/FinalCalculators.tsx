@@ -246,7 +246,6 @@ export default function FinalCalculators() {
   }
   return (
     <main className="tool-page">
-      <span className="eyebrow">LAB / {calculator?.toUpperCase()}</span>
       <h1>
         {calculator === 'icm'
           ? 'ICM and bubble factor'
