@@ -30,7 +30,7 @@
 </script>
 
 <main class="tool-page">
-  <h1>Streak Trap</h1>
+  <h2>Streak Trap</h2>
   <p>
     Predict the next independent result, before seeing an explanation. No clock
     is needed for this drill.

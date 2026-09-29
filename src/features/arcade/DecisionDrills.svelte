@@ -35,13 +35,13 @@
 </script>
 
 <main class="tool-page">
-  <h1>
+  <h2>
     {mode === 'call'
       ? 'Call or Fold'
       : mode === 'guess'
         ? 'Guess the Equity'
         : 'Combo Counter'}
-  </h1>
+  </h2>
   <p>
     Seed: <code>{seed}</code>. Share this address to repeat all five questions.
     Solutions appear only after answering.

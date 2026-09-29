@@ -32,7 +32,7 @@
 </script>
 
 <main class="tool-page">
-  <h1>AKQ</h1>
+  <h2>AKQ</h2>
   <p>
     Q &lt; K &lt; A. Each player antes one chip and receives one distinct card.
     Check or bet one; facing a bet, fold or call. No raises. Payoffs include the

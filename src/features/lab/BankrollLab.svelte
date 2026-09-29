@@ -84,7 +84,7 @@
 </script>
 
 <main class="tool-page">
-  <h1>The spread around a win rate</h1>
+  <h2>The spread around a win rate</h2>
   <section class="panel tool-fields">
     {#each Object.keys(values) as (keyof typeof values)[] as k (k)}<label
         >{{

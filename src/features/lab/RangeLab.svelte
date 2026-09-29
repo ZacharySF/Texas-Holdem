@@ -196,7 +196,7 @@
 </script>
 
 <main class="tool-page">
-  <h1>Range editor</h1>
+  <h2>Range editor</h2>
   <p><a href="#/lab/charts">Starting-hand charts & reference →</a></p>
   <p>
     Pairs lie on the diagonal, suited hands above it, offsuit below it. Each

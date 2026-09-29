@@ -90,7 +90,7 @@
 </script>
 
 <main class="tool-page">
-  <h1>How often does it happen?</h1>
+  <h2>How often does it happen?</h2>
   <p>
     Choose one card event, then repeat complete independent hands. Within a hand
     cards stay out; between hands the full setup is restored.

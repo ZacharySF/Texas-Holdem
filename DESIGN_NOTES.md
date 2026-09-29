@@ -77,3 +77,9 @@ Contrast exposes two conflicts in the brief: ink-4 on ink-0 is only 2.35:1, so i
 The top rail uses the five numbered sections. The shell is left-anchored on a 12-column grid; the existing course contents occupy columns 1–2 on course pages. Other pages get an index built from existing tool/drill links or visible section headings. Mobile indices scroll horizontally; the existing course-contents disclosure retains its behavior.
 
 The 28px status rail shows current route code, existing lifetime hands, chips, XP and local time. No overall accuracy, session-only count, or streak is fabricated. Side-index buttons only scroll existing headings; cloned tool links use their existing URLs. No application state or routing is changed.
+
+## Phase 4 — page compositions
+
+Each page now has a single h1 masthead. Existing tool/game titles remain, with their text unchanged, as subordinate headings. The home brand heading also remains as a subordinate heading to preserve its existing accessible name and tests. Lesson titles are unchanged, cropped only by their own heading box; the full text remains accessible.
+
+Course has a real linked chapter index and numbered rows. Lessons retain their text, examples and original controls at 18px/27px with a 68ch reading limit. Existing previous/next navigation is enlarged. Play's readout receives existing equity, category-improvement outs and street values from CoachPanel; it neither computes new odds nor reveals unavailable values. Progress uses the existing completed-hand count as its large figure, plus saved per-lesson quiz scores and proportional bars. There is no overall-accuracy selector to bind.

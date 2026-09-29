@@ -570,7 +570,7 @@
 <main class={`play ${game ? 'in-game' : 'home-page'}`}>
   {#if game}
     <header class="play-header">
-      <h1>Poker</h1>
+      <h2>Poker</h2>
     </header>{/if}{#if !game && !pending}<div class="svelte-view">
       <Home
         {...{

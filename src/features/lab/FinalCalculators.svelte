@@ -132,7 +132,7 @@
 </script>
 
 <main class="tool-page">
-  <h1>
+  <h2>
     {calculator === 'icm'
       ? 'ICM and bubble factor'
       : calculator === 'sizing'
@@ -140,7 +140,7 @@
         : calculator === 'insurance'
           ? 'Insurance and running twice'
           : 'Push or fold'}
-  </h1>
+  </h2>
   <p>Seed: <code>{seed}</code>. Inputs are retained in this URL.</p>
   {#key calculator + params.toString()}<form
       onsubmit={(e) => {

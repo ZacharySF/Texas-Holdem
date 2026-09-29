@@ -16,7 +16,7 @@
 
 <section class="home-hero">
   <div class="home-title">
-    <h1 aria-label="contemprorary">{SITE_NAME}</h1>
+    <h2 aria-label="contemprorary">{SITE_NAME}</h2>
     <p>heads-up or six-max. the math is on screen.</p>
     <div class="home-actions">
       <button

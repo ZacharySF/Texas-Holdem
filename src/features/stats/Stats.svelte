@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ProgressOverview from '../../decor/ProgressOverview.svelte';
   import { learningFacts } from '../../content/facts';
   import { loadHands } from '../play/storage';
   import { readForecasts } from '../arcade/forecastStorage';
@@ -76,7 +77,8 @@
 </script>
 
 <main class="tool-page">
-  <h1>Results and uncertainty</h1>
+  <ProgressOverview hands={data?.summary.rate.hands} />
+  <h2>Results and uncertainty</h2>
   <p>
     Completed saved hands only. An unfinished hand is not counted. Rates use
     each hand's own big blind, so changing stakes does not change its weight.

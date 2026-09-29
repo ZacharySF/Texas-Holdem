@@ -279,7 +279,7 @@
 <main class={styles.lab}>
   <header class={styles.intro}>
     <div>
-      <h1>Equity</h1>
+      <h2>Equity</h2>
       <p>
         Choose the cards. Count every possible finish, or deal thousands of
         boards and watch the answer take shape.

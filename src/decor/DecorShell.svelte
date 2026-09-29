@@ -1,4 +1,5 @@
 <script lang="ts">
+  import PageMasthead from './PageMasthead.svelte';
   import StatusBar from './StatusBar.svelte';
   import SideIndex from './SideIndex.svelte';
   import { readouts } from './readouts';
@@ -9,6 +10,10 @@
 
 <div class="site-shell">
   <SideIndex />
-  <div class="site-main">{@render children()}</div>
+  <div class="site-main">
+    {#if !navigation.path.startsWith('/learn')}<PageMasthead
+        path={navigation.path}
+      />{/if}{@render children()}
+  </div>
 </div>
 <StatusBar path={navigation.path} {...readouts()} live />

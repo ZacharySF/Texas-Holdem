@@ -126,7 +126,7 @@
 </script>
 
 <main class="tool-page hand-charts">
-  <h1>Hand charts</h1>
+  <h2>Hand charts</h2>
   <p>Find your two cards. Read the numbers. Check the assumptions.</p>
   <div class="chart-mode" role="group" aria-label="Chart type">
     <button

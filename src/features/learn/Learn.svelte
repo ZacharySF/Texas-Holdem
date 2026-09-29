@@ -1,4 +1,5 @@
 <script lang="ts">
+  import CourseIndexLine from '../../decor/CourseIndexLine.svelte';
   import { lessons, lessonById } from '../../content/lessons';
   import { learningFacts } from '../../content/facts';
   import { Rng } from '../../engine/rng';
@@ -129,6 +130,7 @@
     {#if storageError || journeyError}<p role="alert">
         Progress works for this visit, but this browser cannot save it.
       </p>{/if}{#if !lessonId}<header class="learn-header">
+        <div class="panel-label">02 / course</div>
         <h1>Course</h1>
         <p>
           Welcome to the probability course. We’ll build the ideas from ordinary
@@ -137,6 +139,7 @@
           pace.
         </p>
       </header>
+      <CourseIndexLine />
       <section class="course-start panel">
         <h2>Chapter 1 · Probability from one deck</h2>
         <p>
@@ -200,7 +203,7 @@
           <a href="#/learn">Course</a><span> / Chapter {lesson.chapter}</span>
         </nav>
         <header class="learn-header">
-          <p class="lesson-number">
+          <p class="lesson-number panel-label">
             Lesson {lesson.id.replace('-', '.')}
           </p>
           <h1>{lesson.title}</h1>

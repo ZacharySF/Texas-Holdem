@@ -84,7 +84,7 @@
 
 <main class={styles.arcade}>
   <header>
-    <h1>Outs Rush</h1>
+    <h2>Outs Rush</h2>
     <p>
       Five seeded card spots. Name the target, remove known cards, and count
       each out once.

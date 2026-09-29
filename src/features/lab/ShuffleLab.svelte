@@ -32,7 +32,7 @@
 </script>
 
 <main class="tool-page">
-  <h1>Shuffle Lab</h1>
+  <h2>Shuffle Lab</h2>
   <p>
     Three labeled cards, 0, 1, and 2. Each random index has equally likely
     choices. Exhaustive enumeration visits every possible index sequence.

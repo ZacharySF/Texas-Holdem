@@ -1,0 +1,406 @@
+#root .page-masthead {
+  margin: 0 0 27px;
+  padding: 0;
+  border-bottom: 1px solid var(--ink-2);
+  min-width: 0;
+}
+#root .page-masthead h1,
+#root .learn-header h1 {
+  font-family: var(--f-display);
+  font-variation-settings: 'wdth' 125;
+  font-weight: 400;
+  font-size: var(--type-masthead);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink-5);
+  text-transform: lowercase;
+  margin: 0;
+  padding: 0 0 27px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  max-width: 100%;
+}
+#root .course-main:has(.lesson-number) .learn-header h1 {
+  font-size: var(--type-lesson);
+}
+#root .site-main::after {
+  content: '';
+  display: block;
+  height: 108px;
+}
+#root main :is(h2, h3, h4) {
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 27px 0 16px;
+}
+#root main p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 16px 0 27px;
+  max-width: 68ch;
+}
+#root .home-title {
+  padding: 0;
+}
+#root .home-title h2 {
+  margin-top: 0;
+}
+#root .home-hero {
+  display: block;
+  padding: 0 0 27px;
+  border-bottom: 1px solid var(--ink-2);
+}
+#root .home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-block: 27px;
+}
+#root .home-actions button {
+  min-height: 44px;
+  padding: 12px 24px;
+}
+#root .home-graphic-nav {
+  border-top: 1px solid var(--ink-2);
+  padding-block: 16px;
+}
+#root .home-stats {
+  border: 0;
+  padding: 16px 0;
+  margin: 0;
+}
+#root .session-toolbar {
+  margin: 0;
+  padding-block: 16px;
+  border-block: 1px solid var(--ink-2);
+}
+#root .poker-workspace {
+  grid-template-columns: minmax(0, 7fr) minmax(272px, 3fr);
+  gap: 24px;
+  align-items: start;
+}
+#root .play.in-game {
+  gap: 16px;
+}
+#root .play-header h2 {
+  font: 11px/1.5 var(--f-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+#root .felt-table {
+  min-height: 540px;
+  background: var(--ink-1);
+  border: 1px solid var(--ink-2);
+}
+#root .table-6 {
+  min-height: 594px;
+}
+#root .table-center {
+  top: 43%;
+}
+#root .table-6 .table-center {
+  top: 45%;
+}
+#root .seat {
+  box-shadow: none;
+}
+#root .actions button {
+  min-height: 44px;
+}
+#root .coach-sidebar {
+  padding: 16px;
+  border: 1px solid var(--ink-2);
+  background: var(--ink-1);
+  top: 24px;
+}
+#root .coach-sidebar p {
+  font-size: 16px;
+}
+#root .coach-sidebar h2 {
+  font-size: 24px;
+  margin-top: 0;
+}
+#root .coach-sidebar .coach-panel {
+  padding: 0;
+  border: 0;
+}
+#root .coach-tabs {
+  gap: 8px;
+}
+#root .coach-tabs button {
+  min-height: 44px;
+  font-size: 13px;
+  padding: 8px;
+}
+#root .spec-readout {
+  border-block: 1px solid var(--ink-2);
+  padding-bottom: 16px;
+  margin-bottom: 27px;
+}
+#root .spec-readout .panel-label {
+  border: 0;
+}
+#root .spec-readout dl {
+  margin: 0;
+}
+#root .spec-readout dl > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-block: 12px;
+}
+#root .spec-readout dt {
+  font: 11px var(--f-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+#root .spec-readout dd {
+  margin: 0;
+  font: 40px/1 var(--f-body);
+}
+#root .spec-readout .outs-number {
+  color: var(--orange);
+}
+#root .spec-readout .street-readout {
+  font-size: 16px;
+}
+#root .stripe-value {
+  height: 24px;
+  background: var(--ink-2);
+  pointer-events: none;
+}
+#root .stripe-value > span {
+  display: block;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--text) 0 1px,
+    transparent 1px 4px
+  );
+}
+#root .index-line {
+  font: 18px/1.5 var(--f-body);
+  padding: 27px 0;
+  margin: 0 0 27px;
+  border-block: 1px solid var(--ink-2);
+}
+#root .index-line a {
+  color: var(--text);
+  text-decoration: none;
+  display: inline;
+  line-height: 1.8;
+}
+#root .index-line a:hover {
+  text-decoration: underline;
+}
+#root .index-category {
+  color: var(--cyan-hi);
+  font: 13px var(--f-mono);
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+#root .index-category:not(:first-child) {
+  margin-left: 16px;
+}
+#root .index-separator {
+  pointer-events: none;
+}
+#root .learn-header {
+  margin: 0 0 27px;
+}
+#root .learn-header .lesson-number {
+  margin: 0;
+}
+#root .course-breadcrumb {
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+#root .course-start,
+#root .learning-loop,
+#root .course-overview,
+#root .course-index {
+  margin: 27px 0;
+}
+#root .course-index-chapter {
+  border-top: 1px solid var(--ink-2);
+  margin-top: 27px;
+}
+#root .course-index-chapter h3 {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+  margin: 27px 0;
+  font-size: 24px;
+}
+#root .course-index-chapter h3 > span {
+  font: 13px var(--f-mono);
+  flex: none;
+}
+#root .course-index-chapter ol {
+  margin: 0;
+  padding: 0;
+}
+#root .course-index-chapter li {
+  border-top: 1px solid var(--ink-2);
+}
+#root .course-index-chapter li > a {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  gap: 24px;
+  padding: 24px 0;
+  align-items: start;
+}
+#root .course-index-number,
+#root .course-index-status {
+  font: 13px/1.5 var(--f-mono);
+  color: var(--text);
+}
+#root .course-index-chapter strong {
+  font-size: 18px;
+  font-weight: 500;
+}
+#root .course-index-chapter small {
+  font-size: 16px;
+}
+#root
+  .course-main
+  :is(
+    .notebook,
+    .lesson-prerequisites,
+    .lesson-road-sign,
+    .lesson-summary,
+    .lesson-game-stop,
+    .lesson-finish
+  ) {
+  max-width: 68ch;
+  margin-inline: 0;
+  line-height: 1.5;
+}
+#root .lesson-nav {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin: 27px 0;
+}
+#root .lesson-nav a {
+  font-size: 16px;
+  max-width: 50%;
+}
+#root .lesson-finish .lesson-nav a {
+  font-size: clamp(24px, 3vw, 40px);
+  text-transform: lowercase;
+  line-height: 1.2;
+}
+#root .lesson-part-nav {
+  gap: 8px;
+}
+#root .lesson-part-nav button {
+  font-size: 13px;
+  min-height: 24px;
+}
+#root .panel {
+  padding: 24px;
+  border: 1px solid var(--ink-2);
+  background: var(--ink-1);
+}
+#root .panel > h2:first-child {
+  margin-top: 0;
+}
+#root .tool-fields {
+  gap: 16px;
+}
+#root .tool-page table {
+  width: 100%;
+  font: 13px/1.5 var(--f-mono);
+  border-collapse: collapse;
+}
+#root .tool-page :is(th, td) {
+  padding: 12px;
+  border-bottom: 1px solid var(--ink-2);
+  text-align: right;
+}
+#root .tool-page :is(th, td):first-child {
+  text-align: left;
+}
+#root .progress-overview {
+  border-block: 1px solid var(--ink-2);
+  margin-bottom: 27px;
+}
+#root .progress-overview .panel-label {
+  border: 0;
+}
+#root .progress-overview .progress-figure {
+  font: 400 clamp(128px, 16vw, 200px)/1 var(--f-display);
+  color: var(--ink-5);
+  margin: 0 0 27px;
+}
+#root .progress-figure > span {
+  display: block;
+  font: 13px/1.5 var(--f-mono);
+  color: var(--text);
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+#root .quiz-record {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--ink-2);
+  font: 13px/1.5 var(--f-mono);
+}
+#root .quiz-record .stripe-value {
+  grid-column: 1/-1;
+}
+@media (max-width: 1100px) and (min-width: 901px) {
+  #root .poker-workspace {
+    grid-template-columns: minmax(0, 1fr) 272px;
+    gap: 16px;
+  }
+}
+@media (max-width: 900px) {
+  #root .poker-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  #root .page-masthead {
+    margin-bottom: 27px;
+  }
+  #root .course-index-chapter h3 {
+    flex-direction: column;
+    gap: 8px;
+  }
+  #root .course-index-chapter li > a {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 16px;
+  }
+  #root .course-index-status {
+    grid-column: 2;
+  }
+  #root .panel {
+    padding: 16px;
+  }
+  #root .home-actions {
+    flex-direction: column;
+  }
+  #root .home-actions button {
+    width: 100%;
+  }
+  #root .felt-table {
+    min-height: 540px;
+  }
+  #root .table-6 {
+    min-height: 702px;
+  }
+  #root .has-runouts {
+    min-height: 864px;
+  }
+  #root .index-line {
+    font-size: 18px;
+  }
+}

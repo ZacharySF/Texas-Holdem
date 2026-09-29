@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Readout from '../../decor/Readout.svelte';
   import EquityWalkthrough from './EquityWalkthrough.svelte';
   import { equityCoachFacts } from '../../content/facts';
   import PotOdds from './PotOdds.svelte';
@@ -41,6 +42,12 @@
 </script>
 
 <section class="panel coach-panel">
+  <Readout
+    equity={equity.display().percent}
+    fraction={equity.toNumber()}
+    outs={outs?.cards.length}
+    street={view.street}
+  />
   <div class="section-head"><h2>Coach · your visible information</h2></div>
   {#if topic === 'equity'}<div class="svelte-view">
       <EquityWalkthrough
