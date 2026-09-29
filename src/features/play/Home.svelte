@@ -1,12 +1,6 @@
 <script lang="ts">
   import { SITE_NAME } from '../../decor/site';
-  import HomeDecor from '../../decor/HomeDecor.svelte';
   import HomeNavigation from '../../decor/HomeNavigation.svelte';
-  import CourseDirectory from '../../decor/CourseDirectory.svelte';
-  import GradientMapImage from '../../ui/GradientMapImage.svelte';
-  import AmbientCards from './AmbientCards.svelte';
-  import { parallax } from '../../visual/parallax';
-  import { assetUrl, visualConfig } from '../../visual/config';
   let {
     seats,
     dealing,
@@ -21,17 +15,7 @@
 </script>
 
 <section class="home-hero">
-  <HomeDecor />
-  <div class="hero-art" aria-hidden="true">
-    <div class="hero-photo" use:parallax={visualConfig.motion.heroPhoto}>
-      <!-- Replace public/art/hero.jpg with your photo; this URL also works on project Pages. -->
-      <GradientMapImage src={assetUrl('art/hero.jpg')} />
-    </div>
-    <div class="hero-blooms" use:parallax={visualConfig.motion.heroLights}>
-      <AmbientCards />
-    </div>
-  </div>
-  <div class="home-title" use:parallax={visualConfig.motion.heroTitle}>
+  <div class="home-title">
     <h1 aria-label="contemprorary">{SITE_NAME}</h1>
     <p>heads-up or six-max. the math is on screen.</p>
     <div class="home-actions">
@@ -48,4 +32,3 @@
   </div>
   <HomeNavigation {onplay} disabled={dealing || bankroll < 1} />
 </section>
-<CourseDirectory />

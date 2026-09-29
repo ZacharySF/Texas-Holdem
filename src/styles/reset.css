@@ -1,0 +1,51 @@
+html body {
+  background: var(--void);
+}
+#root {
+  padding-bottom: 48px;
+}
+#root *,
+#root *::before,
+#root *::after {
+  box-shadow: none;
+  text-shadow: none;
+  border-radius: 0;
+}
+#root .film-grain {
+  opacity: 0.04;
+  pointer-events: none;
+}
+#root .home-hero {
+  min-height: 0;
+  overflow: visible;
+  background: none;
+}
+#root .home-title {
+  max-width: none;
+  padding: 32px 0;
+}
+#root .home-graphic-nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 16px 0;
+}
+#root .home-graphic-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+#root .pixi-table {
+  display: none;
+}
+#root .felt-table {
+  background: var(--ink);
+}
+#root .status-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 8px 16px;
+  border-top: 1px solid var(--dusk);
+  font: 11px var(--mono);
+}

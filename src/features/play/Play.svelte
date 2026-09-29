@@ -1,8 +1,4 @@
 <script lang="ts">
-  import TableEdge from '../../decor/TableEdge.svelte';
-  import { sitePath } from '../../decor/site';
-  import PlayDecor from '../../decor/PlayDecor.svelte';
-  import WindowFrame from '../../decor/WindowFrame.svelte';
   import { readForecasts, forecastXp } from '../arcade/forecastStorage';
   import { readDrill, drillXp } from '../arcade/progress';
   import { lessonById, lessons } from '../../content/lessons';
@@ -572,12 +568,7 @@
 </script>
 
 <main class={`play ${game ? 'in-game' : 'home-page'}`}>
-  {#if game}<PlayDecor
-      hand={game.players[0].hand}
-      board={game.board}
-      seed={game.complete ? game.config.seed : undefined}
-      street={game.street}
-    />
+  {#if game}
     <header class="play-header">
       <h1>Poker</h1>
     </header>{/if}{#if !game && !pending}<div class="svelte-view">
@@ -661,12 +652,8 @@
     </section>{/if}
   <div class={game ? 'poker-workspace' : undefined}>
     <div class="table-column">
-      {#if game}<WindowFrame title={sitePath('play/table')} active
-          ><TableEdge hand={game.players[0].hand} board={game.board} /><Table
-            {game}
-            {persona}
-          ></Table></WindowFrame
-        >{/if}{#if game?.complete}<section
+      {#if game}<Table {game} {persona}
+        ></Table>{/if}{#if game?.complete}<section
           class="hand-result"
           aria-label="Hand result"
         >

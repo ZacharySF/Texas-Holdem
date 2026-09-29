@@ -15,7 +15,7 @@ Display offers two dark palettes: Violet and a lighter dark Blue. Both use flat 
 - Theme: [`src/design-tokens.css`](src/design-tokens.css).
 - Pixi colors, filters, performance budget, and all parallax magnitudes: [`src/visual/config.ts`](src/visual/config.ts).
 - Shared page motion: [`src/visual/parallax.ts`](src/visual/parallax.ts).
-- Replace `public/art/hero.jpg` with your photo. The reusable `GradientMapImage.svelte` component maps its shadows, midtones, and highlights to the theme. The bundled JPEG is a neutral placeholder. Random aces, court cards, and jokers fade over this slot; `visualConfig.motion.heroCards` controls their timing and placement. Jokers are decorative only.
+  See [DESIGN_NOTES.md](DESIGN_NOTES.md) for the current presentation rebuild and screenshot audit.
 - Screenshots, before/after descriptions, exact changed-file list, and validation limits: [`docs/VISUAL-DESIGN.md`](docs/VISUAL-DESIGN.md).
 
 Cards are adapted from Byron Knoll’s public-domain [Vector Playing Cards](https://byronknoll.blogspot.com/2011/03/vector-playing-cards.html), with 52 default faces, 52 four-color variants, and a custom geometric back in `public/cards/`. The source/license note is [here](public/cards/LICENSE.md). Syncopate (Apache 2.0), Zen Kaku Gothic New (OFL), and Departure Mono (OFL) are self-hosted; their license files are in `src/assets/fonts/`.

@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { sitePath } from '../../decor/site';
-  import WindowChrome from '../../decor/WindowChrome.svelte';
   import { chapters, lessons } from '../../content/lessons';
   import { mastered, type Progress } from './progress.svelte';
   import type { Journey } from './journey.svelte';
@@ -38,7 +36,6 @@
 </script>
 
 <aside class="course-contents" aria-label="Course contents">
-  <WindowChrome title={sitePath('course/index')} />
   <div class="contents-heading">
     <h2>Course contents</h2>
     <a href="#/learn">Overview</a>

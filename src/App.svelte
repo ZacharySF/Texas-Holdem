@@ -6,8 +6,6 @@
   import Routes from './Routes.svelte';
   import { navigation, navigate } from './navigation.svelte';
   import { fourColorDeck, theme } from './visual/display';
-  import { parallax } from './visual/parallax';
-  import { visualConfig } from './visual/config';
   const modes = [
     ['play', 'Play'],
     ['learn', 'Course'],
@@ -81,13 +79,6 @@
 
 <Foundation />
 
-<div class="page-atmosphere" aria-hidden="true">
-  <div
-    class="tunnel-light"
-    use:parallax={{ ...visualConfig.motion.tunnel, fixed: true }}
-  ></div>
-  <div class="corner-light"></div>
-</div>
 <svg class="filter-definitions" aria-hidden="true">
   <defs>
     <linearGradient id="chart-ink" x1="0" y1="1" x2="0" y2="0">

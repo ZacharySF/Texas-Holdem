@@ -1,5 +1,4 @@
 <script lang="ts">
-  import LearningDecor from '../../decor/LearningDecor.svelte';
   import { lessons, lessonById } from '../../content/lessons';
   import { learningFacts } from '../../content/facts';
   import { Rng } from '../../engine/rng';
@@ -127,11 +126,6 @@
     {journey}
   ></CourseContents>
   <div class="course-main">
-    <LearningDecor
-      chapter={lesson?.chapter}
-      title={lesson?.title}
-      lessonId={lesson?.id}
-    />
     {#if storageError || journeyError}<p role="alert">
         Progress works for this visit, but this browser cannot save it.
       </p>{/if}{#if !lessonId}<header class="learn-header">

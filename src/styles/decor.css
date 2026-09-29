@@ -1,15 +1,2 @@
 @import './tokens.css';
-@import './typography.css';
-@import './primitives.css';
-@import './home.css';
-@import './play.css';
-@import './course.css';
-@import './modes.css';
-@import './chrome.css';
-@import './generators.css';
-@import './devices.css';
-@import './spread-home.css';
-@import './spread-play.css';
-@import './spread-course.css';
-@import './spread-modes.css';
-@import './spread-finish.css';
+@import './reset.css';

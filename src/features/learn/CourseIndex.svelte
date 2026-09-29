@@ -1,5 +1,4 @@
 <script lang="ts">
-  import ChapterMark from '../../decor/ChapterMark.svelte';
   import { chapters, lessons } from '../../content/lessons';
   import { readingGuides } from '../../content/readingGuides';
   import type { Journey } from './journey.svelte';
@@ -47,7 +46,6 @@
         class="course-index-chapter"
         aria-labelledby={`index-chapter-${chapter}`}
       >
-        <ChapterMark n={chapter} />
         <h3 id={`index-chapter-${chapter}`}>
           <span
             >{chapter === 0

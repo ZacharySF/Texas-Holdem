@@ -1,5 +1,4 @@
 <script lang="ts">
-  import ProgressDecor from '../../decor/ProgressDecor.svelte';
   import { learningFacts } from '../../content/facts';
   import { loadHands } from '../play/storage';
   import { readForecasts } from '../arcade/forecastStorage';
@@ -77,7 +76,6 @@
 </script>
 
 <main class="tool-page">
-  <ProgressDecor results={data?.results} />
   <h1>Results and uncertainty</h1>
   <p>
     Completed saved hands only. An unfinished hand is not counted. Rates use

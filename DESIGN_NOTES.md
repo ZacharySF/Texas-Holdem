@@ -61,3 +61,7 @@ Legacy `Hairlines`, `Chevrons`, `GhostWord`, `Masthead`, `MicroBlock`, `Stripes`
 - A cross-application overall accuracy and a session-hands counter do not exist as selectors. The design must not invent them. The status rail will label the existing lifetime hand count accurately. Existing quiz scores and stats stay in their original content.
 - The requested new keyboard 1–4 behavior can only be added if already supported by a drill. New input handlers would change behavior and are out of scope.
 - References are missing, so the reference-match item in the final review must remain unresolved.
+
+## Phase 1 — removal
+
+Removed the old device components, generators, associated styles/fonts, old artwork and obsolete review assets. Useful home navigation remains as ordinary links/buttons. The original data charts and interactive range tools remain. The real-data status readouts remain; fake window paths, FPS telemetry and workspace polybar are gone. Pixi decoration is hidden through presentation CSS; its implementation remains unchanged.
