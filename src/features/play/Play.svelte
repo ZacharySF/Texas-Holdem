@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { sitePath } from '../../decor/site';
   import PlayDecor from '../../decor/PlayDecor.svelte';
   import WindowFrame from '../../decor/WindowFrame.svelte';
   import { readForecasts, forecastXp } from '../arcade/forecastStorage';
@@ -654,7 +655,7 @@
     </section>{/if}
   <div class={game ? 'poker-workspace' : undefined}>
     <div class="table-column">
-      {#if game}<WindowFrame title="~/contemporary/play/table" active
+      {#if game}<WindowFrame title={sitePath('play/table')} active
           ><Table {game} {persona}></Table></WindowFrame
         >{/if}{#if game?.complete}<section
           class="hand-result"

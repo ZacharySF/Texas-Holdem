@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { SITE_NAME } from './site';
   import { liveReadout, frameMeter } from './live';
   let {
     path = '/play',
@@ -37,7 +38,7 @@
       >{/each}
   </nav>
   <span class="decor-status-path decor" aria-hidden="true"
-    >~/contemporary{path}</span
+    >~/{SITE_NAME}{path}</span
   >
   <span class="decor-status-readouts decor" aria-hidden="true">
     {#if live}<b

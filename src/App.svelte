@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { SITE_NAME } from './decor/site';
   import DecorShell from './decor/DecorShell.svelte';
   import Foundation from './decor/Foundation.svelte';
   import { onMount } from 'svelte';
@@ -119,7 +120,7 @@
     href="#/play"
     class="brand"
     aria-label="contemprorary home"
-    onclick={goHome}>contemprorary</a
+    onclick={goHome}>{SITE_NAME}</a
   >
   <nav aria-label="Main navigation">
     {#each modes as [route, label] (route)}<a

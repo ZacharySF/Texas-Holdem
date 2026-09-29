@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { SITE_NAME } from './site';
   import StatusBar from './StatusBar.svelte';
   import RouteWipe from './RouteWipe.svelte';
   import WindowChrome from './WindowChrome.svelte';
@@ -19,7 +20,7 @@
       navigation.path.startsWith('/arcade')}
   >
     {#if navigation.path.startsWith('/lab') || navigation.path.startsWith('/arcade')}<WindowChrome
-        title={`~/contemporary${navigation.path}`}
+        title={`~/${SITE_NAME}${navigation.path}`}
       />{/if}
     {@render children()}
   </div>{/if}

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { SITE_NAME } from './site';
   import Masthead from './Masthead.svelte';
   import MotionPhoto from './MotionPhoto.svelte';
   import Swoosh from './Swoosh.svelte';
@@ -15,7 +16,7 @@
   <MotionPhoto src={photo} /><Swoosh />
 </div>
 <div class="decor-home-masthead decor" aria-hidden="true">
-  <Masthead word="contemporary" />
+  <Masthead word={SITE_NAME} />
 </div>
 <div class="decor-home-grid decor" aria-hidden="true">
   <Hairlines horizontal={['22%', '88%']} vertical={['3%', '72%']} />

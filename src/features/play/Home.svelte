@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { SITE_NAME } from '../../decor/site';
   import HomeDecor from '../../decor/HomeDecor.svelte';
   import GhostWord from '../../decor/GhostWord.svelte';
   import CourseRunIn from '../../decor/CourseRunIn.svelte';
@@ -31,7 +32,7 @@
     </div>
   </div>
   <div class="home-title" use:parallax={visualConfig.motion.heroTitle}>
-    <h1>contemprorary</h1>
+    <h1>{SITE_NAME}</h1>
     <p>heads-up or six-max. the math is on screen.</p>
     <div class="decor-home-play"><GhostWord word="play" blur /></div>
     <div class="home-actions">
