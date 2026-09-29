@@ -46,3 +46,37 @@ for (const [use, foreground, background, minimum] of pairs) {
   );
 }
 if (failed) process.exitCode = 1;
+
+// Validate measured browser pairs as well as the allowed token pairings.
+if (process.argv.includes('--rendered')) {
+  const audit = JSON.parse(
+    readFileSync(
+      new URL('../design/rendered-audit.json', import.meta.url),
+      'utf8',
+    ),
+  );
+  const hex = (rgb) =>
+    '#' +
+    rgb
+      .slice(0, 3)
+      .map((n) => Math.round(n).toString(16).padStart(2, '0'))
+      .join('');
+  let measured = 0;
+  for (const screen of audit)
+    for (const pair of screen.pairs) {
+      measured++;
+      const actual = contrast(
+        hex(pair.fg.match(/[\d.]+/g).map(Number)),
+        hex(pair.bg),
+      );
+      if (actual + 0.001 < pair.minimum) {
+        console.error(
+          `FAIL ${screen.name} ${screen.width}: ${pair.fg} ${pair.bg} ${actual}`,
+        );
+        process.exitCode = 1;
+      }
+    }
+  console.log(
+    `Checked ${measured} rendered text/background pairs across ${audit.length} route/viewport samples.`,
+  );
+}

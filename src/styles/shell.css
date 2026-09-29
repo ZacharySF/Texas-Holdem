@@ -140,10 +140,10 @@
 #root .mode-guide p {
   display: block;
 }
-#root .site-shell:has(.course-layout) > .side-index {
+#root .site-shell.course-shell > .side-index {
   display: none;
 }
-#root .site-shell:has(.course-layout) > .site-main {
+#root .site-shell.course-shell > .site-main {
   grid-column: 1/-1;
 }
 #root .course-layout {

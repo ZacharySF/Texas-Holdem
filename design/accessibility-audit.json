@@ -1,0 +1,62 @@
+[
+  {
+    "route": "play",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "learn",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "learn/1-1",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "stats",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "lab",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "arcade",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "play",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "learn",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "learn/1-1",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "stats",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "lab",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "arcade",
+    "width": 390,
+    "violations": []
+  }
+]

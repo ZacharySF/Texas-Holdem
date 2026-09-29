@@ -1,0 +1,187 @@
+/* Essential content remains visible when the decorative Pixi surface is hidden. */
+#root .felt-table[data-renderer='pixi'] .playing-card img {
+  opacity: 1;
+}
+#root .felt-table[data-renderer='pixi'] .seat {
+  background: var(--ink-1);
+  border-color: var(--ink-2);
+}
+#root .felt-table[data-renderer='pixi'] .seat.acting {
+  border-color: var(--cyan);
+}
+#root .felt-table[data-renderer='pixi'] .board-slot {
+  border-color: var(--ink-4);
+}
+#root .seat :is(h2, h3) {
+  font: 16px/1.5 var(--f-body);
+  margin: 0 0 8px;
+}
+#root .photo-plate img {
+  height: auto;
+}
+#root .photo-plate.compact img {
+  height: 64px;
+}
+#root .index-line {
+  display: block;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+#root .index-line a {
+  padding: 0;
+  font-size: 18px;
+}
+#root .index-category,
+#root .index-separator {
+  display: inline;
+}
+#root .index-separator {
+  margin-inline: 8px;
+}
+#root .app-header > .brand {
+  grid-column: 1;
+  grid-row: 1;
+}
+#root .app-header > nav {
+  grid-column: 2;
+  grid-row: 1;
+  order: initial;
+  justify-content: flex-start;
+}
+#root .app-header > .settings {
+  grid-column: 3;
+  grid-row: 1;
+}
+#root .side-index nav {
+  align-items: stretch;
+  justify-content: flex-start;
+}
+#root .side-index :is(a, button) {
+  justify-content: flex-start;
+  width: 100%;
+}
+#root .playing-card {
+  flex-shrink: 0;
+}
+#root .play-header {
+  padding: 0;
+  margin: 0;
+}
+#root .play-header .home-stats {
+  padding: 8px 0;
+}
+#root .session-toolbar {
+  min-height: 48px;
+  padding-block: 8px;
+}
+#root button,
+#root summary {
+  min-width: 24px;
+}
+#root .table-controls button,
+#root .actions button {
+  min-height: 44px;
+}
+#root a:focus-visible {
+  position: relative;
+  z-index: 2;
+}
+/* Debug only: deliberately not rendered in production. */
+#root.debug-grid .site-shell {
+  position: relative;
+}
+#root.debug-grid .site-shell::before {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  z-index: 100;
+  inset: 0 var(--outer);
+  background: repeating-linear-gradient(
+    to right,
+    transparent 0 calc((100% - 11 * var(--gutter)) / 12),
+    var(--ink-4) calc((100% - 11 * var(--gutter)) / 12)
+      calc((100% - 11 * var(--gutter)) / 12 + 1px),
+    transparent calc((100% - 11 * var(--gutter)) / 12 + 1px)
+      calc((100% + var(--gutter)) / 12)
+  );
+  opacity: 0.5;
+}
+@media (max-width: 767px) {
+  #root .app-header {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+  #root .app-header nav {
+    gap: 16px;
+  }
+  #root .side-index :is(a, button) {
+    width: auto;
+  }
+  #root.debug-grid .site-shell::before {
+    background: repeating-linear-gradient(
+      to right,
+      transparent 0 calc((100% - 3 * var(--gutter)) / 4),
+      var(--ink-4) calc((100% - 3 * var(--gutter)) / 4)
+        calc((100% - 3 * var(--gutter)) / 4 + 1px),
+      transparent calc((100% - 3 * var(--gutter)) / 4 + 1px)
+        calc((100% + var(--gutter)) / 4)
+    );
+  }
+}
+#root :is(button, select) {
+  min-width: 44px;
+  min-height: 44px;
+}
+#root .felt-table.has-runouts {
+  min-height: 864px;
+}
+#root .felt-table.has-runouts .table-center {
+  top: 32%;
+}
+#root .felt-table.has-runouts .hero-seat {
+  top: auto;
+  bottom: 24px;
+}
+#root .side-index :is(a, button)[aria-current] {
+  color: var(--cyan-hi);
+}
+#root .chips,
+#root .seat .chips,
+#root .pot .chips {
+  color: var(--text);
+}
+@media (max-width: 767px) {
+  #root .app-header:has(.settings[open]) {
+    margin-bottom: calc(128px + 64px);
+  }
+  #root .panel {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  #root .panel table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  #root .panel :is(th, td) {
+    overflow-wrap: anywhere;
+  }
+}
+/* Reserve the loading view's space and contain paragraph margins before a
+   lazy course chunk arrives. Prevent the empty-zone edge shifting on load. */
+#root .site-main #main-content {
+  display: flow-root;
+  min-height: calc(100dvh - 80px);
+}
+#root
+  :is(
+    .probability strong,
+    .bankroll strong,
+    .seat-stack,
+    .seat-bet,
+    .pot-chip strong,
+    .exact-value dd,
+    td,
+    .fraction
+  ) {
+  color: var(--text);
+}

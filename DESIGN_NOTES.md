@@ -93,3 +93,13 @@ The design vocabulary is limited to masthead, index line, panel label, real-valu
 No user photo directory exists. One GrainGradient plate was rendered offline with pinned `@paper-design/shaders-react@0.0.81`, then exported to 640/1280 AVIF and WebP. The build recipe is `scripts/build-plates.mjs`; its tool dependencies are isolated outside the application. The running site remains Svelte, with no React or shader runtime dependency. The plate appears once in the lobby and as 64px course-list thumbnails, never underneath text. Images have explicit dimensions and lazy loading.
 
 Native route transitions are blocked by the no-routing-change rule: starting a correct old/new snapshot transaction requires wrapping the existing router's update. Merely observing a changed DOM would capture the wrong old view. Routing is therefore left unchanged and swaps remain instant. No scroll reveals, shader canvases, or perpetual animation are introduced. Presentation transitions are 160ms; reduced motion limits them to color/opacity at 120ms.
+
+## Phase 7 — accessibility and performance
+
+The existing 40 Playwright browser checks pass on phone and desktop, including legal actions, replay, storage, keyboard focus, lesson navigation and drill flows. Tests are unchanged. The presentation fixes include visible card assets when the decorative Pixi layer is suppressed, room for two runouts, 44px buttons/selects, wrapped drill-result tables, and space below an expanded mobile Display menu.
+
+The token contrast script passes. The browser audit measured 1,082 rendered text/background pairs across all 73 views at 1440px and 390px; none fail their small/large-text thresholds. The twelve representative axe scans have no WCAG A/AA violations. This is automated evidence, not a claim that every interaction state has been exhaustively audited. Existing mathematical/card assets are preserved as content. The 173-file protected hash inventory is unchanged.
+
+The course's initial layout shift was traced to a loading paragraph's collapsing margin and the bottom empty-zone edge moving when the lazy lesson bundle arrived. Presentation CSS contains the margin and reserves viewport height; no router changes were needed. `design/lighthouse-course.json` contains the measured desktop result. Only Archivo and Plex are introduced (119,700 bytes); existing KaTeX mathematical fonts remain part of lesson content.
+
+Desktop course Lighthouse: **100 performance**, CLS **0.001**, recorded against the production build. The initial 76-point run was corrected through presentation CSS before this phase was accepted.

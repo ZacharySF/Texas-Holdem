@@ -9,7 +9,10 @@
   let { children }: { children: Snippet } = $props();
 </script>
 
-<div class="site-shell">
+<div
+  class="site-shell"
+  class:course-shell={navigation.path.startsWith('/learn')}
+>
   <SideIndex />
   <div class="site-main" use:panelLabels>
     {#if !navigation.path.startsWith('/learn')}<PageMasthead
