@@ -127,7 +127,11 @@
     {journey}
   ></CourseContents>
   <div class="course-main">
-    <LearningDecor chapter={lesson?.chapter} />
+    <LearningDecor
+      chapter={lesson?.chapter}
+      title={lesson?.title}
+      lessonId={lesson?.id}
+    />
     {#if storageError || journeyError}<p role="alert">
         Progress works for this visit, but this browser cannot save it.
       </p>{/if}{#if !lessonId}<header class="learn-header">

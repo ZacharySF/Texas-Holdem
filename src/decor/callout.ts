@@ -9,7 +9,10 @@ export function attachCallout(
     text = node.querySelector('text')!;
   const paint = () => {
     frame = 0;
-    const next = document.querySelector<HTMLElement>(options.selector);
+    const next =
+      [...document.querySelectorAll<HTMLElement>(options.selector)].find(
+        (element) => /\d/.test(element.textContent ?? ''),
+      ) ?? null;
     if (next !== target) {
       if (target) resize.unobserve(target);
       target = next;
