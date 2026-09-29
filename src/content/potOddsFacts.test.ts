@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest';
-import { potOddsFacts } from './facts';
+import { potOddsFacts, potOddsExamples } from './potOddsFacts';
 import { newGame, playerView } from '../engine/game';
 const view = () =>
   playerView(
@@ -61,4 +61,22 @@ it('excludes uncallable overbets and sums eligible pot awards for multiway hands
     expectedAward: 50,
     net: 5,
   });
+});
+
+it('derives the shared course examples from awards and contribution layers', () => {
+  const e = potOddsExamples();
+  expect(e.wins + e.ties + e.losses).toBe(e.trials);
+  expect(e.equity).toBe(0.35);
+  expect(e.award).toBe(70);
+  expect(e.net).toBe(20);
+  expect(
+    (e.wins * e.winNet + e.ties * e.tieNet + e.losses * e.lossNet) / e.trials,
+  ).toBe(e.net);
+  expect(e.layers.map((p) => [p.amount, p.eligible])).toEqual([
+    [150, [0, 1, 2]],
+    [100, [1, 2]],
+  ]);
+  expect(e.awards).toEqual([30, 60]);
+  expect(e.sideNet).toBe(40);
+  expect(e.threshold).toBe(0.25);
 });

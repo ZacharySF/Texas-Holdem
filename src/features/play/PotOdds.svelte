@@ -1,4 +1,5 @@
 <script lang="ts">
+  import PotOddsGuide from '../learn/PotOddsGuide.svelte';
   import type { PotOddsFacts } from '../../content/potOddsFacts';
   import { formatPercent } from '../../engine/math';
   let { facts }: { facts: PotOddsFacts } = $props();
@@ -16,8 +17,10 @@
   {/if}
   {#if facts.multiway}
     <p>
-      Several players can create separate pots. We calculate your expected share
-      of each pot you can win.
+      A pot is a group of chips with the same eligible winners. More players do
+      not automatically mean more pots: different contribution amounts create
+      layers, usually when someone is all in. You cannot win a layer you did not
+      match. Folded players’ chips stay in the pots, but they cannot win them.
     </p>
     <ol>
       <li>
@@ -27,7 +30,9 @@
         <span>Count each pot separately</span>
         {#each facts.pots as pot, i (i)}
           <div class="pot-odds-pot">
-            <span>Pot {i + 1} · {chips(pot.amount)} chips</span>
+            <span
+              >{i === 0 ? 'Main pot' : `Side pot ${i}`} · {chips(pot.amount)} chips</span
+            >
             <div
               class="pot-odds-bar"
               role="img"
@@ -41,6 +46,11 @@
               >Your estimated award: {chips(pot.heroMean)} chips. Eligible seats:
               {pot.eligible.map((s) => s + 1).join(', ')}.</small
             >
+            <p>
+              {pot.eligible.includes(facts.hero)
+                ? `You can win this pot. Its average award includes full wins, split wins, and zero when you lose.`
+                : 'You cannot win this pot. Its contribution to your estimated award is zero, regardless of how strong your hand is.'}
+            </p>
           </div>
         {/each}
       </li>
@@ -53,6 +63,23 @@
         >
       </li>
     </ol>
+    <p>
+      The model samples possible opponent hands and remaining board cards, then
+      awards each pot to its eligible winner or splits a tie. For each pot, it
+      adds the chips awarded to you across {facts.samples?.toLocaleString()}
+      simulated deals and divides by that number of deals. That average is your
+      <strong>estimated award</strong>, not a guaranteed reward or pure profit.
+      A side pot can be easier to win because fewer opponents are eligible.
+    </p>
+    <p>
+      The total above includes the chips you put in by calling. Subtract your
+      {chips(facts.call)}-chip call once because you pay it in every outcome,
+      even the losing ones. We subtract the call
+      <em>from the expected award</em>, not the other way around. The result is
+      the estimated net change in your stack from this decision. Folding adds no
+      new cost, so its comparison value is zero; earlier contributions are
+      already committed either way.
+    </p>
     <p>
       No single equity target describes different side pots. This model assumes
       every live opponent matches the current bet up to their stack, then
@@ -122,4 +149,13 @@
       rake. It does not compare a raise, and it cannot promise a win.
     </p>
   {/if}
+  <details>
+    <summary
+      >Why this arithmetic works — pots, awards, and the cost of calling</summary
+    >
+    <PotOddsGuide />
+  </details>
+  <p>
+    <a href="#/learn/12-2">Study pot odds and side pots in lesson 12.2 →</a>
+  </p>
 </section>

@@ -1,4 +1,5 @@
 <script>
+  import PotOddsGuide from '../../features/learn/PotOddsGuide.svelte';
   import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
   import AtTheTable from '../../features/learn/AtTheTable.svelte';
   import Hook from '../../features/learn/Hook.svelte';
@@ -17,6 +18,8 @@ The pot was one hundred. An opponent bets fifty, so the pot you can win now is o
 </Hook>
 
 <Idea>
+
+<PotOddsGuide />
 
 ### Follow your call through a win and a loss
 
