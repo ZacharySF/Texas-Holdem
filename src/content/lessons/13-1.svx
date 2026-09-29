@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+A draw needs the river, but calling the flop may lead to another bet on the turn. What does the whole path cost?
+
+</Hook>
+
+<Idea>
+
+### Work backward through one small tree
+
+Begin at a final leaf and write its net chip change from today's decision. Include all new payments along that path once. Move one level upward to the chance split that leads to those leaves. Weight each leaf's value by its conditional chance and add them. The result is the value of reaching that node before its random outcome is known.
+
+At a decision node, do something different: compare the values of the actions you could choose. Do not average them unless the strategy deliberately randomizes between them. A chance event happens to you; a decision describes your policy. Keeping the two kinds of nodes distinct prevents a tree from hiding a choice inside a probability.
+
+### Name the nodes
+
+An EV tree has decision nodes, where you choose an action, and chance nodes, where outcomes occur with stated probabilities. At a chance node multiply each child value by its branch chance and add. At a decision node compare the child values only after defining each action’s costs and later policy. Work backward from final chip payoffs so earlier costs are counted once.
+
+### Price the stated two-street policy
+
+The worked toy tree starts with two hundred in the pot, a first call of fifty, and a later opposing bet of fifty that you commit to call. A final win returns the existing pot plus the later opposing money; a loss costs both calls. The supplied final win chance prices this specific policy. Pricing only the first call while using river equity overstates its value. These are effective odds: the full expected cost of following the draw, not just today’s price.
+
+### Allow different later actions
+
+A richer tree can split the turn into hit and miss branches and choose a different policy after each. Multiply conditional turn and river chances along each path, then add disjoint final paths. Do not assume an opponent pays the same bet on every river; hitting an obvious draw may stop their betting. The diagram below is deliberately small enough to audit every leaf.
+
+<AdvancedExamples />
+
+### Explain the later policy in words
+
+The example commits to a later call so its costs can be audited. Another policy might fold after some turns and continue after others. That creates a different tree with different payoffs, even if today's cards are identical.
+
+When an implied-odds argument sounds optimistic, ask which later branch contains the promised extra payment and why the opponent makes it. The tree should show both the favorable future action and the less favorable alternatives.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Ask what you plan to do on the next street before buying a two-card draw. The coach’s direct model deliberately stops at showdown without later bets.
+
+</AtTheTable>
+
+<QuantCorner>
+
+A staged investment can require follow-on funding before its final payoff. Backward evaluation reveals costs that a single-step success probability hides.
+
+</QuantCorner>

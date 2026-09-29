@@ -1,0 +1,68 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import SuppliedChance from '../../features/learn/SuppliedChance.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+Suppose each all-in has a supplied win chance of <SuppliedChance /> and no ties. What is the chance of winning every one of five?
+
+</Hook>
+
+<Idea>
+
+### One sequence and a collection of sequences
+
+Write a short row of W and L symbols. A particular row is one path through a tree of independent trials. Multiply its win factors and loss factors in order. Since every trial has the same chance, rearranging the symbols changes the path but leaves its probability unchanged.
+
+Now put all rows with the requested win count in a pile. The positions occupied by W determine a row uniquely, so choosing those positions counts the pile. This is where combinations enter: they count placements of wins, not cards in a single hand. Multiplying the number of rows by each row's probability gives the event's probability.
+
+### Define the repeated-trial model
+
+A Bernoulli trial has two outcomes: success or failure. Write its success chance as p and failure chance as one minus p. Independent trials mean that the previous result does not change the next trial’s chance. Freshly shuffled deals can support that model; changing opponents and hand strengths often do not. Here the chance is supplied and fixed deliberately.
+
+### Count every qualifying sequence
+
+One specified sequence containing k wins and n minus k losses has probability p to the kth power times one minus p to the remaining power. Multiplication follows the path through all trials. There are C(n,k) different placements of those wins. They are disjoint sequences, so multiply the path probability by their count. This gives the binomial distribution. For exactly sixteen wins among twenty trials, the coefficient matters; for winning all five, there is only one successful ordering.
+
+### Interpret the expected count
+
+The expected number of wins is n times p: add each trial’s success indicator, which is one for a win and zero for a loss. Expected count is an average over repeated sets, not the most certain result of a particular set. The event builder lets you compose card events across freshly restored decks and ask for exactly or at least a chosen number of successes. It uses exact card-event probabilities in the binomial calculation and deals the events again in simulation.
+
+<AdvancedExamples />
+
+### Choose the model by what resets
+
+The hypergeometric model draws from a finite population which shrinks within a trial. The binomial model here starts each trial with the same chance and makes trials independent. Neither model is selected merely because the problem mentions cards. Ask whether drawing or observing a success changes the possibilities for the next trial.
+
+In the experiment, keep the supplied chance fixed while changing the number of trials. Watch both the typical count and the spread of counts. The expected count is a summary of repeated sets, not a prediction that every set will equal it.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Do not turn a strong favorite into a promise to win a short sequence. Check whether identical independent trials are a reasonable model.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Repeated independent trades with a fixed success chance produce the same binomial counts. Real trades can share information and market exposure, so independence must be argued rather than assumed.
+
+</QuantCorner>

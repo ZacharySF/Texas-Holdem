@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+An opponent bets. Strong hands may bet more often, but weak hands can bet too. How much should the action change your belief?
+
+</Hook>
+
+<Idea>
+
+### Compare two directions of conditioning
+
+“How often does a strong hand bet?” begins inside the strong-hand group and asks which members bet. “How often is a betting hand strong?” begins inside the betting group and asks which members were strong. The two questions use different denominators.
+
+To answer the second, first build both sources of bets. Weight the strong-hand prior by its betting likelihood, and weight the weak-hand prior by its own betting likelihood. Their sum is the total betting weight. The strong portion divided by that total is the answer after observing the bet.
+
+### Write the betting branches
+
+Bayes’ rule follows from counting the observed branch of a probability tree. Let A mean a strong hand and B the observed bet. Multiply the prior chance of A by the chance of betting when strong. Do the same for weak hands, then add both products to obtain the total chance of observing a bet. Divide the strong-and-bet branch by that total.
+
+### Simulate the conditioning step
+
+The notebook uses supplied illustrative branch weights. In the simulator, first choose strong or weak from the prior, then sample the action conditional on that choice, and keep the trials with a bet. The retained strong fraction estimates the posterior. This rejection experiment makes the conditioning visible instead of treating a bet as certain evidence of strength.
+
+### Update many physical combos
+
+For many combos, multiply every prior combo weight by its action likelihood, remove blocked combos, and normalize. The likelihood model is essential: a calling station and an aggressive player need not produce the same posterior after the same action. If your model assigns zero probability to the observation, the conditional distribution is undefined; do not quietly divide by zero or invent a posterior.
+
+<AdvancedExamples />
+
+### Test a limiting case in words
+
+If strong and weak hands bet equally often, observing a bet does not favor either group relative to the other. If strong hands bet more often, the observation increases their relative weight. Neither case requires treating the action as proof of a particular hand.
+
+Before doing the numerical example, make that directional prediction. Then inspect the posterior and explain how the assumed likelihoods caused the change. This is a useful way to read Bayes' rule as an update rather than as a formula to memorize.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Update with both blockers and public actions. Label action likelihoods as assumptions unless you have enough representative observations to estimate them.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Bayesian updating combines a prior belief with the likelihood of new evidence. A precise posterior can still be misleading when the likelihood model is poorly chosen.
+
+</QuantCorner>

@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+After an unlucky set of all-ins, is the observed win count surprising under the chance you assumed?
+
+</Hook>
+
+<Idea>
+
+### Ask the test's question in the right direction
+
+Begin with “Suppose the null model were true.” Under that supposition, list the possible counts and their probabilities. The p-value collects counts at least as extreme by the chosen rule as the one you observed. The calculation starts from a model and evaluates data; it does not directly assign a probability to the model itself.
+
+If the value is small, investigate what could be wrong with the setup as well as what could be unusual about the sample. Were the hands comparable? Was the chance fixed? Did you choose the window because its losses stood out? These questions describe the test's inputs, not excuses to ignore its output.
+
+### Define the null model and p-value
+
+A null hypothesis supplies the distribution being tested. Here it says the trials are independent with a specified win chance. A two-sided exact binomial p-value adds probabilities of counts no more likely under that null than the observed count. It measures how extreme the observation is under that model. It is not the probability that the null is true, and it is not the probability that you are playing badly.
+
+### Account for how the sample was selected
+
+The computed example lists the observed count and the resulting sum. A low value can signal an incorrect chance, dependence, selective reporting, or simply an unusual sample. Repeatedly inspecting results and stopping only after a surprising result changes the procedure’s false-alarm rate. Decide a sample size and test rule before seeing the outcomes when you want a conventional test interpretation.
+
+### Score forecasts and check calibration
+
+Guess the Equity records a forecast before revealing the answer. The Brier score is the squared difference between the forecast probability and a binary outcome, averaged across forecasts. On tied pots we sample a pot unit, so its binary winning probability equals equity. Calibration groups similar forecasts and compares their average with the observed frequency; small groups need intervals. Good calibration alone does not imply useful discrimination between strong and weak hands.
+
+<AdvancedExamples />
+
+### A forecast score asks a different question
+
+A forecast is recorded before the outcome. The Brier score compares that announced probability with what occurs and rewards accuracy over repeated forecasts. Calibration asks whether groups of similar forecasts succeed at the rates they announce.
+
+You can pass a calibration check with forecasts that barely distinguish strong situations from weak ones. That is why calibration, discrimination, and a test of a supplied model are separate ideas. Use the experiment or drill that matches the claim you actually want to evaluate.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Separate running below a model’s expectation from evidence that the model is accurate. Review recorded decisions and assumptions before attributing a downswing to either skill or luck.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Forecast scores reward honest probability estimates over repeated outcomes. A p-value and a scoring rule answer different questions; neither replaces independent validation.
+
+</QuantCorner>

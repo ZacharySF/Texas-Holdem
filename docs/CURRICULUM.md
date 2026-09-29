@@ -132,3 +132,9 @@ The expanded chapter plan below replaces the original 18-chapter plan. Each bull
 
 - Lesson 25.1: Implement counterfactual regret minimization on a toy game.
 - Lesson 25.2: Track convergence toward equilibrium and explain the limits of a toy solver.
+
+## Teaching standard for the tutorial reading follow-up
+
+Every lesson now has a specific introduction and prerequisite links, concrete examples before compact notation, descriptive subheadings, a key idea, a common misconception, and an original conceptual question with a revealable explanation. The end summary asks the reader to retrieve the idea again. Chapter-ending lessons review their constituent lessons and link back to them. These reading checks supplement the seven-part contract and seeded graded practice; they never award mastery by themselves.
+
+Take particular care with the distinction between an ordered path and an unordered hand, a count and a probability, a draw hit and a showdown award, a model's expected value and one outcome, individual spread and uncertainty in an average, and sampling uncertainty and model uncertainty. Explain what each symbol measures and what each denominator counts. The existing computed examples remain the source of numerical results.

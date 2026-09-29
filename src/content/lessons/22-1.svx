@@ -1,0 +1,69 @@
+<script>
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import FinalLinks from '../../features/learn/FinalLinks.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+There are 100 chips in the pot. You consider betting 50 with no chance to win if called. How often must your opponent fold?
+
+</Hook>
+
+<Idea>
+
+### Begin with a bluff that cannot win when called
+
+There are only two response branches: the opponent folds, or the opponent calls. A fold awards the existing pot. A call loses the added bet in this zero-equity model. Averaging those two net results explains the break-even fold frequency without needing a separate bluffing rule.
+
+Now give the bluff some showdown equity. The fold branch is unchanged, but the called branch must be expanded to include possible wins and ties as well as losses. This is a semi-bluff. Its called equity refers only to the hands that call, because folded hands no longer participate in that branch.
+
+### Derive the zero-equity bluff threshold
+
+Measure incremental results from the decision point. Folding or giving up adds zero. When the bluff succeeds, you win the current pot P. When called with no winning chance, you lose your added bet B. If f is the fold chance, expected profit is fP minus (one minus f)B. Set that expression to zero, collect the two terms containing f, and divide by P plus B. The notebook substitutes actual chips.
+
+### Interpret minimum defense frequency
+
+Minimum defense frequency is one minus this break-even fold frequency. It is a baseline that stops this zero-equity bluff from making an immediate profit under the toy assumptions. It is not a command to call that fraction of every actual range: blockers, value density, future betting, and the bettor’s equity can change the strategic problem.
+
+### Add called equity
+
+A semi-bluff retains equity when called. After matching bets, the final pot is P plus twice B. With conditional called equity e, the called branch is e times that final pot minus B. Weight this branch by the call chance, then add the fold branch fP. The equity must be against the range that calls. Averaging against all hands before the opponent folds usually answers the wrong question.
+
+### Separate the response branches
+
+Use a chance tree with a fold branch and a call branch. Within the call branch, add win, tie, and loss pot shares. This separates two routes to profit: winning immediately and recovering part of the pot at showdown. The model ends at showdown with no future betting and excludes rake.
+
+### Keep the two thresholds distinct
+
+The frequency of folds that makes a bluff break even describes the bettor's opportunity. The equity needed to call a bet describes the defender's price. They arise from different payoff tables. Write whose decision you are evaluating beside the calculation so a familiar-looking denominator does not tempt you to use the wrong threshold.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Estimate both folds and called-range equity before assigning a semi-bluff an EV. The coach’s direct values are explicitly limited by these assumptions.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+A strategy’s expected payoff can come from several conditional branches. Estimating a branch probability without its conditional payoff can reverse a trade decision.
+
+</QuantCorner>

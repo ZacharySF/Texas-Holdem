@@ -1,2 +1,9 @@
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-export default { preprocess: vitePreprocess() };
+import { mdsvex } from 'mdsvex';
+export default {
+  extensions: ['.svelte', '.svx'],
+  preprocess: [
+    vitePreprocess(),
+    mdsvex({ extensions: ['.svx'], smartypants: false }),
+  ],
+};

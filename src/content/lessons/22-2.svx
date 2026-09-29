@@ -1,0 +1,71 @@
+<script>
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import FinalLinks from '../../features/learn/FinalLinks.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+You face a river bet from a range containing only unbeatable value hands and hands you beat. Which mix makes calling and folding equally valuable?
+
+</Hook>
+
+<Idea>
+
+### Derive the bluff-catcher's two payoffs
+
+The simplified defender beats every bluff and loses to every value hand. Calling a bluff therefore gains the pot already present, including the opponent's bet. Calling a value hand loses the added call. Folding is the reference action with no further gain or loss.
+
+Weight those called outcomes by the composition of the betting range. The bluff fraction that makes the average equal to folding's value creates indifference for this particular defender. It does not say how often the bettor should bet overall, because it describes the mix conditional on seeing a bet.
+
+### Find the indifferent bluff-catcher
+
+Let q be the fraction of bluffs among bets you face. Calling a bluff wins the old pot plus the opponent’s bet. Calling value loses your call. Set the probability-weighted sum to zero and solve for q. The denominator contains the original pot and both bets. This is a fraction of the betting range, not the bluff-to-value ratio and not the bettor’s required fold frequency. These are three different questions.
+
+### Define a legal mixed strategy
+
+A mixed strategy assigns probabilities to actions at the same information set. Mixing does not mean forgetting what happened. The information set contains your own card and the public betting history, while keeping the opponent’s card hidden. At equilibrium, any action used with positive frequency has the same value against the opponent’s strategy; otherwise shifting probability to a better action would improve your result.
+
+### Learn the small game’s rules
+
+The playable AKQ game is three-card Kuhn poker relabeled Q, K, A. Each player antes one, receives a distinct private card, and may check or make one bet of one. After a bet the response is call or fold; there are no raises. Check-check reveals cards, as does a call. The larger rank wins. Payoffs include the ante. The game enumerates all deals and all public action paths.
+
+### Check the equilibrium
+
+The displayed equilibrium belongs to this bounded game. We verify it by holding one player’s policy fixed and trying every deterministic policy for the other. Such a best response must use the same action whenever its information set is identical; choosing based on the hidden card would cheat. Neither player can gain by deviating, even though the first player’s equilibrium payoff is negative. Fair rules need not give equal value to different positions.
+
+### Why mixing can be stable
+
+If one action were strictly better against the opposing strategy, shifting weight toward it would improve the result. When actions used in a mixture have equal value, that particular shift offers no gain. The tiny AKQ game lets you inspect this idea without the huge collection of cards and bet sizes in Hold'em.
+
+Play several hands, but evaluate a policy over all of its information sets. A lucky result from one deal says little about whether an alternative legal policy could improve its expected payoff.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Play the toy game to see why always bluffing or never bluffing creates an exploitable pattern. Real Hold’em adds cards, sizes, and future branches.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+Indifference conditions price competing choices against a specified environment. They do not guarantee that the environment follows the assumed model.
+
+</QuantCorner>

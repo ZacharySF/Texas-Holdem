@@ -6,9 +6,9 @@ Phases 0–9 are implemented locally. Learn contains 53 lessons across chapters 
 
 **Source:** [contemprorary on GitHub](https://github.com/ZacharySF/contemprorary). The repository has been renamed with its history intact. Pushes to main run the checks and publish to the [Pages site](https://zacharysf.github.io/contemprorary/). Hash routes and relative assets support project Pages URLs and shared Lab links.
 
-## Dark Svelte presentation
+## Native Svelte application
 
-The application shell, home, playing cards, table, gradient-mapped image, hand charts, and coaching walkthroughs use Svelte 5. The existing React controllers, hash router, MDX lessons, and experiments remain behind a small adapter to preserve their tested behavior. This is a staged migration, not a complete removal of React.
+Every page and UI controller uses Svelte 5, including play, coaching, all tools, drills, progress, and the 53 lessons. Lessons use Svelte Markdown (`.svx`, compiled by mdsvex) and native Svelte components for their experiments and practice. There is no React, React DOM, React Router, JSX, or adapter runtime. A small hash-navigation module preserves the same routes and query strings for static hosting. See [the migration plan and verification](docs/SVELTE-MIGRATION.md).
 
 Display offers two dark palettes: Violet and a lighter dark Blue. Both use flat panels, thin rules, and limited bright highlights; the choice persists across reloads and updates the Pixi table. A lazily loaded Pixi canvas draws the poker table and the same visible cards announced by the accessible HTML. If WebGL is unavailable, HTML keeps the table playable. Effects turn off after sustained slow frames; reduced motion stops animation entirely.
 
@@ -30,7 +30,9 @@ The coach's **Equity** tab shows actual wins, ties, losses, shared-pot credit, a
 
 ## Start here
 
-Choose **Start Chapter 1** in the poker room, or open **Course**. The course has a numbered, searchable chapter list and previous/next lesson links. If poker itself is new, start with the optional rules introduction. You can read ahead without passing a quiz.
+Choose **Start Chapter 1** in the poker room, or open **Course**. The overview includes a full searchable index of all 53 lessons; each lesson has prerequisite links and named previous/next destinations. If poker itself is new, start with the optional rules introduction. Chapter 25 is an optional capstone. You can read ahead without passing a quiz.
+
+The course follows a gradual tutorial approach inspired by [LearnCpp](https://www.learncpp.com/cpp-tutorial/introduction-to-objects-and-variables/): concrete examples, small explanatory steps, definitions before notation, common mistakes, and questions you answer before revealing an explanation. All 53 lesson bodies have been expanded. Each lesson ends with a summary, and each chapter ends with a reading review. These conceptual checks do not affect your quiz score. The existing calculations and graded practice remain the source of numerical results and mastery.
 
 Each lesson gives you a card example, an explanation, an experiment, and a chance to practice. **Play a practice hand** takes that lesson’s focus to a real bot game. Finish the hand, then **Return to lesson** to pick up the same lesson and experiment code. Your place, read lessons, and played practice hands save on this device; quiz mastery is tracked separately. Unfinished quiz answers reset when you leave.
 
@@ -38,13 +40,13 @@ The **coach sits beside the table** on desktop. On a phone, use **Open coach · 
 
 The top navigation is **Play** (bot games), **Course** (numbered lessons), **Drills** (short practice games), **Tools** (experiments and calculators), and **Progress** (completed hands and forecasts).
 
-![The numbered course contents and guided starting point](docs/screenshots/course-contents.png)
+![The full numbered tutorial index](docs/screenshots/tutorial-index-1280.png)
 
 ![The coach beside a live poker table](docs/screenshots/coach-beside-table.png)
 
 ## Play first, learn as you go
 
-The app opens in the poker room. Press **Take a seat & play** for the selected table or **Six-player table** to deal directly against five bots. The table shows named bots, concealed hole cards, the dealer button, stack sizes, bets, and whose turn it is. Opponents pause briefly so their actions are readable. Choose fold, check, call, or raise; use the slider or enter an exact raise total.
+The app opens in the poker room. The top-left **contemprorary** link returns to this home screen, including from an active table; unfinished hands are left behind. Press **Take a seat & play** for the selected table or **Six-player table** to deal directly against five bots. The table shows named bots, concealed hole cards, the dealer button, stack sizes, bets, and whose turn it is. Opponents pause briefly so their actions are readable. Choose fold, check, call, or raise; use the slider or enter an exact raise total.
 
 **Explain action buttons** toggles short button captions. The side coach shows the current pot, call cost, final pot, and the division that gives break-even equity. Multiway hands show each pot’s expected award separately. **Equity, raises, and deeper analysis** opens the detailed estimates. Ordinary actions stay available while estimates load; actions made before an estimate arrives are saved without a model grade. Exam mode still requires an estimate before acting.
 
@@ -180,7 +182,7 @@ On NixOS, point `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` at the installed Chromium 
 
 ```mermaid
 flowchart TD
-    UI[Svelte shell and visuals + React/MDX controllers] --> URL[HashRouter: lessons, cards, seeds]
+    UI[Native Svelte components and lessons] --> URL[Hash navigation: lessons, cards, seeds]
     UI --> Course[MDX and KaTeX lessons]
     UI --> Game[Pure betting state machine and bot views]
     UI --> History[IndexedDB: completed hands and replay]
@@ -199,7 +201,7 @@ flowchart TD
     Tests --> Reference
 ```
 
-The engine has no DOM or React dependency. Cards are rank-major integers; larger encoded hand strengths win. The fast evaluator uses rank counts and suit masks with no bundled lookup tables. The reference evaluator sorts groups in every five-card subset and reports the best five, category, and English name. The worker schedules pure iterator batches and posts progress about every 50 ms. Terminating its worker cancels a run and prevents stale updates. Weighted integer combo ranges extend `PlayerInput`. Exact range equity accumulates BigInt weighted pot shares; sampled range equity rejects entire colliding joint assignments to preserve the intended conditioned distribution. Pathologically overlapping inputs fail explicitly rather than silently biasing samples. The range editor expands its 169 classes into those weighted physical combos.
+The engine has no DOM or UI-framework dependency. Cards are rank-major integers; larger encoded hand strengths win. The fast evaluator uses rank counts and suit masks with no bundled lookup tables. The reference evaluator sorts groups in every five-card subset and reports the best five, category, and English name. The worker schedules pure iterator batches and posts progress about every 50 ms. Terminating its worker cancels a run and prevents stale updates. Weighted integer combo ranges extend `PlayerInput`. Exact range equity accumulates BigInt weighted pot shares; sampled range equity rejects entire colliding joint assignments to preserve the intended conditioned distribution. Pathologically overlapping inputs fail explicitly rather than silently biasing samples. The range editor expands its 169 classes into those weighted physical combos.
 
 See [architecture decisions](docs/ARCHITECTURE.md), [product specification](docs/SPEC.md), [roadmap](docs/ROADMAP.md), [curriculum](docs/CURRICULUM.md), and [working rules](AGENTS.md).
 

@@ -1,6 +1,5 @@
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
-import hooks from 'eslint-plugin-react-hooks';
 import svelte from 'eslint-plugin-svelte';
 export default tseslint.config(
   {
@@ -33,11 +32,9 @@ export default tseslint.config(
     },
   },
   {
-    files: ['src/**/*.{ts,tsx}'],
-    plugins: { 'react-hooks': hooks },
+    files: ['src/**/*.ts'],
+    languageOptions: { parser: tseslint.parser },
     rules: {
-      'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'error',
       '@typescript-eslint/no-explicit-any': 'error',
       'no-restricted-properties': [
         'error',

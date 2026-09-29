@@ -1,0 +1,71 @@
+<script>
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+You sit down with two cards face down in front of you. One is the ace of spades, written As; the other is the ace of hearts, Ah. A player puts chips in front of them. Before asking whether calling is a good decision, you need to know what calling means, which cards belong to everyone, and when a hand ends.
+
+We will also ask a small counting question: how often are your first two cards a pair? You can run that experiment without yet understanding every formula. Chapter 3 will build its full counting argument.
+
+</Hook>
+
+<Idea>
+### The deck and the goal
+
+A standard deck has thirteen ranks, from two through ace, in each of four suits: clubs, diamonds, hearts, and spades. In card strings, T means ten and c, d, h, s identify the suits. Suits do not have an order of strength. An ace can be high, or low in the A-2-3-4-5 straight.
+
+In Hold'em each player receives two private **hole cards**. Five **community cards** can eventually appear face up in the middle. At showdown, make the strongest five-card hand from your two hole cards and those community cards. You may use both hole cards, one, or neither. Having seven available cards does not mean all seven count toward your final hand.
+
+There are two ways to win a pot: have the best hand among the players who reach showdown, or be the last player who has not folded. If everyone else folds, you do not need to show a stronger hand.
+
+### Follow a single hand
+
+Before the deal, two players post forced bets called the small blind and big blind. The dealer button identifies a position; in a casino it need not be the person physically dealing. The button moves one seat after each hand so the positional advantage and blind obligations move around the table.
+
+The **preflop** round begins with the private cards and no community cards. After betting is settled, the **flop** deals three community cards together. Another betting round follows. The **turn** adds one community card; betting follows again. The **river** adds the final community card, followed by the last betting round and, if needed, showdown.
+
+A betting round is not finished merely because every player has acted once. A new raise can require earlier players to respond. A player whose stack is already all in cannot add more chips; if several stack sizes are involved, side pots keep different contributions separate. The game handles these betting rules and shows the legal actions when it is your turn.
+
+### The actions, with chips
+
+To **check** is to stay in without adding chips when there is no unmatched amount to call. To **bet** is to put in the first voluntary wager of a round. To **call** is to match the current wager with the amount still owed. To **raise** is to increase that wager. To **fold** is to give up your claim to the pot; chips already committed stay there.
+
+Suppose you have put ten chips into the current round and the amount to match is thirty. A call pays the difference, not another thirty. Chips paid on a previous street do not reduce the amount you face on this street. “No-Limit” means a player may wager all remaining chips, subject to the rules about turn order and minimum raises; it does not mean a player may take any action at any time.
+
+### A first count to test
+
+A **pocket pair** means both hole cards have the same rank, such as As Ah. Once your first card is dealt, three cards of that rank remain among the other fifty-one cards. Each of those remaining physical cards is equally likely to be your second card. The fraction “matching cards divided by remaining cards” describes the event. The notebook below writes the equivalent all-hands count; the choose symbols will be unpacked in chapter 3.
+
+### Try narrating the hand
+
+Before playing, describe the next action aloud: “These are my private cards. These cards belong to everyone. This is the extra amount I would pay to stay in.” You do not need a winning strategy to practice reading the table correctly.
+
+On your first hand, concentrate on the legal choices. If the action says check, no new payment is required. If it says call, look for the amount still owed. After an opponent raises, look again; the earlier amount may no longer be enough. Once the hand ends, compare your final stack with your starting stack. The pot you were awarded and your net gain are different quantities because some chips in the pot may have been yours.
+
+<Shortcut />
+</Idea>
+
+<WorkedDerivation />
+<SimCheck />
+<PracticeSet />
+
+<AtTheTable>
+Before considering a call, identify the current street, the amount already paid this round, and the amount to match. Before considering a check, make sure you face no unmatched wager. The frequency of pocket pairs tells you how often a starting shape occurs; it does not tell you whether a particular bet is worth calling.
+
+You may skip this introductory chapter from the course page if the rules are familiar. You can open Chapter 1 directly; reading ahead does not award quiz credit.
+
+</AtTheTable>
+
+<QuantCorner>
+  A trading decision also starts with a clear description of the available
+  actions and the cash already committed. Mixing a past payment with the cost of
+  the next action can distort a comparison. Later, expected value will turn
+  those action descriptions into weighted outcome calculations.
+</QuantCorner>

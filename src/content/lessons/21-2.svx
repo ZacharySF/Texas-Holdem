@@ -1,0 +1,65 @@
+<script>
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import FinalLinks from '../../features/learn/FinalLinks.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+An insurer offers to pay you a fixed benefit only if your all-in hand loses outright. What premium makes that extra contract fair?
+
+</Hook>
+
+<Idea>
+
+### Put the premium in both outcome rows
+
+Make one row for a triggering loss and one for every non-triggering result. The first row receives the insured benefit and pays the premium. The second receives no insurance benefit but still pays the premium. Weight those rows by their respective chances and add.
+
+The premium appears in every row, which is why the average contract value equals the expected benefit minus that premium. A fair price sets this average to zero under the stated loss model. A loading raises the price above that reference and gives the buyer a negative expected insurance cash flow.
+
+That extra cost and any reduction in fluctuations are separate properties. Combine the insurance payoff with the original hand payoff if you want to study total risk. Keep the contract on its own ledger when you want to check whether its quoted price matches its expected benefit.
+
+### Specify the insurance trigger
+
+Define the contract before calculating: which event triggers payment, how much is paid, and when is the premium charged? A tie is not an outright loss. A capped loss reimbursement is different from a fixed benefit. The calculator uses a fixed benefit on a zero pot share, with no payment on ties.
+
+### Write the contract payoff
+
+Let L indicate an insured loss: it equals one on that event and zero otherwise. With benefit D and premium pi, the net insurance cash flow is LD minus pi. Multiply each cash flow by its probability and add. Because the premium is paid in either outcome, its expectation is just the premium. The fair premium is loss probability times benefit. A loading is an extra fraction of that fair premium, not a fraction of the entire pot.
+
+### Compare the worked models
+
+The worked example uses a supplied loss chance, benefit 100, and the loading shown in the notebook. The worker generates the two contract outcomes and compares the mean with the exact expected cost. In the linked card example, loss probability comes from enumerating legal rivers for exposed aces against kings. Do not substitute win probability when ties or different payout triggers are possible.
+
+Fair pricing does not mean identical risk. Insurance can offset the same loss that harms your poker result, making their combined cash flow less variable. Positive loading transfers expected wealth to the seller. Running twice instead divides exposure between card outcomes without adding a seller’s premium. Neither arrangement makes a bad call profitable merely by reducing variance.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Compare the quoted premium with the exact expected benefit under the contract’s trigger. Keep this purchase separate from the EV of the original poker decision.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+An option or hedge has both a payout rule and a price. Lower portfolio variance does not establish that its price is favorable.
+
+</QuantCorner>

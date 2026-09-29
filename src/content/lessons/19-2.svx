@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+You observe several bets in a few comparable opportunities. The observed fraction is useful, but treating it as a known permanent tendency is too strong.
+
+</Hook>
+
+<Idea>
+
+### A distribution over rates is a different object
+
+An ordinary binary trial has a success or a failure. A beta distribution instead describes which underlying success rates you regard as plausible before the next trial. That is a second layer of uncertainty: you do not know the result, and you do not know its generating rate exactly.
+
+The observed successes and failures update the distribution over rates. Its mean gives a convenient central estimate, but other rates still have weight. In a small sample, a different defensible prior may noticeably change the answer. Keep the observed counts separate from the prior parameters so readers can see where the information came from.
+
+### Update the beta parameters
+
+A beta distribution describes uncertainty about an unknown probability between zero and one. Its two positive parameters, alpha and beta, control how much weight lies near different probabilities. Begin with two pseudo-successes and two pseudo-failures in this example. After three successes in ten opportunities, add the successes to alpha and the failures to beta. The posterior mean is updated alpha divided by the sum of updated parameters.
+
+### Keep prior and observations distinct
+
+These pseudo-counts are a prior model, not invented observed hands. Different justified priors produce different small-sample conclusions. With more representative data their relative influence decreases. The update assumes exchangeable Bernoulli observations of the same tendency; a player changing strategy or facing different situations can violate that assumption.
+
+### Predict through uncertain rates
+
+Predicting several future trials requires averaging their binomial probability over the uncertain success chance. This yields the beta-binomial distribution. In the notebook, (a)\_k is a rising product: a times a plus one, continuing for k factors; zero factors multiply to one. The simulation uses the equivalent reinforced-urn procedure: draw according to current counts, increment the drawn count, and repeat within a prediction trial. Restore the posterior counts before the next trial. This produces wider predictive variation than simply fixing the posterior mean and pretending it is certain.
+
+<AdvancedExamples />
+
+### Predict with the whole uncertainty
+
+For future counts, imagine calculating a binomial distribution at each plausible rate and averaging those predictions using the posterior weights. That is the purpose of the beta-binomial model. Substituting only the posterior mean skips the averaging over uncertain rates.
+
+The reinforced-urn simulation is a way to generate that predictive distribution. It does not claim that watching an opponent bet physically makes their permanent tendency increase. Distinguish the model's sampling mechanism from the behavior it is intended to describe.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Group comparable opportunities before estimating a tendency. Keep the prior and sample count visible, and avoid overreacting to a few public actions.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Small-sample forecasting benefits from explicit uncertainty about the rate itself. Predictive variation includes both future outcome noise and uncertainty in the underlying parameter.
+
+</QuantCorner>

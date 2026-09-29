@@ -1,0 +1,64 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import RealizationInputs from '../../features/learn/RealizationInputs.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+A hand can have respectable showdown equity yet repeatedly fold before the river when out of position.
+
+</Hook>
+
+<Idea>
+
+### Trace what prevents the showdown benchmark
+
+Imagine holding a draw with useful raw equity. If a later bet makes continuing unprofitable, your strategy folds and gives up those potential showdown outcomes. Now imagine having position: you see the opponent check before deciding, which may let you reach another card at no additional cost. The cards' raw runouts have not changed, but the action paths have.
+
+This is why realization is tied to a strategy and a situation. It cannot be read from a starting-hand name alone. The capture factor compresses many paths into one assumed multiplier. That can make a sensitivity exercise manageable, but it hides which folds, bets, and payments created the change.
+
+Use the toy model by varying the factor and observing when the conclusion changes. If a small adjustment reverses the preferred action, the result depends heavily on that assumption. When you can describe the actual future choices, return to a branch-by-branch EV tree instead of treating the factor as a measured fact.
+
+### Define the showdown benchmark
+
+Raw equity assumes the hand reaches showdown against the modeled opponents. Equity realization compares what a strategy actually captures with that benchmark. Position affects information and control: acting last lets you observe a bet or a check before choosing your response. Out of position, a weak draw may face a price that prevents it from using its full showdown equity.
+
+### Use a capture factor as an assumption
+
+One illustrative model multiplies raw equity by a capture factor. <RealizationInputs /> The notebook turns the reduced average into a binary toy payoff so you can simulate it. The factor is an assumption, not something determined by hole cards alone.
+
+### Recognize what the factor hides
+
+Realization is not always below one: position, folds, and additional value bets can produce more profit than a passive showdown benchmark. A single scalar hides which paths changed. Prefer an explicit action tree when you know those paths; use a factor only to test sensitivity. The simplified range coach cannot infer a guaranteed capture factor from its equity sample.
+
+<AdvancedExamples />
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Keep raw showdown equity separate from strategic value. Test whether a plausible reduction changes the decision before trusting a narrow direct-odds edge.
+
+</AtTheTable>
+
+<QuantCorner>
+
+A projected opportunity may not be fully captured because execution has costs and constraints. Sensitivity analysis shows how much the conclusion depends on the assumed capture rate.
+
+</QuantCorner>

@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+How many aces might appear among seven cards? Counting each possible ordering is possible, but needlessly long.
+
+</Hook>
+
+<Idea>
+
+### Fill the hand in two parts
+
+Suppose the question asks for exactly two aces among the seven cards. Make a place for the ace group and another for everything else. First choose the ace group from the available aces. Then fill the remaining places with non-aces. Neither group has an internal dealing order, so both choices use combinations.
+
+Why multiply? Each allowed choice of aces can be paired with every allowed choice of non-aces. Once both groups are chosen, their union determines one complete hand. Conversely, a completed hand tells you exactly which cards belonged to each group. That gives a one-to-one construction of the favorable hands.
+
+### Name the counts in the general formula
+
+Let N be the population size, K the number of target cards, n the cards drawn, and k the target cards actually drawn. A particular seven-card set is equally likely to any other. To obtain exactly k aces, choose k from the four aces and choose the remaining cards from the non-aces. Multiply those independent counting choices; then divide by the number of all seven-card sets. This is called the hypergeometric distribution: a table assigning a probability to every possible target count when sampling without replacement.
+
+### Check which counts are possible
+
+The count k can range only from zero to the smaller of K and n. If too few non-targets remain to fill the hand, that count is impossible too. Summing the feasible counts must give one because every hand has exactly one ace count. For at least one ace, either add the separate positive counts or subtract the zero-ace count from one. The simulator uses the actual shrinking population, not repeated draws with replacement.
+
+### Apply the count to opposing cards
+
+To ask whether anyone among three named opponents holds an ace, fix your own cards first, remove them, then draw six opposing cards as one set. Its composition has the same hypergeometric count even though you later divide that set among seats. This shortcut answers whether anyone has an ace; it does not tell you which seat has it, or whether an ace beats your hand. Change the population and success counts when the board exposes more cards.
+
+<AdvancedExamples />
+
+### Read the letters as a checklist
+
+The capital letters describe the available population; the lowercase letters describe the sample you take from it. Before substituting anything, point to the population, its target group, the sample size, and the desired target count. If the desired count asks for more target cards than exist, there are no favorable hands. The formula should reflect that impossibility, not force you to invent extra cards.
+
+A distribution repeats this calculation for every feasible count. It answers more than one question, but it introduces no new counting rule. The familiar “at least one” calculation is obtained by collecting its positive-count rows or subtracting its zero-count row.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Count without replacement. Separate the event “someone holds an ace” from the event “someone beats you.”
+
+</AtTheTable>
+
+<QuantCorner>
+
+Finite inventories appear in sampling without replacement outside poker too. Conditioning on items already observed changes the population, not merely the final display.
+
+</QuantCorner>

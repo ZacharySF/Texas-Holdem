@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+Some events have small exact spaces; a multiway range matchup can have far too many legal assignments to enumerate quickly.
+
+</Hook>
+
+<Idea>
+
+### Follow one sample all the way through
+
+First generate one legal situation from the specified model. For an equity estimate, that means assigning opposing cards with the intended weights, removing known cards, and completing a legal board. Evaluate the hands and record your pot share. That share is one observation.
+
+Repeat the procedure and average the observations. A trial with an illegal shared card is not a harmless approximation: it belongs to a different experiment. Likewise, giving all range labels equal sampling weight can silently change a carefully specified range. The sampling step deserves as much attention as the final average.
+
+### Define the quantity to estimate
+
+Monte Carlo estimation repeats the same random experiment and averages a measured quantity. Define the target first: an event indicator, a pot share, or a chip payoff. Then sample from the intended distribution with card removal and range weights respected. Increasing samples cannot repair a biased sampling procedure or a wrong event definition.
+
+### Compare with a known reference
+
+When an exact answer exists, put it beside the estimate and inspect the signed gap. A fixed seed reproduces the same sequence, which makes comparisons and debugging possible. It does not create additional independent evidence: rerunning that seed repeats the experiment. The workers use a documented seeded generator and rejection sampling for bounded integers.
+
+### Read the error scaling
+
+The standard error of independent sample means decreases in proportion to one divided by the square root of sample count. Multiply the sample count by four to halve that error. The exact ratio is computed below. A rare event can still record no successes; a sensible proportion interval should retain a positive upper bound. For average chip awards, use the variance of awards rather than a binary win formula.
+
+<AdvancedExamples />
+
+### Compare error with cost
+
+The square-root relationship explains why extra precision becomes expensive. Reducing the typical error by a fixed factor requires increasing sample count by the square of that factor. The computed example below makes that tradeoff explicit.
+
+Use the exact reference where one is available, and decide a sample count before inspecting the gap. A single estimate can happen to be unusually close or unusually far away. The uncertainty measure describes the sampling process, not a guarantee that each larger run improves on the previous one.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Choose exact enumeration when its work is small. Otherwise report method, sample count, interval, seed, and the range assumptions.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Pricing by simulation has numerical error separate from model error. A larger sample reduces the first while leaving the second unchanged.
+
+</QuantCorner>

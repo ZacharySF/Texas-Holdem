@@ -1,0 +1,74 @@
+<script>
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import ChartWalkthrough from '../../features/learn/ChartWalkthrough.svelte';
+  import FinalLinks from '../../features/learn/FinalLinks.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+Your stack is short enough that one shove ends your decisions. The opponent can fold or call. What inputs determine the shove’s value?
+
+</Hook>
+
+<Idea>
+
+### Build the shove from the decision point
+
+Before betting, mark the existing pot, the new chips you can actually lose, and the additional chips the opponent must put in to call. If the opponent folds, your unmatched added chips return and you gain the existing pot. If they call, the contested final pot contains both covered additions.
+
+Average the called award using equity against the calling range, then subtract your new risk. Combine that result with the fold branch. You now have the value of the specified shove against the specified response model. You have not yet solved which range either player ought to use.
+
+### Write the shove payoff
+
+Start with pot P, additional covered risk R, and the opponent’s additional call C. A fold wins P. A call creates P plus R plus C in the final pot, so your expected incremental result is equity times that total minus R. Weight the called result by the call chance and add the fold branch. Folding now is zero additional chips; earlier contributions are sunk.
+
+### Restrict the model to covered risk
+
+Remove chips that cannot be called before defining R. Use equity conditional on a call: an opponent who folds weak hands leaves a stronger calling range. Multiway shoves need separate joint call branches and side-pot eligibility. The calculator deliberately models one opponent and one binary response, with no rake or later betting.
+
+### Define an equilibrium range
+
+A Nash range is a set of conditional action frequencies such that no player improves by changing their own policy alone. For a small example, deal distinct Q, K, A after both players ante one. The first player can fold or shove one additional chip, and the second can fold or call. Enumerate the six equally likely deals and each allowed action. The calculator lists an exact mixed equilibrium and its value; tests enumerate every deterministic push or call range as a unilateral deviation.
+
+### Distinguish the toy solution from Hold’em
+
+That toy chart is not a Hold’em Nash chart. Hold’em ranges depend on every physical combo, dead cards, position, stack, blind structure, and whether the objective is chip value or prize value. A supplied fold chance and called equity can price a particular shove, but they do not solve those interacting ranges. Changing an opponent’s call behavior generally changes both inputs.
+
+<ChartWalkthrough mode="shove" />
+
+### Read a chart's question before its colors
+
+A cell's recommendation depends on the stack, position, costs, and opposing calling behavior used to construct it. Changing the calling range can change both how often the shove wins immediately and how well it performs when called. Inspect those assumptions before treating a cell as a universal instruction.
+
+The small equilibrium example illustrates what solving both players' policies means. The Hold'em chart illustrates pricing hands under a supplied model. Keep that difference visible when comparing their outputs.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Use push/fold EV to audit assumptions, then change the calling range and observe sensitivity. An equilibrium chart from another stack or payout model is not interchangeable.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+A restricted action model can answer a narrow optimization question exactly. Expanding the action set may change the optimal policy.
+
+</QuantCorner>

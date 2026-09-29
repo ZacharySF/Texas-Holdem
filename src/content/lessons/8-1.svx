@@ -1,0 +1,71 @@
+<script>
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import CourseExamples from '../../features/learn/CourseExamples.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+You hold Ah Jh on 2h 7h Kc. Nine hearts are unseen. What is the chance of seeing at least one of those cards before the river, and what changes if the turn misses?
+
+</Hook>
+
+<Idea>
+
+### Define the out set
+
+An out is a physical unseen card counted toward a specified improvement. Here the target is completing a flush, so list the missing hearts. This definition does not yet promise that a flush wins. Keep the target explicit: a card can complete your draw while completing a stronger hand for someone else.
+
+On the flop, your two hole cards and the three board cards are visible. The remaining cards form the next-card sample space. Divide the number of outs by that remaining count for a turn hit. If the turn is a non-heart, remove that miss from the denominator; the same hearts remain favorable on the river. The selectable examples include both one-card situations so the denominators can be compared directly.
+
+### Count at least one hit
+
+For a hit by the river, do not simply add the turn chance to the river chance. A two-card runout containing two hearts would then be counted twice. Count the opposite event instead: neither future card comes from your fixed out set. Choose both misses from the non-outs and divide by all possible two-card sets. Subtract from one. The notebook uses exactly this complement construction.
+
+<CourseExamples />
+
+Another route is a tree. One successful path hits on the turn and then accepts any river. The other misses on the turn and hits on the river. Those paths cannot overlap because their turn outcomes differ. Add their path probabilities. Notice that a miss changes the denominator for the second draw; drawing without replacement is built into both the tree and the combination formula.
+
+### State what the fixed-out model includes
+
+The example with eight outs models an open-ended straight draw: both endpoint ranks can complete it. The fifteen-out example models a combined draw after shared cards have been removed from the count. They use the same formula because the formula cares about the size of a fixed favorable set, not the names of its cards. The next lesson shows how to construct that set correctly.
+
+A fixed set means exactly that: count whether at least one card from today’s list appears. It does not describe every way your final hand might improve. Two cards outside today’s list can create a backdoor draw, and a card inside it might later be counterfeited or beaten. The displayed chance is exact for the stated event, while showdown equity asks who wins after every possible runout.
+
+The rule of two and rule of four approximate a single-card or two-card hit chance by multiplying the out count by a small percentage. They are useful for mental estimates, but their error changes with the out count and the cards left. Read the signed error below: a positive value overstates the chance. The exact formula remains the reference.
+
+### Choose the finish line before counting
+
+Write “after the turn” or “by the river” beside your question. The first has one future card. The second has two and permits a hit on either. The favorable outcomes are therefore individual cards in the first problem and complete two-card runouts in the second.
+
+For the two-card problem, take a runout with two hearts. It should count as one successful runout, not two. Counting all misses first avoids this repeated-hit issue automatically. The tree method also works when its success branches are “hit now” and “miss now, hit later,” which cannot describe the same runout.
+
+At the table, ask a separate question: does the current payment guarantee reaching that finish line? A correct by-river count can still be the wrong input for a decision that buys only the next card.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Use a two-card hit chance when both future cards will actually be dealt for the decision being priced, such as an all-in. Facing a flop bet with later betting still possible, distinguish seeing one card from paying again on the turn. Completing the draw and winning the pot are different questions.
+
+</AtTheTable>
+
+<QuantCorner>
+
+An event’s horizon is part of its definition. A two-period chance cannot be substituted for a one-period chance without changing the decision being evaluated. Simulating the exact horizon is a useful check on a shortcut.
+
+</QuantCorner>

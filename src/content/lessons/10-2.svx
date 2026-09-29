@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+You have not seen pocket aces for a long time. Does that make aces due on the next fresh deal?
+
+</Hook>
+
+<Idea>
+
+### Keep a count question separate from a waiting question
+
+“Exactly this many successes in a fixed number of trials” belongs to the binomial model. “The first success occurs on this trial” belongs to a waiting-time model. The second question requires every earlier trial to fail; a sequence with an earlier success does not qualify even if the last trial succeeds too.
+
+For the geometric calculation, write the failures first and then the one required success. Multiplication follows that single path. For success by a deadline, the complement is simpler: every trial before the deadline fails. This is the same complement rule you used for drawing at least one ace.
+
+### Define the waiting-time variable
+
+Let T count hands up to and including the first success. To wait exactly t hands, fail t minus one times and then succeed. To succeed by hand t, subtract the chance of failing all t attempts from one. This is the geometric distribution. With independent fresh deals, its remaining waiting time does not shorten because of past failures.
+
+### Derive the average wait
+
+The average waiting time can be derived without an infinite list. Write E for the unknown average. Every attempt consumes one hand. With chance one minus p, it fails and the process starts again with average E still to go. Therefore E equals one plus (one minus p) times E. Rearranging gives E equals one divided by p. The aces simulation counts the successful hand, matching this definition. Its distribution has a long right tail; its average need not resemble one typical wait.
+
+### Introduce the rare-event approximation
+
+For many independent opportunities each having a tiny chance, the Poisson distribution approximates the count of rare successes. Let lambda be the expected count. Its probability of k events is e to minus lambda, times lambda to the kth power, divided by k factorial. Here e is a number defined by the limit of (1 plus one divided by n) to the nth power as n grows. It arises because the no-event chance (1 minus lambda divided by n) to the nth power approaches e to minus lambda. Powers of e are evaluated numerically; no logarithms are needed here. Compare the approximation with the exact binomial calculation below before using it.
+
+<AdvancedExamples />
+
+### Why introduce another number, e?
+
+The Poisson approximation keeps the expected count fixed while spreading it across many tiny independent opportunities. The no-success probability has a repeated-product form. As the opportunities become more numerous and individually smaller, that product approaches a limit expressed with e. The symbol names a particular mathematical constant; it is not an additional probability you choose.
+
+You can use the exact binomial comparison before mastering every limit argument. First decide whether your question is a count or a wait, and whether the rare-event approximation describes the process being modeled. The approximation is useful because of those conditions, not simply because the event sounds rare.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+A long dry spell does not improve the next independent deal. Use a waiting-time model to judge patience, not to choose a larger wager.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Waiting for rare fills or failures uses the same distributions. A Poisson approximation assumes independent opportunities and a stable rate; clustered events violate that mechanism.
+
+</QuantCorner>

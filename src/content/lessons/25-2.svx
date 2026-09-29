@@ -1,0 +1,75 @@
+<script>
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import FinalLinks from '../../features/learn/FinalLinks.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+The current strategy’s payoff is close to the known game value. Does that prove neither player can exploit it?
+
+</Hook>
+
+<Idea>
+
+### Freeze one policy while testing the other
+
+Begin with the payoff when the two displayed policies face each other. Hold one policy fixed. Enumerate the other player's legal response policies and find the largest improvement they can achieve. Then reverse the roles and repeat. Each test changes only one player's behavior.
+
+The word legal matters. A response assigns actions to information sets, not to fully exposed deals. Whenever the responder sees the same private card and public history, it must act the same way even if the opponent's hidden card differs.
+
+### Compare unilateral improvements
+
+A matching payoff alone does not establish equilibrium. Two poor policies can have a plausible average payoff against each other while each gives an informed opponent a large opportunity. Hold the second player’s policy fixed and find the first player’s best legal response. Then hold the first player fixed and find the second player’s best response. Compare each improvement with the baseline matchup value.
+
+### Enumerate legal response policies
+
+For this tiny game, every player controls six information sets, each with two actions. Enumerate all deterministic assignments. Mixing cannot beat the best deterministic response to a fixed opponent because payoff is linear in the responding policy’s mixture. Each assignment acts only on a private rank and a public history; it cannot vary its action by the hidden card. This restriction is essential. A clairvoyant response would measure an impossible opponent.
+
+### Define the reported exploitability
+
+Exploitability here is the average of the two unilateral gains. It is nonnegative and equals zero at a verified equilibrium. The chart reports this exact finite-game metric for the learned average policy at selected iteration counts. Values need not decrease at every point. There is no Monte Carlo confidence band because the trainer and best-response checker enumerate the entire game. Floating-point arithmetic still imposes numerical tolerance.
+
+### Interpret policies with equal value
+
+The practice set repeats a regret-matching calculation with new seeded values so you can connect the update rule with the policy being tested. Compare the final learned policy with the analytic equilibrium in the playable AKQ game. Different equilibrium mixtures may have the same game value; matching each frequency to one particular equilibrium is a stronger and unnecessary demand.
+
+### State the scope of the result
+
+A bound for this small game says nothing by itself about larger bet sizes, more cards, abstraction error, or an opponent’s mistakes. A production solver must account for those choices and numerical limits separately. This capstone stops at a completely inspectable game.
+
+### Read the convergence chart as evidence about this game
+
+The measured unilateral gains show how much room for improvement remains in the finite game. A low value is stronger evidence than two policies merely producing a plausible payoff against each other. The trajectory can still wobble between reported iterations, so do not require every point to improve.
+
+At the end of this capstone, explain the game rules, the information restriction, the learned policy being evaluated, and the best-response procedure. Those four statements describe what the result establishes and make its limits much clearer than the word “solved” alone.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Ask which game was solved, which information was available, and how exploitability was measured before treating a solver output as a strategy guarantee.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+Out-of-sample evaluation asks a different question from fitting a target value. Adversarial best-response checks expose weaknesses that a single average score can hide.
+
+</QuantCorner>

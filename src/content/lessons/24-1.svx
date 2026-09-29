@@ -1,0 +1,71 @@
+<script>
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import FinalLinks from '../../features/learn/FinalLinks.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+You start with five betting units and stop at either zero or ten. Each independent even-money trial changes your balance by one. How often do you hit zero first?
+
+</Hook>
+
+<Idea>
+
+### Read the recurrence as the next step
+
+From an interior balance, the model moves up one unit after a win or down one unit after a loss. Each destination already has its own chance of eventually reaching zero before the target. Weight those destination chances by the next-step probabilities and add. That gives the starting balance's ruin chance.
+
+At a boundary there is no next step. Starting at zero has already met the failure condition. Starting at the target has already met the success condition. These boundary values anchor the recurrence and tell you what experiment it describes.
+
+### Write the boundary recurrence
+
+Let u(i) be the chance of reaching zero before the target when starting with i units. The boundary values are one at zero and zero at the target. From an interior balance, condition on the next trial: u(i) equals p times u(i plus one) plus one minus p times u(i minus one). This recurrence expresses the whole future using its first step.
+
+### Follow the fair and biased solutions
+
+For a fair trial, adjacent differences are equal, so the solution is a straight line between the two boundary values. For a biased trial, the differences form a geometric progression with ratio (one minus p) divided by p. Summing that progression and applying the two boundaries gives the exact formula implemented by the calculator. If every step wins, ruin is impossible; if every step loses, ruin is certain. Handle the fair case separately because the geometric formula otherwise divides zero by zero.
+
+### State the stopping rule
+
+This is eventual ruin before a target, not ruin by a fixed hand count and not an unbounded walk. There are no withdrawals, costs, variable stakes, or changing probabilities. The worker follows each independent path until a boundary and compares the frequency of ruined paths with the exact fraction. A computational path cap reports an error rather than quietly treating unfinished paths as safe.
+
+### Compare other bankroll models
+
+The earlier bankroll simulator uses a different model of normally distributed block results and observes ruin at block endpoints. It may miss a crossing inside a block. Fractional betting is different again: a fraction below one leaves positive mathematical wealth after any finite sequence of losses, but minimum chip sizes and living expenses can create a practical failure threshold.
+
+### Changing a rule changes the question
+
+A maximum number of hands adds a time boundary. Variable stakes change the possible next balances. Withdrawals change the available resources. None of these changes is merely a different display of the same ruin probability; each changes the process being modeled.
+
+Before comparing two bankroll tools, write their stopping rules and stake rules side by side. Agreement is meaningful only when they are evaluating the same event under the same assumptions.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Name the failure threshold, horizon, and stake rule before discussing bankroll risk. A ruin percentage without those inputs is incomplete.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+An account can fail through a margin threshold long before wealth reaches mathematical zero. Risk models need the actual stopping rule.
+
+</QuantCorner>

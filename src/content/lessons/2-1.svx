@@ -1,0 +1,83 @@
+<script>
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import CountingExamples from '../../features/learn/CountingExamples.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import Orders from '../../features/learn/Orders.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+  Deal two cards one after another. You want the first to be an ace and the
+  second to be another ace. Why does multiplying two fractions answer this
+  question? And why is the second fraction different from the first?
+</Hook>
+
+<Idea>
+### Begin with choices you can list
+
+Take three labeled cards, A, B, and C. These labels identify physical cards; they are not rank names. Deal one card into a left position and another into a right position. Once A goes left, the right card can be B or C. Once B goes left, the right card can be A or C. Once C goes left, the right card can be A or B.
+
+<Orders size={3} take={2} />
+
+There are three first branches, and each branch has two second branches. Multiplication counts all the leaves: the first number counts groups and the second counts leaves per group. Nothing about the multiplication rule requires memorizing a special poker formula.
+
+Now use a full deck. There are fifty-two choices for the left card. For each particular left card, there are fifty-one remaining choices for the right card. This counts **ordered outcomes**: As then Kh is different from Kh then As. Both belong in the sample space for an experiment that records first and second positions.
+
+<CountingExamples />
+
+The second example above arranges three cards from four available labels. Keep branching once per position. The final example arranges all three labels; the exclamation mark is called a factorial and will be developed in the next lesson.
+
+### Follow only the favorable branches
+
+Return to two aces from a full deck. Four first branches begin with an ace. Under each of those branches, three second branches are another ace, because the particular ace already dealt is gone. Multiply those two favorable branch counts, then divide by the count of all ordered two-card outcomes.
+
+The same fraction can be regrouped into a product: favorable first choices over all first choices, multiplied by favorable second choices over all remaining second choices. You are counting the same leaves with the factors placed differently. That is why multiplying these probabilities works.
+
+The second fraction describes the second draw **after following the first branch**. It is not an unrelated chance copied from the fresh deck. If the first card is As, As is unavailable next. If the first card is Ac, Ac is unavailable instead. Either way, exactly three aces remain, so every favorable first branch has the same second-stage fraction.
+
+### Compare a different request
+
+Ask instead for an ace followed by a king. Dealing an ace removes no king. There are still four kings among the fifty-one remaining cards. The denominator shrinks because a card was dealt; the numerator stays at four because that card was not a king. The practice set varies both requested ranks so you have to decide which numerator applies.
+
+This distinction is the beginning of dependence: a previous outcome can change later possibilities. Chapter 5 will give that relationship formal conditional-probability notation. For now, say the condition in words and redraw the remaining deck.
+
+### Multiply along a path; do not add the stages
+
+“First an ace **and then** an ace” requires both stages. Adding their separate probabilities counts a different question about alternatives. Multiplication along the path accounts for the trials that survive the first requirement and then satisfy the second.
+
+If different first branches have different second-stage counts, count each branch's leaves separately and add those branch totals. Multiplying by a single common second count only works when that count really is the same across the branches you grouped.
+
+### Read a product as a filtering process
+
+Think of all the ordered two-card deals in a large list. First keep only rows whose first card is an ace. Then, within those surviving rows, keep only rows whose second card is an ace. Each stage retains a fraction of the rows that reached it. Taking a fraction of a fraction is why the path calculation multiplies.
+
+Now stop after the first filter and inspect the remaining rows. Each has a particular ace missing from the second-card choices. The second filter therefore uses the deck after that ace was removed. It does not use the fresh-deck fraction again.
+
+There are two checks you can make before doing arithmetic. Requiring both stages cannot make success more likely than requiring the first stage alone. Also, every denominator must describe the pool of possibilities at that point in the path. These checks help you catch an incorrect setup before a correct multiplication produces the wrong answer.
+
+<Shortcut />
+</Idea>
+
+<WorkedDerivation />
+<SimCheck />
+<PracticeSet />
+
+<AtTheTable>
+  When two future cards must both satisfy a requirement, write the first
+  requirement and then the second requirement with the first card removed. A
+  copied full-deck fraction can be wrong even when its denominator looks almost
+  unchanged. Naming the draw order makes the mechanism visible before you press
+  Simulate.
+</AtTheTable>
+
+<QuantCorner>
+  A trading scenario can also require a sequence of events, such as one price
+  move followed by a second move. Multiplying two unconditional forecasts
+  assumes away any effect of the first event on the second. A probability tree
+  makes the conditioning explicit before the scenario is assigned a weight.
+</QuantCorner>

@@ -234,3 +234,41 @@ test('ordinary play stays usable with a slow coach, while exam requires a predic
   await page.getByRole('button', { name: 'Reveal coach', exact: true }).click();
   await expect(page.getByRole('button', { name: /^Call / })).toBeEnabled();
 });
+
+test('the brand returns an active table to the lobby even on the same URL', async ({
+  page,
+}) => {
+  await page.goto('/#/play');
+  const home = page.getByRole('link', {
+    name: 'contemprorary home',
+    exact: true,
+  });
+  for (const button of ['Six-player table', 'Take a seat & play']) {
+    await page.getByRole('button', { name: button, exact: true }).click();
+    await expect(page.locator('.felt-table')).toBeVisible();
+    await expect(page).toHaveURL(/#\/play$/);
+    const profile = await page.evaluate(() =>
+      localStorage.getItem('holdem-play-v1'),
+    );
+    expect(profile).not.toBeNull();
+    await home.focus();
+    await page.keyboard.press('Enter');
+    await expect(
+      page.getByRole('heading', { name: 'contemprorary', exact: true }),
+    ).toBeVisible();
+    await expect(page.locator('.felt-table')).toHaveCount(0);
+    await expect(
+      page.getByRole('button', { name: 'Take a seat & play', exact: true }),
+    ).toBeEnabled();
+    expect(
+      await page.evaluate(() => localStorage.getItem('holdem-play-v1')),
+    ).toBe(profile);
+  }
+  await page.getByRole('link', { name: 'Course', exact: true }).click();
+  await expect(page).toHaveURL(/#\/learn$/);
+  await home.click();
+  await expect(
+    page.getByRole('heading', { name: 'contemprorary', exact: true }),
+  ).toBeVisible();
+  await expect(page).toHaveURL(/#\/play$/);
+});

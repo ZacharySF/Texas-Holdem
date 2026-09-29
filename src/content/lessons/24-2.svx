@@ -1,0 +1,75 @@
+<script>
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import FinalLinks from '../../features/learn/FinalLinks.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+You repeat an even-money opportunity and risk the same fraction of your current wealth each time. Which fraction grows wealth fastest in the long run under a known probability model?
+
+</Hook>
+
+<Idea>
+
+### Start with wealth multipliers
+
+Imagine writing the balance after each round. A fractional stake is calculated from the current balance, so the next win or loss multiplies that balance. A loss followed by a gain of the same fraction does not cancel: the gain acts on a smaller base. Follow the balance before simplifying anything.
+
+Logarithms let you replace that long product with a sum of log multipliers. Averaging the sum over many model trials produces the expected log-growth expression. This choice of objective is deliberate. Maximizing the expected amount after one bet is a different problem and can prefer different risk.
+
+### Describe repeated wealth multiplication
+
+One win multiplies wealth by one plus the risked fraction f; one loss multiplies it by one minus f. Ten rounds multiply ten such factors. Ordinary arithmetic average payoff does not describe this compounded path. We need a way to turn products into sums.
+
+### Introduce logarithms
+
+Start with powers. If ten squared is one hundred, the base-ten logarithm of one hundred is two: it asks what exponent produces the input. Because multiplying powers adds exponents, the logarithm of a product is the sum of its logarithms. The natural logarithm uses base e, introduced through repeated compounding in chapter 10. Changing the base only multiplies all logarithms by a positive constant, so it does not change the fraction that maximizes growth. A multiplier above one has positive log; a multiplier below one has negative log; a multiplier of one has zero log.
+
+### Build expected log growth
+
+After many independent trials, counts approach their expected proportions. Divide the log of final wealth relative to initial wealth by the trial count. The limiting average becomes p times the log of the winning multiplier plus one minus p times the log of the losing multiplier. At net odds b, a win multiplies wealth by one plus bf and a loss by one minus f. The calculator plots this expected log growth rather than the arithmetic average wealth multiplier.
+
+### Find the peak
+
+To find the peak, ask how a tiny increase in f changes growth. The derivative, meaning this local rate of change, of ln(x) is one divided by x. Applying it to the two multipliers gives pb divided by one plus bf, minus one minus p divided by one minus f. Set that slope to zero, cross-multiply the positive denominators, and collect f. The result is p minus (one minus p) divided by b. If this is negative and borrowing or taking the opposite side is unavailable, the allowed optimum is zero. The curve is concave because its second derivative is negative, so the interior stationary point is a maximum.
+
+### Test the supplied assumptions
+
+The worked example uses even-money odds. A half-Kelly shortcut deliberately risks half the computed fraction. Its fraction error is shown below; its expected growth should be compared on the curve, not inferred from that fraction error alone. Full Kelly assumes known stable probabilities, independent repeatable opportunities, divisible wealth, and no omitted costs. An overestimated edge can turn aggressive sizing into negative log growth. Change the supplied probability in the Lab before trusting an apparently precise optimum.
+
+### Interpret the slope without needing calculus first
+
+The plotted curve tells you what happens as the chosen fraction increases. Where the curve rises, a slightly larger fraction improves the model's expected log growth. Where it falls, a larger fraction makes growth worse. At an interior peak, the local slope is zero; the derivative calculation expresses that observation algebraically.
+
+If derivatives are new, first compare neighboring points on the curve and identify the peak visually. Then read the algebra as a compact method for finding it. Finally change the assumed success chance: the resulting movement of the peak shows why uncertainty about an edge matters to this model.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Fractional Kelly is a sensitivity choice under estimation error, not a guarantee against drawdowns. Keep model-based sizing separate from the fixed-unit ruin model.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+Position sizing controls the sequence of wealth multipliers, not just the next trade’s mean profit. Forecast uncertainty and correlated exposures can invalidate a single-opportunity Kelly calculation.
+
+</QuantCorner>

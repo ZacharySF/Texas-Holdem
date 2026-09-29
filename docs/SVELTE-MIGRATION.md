@@ -1,0 +1,376 @@
+# Full Svelte migration plan
+
+Keep the existing Svelte 5/Vite/plain CSS stack, tokens, Pixi rendering, routes, saved-data formats, engine, workers, and lesson prose. Replace the remaining UI controllers with native Svelte state, derived values, effects, and snippets. No compatibility runtime.
+
+## Replace or remove
+
+- Remove `src/App.tsx`, `src/bridge/LegacyRoutes.svelte`, `src/bridge/ComponentHost.svelte`, `src/bridge/SvelteView.tsx`, and `src/mdx.d.ts`.
+- Replace the following TSX modules with native components (shared pure exports remain in `.ts` modules where needed):
+
+- `src/ui/Card.tsx` → `src/ui/Card.svelte`.
+- `src/ui/CardPicker.tsx` → `src/ui/CardPicker.svelte`.
+- `src/ui/CfrChart.tsx` → `src/ui/CfrChart.svelte`.
+- `src/ui/ConvergenceChart.tsx` → `src/ui/ConvergenceChart.svelte`.
+- `src/ui/EquityExperiment.tsx` → `src/ui/EquityExperiment.svelte`.
+- `src/ui/ExperimentChart.tsx` → `src/ui/ExperimentChart.svelte`.
+- `src/ui/FinalExperiment.tsx` → `src/ui/FinalExperiment.svelte`.
+- `src/ui/MeanChart.tsx` → `src/ui/MeanChart.svelte`.
+- `src/ui/PlayingCards.tsx` → `src/ui/PlayingCards.svelte`.
+- `src/ui/Probability.tsx` → `src/ui/Probability.svelte`.
+- `src/ui/RangeGrid.tsx` → `src/ui/RangeGrid.svelte`.
+- `src/ui/SeedInput.tsx` → `src/ui/SeedInput.svelte`.
+- `src/ui/SeriesChart.tsx` → `src/ui/SeriesChart.svelte`, `src/ui/Histogram.svelte`.
+- `src/features/arcade/Akq.tsx` → `src/features/arcade/Akq.svelte`, `src/features/arcade/Hand.svelte`.
+- `src/features/arcade/DecisionDrills.tsx` → `src/features/arcade/DrillSet.svelte`, `src/features/arcade/DecisionDrills.svelte`.
+- `src/features/arcade/OutsRush.tsx` → `src/features/arcade/Round.svelte`, `src/features/arcade/OutsRush.svelte`.
+- `src/features/arcade/StreakTrap.tsx` → `src/features/arcade/StreakTrap.svelte`, `src/features/arcade/Set.svelte`.
+- `src/features/lab/BankrollLab.tsx` → `src/features/lab/BankrollLab.svelte`.
+- `src/features/lab/EventBuilder.tsx` → `src/features/lab/EventBuilder.svelte`.
+- `src/features/lab/FinalCalculators.tsx` → `src/features/lab/FinalCalculators.svelte`.
+- `src/features/lab/HandCharts.tsx` → `src/features/lab/HandCharts.svelte`.
+- `src/features/lab/Lab.tsx` → `src/features/lab/Lab.svelte`.
+- `src/features/lab/RangeLab.tsx` → `src/features/lab/RangeLab.svelte`.
+- `src/features/lab/ShuffleLab.tsx` → `src/features/lab/ShuffleLab.svelte`.
+- `src/features/learn/AdvancedExamples.tsx` → `src/features/learn/AdvancedWorked.svelte`, `src/features/learn/AdvancedShortcut.svelte`, `src/features/learn/Matchups.svelte`, `src/features/learn/AdvancedSimulation.svelte`, `src/features/learn/AdvancedExamples.svelte`, `src/features/learn/RangeExampleExperiment.svelte`, `src/features/learn/SuppliedChance.svelte`, `src/features/learn/RealizationInputs.svelte`.
+- `src/features/learn/CourseContents.tsx` → `src/features/learn/CourseContents.svelte`.
+- `src/features/learn/CourseExamples.tsx` → `src/features/learn/FrequencyCounts.svelte`, `src/features/learn/ProbabilityTree.svelte`, `src/features/learn/CourseExamples.svelte`, `src/features/learn/OutsExamples.svelte`.
+- `src/features/learn/FinalLesson.tsx` → `src/features/learn/FinalWorked.svelte`, `src/features/learn/FinalShortcut.svelte`, `src/features/learn/FinalSimulation.svelte`, `src/features/learn/FinalLinks.svelte`.
+- `src/features/learn/Learn.tsx` → `src/features/learn/LessonReady.svelte`, `src/features/learn/Learn.svelte`.
+- `src/features/learn/ModelCheck.tsx` → `src/features/learn/ModelCheck.svelte`.
+- `src/features/learn/NotebookBlock.tsx` → `src/features/learn/NotebookBlock.svelte`, `src/features/learn/Formula.svelte`, `src/features/learn/ExactValue.svelte`, `src/features/learn/Count.svelte`.
+- `src/features/learn/PracticeSet.tsx` → `src/features/learn/PracticeSet.svelte`.
+- `src/features/learn/SimCheck.tsx` → `src/features/learn/SimCheck.svelte`, `src/features/learn/BasicSimCheck.svelte`.
+- `src/features/learn/components.tsx` → `src/features/learn/Section.svelte`, `src/features/learn/Hook.svelte`, `src/features/learn/Idea.svelte`, `src/features/learn/AtTheTable.svelte`, `src/features/learn/QuantCorner.svelte`, `src/features/learn/WorkedDerivation.svelte`, `src/features/learn/Shortcut.svelte`, `src/features/learn/Orders.svelte`, `src/features/learn/CountingExamples.svelte`, `src/features/learn/CombinationExamples.svelte`, `src/features/learn/ClassTable.svelte`, `src/features/learn/StartingFacts.svelte`, `src/features/learn/ConversionExamples.svelte`, `src/features/learn/Endpoints.svelte`, `src/features/learn/RankingTable.svelte`, `src/features/learn/EquityByHand.svelte`, `src/features/learn/ChartWalkthrough.svelte`.
+- `src/features/play/CoachPanel.tsx` → `src/features/play/CoachPanel.svelte`.
+- `src/features/play/CoachSidebar.tsx` → `src/features/play/CoachSidebar.svelte`.
+- `src/features/play/HistoryPanel.tsx` → `src/features/play/HistoryPanel.svelte`.
+- `src/features/play/Play.tsx` → `src/features/play/Play.svelte`.
+- `src/features/play/Table.tsx` → `src/features/play/PokerTable.svelte` plus the existing `Table.svelte` view; pure names and action labels remain in `Table.ts`.
+- `src/features/stats/Stats.tsx` → `src/features/stats/Stats.svelte`.
+
+## Lessons and tests
+
+- Rename all 53 `src/content/lessons/*.mdx` files to `.svx`, retaining the existing prose and seven-part sections; add explicit Svelte component imports. Replace MDX compilation with mdsvex.
+- Migrate `src/features/learn/content.test.tsx`, `src/features/learn/PracticeSet.test.tsx`, `src/features/arcade/OutsRush.test.tsx`, and `src/features/arcade/DecisionDrills.test.tsx` to Svelte test mounts, retaining their behavior assertions. Add a lesson-context test wrapper if needed. Engine tests remain unchanged.
+
+## Modify and add
+
+- Modify `src/App.svelte`; add `src/Routes.svelte` and `src/navigation.svelte.ts` for the same lazy hash routes and URL query behavior.
+- Replace React state helpers in `src/features/learn/progress.ts`, `src/features/learn/journey.ts`, and `src/features/learn/context.ts` with Svelte state/context; retain pure storage/learning functions.
+- Modify `package.json`, `package-lock.json`, `vite.config.ts`, `svelte.config.js`, `tsconfig.json`, and `eslint.config.js`; remove every React, React Router, MDX, and React testing dependency.
+- Update imports in existing Svelte components and tests that consume migrated modules.
+- Update `README.md`, `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`, `docs/SPEC.md`, and this plan with the completed boundaries and verification.
+
+## Verification
+
+Run lint, typecheck, the complete unit suite, production build, and desktop/phone browser checks. Verify all course modules compile, play with two/six seats, simulations, navigation, and localhost directly in Chromium. Check source and installed dependency tree for React. No engine changes or benchmark changes are planned.
+
+## Completed verification
+
+- Lint and typecheck pass; Svelte reports zero errors and warnings.
+- All 106 unit tests pass, including rendering all 53 lessons and the native-stack audit.
+- All 26 existing browser checks pass at desktop/phone sizes; six additional checks cover the migrated equity tool, card picker, ranges, early lessons, event builder, and bankroll paths.
+- The production build passes. Engine and worker source files are unchanged; their measured benchmarks are retained rather than rerun.
+- Localhost serves the app and compiles actual Svelte modules successfully. Chromium checks at 1280px and 375px show no JavaScript errors, failed HTTP requests, Vite overlay, or horizontal page overflow. Course navigation and browser back return to the home page; the six-player entry mounts the Pixi table.
+- `npm ls react react-dom react-router --all` is empty. There are no JSX source files, cross-framework adapters, or React imports. Development-only Testing Library uses `react-is` through its generic DOM diagnostic formatter; this utility does not install React or enter the application bundle.
+
+## Screens
+
+The existing design is retained. Home, play, and course now render through native Svelte controllers:
+
+| Screen           | Desktop                                      | Phone                                      |
+| ---------------- | -------------------------------------------- | ------------------------------------------ |
+| Home             | [1280px](screenshots/svelte-home-1280.png)   | [375px](screenshots/svelte-home-375.png)   |
+| Six-player table | [1280px](screenshots/svelte-play-1280.png)   | [375px](screenshots/svelte-play-375.png)   |
+| Chapter 1        | [1280px](screenshots/svelte-course-1280.png) | [375px](screenshots/svelte-course-375.png) |
+
+Additional files used during implementation: `.prettierrc.json` for Svelte Markdown formatting; `src/audit.test.ts` for native source/dependency checks; `src/features/learn/LessonBody.svelte` and `LessonTestHost.svelte` for lesson context; `src/features/learn/{journey,progress}.svelte.ts` for state; `e2e/migration.spec.ts` for the migrated tools. All helper exports remain plain TypeScript. No new UI framework, game phase, math claim, or storage format is introduced.
+
+## Changed-file manifest
+
+- `.prettierrc.json`
+- `README.md`
+- `docs/ARCHITECTURE.md`
+- `docs/ROADMAP.md`
+- `docs/SPEC.md`
+- `docs/SVELTE-MIGRATION.md`
+- `docs/screenshots/akq-phone.png`
+- `docs/screenshots/blue-six-desktop.png`
+- `docs/screenshots/blue-six-phone.png`
+- `docs/screenshots/coach-beside-table.png`
+- `docs/screenshots/coach-phone.png`
+- `docs/screenshots/course-contents.png`
+- `docs/screenshots/equity-coach-desktop.png`
+- `docs/screenshots/equity-coach-phone.png`
+- `docs/screenshots/poker-lobby-desktop.png`
+- `docs/screenshots/poker-lobby-phone.png`
+- `docs/screenshots/poker-six-desktop.png`
+- `docs/screenshots/poker-table-desktop.png`
+- `docs/screenshots/shove-chart-desktop.png`
+- `docs/screenshots/shuffle-lab.png`
+- `docs/screenshots/svelte-course-1280.png`
+- `docs/screenshots/svelte-course-375.png`
+- `docs/screenshots/svelte-home-1280.png`
+- `docs/screenshots/svelte-home-375.png`
+- `docs/screenshots/svelte-play-1280.png`
+- `docs/screenshots/svelte-play-375.png`
+- `e2e/migration.spec.ts`
+- `eslint.config.js`
+- `package-lock.json`
+- `package.json`
+- `src/App.svelte`
+- `src/App.tsx`
+- `src/Routes.svelte`
+- `src/audit.test.ts`
+- `src/bridge/ComponentHost.svelte`
+- `src/bridge/LegacyRoutes.svelte`
+- `src/bridge/SvelteView.tsx`
+- `src/content/lessons/0-1.mdx`
+- `src/content/lessons/0-1.svx`
+- `src/content/lessons/0-2.mdx`
+- `src/content/lessons/0-2.svx`
+- `src/content/lessons/1-1.mdx`
+- `src/content/lessons/1-1.svx`
+- `src/content/lessons/1-2.mdx`
+- `src/content/lessons/1-2.svx`
+- `src/content/lessons/10-1.mdx`
+- `src/content/lessons/10-1.svx`
+- `src/content/lessons/10-2.mdx`
+- `src/content/lessons/10-2.svx`
+- `src/content/lessons/11-1.mdx`
+- `src/content/lessons/11-1.svx`
+- `src/content/lessons/11-2.mdx`
+- `src/content/lessons/11-2.svx`
+- `src/content/lessons/12-1.mdx`
+- `src/content/lessons/12-1.svx`
+- `src/content/lessons/12-2.mdx`
+- `src/content/lessons/12-2.svx`
+- `src/content/lessons/13-1.mdx`
+- `src/content/lessons/13-1.svx`
+- `src/content/lessons/13-2.mdx`
+- `src/content/lessons/13-2.svx`
+- `src/content/lessons/14-1.mdx`
+- `src/content/lessons/14-1.svx`
+- `src/content/lessons/14-2.mdx`
+- `src/content/lessons/14-2.svx`
+- `src/content/lessons/15-1.mdx`
+- `src/content/lessons/15-1.svx`
+- `src/content/lessons/15-2.mdx`
+- `src/content/lessons/15-2.svx`
+- `src/content/lessons/16-1.mdx`
+- `src/content/lessons/16-1.svx`
+- `src/content/lessons/16-2.mdx`
+- `src/content/lessons/16-2.svx`
+- `src/content/lessons/17-1.mdx`
+- `src/content/lessons/17-1.svx`
+- `src/content/lessons/17-2.mdx`
+- `src/content/lessons/17-2.svx`
+- `src/content/lessons/18-1.mdx`
+- `src/content/lessons/18-1.svx`
+- `src/content/lessons/18-2.mdx`
+- `src/content/lessons/18-2.svx`
+- `src/content/lessons/19-1.mdx`
+- `src/content/lessons/19-1.svx`
+- `src/content/lessons/19-2.mdx`
+- `src/content/lessons/19-2.svx`
+- `src/content/lessons/2-1.mdx`
+- `src/content/lessons/2-1.svx`
+- `src/content/lessons/2-2.mdx`
+- `src/content/lessons/2-2.svx`
+- `src/content/lessons/20-1.mdx`
+- `src/content/lessons/20-1.svx`
+- `src/content/lessons/20-2.mdx`
+- `src/content/lessons/20-2.svx`
+- `src/content/lessons/21-1.mdx`
+- `src/content/lessons/21-1.svx`
+- `src/content/lessons/21-2.mdx`
+- `src/content/lessons/21-2.svx`
+- `src/content/lessons/22-1.mdx`
+- `src/content/lessons/22-1.svx`
+- `src/content/lessons/22-2.mdx`
+- `src/content/lessons/22-2.svx`
+- `src/content/lessons/23-1.mdx`
+- `src/content/lessons/23-1.svx`
+- `src/content/lessons/23-2.mdx`
+- `src/content/lessons/23-2.svx`
+- `src/content/lessons/24-1.mdx`
+- `src/content/lessons/24-1.svx`
+- `src/content/lessons/24-2.mdx`
+- `src/content/lessons/24-2.svx`
+- `src/content/lessons/25-1.mdx`
+- `src/content/lessons/25-1.svx`
+- `src/content/lessons/25-2.mdx`
+- `src/content/lessons/25-2.svx`
+- `src/content/lessons/3-1.mdx`
+- `src/content/lessons/3-1.svx`
+- `src/content/lessons/3-2.mdx`
+- `src/content/lessons/3-2.svx`
+- `src/content/lessons/4-1.mdx`
+- `src/content/lessons/4-1.svx`
+- `src/content/lessons/4-2.mdx`
+- `src/content/lessons/4-2.svx`
+- `src/content/lessons/5-1.mdx`
+- `src/content/lessons/5-1.svx`
+- `src/content/lessons/5-2.mdx`
+- `src/content/lessons/5-2.svx`
+- `src/content/lessons/6-1.mdx`
+- `src/content/lessons/6-1.svx`
+- `src/content/lessons/6-2.mdx`
+- `src/content/lessons/6-2.svx`
+- `src/content/lessons/6-3.mdx`
+- `src/content/lessons/6-3.svx`
+- `src/content/lessons/7-1.mdx`
+- `src/content/lessons/7-1.svx`
+- `src/content/lessons/7-2.mdx`
+- `src/content/lessons/7-2.svx`
+- `src/content/lessons/8-1.mdx`
+- `src/content/lessons/8-1.svx`
+- `src/content/lessons/8-2.mdx`
+- `src/content/lessons/8-2.svx`
+- `src/content/lessons/9-1.mdx`
+- `src/content/lessons/9-1.svx`
+- `src/content/lessons/9-2.mdx`
+- `src/content/lessons/9-2.svx`
+- `src/features/arcade/Akq.svelte`
+- `src/features/arcade/Akq.tsx`
+- `src/features/arcade/DecisionDrills.svelte`
+- `src/features/arcade/DecisionDrills.test.ts`
+- `src/features/arcade/DecisionDrills.test.tsx`
+- `src/features/arcade/DecisionDrills.tsx`
+- `src/features/arcade/DrillSet.svelte`
+- `src/features/arcade/Hand.svelte`
+- `src/features/arcade/OutsRush.svelte`
+- `src/features/arcade/OutsRush.test.ts`
+- `src/features/arcade/OutsRush.test.tsx`
+- `src/features/arcade/OutsRush.tsx`
+- `src/features/arcade/Round.svelte`
+- `src/features/arcade/Set.svelte`
+- `src/features/arcade/StreakTrap.svelte`
+- `src/features/arcade/StreakTrap.tsx`
+- `src/features/lab/BankrollLab.svelte`
+- `src/features/lab/BankrollLab.tsx`
+- `src/features/lab/EventBuilder.svelte`
+- `src/features/lab/EventBuilder.tsx`
+- `src/features/lab/FinalCalculators.svelte`
+- `src/features/lab/FinalCalculators.tsx`
+- `src/features/lab/HandCharts.tsx`
+- `src/features/lab/Lab.svelte`
+- `src/features/lab/Lab.tsx`
+- `src/features/lab/RangeLab.svelte`
+- `src/features/lab/RangeLab.tsx`
+- `src/features/lab/ShuffleLab.svelte`
+- `src/features/lab/ShuffleLab.tsx`
+- `src/features/learn/AdvancedExamples.svelte`
+- `src/features/learn/AdvancedExamples.tsx`
+- `src/features/learn/AdvancedShortcut.svelte`
+- `src/features/learn/AdvancedSimulation.svelte`
+- `src/features/learn/AdvancedWorked.svelte`
+- `src/features/learn/AtTheTable.svelte`
+- `src/features/learn/BasicSimCheck.svelte`
+- `src/features/learn/ClassTable.svelte`
+- `src/features/learn/CombinationExamples.svelte`
+- `src/features/learn/ConversionExamples.svelte`
+- `src/features/learn/Count.svelte`
+- `src/features/learn/CountingExamples.svelte`
+- `src/features/learn/CourseContents.svelte`
+- `src/features/learn/CourseContents.tsx`
+- `src/features/learn/CourseExamples.svelte`
+- `src/features/learn/CourseExamples.tsx`
+- `src/features/learn/Endpoints.svelte`
+- `src/features/learn/ExactValue.svelte`
+- `src/features/learn/FinalLesson.tsx`
+- `src/features/learn/FinalLinks.svelte`
+- `src/features/learn/FinalShortcut.svelte`
+- `src/features/learn/FinalSimulation.svelte`
+- `src/features/learn/FinalWorked.svelte`
+- `src/features/learn/Formula.svelte`
+- `src/features/learn/FrequencyCounts.svelte`
+- `src/features/learn/Hook.svelte`
+- `src/features/learn/Idea.svelte`
+- `src/features/learn/Learn.svelte`
+- `src/features/learn/Learn.tsx`
+- `src/features/learn/LessonBody.svelte`
+- `src/features/learn/LessonTestHost.svelte`
+- `src/features/learn/Matchups.svelte`
+- `src/features/learn/ModelCheck.svelte`
+- `src/features/learn/ModelCheck.tsx`
+- `src/features/learn/NotebookBlock.svelte`
+- `src/features/learn/NotebookBlock.ts`
+- `src/features/learn/NotebookBlock.tsx`
+- `src/features/learn/Orders.svelte`
+- `src/features/learn/OutsExamples.svelte`
+- `src/features/learn/PracticeSet.svelte`
+- `src/features/learn/PracticeSet.test.ts`
+- `src/features/learn/PracticeSet.test.tsx`
+- `src/features/learn/PracticeSet.tsx`
+- `src/features/learn/ProbabilityTree.svelte`
+- `src/features/learn/QuantCorner.svelte`
+- `src/features/learn/RangeExampleExperiment.svelte`
+- `src/features/learn/RankingTable.svelte`
+- `src/features/learn/RealizationInputs.svelte`
+- `src/features/learn/Section.svelte`
+- `src/features/learn/Shortcut.svelte`
+- `src/features/learn/SimCheck.svelte`
+- `src/features/learn/SimCheck.tsx`
+- `src/features/learn/StartingFacts.svelte`
+- `src/features/learn/SuppliedChance.svelte`
+- `src/features/learn/WorkedDerivation.svelte`
+- `src/features/learn/components.tsx`
+- `src/features/learn/content.test.ts`
+- `src/features/learn/content.test.tsx`
+- `src/features/learn/context.ts`
+- `src/features/learn/journey.svelte.ts`
+- `src/features/learn/journey.ts`
+- `src/features/learn/phaseFourPractice.ts`
+- `src/features/learn/practice.ts`
+- `src/features/learn/progress.svelte.ts`
+- `src/features/learn/progress.ts`
+- `src/features/play/CoachPanel.svelte`
+- `src/features/play/CoachPanel.ts`
+- `src/features/play/CoachPanel.tsx`
+- `src/features/play/CoachSidebar.svelte`
+- `src/features/play/CoachSidebar.tsx`
+- `src/features/play/HistoryPanel.svelte`
+- `src/features/play/HistoryPanel.tsx`
+- `src/features/play/Play.svelte`
+- `src/features/play/Play.tsx`
+- `src/features/play/PokerTable.svelte`
+- `src/features/play/Table.ts`
+- `src/features/play/Table.tsx`
+- `src/features/stats/Stats.svelte`
+- `src/features/stats/Stats.tsx`
+- `src/mdx.d.ts`
+- `src/navigation.svelte.ts`
+- `src/ui/Card.svelte`
+- `src/ui/Card.ts`
+- `src/ui/Card.tsx`
+- `src/ui/CardPicker.svelte`
+- `src/ui/CardPicker.tsx`
+- `src/ui/CfrChart.svelte`
+- `src/ui/CfrChart.tsx`
+- `src/ui/ConvergenceChart.svelte`
+- `src/ui/ConvergenceChart.tsx`
+- `src/ui/EquityExperiment.svelte`
+- `src/ui/EquityExperiment.tsx`
+- `src/ui/ExperimentChart.svelte`
+- `src/ui/ExperimentChart.tsx`
+- `src/ui/FinalExperiment.svelte`
+- `src/ui/FinalExperiment.tsx`
+- `src/ui/Histogram.svelte`
+- `src/ui/MeanChart.svelte`
+- `src/ui/MeanChart.ts`
+- `src/ui/MeanChart.tsx`
+- `src/ui/PlayingCards.tsx`
+- `src/ui/Probability.svelte`
+- `src/ui/Probability.ts`
+- `src/ui/Probability.tsx`
+- `src/ui/RangeGrid.svelte`
+- `src/ui/RangeGrid.tsx`
+- `src/ui/SeedInput.svelte`
+- `src/ui/SeedInput.tsx`
+- `src/ui/SeriesChart.svelte`
+- `src/ui/SeriesChart.tsx`
+- `src/visual/pokerScene.ts`
+- `svelte.config.js`
+- `tsconfig.json`
+- `vite.config.ts`

@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+The pot was one hundred. An opponent bets fifty, so the pot you can win now is one hundred fifty. You must call fifty.
+
+</Hook>
+
+<Idea>
+
+### Follow your call through a win and a loss
+
+Start at the decision with the call chips still in your stack. If you call and later win the entire pot, the returned pot includes those same call chips. Your net gain therefore excludes counting them as new profit. If you lose, those chips leave your stack and nothing comes back.
+
+The compact award-minus-cost formula handles both cases at once, and also handles split-pot credit when the equity input represents the correct average share. First average the final award, then subtract the call paid in every called outcome. Do not subtract it again from a payoff that was already net of that cost.
+
+### Write award minus new cost
+
+Let P include the opposing bet and C be your call. If your showdown share is e, the final pot is P plus C and your expected award is e times that amount. Subtract C because those chips leave your stack now. Folding risks no additional chips, so its value from this decision is zero. Solving call EV equal to zero gives the break-even share C divided by P plus C.
+
+### Include the stated rake
+
+Rake removes money from the final pot. With a fixed deduction R, replace the final pot by P plus C minus R before multiplying by equity. The worked experiment uses a fixed rake; actual schedules can have caps, exclusions, and per-hand rules. Its threshold is therefore higher than the no-rake threshold. The Call or Fold drill states its rake explicitly.
+
+### Recognize future payments
+
+Implied odds include additional money you expect to win after improving. Reverse implied odds include additional losses when an apparently improved hand remains beaten. Neither is free money guaranteed by your outs. Specify the later action and conditional payoff before adding it to today’s EV. Next chapter builds that tree. If you must pay again to see the river, two-card equity alone does not price today’s call.
+
+<AdvancedExamples />
+
+### Read the break-even result as a comparison
+
+Break-even equity is the share at which the expected returned chips just cover the call. More equity makes the direct call value positive; less makes it negative under the stated model. It is a price threshold, not a claim about the strength of your cards.
+
+To make a decision, you still need an equity estimate against a plausible opponent range. You also need the model's assumptions about later betting and costs. A perfectly calculated threshold does not supply those missing inputs.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Use the pot including the bet you face, and subtract only new risk. State rake and future-betting assumptions before grading a decision.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Transaction costs reduce a trade’s expected profit just as rake reduces a pot. A small apparent edge can disappear once those costs are included.
+
+</QuantCorner>

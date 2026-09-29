@@ -1,0 +1,63 @@
+<script>
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import FinalLinks from '../../features/learn/FinalLinks.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+After several losses as a favorite, a win feels overdue. Is the next hand affected by those losses?
+
+</Hook>
+
+<Idea>
+
+### Write down the claim before looking for evidence
+
+“The next hand will win,” “these particular hands will all lose,” and “somewhere in this session there will be a losing run” are three different claims. Each needs its own event definition. A memorable stretch found after the session does not become a prediction made before it.
+
+For a next-hand claim under independence, the past can be factored out when conditioning. For an anywhere-in-the-session claim, it cannot simply be ignored: there are many potential starting positions, and their candidate runs overlap. The state-based count keeps just enough history to know how close the current suffix is to the target length.
+
+You can inspect this with a short written sequence of successes and failures. After each failure, the current success-run length resets. After each success, it grows. Once the target has been reached, the sequence already qualifies even if later failures arrive. That is the event the dynamic program is tracking.
+
+### Condition on an independent past
+
+For independent trials with a fixed success chance, multiply the chance of the past sequence by the chance of the next outcome. Conditioning on the past divides out that same sequence factor. The next success chance is unchanged. This statement assumes a fixed process: changing opponents, ranges, or tired decisions can change the next hand’s probability.
+
+### Count overlapping runs
+
+The chance of a long run somewhere in many trials is a different event. Adding the chance of a run starting at each position double counts sequences with overlapping runs. Count only histories that have not yet reached the requested run length. Label each state by the number of consecutive successes at its end. A failure sends every surviving state to zero. A success moves state j to j plus one; a move reaching the target leaves the surviving states. After the final trial, subtract the surviving probability from one. This small probability tree is dynamic programming: combine histories with identical futures rather than list each history again.
+
+### Keep the observation window fixed
+
+For a strong favorite repeated over many all-ins, losses are ordinary outcomes of the model. Count wins with the binomial model from chapter 10, or change success to failure in the streak counter. A claim about losing five consecutive hands is different from a claim about seeing such a run somewhere in a long session. Picking a dramatic interval after seeing all the hands further changes the question. Confirmation bias keeps memorable losses and forgets routine wins. State the event and observation window before testing a fairness claim.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+In Streak Trap, predict the next outcome from the stated process. Do not change a sound decision just to chase a loss or protect a streak.
+
+<FinalLinks />
+
+</AtTheTable>
+
+<QuantCorner>
+
+A backtest selected because it contains an unusual winning streak has already been filtered for luck. Record the selection rule before interpreting its statistical evidence.
+
+</QuantCorner>

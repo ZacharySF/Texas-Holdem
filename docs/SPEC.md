@@ -16,9 +16,9 @@ No hand-typed UI or lesson probabilities. Values come from engine computations o
 
 ## Stack and boundaries
 
-Strict TypeScript without any, Svelte 5 for the shell and new visual components, existing React/MDX controllers behind adapters, Vite, npm, pinned Node LTS. HashRouter and Vite base './'. Vitest, coverage-v8, fast-check; at least 90% engine coverage enforced by CI. Plain CSS variables and CSS Modules; hand-built SVG charts. MDX and KaTeX begin Phase 2. All simulation runs in Web Workers via a typed protocol. ESLint and Prettier. GitHub Actions checks lint, typecheck, tests, build on pushes and PRs and deploys Pages on main.
+Strict TypeScript without any, Svelte 5 throughout, Svelte Markdown lessons compiled by mdsvex, Vite, npm, pinned Node LTS. Hash navigation and Vite base './'. Vitest, coverage-v8, fast-check; at least 90% engine coverage enforced by CI. Plain CSS variables and CSS Modules; hand-built SVG charts. Svelte Markdown and KaTeX provide the lesson presentation. All simulation runs in Web Workers via a typed protocol. ESLint and Prettier. GitHub Actions checks lint, typecheck, tests, build on pushes and PRs and deploys Pages on main.
 
-src/engine is pure TypeScript without DOM or React: cards, RNG, shuffle, combinatorics, rational arithmetic, evaluator, equity, statistics; later game rules and bots. src/workers wraps the engine. Modes live in src/features/{learn,play,lab,arcade,stats}; shared UI in src/ui; lessons and facts in src/content. Settings and progress use localStorage; histories use IndexedDB starting Phase 3.
+src/engine is pure TypeScript without DOM or UI-framework dependencies: cards, RNG, shuffle, combinatorics, rational arithmetic, evaluator, equity, statistics; later game rules and bots. src/workers wraps the engine. Modes live in src/features/{learn,play,lab,arcade,stats}; shared UI in src/ui; lessons and facts in src/content. Settings and progress use localStorage; histories use IndexedDB starting Phase 3.
 
 Mobile first, playable at 375px; targets at least 44px and no hover-only controls. Cobalt glass theme plus icy light option; four-color deck option with suit symbols always visible. Deal and chip animations respect reduced motion.
 
@@ -59,3 +59,11 @@ The visual-only follow-up renames the project and GitHub repository to contempro
 ## Dark Svelte redesign and current name
 
 The later visual request supersedes the light/glass theme above. Use Svelte for the shell and new presentation, a flat void/ink/violet theme, a Pixi table, public-domain SVG playing cards, and configurable sparse motion. Preserve existing React/MDX controllers through an adapter during this migration so game logic, math, lesson content, routing, and tests remain unchanged. Add randomly fading aces, court cards, and jokers behind the home logo; jokers are decorative only. The requested project and GitHub name is `contemprorary` (spelled as requested).
+
+## Complete Svelte migration
+
+The latest request supersedes the staged adapter approach above: remove every React component, dependency, router, test renderer, and build plugin. Keep the game engine, probability functions, workers, lesson content, route paths, and saved-data formats unchanged. Use native Svelte components and snippets, keyed lesson subtrees, and Svelte Markdown for all 53 lessons. Migrate component test harnesses and source audits while retaining their behavioral assertions.
+
+## Thorough tutorial learning follow-up
+
+The latest request authorizes a complete teaching and navigation pass inspired by LearnCpp’s gradual tutorial approach. Review and expand every lesson, explain new terms and notation through concrete examples, add conceptual questions with revealable explanations and summaries, and make prerequisites and the numbered course path easier to find. Retain the original probability curriculum, native Svelte implementation, tested computed values, seven-part lesson contract, simulations, and independent quiz mastery.

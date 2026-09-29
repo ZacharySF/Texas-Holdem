@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+A single all-in has only two possible outcomes. Why can averages of many all-ins form a smooth-looking mound?
+
+</Hook>
+
+<Idea>
+
+### Centering and scaling do different jobs
+
+Subtracting the true mean moves the distribution of averages so its center is at zero. Dividing by standard error measures each average's distance in units of its expected fluctuation. This second operation lets you compare sample sizes whose original widths are different.
+
+The central limit theorem describes the shape after these operations. It does not say that the unscaled averages keep the same width as sample size grows; they concentrate more closely around the mean. Nor does it say the original binary observations stop being binary.
+
+### State the central limit theorem
+
+The central limit theorem describes the shape of a standardized sum or average under conditions such as independent identically distributed observations with finite nonzero variance. Subtract its true mean and divide by its standard error; as sample size grows, its distribution approaches the standard normal bell curve. It concerns repeated samples, not a promise about one observed path.
+
+### Keep the original outcomes distinct
+
+The original outcomes need not be bell-shaped. Binary all-ins are an extreme example: individual values sit at two points, while their averages occupy many possible fractions. Small samples or rare success chances can remain skewed and discrete. The normal approximation improves only when enough of both outcomes can occur; it never makes impossible values possible.
+
+### Examine the approximation
+
+Change the sample size and compare the histogram. Its center stays near the supplied mean; its width shrinks. A bankroll simulator may use normal increments directly as a model of aggregate hands, but that is an assumption about the approximation. Large bets, dependence, and changing opponents can create tails or clusters that its simple model misses.
+
+<AdvancedExamples />
+
+### Compare the approximation with what is possible
+
+An average of wins must remain within the range of a binary variable, and a small set permits only a limited collection of possible averages. A smooth curve is an approximation to that discrete distribution. Near a boundary, or when successes are very rare, the mismatch can matter.
+
+Start by comparing center and width in the experiment. Then inspect the sparse edges. A curve that looks convincing in the middle may still describe unusual outcomes poorly. Its conditions and the part of the distribution you plan to use belong in the explanation.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Treat a bell-shaped approximation as a tool with conditions. Check the scale and whether rare, large outcomes dominate before relying on its tail estimates.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Aggregated returns can look more regular than individual payoffs. Heavy tails and dependence can make a normal approximation unreliable exactly where risk estimates matter most.
+
+</QuantCorner>

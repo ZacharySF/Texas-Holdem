@@ -1,4 +1,3 @@
-import { useCallback, useEffect, useState } from 'react';
 import { lessonById, lessons } from '../../content/lessons';
 import type { LessonId } from '../../content/lessonTypes';
 export const JOURNEY_KEY = 'holdem-course-journey-v1';
@@ -37,43 +36,7 @@ export function decodeJourney(raw: string | null): Journey {
     return emptyJourney();
   }
 }
-export function useJourney() {
-  const [journey, setJourney] = useState(() => {
-    try {
-      return decodeJourney(localStorage.getItem(JOURNEY_KEY));
-    } catch {
-      return emptyJourney();
-    }
-  });
-  const [storageError, setStorageError] = useState(false);
-  useEffect(() => {
-    try {
-      localStorage.setItem(JOURNEY_KEY, JSON.stringify(journey));
-    } catch {
-      setStorageError(true);
-    }
-  }, [journey]);
-  const visit = useCallback(
-    (id: LessonId) =>
-      setJourney((j) => (j.current === id ? j : { ...j, current: id })),
-    [],
-  );
-  const markRead = useCallback(
-    (id: LessonId) =>
-      setJourney((j) =>
-        j.read.includes(id) ? j : { ...j, read: [...j.read, id] },
-      ),
-    [],
-  );
-  const markPlayed = useCallback(
-    (id: LessonId) =>
-      setJourney((j) =>
-        j.played.includes(id) ? j : { ...j, played: [...j.played, id] },
-      ),
-    [],
-  );
-  return { journey, storageError, visit, markRead, markPlayed };
-}
+
 export function lessonGameLink(id: LessonId, seed: string) {
   return `/play?${new URLSearchParams({ lesson: id, lessonSeed: seed })}`;
 }

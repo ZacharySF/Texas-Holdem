@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+Run repeated sets of all-ins, then increase the number of trials inside each set. Individual outcomes still vary, but their average settles.
+
+</Hook>
+
+<Idea>
+
+### Why another observation has less influence
+
+Early in a run, one result is a large part of the sample. Later, that same result is only one entry among many. A new win still adds one win, but it changes the running average less when the denominator is large. This dilution helps explain why averages can settle while individual outcomes remain uncertain.
+
+It does not require the next card to repair an earlier loss. The next trial follows the same process. A path may move farther from the true average for a while before moving closer again. Convergence is not a rule that every successive point improves.
+
+### State the law and its conditions
+
+The law of large numbers says that, under suitable conditions such as independent identically distributed trials with a finite mean, the sample average approaches the population mean as the sample grows. It does not say a losing streak must be repaid by wins. New trials keep their own probabilities; their accumulated average becomes less sensitive to any one result.
+
+### Calculate variation in an average
+
+For binary wins, the sample average is the win count divided by the number of trials. Its expectation remains p for every sample size. Its variance is p times one minus p divided by sample size, because independent indicator variances add and dividing a sum by n divides its variance by n squared. The standard deviation of these averages is called the standard error.
+
+### Compare the two experiment controls
+
+The simulator repeats entire sets and plots their averages. Change the set size to distinguish two operations: more sets improve the estimate of the distribution; more hands per set narrow that distribution. Watching a single running path is useful, but it cannot show every possible path you might have received.
+
+<AdvancedExamples />
+
+### Name what the experiment repeats
+
+One trial produces a win or loss. One set collects many trials and produces an average. Repeating sets produces a collection of averages. The histogram displays that final collection, so a bar counts sets whose averages fall in its range.
+
+Change just the hands-per-set control first. Then change the number of sets. Describe which operation changes the spread of the averages and which gives you a clearer picture of that spread. Distinguishing those levels makes the next theorem much easier to read.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Expect noisy early results without expecting compensating future cards. Increase your evidence before concluding a small edge is real.
+
+</AtTheTable>
+
+<QuantCorner>
+
+A backtest average may stabilize when observations provide new independent information. Repeating nearly identical correlated trades does not create the same evidence as independent data.
+
+</QuantCorner>

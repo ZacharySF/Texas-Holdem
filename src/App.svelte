@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import LegacyRoutes from './bridge/LegacyRoutes.svelte';
+  import Routes from './Routes.svelte';
+  import { navigation, navigate } from './navigation.svelte';
   import { fourColorDeck, theme } from './visual/display';
   import { parallax } from './visual/parallax';
   import { visualConfig } from './visual/config';
@@ -11,7 +12,23 @@
     ['lab', 'Tools'],
     ['stats', 'Progress'],
   ];
-  let path = $state(location.hash.slice(1).split('?')[0] || '/play');
+  let path = $derived(navigation.path);
+  let homeVisit = $state(0);
+  function goHome(event: MouseEvent) {
+    if (
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    )
+      return;
+    event.preventDefault();
+    navigate('/play');
+    // The table and lobby share a URL. A home visit must also reset page state.
+    homeVisit += 1;
+    window.scrollTo(0, 0);
+  }
   function readDeck() {
     try {
       return (
@@ -49,8 +66,9 @@
     }
   });
   onMount(() => {
+    if (!location.hash) navigate('/play', true);
     const change = () => {
-      path = location.hash.slice(1).split('?')[0] || '/play';
+      navigation.sync();
     };
     change();
     window.addEventListener('hashchange', change);
@@ -93,7 +111,12 @@
   }}>Skip to content</a
 >
 <header class="app-header">
-  <a href="#/play" class="brand">contemprorary</a>
+  <a
+    href="#/play"
+    class="brand"
+    aria-label="contemprorary home"
+    onclick={goHome}>contemprorary</a
+  >
   <nav aria-label="Main navigation">
     {#each modes as [route, label] (route)}<a
         href={`#/${route}`}
@@ -122,4 +145,4 @@
     </div>
   </details>
 </header>
-<LegacyRoutes />
+<Routes {homeVisit} />

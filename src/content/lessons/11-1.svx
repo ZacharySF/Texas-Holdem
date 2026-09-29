@@ -1,0 +1,70 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import EquityByHand from '../../features/learn/EquityByHand.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+Compare Qs Qd against Ah Kc, then As Ad against Ks Kd. Both are pair-versus-hand matchups, but their winning runouts differ.
+
+</Hook>
+
+<Idea>
+
+### Keep a pot-share ledger
+
+Imagine one line for every legal board. Write who wins beside it and how much of a unit pot your player receives. An outright win contributes the whole unit. A loss contributes nothing. A tie contributes only the share assigned to that player. Add the credits, then divide by the number of equally likely boards.
+
+This ledger explains why ties require care. A tie is not a full win, but throwing it away as a loss also gives the wrong average. With additional opponents, the tie share depends on how many eligible players share that pot.
+
+### Define equity precisely
+
+Equity is the average share of the pot across legal runouts. An outright win earns the whole pot, a loss earns none, and tied winners divide it equally. Remove both hands first, deal every legal board, evaluate both best five-card hands, and average those shares. Exact enumeration gives a rational answer; a seeded sample estimates the same quantity with an interval.
+
+### Compare families of matchups
+
+Pair against two overcards is often called a coin flip. It is only a description of a roughly balanced contest, not an exact equality. The pair begins ahead; either opposing rank may pair, and straights, flushes, or a shared board can change the result. Against just one overcard there are fewer rank-pairing routes. Against undercards, the lower hand must improve more substantially. A bigger pocket pair also blocks many outcomes on which the smaller pair merely remains a pair.
+
+### Use the actual cards
+
+Use the matchup selector to compare the same physical cards under all four structures. “Pair versus overcards” is a family, not one probability: suits and connected ranks matter. The simple supplied-equity experiment in the notebook isolates the averaging operation. The actual-card experiment below uses the evaluator and does not assume its illustrative chance.
+
+<AdvancedExamples />
+
+<EquityByHand />
+
+### Try a calculation small enough to see
+
+The by-hand exercise exposes both hands and leaves only the river unknown. Cross off every known card, inspect each possible river, and classify it before opening the solution. This is the same equity calculation as a full preflop enumeration, with a much smaller list of outcomes.
+
+Once the small example is clear, return to the matchup selector. Suits and rank spacing change which boards contribute credits. The informal matchup label is useful for orientation, but the legal-board ledger is what defines the answer.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Compare your equity with the actual price you face. A favorable matchup can still be a poor call against a range very different from the exposed example.
+
+</AtTheTable>
+
+<QuantCorner>
+
+An expected payoff averages across scenarios, not across informal scenario names. Scenario definitions and weights need to match the position being valued.
+
+</QuantCorner>

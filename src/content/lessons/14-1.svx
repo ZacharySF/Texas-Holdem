@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+The same positive-EV all-in can win or lose fifty chips. How far do individual outcomes lie from the average?
+
+</Hook>
+
+<Idea>
+
+### Why the first attempt at measuring spread fails
+
+Take each possible payoff and subtract the expected payoff. Some deviations point above the mean and others below it. Their probability-weighted sum cancels because the mean is precisely the balance point of the distribution. A zero signed average can therefore describe either a stable payoff or a highly variable one.
+
+Squaring each deviation makes its contribution nonnegative and gives larger deviations more weight. Average those squared quantities to obtain variance. Since a chip difference was multiplied by another chip difference, the result has squared-chip units. Taking its square root gives standard deviation in chips again.
+
+### Define variance and standard deviation
+
+Variance is the average squared distance from the mean. Subtract the mean from each payoff, square the difference, weight by its probability, then add. Squaring keeps positive and negative deviations from cancelling. It also means variance has squared-chip units. Standard deviation is the square root of variance, returning to chips.
+
+### Simplify the calculation
+
+For two outcomes, expand the squares and simplify: variance equals the expected squared payoff minus the square of the expected payoff. The computed example shows both the mean and spread for the same payoff model used in the EV chapter. Larger spread does not change the average; it changes how unpredictable an individual result is.
+
+### Combine hands and estimate from data
+
+For independent hands, variances add. Standard deviations do not: the square root is taken after adding variances. A running estimate from data uses squared deviations and divides by one fewer than the observation count to estimate the population variance. Welford’s update maintains that calculation without retaining every sample or subtracting two huge nearly equal sums.
+
+<AdvancedExamples />
+
+### Distinguish a known model from observed data
+
+In the worked distribution, the outcomes and probabilities are supplied, so you can calculate the population mean and variance directly. In a real sample, both quantities must be estimated. The sample formula accounts for using the data to estimate their own mean.
+
+The running-update algorithm mentioned above is a way to carry out that sample calculation efficiently. You do not need to memorize its implementation to interpret the result. Be able to explain the deviations, the squaring, the weighting, and the final units first.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+A positive-EV decision can be too volatile for a small play-money bankroll. Use both expected value and a plausible spread when interpreting short runs.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Standard deviation measures volatility; drawdowns also depend on the order of results. Two paths can have the same final total and very different experiences along the way.
+
+</QuantCorner>

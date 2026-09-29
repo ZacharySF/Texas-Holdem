@@ -1,0 +1,75 @@
+<script>
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+  Turn over one card. Count success if it is an ace **or** a spade. The ace of
+  spades qualifies in both ways. It is still only one physical outcome. How do
+  you add the two groups without pretending that shared card was dealt twice?
+</Hook>
+
+<Idea>
+### Define “or” before adding
+
+In probability, the usual “A or B” includes outcomes satisfying A alone, B alone, or both. This is an **inclusive or**. It differs from “exactly one of A and B,” which excludes the overlap. If someone intends the latter, they must say so.
+
+The **union** of two events is the group satisfying at least one of them. Its cup-shaped symbol joins the two event names. The **intersection** is the overlap satisfying both; its cap-shaped symbol points to the shared group. These are names for groups of outcomes, not new arithmetic operations you must guess.
+
+### Count the shared card visibly
+
+Write the four aces in one list: Ac, Ad, Ah, As. Write the thirteen spades in another. Adding the list lengths counts As once in each list. Subtract one copy of that shared outcome. Do not subtract both copies: As belongs in the final success group once.
+
+Now divide the corrected favorable count by the number of equally likely physical outcomes. You can also divide each list count by that common denominator first, then add the event probabilities and subtract the overlap probability. The notebook shows both descriptions of the same count.
+
+### When simple addition is exact
+
+Compare “heart or diamond” on a single-card draw. A card cannot have both suits. The two groups are **mutually exclusive**, meaning their intersection is empty for this experiment. Adding their probabilities works because no outcome appears in both lists.
+
+Be careful about the experiment. “There is a heart in a two-card hand” and “there is a diamond in that hand” can both be true. Mutually exclusive is a property of the events you defined, not a permanent property attached to the words “heart” and “diamond.” The practice alternates single-card disjoint and overlapping cases so you must identify the intersection each time.
+
+### Inclusion–exclusion is bookkeeping
+
+The rule's long name describes two simple actions: include every outcome from both groups, then exclude the extra copy of the overlap. You can verify it by tracking one outcome from each region. An ace that is not a spade is added once and never subtracted. A spade that is not an ace is treated the same way. As is added twice and subtracted once. An outcome in neither group is untouched.
+
+A useful reasonableness check follows: the union must be at least as likely as either of its individual events, and it cannot be more likely than the whole sample space. Passing that check does not prove a calculation, but failing it proves the counting needs repair.
+
+### Connect the two lessons in this chapter
+
+In the previous lesson, “ace first or ace second” overlapped when both cards were aces. Counting the complement avoided that overlap. Here we correct it directly. These are two ways to organize a sample space, and a good solution chooses whichever makes the elementary outcomes easiest to see.
+
+### Test the rule one outcome at a time
+
+Choose a non-spade ace and follow what the arithmetic does to it: the ace list includes it, the spade list does not, and the overlap subtraction leaves it alone. Next choose a spade that is not an ace. It is included once for the same reason with the roles reversed.
+
+Finally follow As. It enters through both lists and loses one extra copy in the subtraction. Now choose a card in neither list; nothing in the calculation includes it. Every kind of physical card has the correct final count.
+
+This outcome-by-outcome check is often easier than staring at a formula. It also explains the union symbol: the result collects cards satisfying either description, including cards satisfying both.
+
+<Shortcut />
+</Idea>
+
+<WorkedDerivation />
+<SimCheck />
+<PracticeSet />
+
+<AtTheTable>
+  Before adding two lists of cards that might help you, check whether any
+  physical card appears in both lists. Count each helpful outcome once. The
+  later outs chapter will apply this directly to overlapping draws; this lesson
+  supplies the bookkeeping before adding the extra question of whether an
+  apparent improvement really wins.
+</AtTheTable>
+
+<QuantCorner>
+  Two risk descriptions can refer to the same underlying scenario. Adding their
+  probabilities without checking overlap can overstate the chance that at least
+  one risk occurs. Inclusion–exclusion is the basic accounting step before
+  building a more detailed dependence model.
+</QuantCorner>

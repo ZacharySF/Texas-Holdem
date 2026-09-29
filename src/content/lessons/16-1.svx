@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+A win-rate estimate without its uncertainty can make a tiny sample look decisive.
+
+</Hook>
+
+<Idea>
+
+### Think of an interval-making machine
+
+Feed one sample into a rule and it returns a lower and upper endpoint. Feed a new sample into the same rule and the endpoints generally change. In the coverage experiment, the generating probability is known, so every returned interval can be checked against that fixed value.
+
+An interval that misses is not automatically a programming error. A procedure with less-than-certain coverage is expected to miss on some samples. The important questions are whether its long-run coverage matches its intended behavior and whether its assumptions describe the data you supplied.
+
+### Define repeated-sample coverage
+
+A confidence interval is a procedure that covers a fixed population value in a stated proportion of repeated samples. It is not a probability distribution for that fixed value after you see one interval. For a mean, the normal approximation adds and subtracts a standard-normal cutoff times estimated standard error. For a binary proportion, Wilson’s score interval solves the normal score inequality without substituting the observed proportion into every variance term.
+
+### Count covered samples
+
+The simulator repeatedly takes twenty binary observations, computes an interval, and asks whether it includes the known truth. The notebook sums the exact binomial probabilities of counts whose Wilson intervals cover that truth. The indicator symbol, a bold one with a condition beneath it, means use one when the condition holds and zero otherwise. Discrete counts explain why actual coverage need not equal the nominal target exactly.
+
+### Plan a sample size
+
+To plan a mean interval, set the desired half-width equal to the cutoff times SD divided by the square root of sample size, then solve for sample size. Stats reports win rate in big blinds per hundred hands and rescales the variance consistently. An estimated SD from a few hands is itself uncertain; a planning number cannot guarantee that an unstable game becomes stationary.
+
+<AdvancedExamples />
+
+### Separate spread from uncertainty in an average
+
+Standard deviation describes variation among individual observations. Standard error describes variation among sample averages. Collecting more independent observations can make the average more precise without making any individual hand less volatile.
+
+When planning a sample, choose the precision you need in the quantity's own units. The half-width is the distance from the center to one endpoint. Work backward through the standard-error formula to see how many observations the model requires. The resulting plan still depends on its assumed spread and on observations providing the intended amount of new information.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Show the sample count and interval with every estimate. Avoid acting as though a narrow-looking value from a handful of hands establishes your win rate.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Standard error helps judge whether a backtested average is distinguishable from noise. Data reuse and changing conditions can invalidate an interval even when the arithmetic is correct.
+
+</QuantCorner>

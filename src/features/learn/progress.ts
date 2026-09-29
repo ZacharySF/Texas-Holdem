@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { learningFacts } from '../../content/facts';
 import { lessons } from '../../content/lessons';
 import type { LessonId } from '../../content/lessonTypes';
@@ -95,29 +94,4 @@ export function chapterUnlocked(chapter: number, progress: Progress): boolean {
       (l) => l.chapter < chapter && !(l.chapter === 0 && progress.skippedIntro),
     )
     .every((l) => mastered(progress.results[l.id]));
-}
-export function useProgress() {
-  const [progress, setProgress] = useState<Progress>(() => {
-    try {
-      return decodeProgress(localStorage.getItem(PROGRESS_KEY));
-    } catch {
-      return emptyProgress();
-    }
-  });
-  const [storageError, setStorageError] = useState(false);
-  useEffect(() => {
-    try {
-      localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
-      setStorageError(false);
-    } catch {
-      setStorageError(true);
-    }
-  }, [progress]);
-  return {
-    progress,
-    storageError,
-    complete: (id: LessonId, answers: readonly boolean[]) =>
-      setProgress((p) => recordAttempt(p, id, answers)),
-    skipIntro: () => setProgress((p) => ({ ...p, skippedIntro: true })),
-  };
 }

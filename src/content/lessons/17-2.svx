@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+Two simulations can agree closely because they share a seed, yet both can be wrong about the opponent’s range.
+
+</Hook>
+
+<Idea>
+
+### Reproduce first, then vary the assumptions
+
+To reproduce a calculation, keep both the seed and every input fixed. That includes the known cards, opponent ranges, method, and sample count. The saved sequence lets you investigate why a particular estimate occurred instead of having the evidence change every time you rerun it.
+
+To investigate robustness, do something different: vary a plausible model input and compare the answers. If changing the opponent's range moves the estimate much more than the displayed sampling interval, uncertainty about that range matters to the decision. Running the original range longer cannot resolve the disagreement.
+
+### Explain what a seed fixes
+
+A seed initializes the pseudo-random generator’s internal state. The same inputs and seed produce the same sampled sequence. That is valuable for replaying a result and comparing code changes. It is not a secret source of true uncertainty, and it does not make a flawed model fair.
+
+### Separate numerical and model uncertainty
+
+An error bar on a Monte Carlo mean describes sampling variation conditional on all supplied assumptions. It omits errors in ranges, future actions, rake, and the game model. Exact enumeration removes numerical sampling error but preserves those assumptions. A deterministic exact answer can therefore still be an inappropriate input to a real decision.
+
+### Understand repeated looks at the estimate
+
+Progress charts display many pointwise intervals. They are not one simultaneous band guaranteed to contain the truth at every displayed time. Optional stopping after a favorable estimate can distort inference. Compare fixed sample sizes with controlled distributions and independent seeds when assessing accuracy; use the saved seed when reproducing a particular calculation.
+
+<AdvancedExamples />
+
+### Read a progress chart carefully
+
+Each point describes the sample available at that moment. Neighboring points share most of their observations, so they are not independent experiments. Their intervals also answer pointwise questions, not a promise that every point on the path captures the truth simultaneously.
+
+Use the chart to understand how estimates behave. Use a saved, fixed-size run when you want another person to reproduce the reported result. Keep the numerical question and the model question separate in both cases.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Read the method and assumptions before trusting extra decimal places. Use a shared URL and seed to reproduce the same Lab state.
+
+</AtTheTable>
+
+<QuantCorner>
+
+Reproducibility allows another calculation to be audited. It does not establish that the data-generating assumptions describe future markets.
+
+</QuantCorner>

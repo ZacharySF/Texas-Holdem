@@ -1,0 +1,67 @@
+<script>
+  import AdvancedExamples from '../../features/learn/AdvancedExamples.svelte';
+  import AtTheTable from '../../features/learn/AtTheTable.svelte';
+  import Hook from '../../features/learn/Hook.svelte';
+  import Idea from '../../features/learn/Idea.svelte';
+  import PracticeSet from '../../features/learn/PracticeSet.svelte';
+  import QuantCorner from '../../features/learn/QuantCorner.svelte';
+  import Shortcut from '../../features/learn/Shortcut.svelte';
+  import SimCheck from '../../features/learn/SimCheck.svelte';
+  import WorkedDerivation from '../../features/learn/WorkedDerivation.svelte';
+</script>
+
+<Hook>
+
+A toy all-in gains fifty chips on a win and loses fifty on a loss. How can its average be positive while some sessions lose?
+
+</Hook>
+
+<Idea>
+
+### Build an outcome table before using sigma
+
+Use three column headings: outcome, net payoff, and probability. Start with the win and loss cases of the toy all-in. Each row describes a mutually exclusive result, and all possible results must appear somewhere. If the model permits ties with a different payoff, give them their own row.
+
+In each row, multiply the payoff by how often that row occurs. A loss has a negative payoff, so its contribution to the average is negative. Add the contributions. That is all the expected-value operation does. E names the averaging operation and X names the quantity whose average you want.
+
+### Name the random variable
+
+A random variable is a number assigned to an outcome. Here X is net chip change, measured after subtracting the new amount risked. Its expected value E[X] is the average obtained by weighting each possible number by its probability. It need not equal any one possible result. Multiply each payoff by its chance, then add the products.
+
+### Read the weighted-average notation
+
+The compact notation E[X] = Σ p_i x_i says exactly that. Sigma means add; i labels a row of the outcome table; x_i is that row’s payoff and p_i its probability. The probabilities must sum to one. Start with the two rows here before using the notation for many river outcomes. If ties occur, add their distinct payoff row rather than counting them as either full wins or full losses.
+
+### What the average leaves out
+
+Expected values add across trials even when trials are dependent. Independence is needed for the simple binomial distribution and the simplest variance formulas, not for adding expectations. A positive average does not tell you the probability of finishing ahead, the worst loss, or the time required for results to stabilize. Those questions require the distribution too.
+
+<AdvancedExamples />
+
+### Check the units and the result
+
+A probability has no chip units. Multiplying it by a chip payoff produces a chip contribution, and adding those contributions leaves an answer in chips. If your answer is a percentage, you have probably calculated a chance instead of a payoff.
+
+The average must also lie between the smallest and largest possible payoffs when the weights form a valid distribution. This is a useful setup check. It does not tell you whether a single trial will be near that average; variance is the later topic that describes spread.
+
+<Shortcut />
+
+</Idea>
+
+<WorkedDerivation />
+
+<SimCheck />
+
+<PracticeSet />
+
+<AtTheTable>
+
+Define what chips are new risk and what chips are already sunk. Compare action values from the same starting point.
+
+</AtTheTable>
+
+<QuantCorner>
+
+EV is expected profit and loss of a trade. A positive expected profit can coexist with a wide distribution and a serious loss in any individual realization.
+
+</QuantCorner>
