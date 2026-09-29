@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Plate from '../lib/softclub/Plate.svelte';
+  import { sceneFor } from '../lib/softclub/scenes';
   import { sectionFor } from './sections';
   let { path }: { path: string } = $props();
   let section = $derived(sectionFor(path));
@@ -14,5 +16,6 @@
         : 'chrome'}
   >
     {path === '/play/tournament' ? 'tournament' : section.name}
+    {#if !path.startsWith('/play')}<Plate scene={sceneFor(path)} header />{/if}
   </h1>
 </header>

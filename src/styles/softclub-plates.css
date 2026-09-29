@@ -1,0 +1,304 @@
+/* All new objects are contained in an existing plate slot or the existing heading's
+   bottom padding. No additional grid tracks, page rows, labels or data. */
+#root .sc-plate,
+#root .sc-plate * {
+  pointer-events: none;
+}
+#root .sc-plate {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  contain: paint;
+  isolation: isolate;
+  background: var(--sc-ink-1);
+  border: 1px solid var(--sc-edge);
+  box-shadow:
+    inset 0 0 0 6px var(--sc-ink-1),
+    inset 0 0 0 7px var(--sc-edge),
+    var(--sc-shadow);
+}
+#root .sc-plate--compact {
+  aspect-ratio: 1;
+}
+#root h1[data-masthead] {
+  position: relative;
+}
+#root h1 > .sc-plate--header {
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 24px;
+  aspect-ratio: auto;
+  filter: none;
+}
+#root .sc-plate > :is(span, picture, svg),
+#root .sc-terminal-field > span {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+#root .sc-plate .sc-filter-defs {
+  width: 0;
+  height: 0;
+}
+#root .sc-plate .sc-plate-photo,
+#root .sc-plate .sc-photo-ghost {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+#root .sc-plate .sc-plate-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.35) saturate(0.8) contrast(1.08) brightness(0.82);
+}
+#root .sc-plate .sc-photo-ghost {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  transform: translateX(2%);
+  opacity: 0.35;
+}
+#root .sc-photo-tint {
+  background: linear-gradient(var(--sc-key-deep), var(--sc-ink-0));
+  mix-blend-mode: color;
+  opacity: 0.55;
+}
+#root .sc-photo-highlight {
+  background: radial-gradient(
+    ellipse at 70% 25%,
+    var(--sc-scene-a),
+    transparent 65%
+  );
+  mix-blend-mode: screen;
+  opacity: 0.35;
+}
+#root .sc-plate .sc-jewel-highlight {
+  z-index: 2;
+  border: 6px solid var(--sc-glass-fill);
+  box-shadow: inset 0 0 0 1px var(--sc-edge);
+  background: linear-gradient(
+    125deg,
+    color-mix(in srgb, var(--sc-white) 6%, transparent),
+    transparent 40%
+  );
+}
+#root .sc-jewel-highlight::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 10px;
+  border-right: 1px solid var(--sc-edge);
+  background: repeating-linear-gradient(
+    180deg,
+    var(--sc-edge) 0 1px,
+    transparent 1px 4px
+  );
+}
+#root .sc-terminal-field {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background:
+    radial-gradient(ellipse at 70% 32%, var(--sc-cobalt), transparent 65%),
+    linear-gradient(
+      130deg,
+      var(--sc-ink-0),
+      var(--sc-key-deep) 50%,
+      var(--sc-key)
+    );
+}
+#root .sc-terminal-field .sc-terminal-exposures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+}
+#root .sc-terminal-exposures i {
+  background:
+    linear-gradient(90deg, transparent, var(--sc-edge-hi), transparent),
+    linear-gradient(0deg, var(--sc-ink-0), transparent 60%);
+  border-right: 1px solid var(--sc-edge);
+}
+#root .sc-terminal-exposures i:first-child {
+  background-color: color-mix(in srgb, var(--sc-black) 30%, transparent);
+}
+#root .sc-terminal-exposures i:last-child {
+  background-color: color-mix(in srgb, var(--sc-frost) 12%, transparent);
+}
+#root .sc-terminal-mesh {
+  background: radial-gradient(
+      circle at 1px 1px,
+      color-mix(in srgb, var(--sc-cyan-ice) 65%, transparent) 0.8px,
+      transparent 1.3px
+    )
+    0 0 / 4px 4px;
+  mask-image: linear-gradient(var(--sc-black), transparent 65%);
+  opacity: 0.65;
+}
+#root .sc-terminal-streaks i {
+  position: absolute;
+  left: 10%;
+  top: 25%;
+  width: 75%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--sc-sodium),
+    transparent
+  );
+  box-shadow: 0 0 12px var(--sc-sodium);
+  filter: blur(1px);
+}
+#root .sc-terminal-streaks i:nth-child(2) {
+  top: 42%;
+  left: 0;
+  width: 58%;
+  opacity: 0.6;
+}
+#root .sc-terminal-streaks i:nth-child(3) {
+  top: 55%;
+  left: 55%;
+  width: 40%;
+  opacity: 0.5;
+}
+#root .sc-plate .sc-terminal-original {
+  bottom: 30%;
+}
+#root .sc-plate .sc-terminal-reflection {
+  top: 70%;
+  height: 70%;
+  transform: scaleY(-1);
+  transform-origin: center 21.4%;
+  filter: blur(2px);
+  opacity: 0.4;
+  mask-image: linear-gradient(transparent 30%, var(--sc-black));
+}
+#root .sc-tunnel-haze {
+  background:
+    radial-gradient(
+      ellipse at 50% 28%,
+      color-mix(in srgb, var(--sc-cyan) 55%, var(--sc-key)),
+      transparent 55%
+    ),
+    linear-gradient(var(--sc-ink-0), var(--sc-key-deep));
+}
+#root .sc-tunnel-perspective {
+  perspective: 600px;
+  overflow: hidden;
+}
+#root .sc-tunnel-plane {
+  position: absolute;
+  left: -50%;
+  top: 5%;
+  width: 200%;
+  height: 240%;
+  background: repeating-linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--sc-cyan-ice) 70%, transparent) 0 2px,
+    transparent 2px 28px
+  );
+  transform: rotateX(72deg);
+  transform-origin: center top;
+  will-change: transform;
+}
+#root .sc-plate[data-scene^='study'] {
+  background: linear-gradient(
+    110deg,
+    var(--sc-ink-1),
+    var(--sc-key-deep) 30%,
+    var(--sc-frost) 63%,
+    var(--sc-ink-1)
+  );
+}
+#root .sc-study-field {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  mix-blend-mode: luminosity;
+}
+#root .sc-study-tint {
+  background:
+    linear-gradient(0deg, var(--sc-ink-1), transparent 75%),
+    linear-gradient(95deg, var(--sc-key-deep), transparent 65%);
+  mix-blend-mode: color;
+}
+#root .sc-study-cross {
+  background:
+    linear-gradient(var(--sc-edge), var(--sc-edge)) 62% 0 / 1px 100% no-repeat,
+    linear-gradient(var(--sc-edge), var(--sc-edge)) 0 38% / 100% 1px no-repeat;
+}
+#root .sc-plate .sc-skyline-towers {
+  inset: 8% 5% 12%;
+  display: flex;
+  gap: 4%;
+  align-items: end;
+}
+#root .sc-skyline-towers i {
+  flex: 1;
+  border-top: 1px solid var(--sc-frost);
+  background:
+    radial-gradient(circle at 1px 1px, var(--sc-frost) 0.5px, transparent 1px) 0
+      0 / 5px 8px,
+    linear-gradient(var(--sc-cobalt), var(--sc-ink-0));
+}
+#root .sc-skyline-horizon {
+  background: radial-gradient(
+    ellipse at 65% 80%,
+    color-mix(in srgb, var(--sc-cobalt) 90%, transparent),
+    transparent 70%
+  );
+}
+#root .sc-skyline-flare {
+  background:
+    radial-gradient(
+      ellipse at 68% 70%,
+      color-mix(in srgb, var(--sc-frost) 70%, transparent),
+      transparent 25%
+    ),
+    linear-gradient(90deg, transparent, var(--sc-frost), transparent) 0 70% /
+      100% 1px no-repeat,
+    radial-gradient(circle at 42% 52%, var(--sc-edge), transparent 8%),
+    radial-gradient(circle at 24% 35%, var(--sc-edge), transparent 12%);
+}
+#root .sc-bokeh-field {
+  background: linear-gradient(135deg, var(--sc-ink-0), var(--sc-key-deep));
+}
+#root .sc-bokeh-field i {
+  position: absolute;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--sc-sodium);
+  filter: blur(8px);
+  opacity: 0.3;
+}
+#root .sc-bokeh-field i:nth-child(3n) {
+  background: var(--sc-lime);
+  opacity: 0.2;
+}
+#root .sc-bokeh-field i:nth-child(3n + 1) {
+  background: var(--sc-key);
+  opacity: 0.4;
+}
+#root .sc-window-flutes {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--sc-edge-hi) 0 1px,
+    transparent 1px 3px
+  );
+}
+@media (max-width: 767px) {
+  #root .sc-plate {
+    max-height: 42vh;
+  }
+  #root .sc-terminal-mesh,
+  #root .sc-terminal-streaks i:nth-child(3) {
+    display: none;
+  }
+}

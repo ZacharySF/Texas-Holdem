@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Plate from '../../lib/softclub/Plate.svelte';
   import CourseIndexLine from '../../decor/CourseIndexLine.svelte';
   import { lessons, lessonById } from '../../content/lessons';
   import { learningFacts } from '../../content/facts';
@@ -131,7 +132,7 @@
         Progress works for this visit, but this browser cannot save it.
       </p>{/if}{#if !lessonId}<header class="learn-header sc-masthead-surface">
         <div class="panel-label">02 / course</div>
-        <h1 data-masthead="glass">Course</h1>
+        <h1 data-masthead="glass">Course<Plate scene="study" header /></h1>
         <p>
           Welcome to the probability course. We’ll build the ideas from ordinary
           playing cards, explaining each new term before using it. You only need
@@ -206,7 +207,9 @@
           <p class="lesson-number panel-label">
             Lesson {lesson.id.replace('-', '.')}
           </p>
-          <h1 data-masthead="glow">{lesson.title}</h1>
+          <h1 data-masthead="glow">
+            {lesson.title}<Plate scene="study-quiet" header />
+          </h1>
           <p>
             {guide?.introduction}
           </p>
