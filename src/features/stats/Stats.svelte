@@ -77,7 +77,7 @@
 </script>
 
 <main class="tool-page">
-  <ProgressDecor />
+  <ProgressDecor results={data?.results} />
   <h1>Results and uncertainty</h1>
   <p>
     Completed saved hands only. An unfinished hand is not counted. Rates use
