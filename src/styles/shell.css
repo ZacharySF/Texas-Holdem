@@ -1,0 +1,271 @@
+#root {
+  padding-bottom: 64px;
+}
+#root .app-header {
+  height: 48px;
+  min-height: 48px;
+  padding: 0 var(--outer);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+  background: var(--ink-0);
+  border-bottom: 1px solid var(--ink-2);
+}
+#root .brand {
+  font: 400 18px var(--f-display);
+  font-variation-settings: 'wdth' 125;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 0;
+}
+#root .app-header nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: nowrap;
+  overflow: auto;
+  scrollbar-width: none;
+  min-width: 0;
+}
+#root .app-header nav a {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 48px;
+  white-space: nowrap;
+  padding: 0;
+  font: 11px var(--f-mono);
+  text-transform: lowercase;
+  color: var(--text);
+  border: 0;
+}
+#root .app-header nav a[aria-current] {
+  color: var(--cyan-hi);
+}
+#root .section-code {
+  pointer-events: none;
+}
+#root .settings {
+  margin: 0;
+  font: 11px var(--f-mono);
+}
+#root .settings summary {
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+}
+#root .display-menu {
+  z-index: 50;
+  background: var(--ink-1);
+  border: 1px solid var(--ink-4);
+  right: 0;
+  min-width: 192px;
+}
+#root .site-shell {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--gutter);
+  max-width: 1440px;
+  margin: 0;
+  padding: 32px var(--outer) 0;
+  align-items: start;
+}
+#root .side-index {
+  grid-column: 1/3;
+  min-width: 0;
+  position: sticky;
+  top: 24px;
+  border-top: 1px solid var(--ink-2);
+}
+#root .panel-label {
+  font: 11px/1.5 var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+  padding: 12px 0;
+  border-top: 1px solid var(--ink-2);
+}
+#root .side-index .panel-label {
+  border: 0;
+}
+#root .side-index nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: calc(100dvh - 128px);
+  overflow: auto;
+}
+#root .side-index :is(a, button) {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  padding: 8px 0;
+  min-height: 24px;
+  border: 0;
+  background: none;
+  color: var(--text);
+  font: 13px/1.5 var(--f-body);
+  text-align: left;
+  text-decoration: none;
+}
+#root .side-index .index-code {
+  font: 11px var(--f-mono);
+  flex: none;
+  pointer-events: none;
+}
+#root .side-index [aria-current] {
+  color: var(--cyan-hi);
+}
+#root .site-main {
+  grid-column: 3/-1;
+  min-width: 0;
+}
+#root .site-main main {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+#root .site-main #main-content {
+  min-width: 0;
+}
+#root .site-main .tool-nav {
+  display: none;
+}
+#root .mode-guide {
+  margin: 0 0 24px;
+  padding: 0;
+  max-width: 68ch;
+  font-size: 13px;
+}
+#root .mode-guide p {
+  display: block;
+}
+#root .site-shell:has(.course-layout) > .side-index {
+  display: none;
+}
+#root .site-shell:has(.course-layout) > .site-main {
+  grid-column: 1/-1;
+}
+#root .course-layout {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--gutter);
+}
+#root .course-contents {
+  grid-column: 1/3;
+  grid-row: 1;
+  min-width: 0;
+  border: 0;
+  border-top: 1px solid var(--ink-2);
+  padding: 0;
+}
+#root .course-main {
+  grid-column: 3/-1;
+  grid-row: 1;
+  min-width: 0;
+}
+#root .course-contents :is(h2, summary, a, button, label) {
+  font-size: 13px;
+}
+#root .course-contents h2 {
+  font-variation-settings: 'wdth' 100;
+}
+#root .status-rail {
+  position: fixed;
+  inset: auto 0 0;
+  height: 28px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 24px;
+  padding: 0 var(--outer);
+  background: var(--ink-1);
+  border-top: 1px solid var(--ink-2);
+  color: var(--text);
+  font: 11px var(--f-mono);
+  z-index: 40;
+}
+#root .status-rail > :last-child {
+  margin-left: auto;
+}
+#root
+  :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+#root :is(input, select, textarea) {
+  border: 1px solid var(--text);
+  border-radius: 2px;
+  color: var(--text);
+  background: var(--ink-1);
+}
+#root button {
+  min-height: 24px;
+  color: var(--text);
+  background: var(--ink-1);
+  border: 1px solid var(--ink-4);
+}
+#root button:hover:not(:disabled) {
+  background: var(--ink-3);
+}
+#root :is(button, input, select, textarea, a, summary) {
+  scroll-margin-block: 24px;
+}
+@media (max-width: 767px) {
+  #root .app-header {
+    gap: 16px;
+  }
+  #root .brand {
+    font-size: 16px;
+  }
+  #root .app-header nav {
+    gap: 16px;
+  }
+  #root .app-header nav a {
+    font-size: 11px;
+  }
+  #root .settings summary {
+    font-size: 11px;
+  }
+  #root .site-shell {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding-top: 16px;
+  }
+  #root .site-main,
+  #root .side-index {
+    grid-column: 1/-1;
+  }
+  #root .side-index {
+    position: static;
+  }
+  #root .side-index .panel-label {
+    display: none;
+  }
+  #root .side-index nav {
+    flex-direction: row;
+    gap: 16px;
+    overflow: auto;
+    max-height: none;
+  }
+  #root .side-index :is(a, button) {
+    white-space: nowrap;
+    flex: none;
+  }
+  #root .course-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  #root .course-contents {
+    width: 100%;
+  }
+  #root .course-main {
+    width: 100%;
+  }
+  #root .status-secondary {
+    display: none;
+  }
+  #root .status-rail {
+    gap: 16px;
+  }
+}

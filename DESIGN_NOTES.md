@@ -71,3 +71,9 @@ Removed the old device components, generators, associated styles/fonts, old artw
 All new palette, type, spacing and grid tokens are in `src/styles/tokens.css`. Latin Archivo variable (width 62.5–125, weight 100–900) and IBM Plex Mono 400/500 are self-hosted: 119,700 bytes total. The optional LED font is omitted. Font resources and licenses are assets supporting that single token file; the required contrast verifier lives in `scripts/contrast-check.mjs`.
 
 Contrast exposes two conflicts in the brief: ink-4 on ink-0 is only 2.35:1, so it cannot be the sole essential control boundary. Essential input boundaries use text color; decorative rules retain ink-2/ink-4. Ink-3 is also too dim for meaningful masthead text, so mastheads use ink-5. Body text is never placed on ink-4/ink-5 fills (text on ink-4 is only 4.45:1). These exceptions preserve AA rather than changing the supplied colors.
+
+## Phase 3 — shell
+
+The top rail uses the five numbered sections. The shell is left-anchored on a 12-column grid; the existing course contents occupy columns 1–2 on course pages. Other pages get an index built from existing tool/drill links or visible section headings. Mobile indices scroll horizontally; the existing course-contents disclosure retains its behavior.
+
+The 28px status rail shows current route code, existing lifetime hands, chips, XP and local time. No overall accuracy, session-only count, or streak is fabricated. Side-index buttons only scroll existing headings; cloned tool links use their existing URLs. No application state or routing is changed.

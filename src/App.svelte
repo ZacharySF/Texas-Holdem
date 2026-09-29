@@ -114,11 +114,11 @@
     onclick={goHome}>{SITE_NAME}</a
   >
   <nav aria-label="Main navigation">
-    {#each modes as [route, label] (route)}<a
+    {#each modes as [route, label], i (route)}<a
         href={`#/${route}`}
         class:active={path.startsWith('/' + route)}
         aria-current={path.startsWith('/' + route) ? 'page' : undefined}
-        >{label}</a
+        ><span class="section-code" aria-hidden="true">0{i + 1}</span>{label}</a
       >{/each}
   </nav>
   <details class="settings">

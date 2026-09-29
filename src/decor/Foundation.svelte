@@ -1,9 +1,18 @@
 <script lang="ts">
   import '../styles/decor.css';
+  import displayFont from '../styles/fonts/archivo-latin.woff2?url';
   import { SITE_NAME } from './site';
 </script>
 
-<svelte:head><title>{SITE_NAME}</title></svelte:head>
+<svelte:head
+  ><title>{SITE_NAME}</title><link
+    rel="preload"
+    href={displayFont}
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /></svelte:head
+>
 
 <span aria-hidden="true" class="decor-foundation"></span>
 
