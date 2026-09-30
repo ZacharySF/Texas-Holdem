@@ -1,0 +1,35 @@
+ README.md                                      |   4 +
+ design/REFINEMENTS_NOTES.md                    |  31 +++
+ design/chips-audit.json                        | 128 ++++++++++
+ design/refinements-audit.json                  |  20 ++
+ design/shots/refinements/display-1440.png      | Bin 0 -> 1383824 bytes
+ design/shots/refinements/display-390.png       | Bin 0 -> 346486 bytes
+ design/shots/refinements/fullscreen-1440.png   | Bin 0 -> 392081 bytes
+ design/shots/refinements/play-1440.png         | Bin 0 -> 1443737 bytes
+ design/shots/refinements/play-390.png          | Bin 0 -> 423634 bytes
+ design/shots/refinements/play-firefox-1440.png | Bin 0 -> 1684841 bytes
+ design/shots/refinements/table-1024.png        | Bin 0 -> 290611 bytes
+ design/shots/refinements/table-1440.png        | Bin 0 -> 368499 bytes
+ design/shots/refinements/table-390.png         | Bin 0 -> 155833 bytes
+ design/terminal-performance.json               |   4 +
+ docs/ARCHITECTURE.md                           |  16 ++
+ docs/ROADMAP.md                                |  20 ++
+ e2e/display-plate.spec.ts                      |  90 +++++++
+ e2e/theme-chips.spec.ts                        | 233 ++++++++++++++++++
+ scripts/lounge-contrast.mjs                    |  32 +--
+ src/App.svelte                                 |  48 ++--
+ src/decor/Foundation.svelte                    |   3 +
+ src/features/play/Home.svelte                  |   8 +-
+ src/features/play/Table.svelte                 |  38 +--
+ src/lib/ChipStack.svelte                       |  44 ++++
+ src/lib/DisplayPlate.svelte                    |  27 +++
+ src/lib/FullscreenStars.svelte                 |  33 +++
+ src/lib/LoungeArtwork.svelte                   |  43 ++++
+ src/lib/PlayViewport.svelte                    |  24 ++
+ src/lib/softclub/Atmosphere.svelte             |   9 +-
+ src/lib/themes.ts                              |  15 ++
+ src/styles/decor.css                           |   1 -
+ src/styles/fullscreen-terminal.css             |  68 ++++++
+ src/styles/lounge-refinements.css              | 144 ++++++++++++
+ src/styles/theme-options.css                   | 311 +++++++++++++++++++++++++
+ 34 files changed, 1341 insertions(+), 53 deletions(-)

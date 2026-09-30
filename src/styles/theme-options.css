@@ -1,0 +1,311 @@
+/* Additional display palettes. Theme selection changes only presentation tokens. */
+html:root[data-theme='grey'] {
+  --ink-0: #15171b;
+  --ink-1: #202329;
+  --ink-2: #30343d;
+  --ink-3: #434954;
+  --ink-4: #687080;
+  --ink-5: #c5cbd7;
+  --text: #f3f4f6;
+  --text-dim: #adb2bd;
+  --cyan: #b9c9df;
+  --lg-primary: #e3e7ee;
+  --cyan-hi: #e3e7ee;
+  --lg-secondary: #c5cbd7;
+  --lg-edge: #15171b;
+  --lg-control: #30343d;
+  --lg-art-opacity: 0.46;
+  --lg-shield-opacity: 0.58;
+  --lg-figure-opacity: 0.14;
+}
+html:root[data-theme='night'] {
+  --ink-0: #0c111b;
+  --ink-1: #141d2c;
+  --ink-2: #222f43;
+  --ink-3: #354861;
+  --ink-4: #596f91;
+  --ink-5: #b9cce5;
+  --text: #edf2fa;
+  --text-dim: #aebcd0;
+  --cyan: #a8c6ea;
+  --lg-primary: #d4e1f2;
+  --cyan-hi: #d4e1f2;
+  --lg-secondary: #b9cce5;
+  --lg-edge: #0c111b;
+  --lg-control: #222f43;
+  --lg-art-opacity: 0.46;
+  --lg-shield-opacity: 0.58;
+  --lg-figure-opacity: 0.14;
+}
+html:root[data-theme='darker'] {
+  --ink-0: #060910;
+  --ink-1: #0d1420;
+  --ink-2: #1a2536;
+  --ink-3: #293d54;
+  --ink-4: #506c88;
+  --ink-5: #a7c5df;
+  --text: #e4edf7;
+  --text-dim: #a5b6ca;
+  --cyan: #97c5e8;
+  --lg-primary: #cbddec;
+  --cyan-hi: #cbddec;
+  --lg-secondary: #a7c5df;
+  --lg-edge: #060910;
+  --lg-control: #1a2536;
+  --lg-art-opacity: 0.46;
+  --lg-shield-opacity: 0.58;
+  --lg-figure-opacity: 0.14;
+}
+html:root[data-theme='green'] {
+  --ink-0: #0c1b18;
+  --ink-1: #142a25;
+  --ink-2: #203d34;
+  --ink-3: #315347;
+  --ink-4: #548471;
+  --ink-5: #b8deca;
+  --text: #edf6ef;
+  --text-dim: #b1c8bb;
+  --cyan: #94d5b1;
+  --lg-primary: #d5eadd;
+  --cyan-hi: #d5eadd;
+  --lg-secondary: #b8deca;
+  --lg-edge: #0c1b18;
+  --lg-control: #203d34;
+  --lg-art-opacity: 0.46;
+  --lg-shield-opacity: 0.58;
+  --lg-figure-opacity: 0.14;
+}
+html:root[data-theme='anime'] {
+  --ink-0: #181424;
+  --ink-1: #251e36;
+  --ink-2: #3d3051;
+  --ink-3: #59416e;
+  --ink-4: #7c6699;
+  --ink-5: #d5c3e9;
+  --text: #f5effa;
+  --text-dim: #c3b2cf;
+  --cyan: #ceb8ef;
+  --lg-primary: #e3d4f0;
+  --cyan-hi: #e3d4f0;
+  --lg-secondary: #d5c3e9;
+  --lg-edge: #181424;
+  --lg-control: #3d3051;
+  --lg-art-opacity: 0.46;
+  --lg-shield-opacity: 0.58;
+  --lg-figure-opacity: 0.14;
+}
+html:root[data-theme='amber'] {
+  --ink-0: #201912;
+  --ink-1: #302519;
+  --ink-2: #453722;
+  --ink-3: #5b492e;
+  --ink-4: #897149;
+  --ink-5: #e2cfaa;
+  --text: #faf1e1;
+  --text-dim: #d0bea2;
+  --cyan: #e6c586;
+  --lg-primary: #ecdfc5;
+  --cyan-hi: #ecdfc5;
+  --lg-secondary: #e2cfaa;
+  --lg-edge: #201912;
+  --lg-control: #453722;
+  --lg-art-opacity: 0.46;
+  --lg-shield-opacity: 0.58;
+  --lg-figure-opacity: 0.14;
+}
+html:root[data-theme='ocean'] {
+  --ink-0: #0b1c24;
+  --ink-1: #132d39;
+  --ink-2: #204453;
+  --ink-3: #315d6c;
+  --ink-4: #59899a;
+  --ink-5: #b4dfe7;
+  --text: #edf8fa;
+  --text-dim: #b0cbd1;
+  --cyan: #8ed8e7;
+  --lg-primary: #cfebef;
+  --cyan-hi: #cfebef;
+  --lg-secondary: #b4dfe7;
+  --lg-edge: #0b1c24;
+  --lg-control: #204453;
+  --lg-art-opacity: 0.46;
+  --lg-shield-opacity: 0.58;
+  --lg-figure-opacity: 0.14;
+}
+
+#root .app-header {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+#root .display-dock {
+  position: fixed;
+  right: 88px;
+  bottom: 0;
+  z-index: 60;
+}
+#root .display-dock .settings {
+  position: relative;
+}
+#root .display-dock summary {
+  min-height: 28px;
+  padding: 0 8px;
+  background: var(--ink-1);
+  color: var(--text);
+}
+#root .display-dock .display-menu {
+  position: absolute;
+  top: auto;
+  bottom: 36px;
+  right: -64px;
+  width: min(360px, calc(100vw - 32px));
+  max-height: calc(100dvh - 80px);
+  overflow: auto;
+  padding: 16px;
+}
+#root .display-dock .theme-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-block: 12px;
+}
+#root .display-dock .theme-options button {
+  min-height: 44px;
+  padding: 8px;
+  font-size: 13px;
+}
+#root .display-dock .surprise-theme {
+  min-height: 44px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+#root .display-dock label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+}
+#root .chip-stack {
+  width: 100px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  flex: none;
+  pointer-events: none;
+  overflow: visible;
+}
+#root .chip-stack--compact {
+  display: block;
+  width: 32px;
+  height: 60px;
+  margin: 0;
+}
+#root .seat-cards-and-chips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+#root .seat-cards-and-chips .playing-cards {
+  flex-wrap: nowrap;
+  gap: 4px;
+}
+#root .bot-seat .seat-cards-and-chips .playing-card {
+  width: 36px;
+  height: 52px;
+  min-height: 0;
+}
+#root .hero-seat .seat-cards-and-chips .playing-card {
+  width: 56px;
+  height: 78px;
+  min-height: 0;
+}
+#root .table-2:not(.has-runouts) {
+  min-height: 720px;
+}
+#root .table-2:not(.has-runouts) .table-center {
+  top: 49%;
+}
+#root .chip-stack {
+  --chip-tone: var(--cyan);
+}
+#root .chip-stack .chip-tone-0 {
+  --chip-tone: var(--ink-5);
+}
+#root .chip-stack .chip-tone-1 {
+  --chip-tone: var(--cyan);
+}
+#root .chip-stack .chip-tone-2 {
+  --chip-tone: var(--lg-secondary);
+}
+#root .chip-stack .chip-tone-3 {
+  --chip-tone: var(--ink-4);
+}
+#root .chip-stack .chip-tone-4 {
+  --chip-tone: var(--lg-primary);
+}
+#root .chip-side {
+  fill: color-mix(in srgb, var(--chip-tone) 55%, var(--ink-0));
+  stroke: var(--ink-0);
+  stroke-width: 0.8px;
+}
+#root .chip-face {
+  fill: var(--chip-tone);
+  stroke: var(--text);
+  stroke-width: 0.6px;
+}
+#root .chip-inlay {
+  fill: none;
+  stroke: var(--lg-primary);
+  stroke-width: 2.5px;
+  stroke-dasharray: 4 6;
+}
+#root .chip-disc {
+  fill: var(--chip-tone);
+  stroke: color-mix(in srgb, var(--text) 55%, transparent);
+  stroke-width: 0.7px;
+}
+#root .pot-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+#root .hero-seat .seat-stack {
+  display: block;
+}
+@media (max-width: 767px) {
+  #root .table-6 .bot-seat .seat-cards-and-chips .playing-card {
+    width: 23px;
+    height: 34px;
+  }
+  #root .table-6 .bot-seat .seat-cards-and-chips .playing-cards {
+    gap: 3px;
+  }
+  #root .table-6 .bot-seat .chip-stack--compact {
+    width: 22px;
+    height: 44px;
+  }
+  #root .table-6 .hero-seat .seat-cards-and-chips .playing-card {
+    width: 48px;
+    height: 68px;
+  }
+  #root .display-dock {
+    right: 64px;
+  }
+  #root .display-dock .display-menu {
+    right: -48px;
+  }
+  #root .pot-chip .chip-stack {
+    width: 76px;
+    height: 32px;
+  }
+}
+@media (forced-colors: active) {
+  #root .chip-face,
+  #root .chip-disc {
+    fill: Canvas;
+    stroke: CanvasText;
+  }
+  #root .chip-inlay,
+  #root .chip-side {
+    stroke: CanvasText;
+  }
+}

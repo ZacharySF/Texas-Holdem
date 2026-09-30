@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, type Snippet } from 'svelte';
+  import FullscreenStars from './FullscreenStars.svelte';
 
   let { enabled, children }: { enabled: boolean; children: Snippet } = $props();
   let viewport: HTMLDivElement;
@@ -55,6 +56,26 @@
       }
     };
     const escape = (event: KeyboardEvent) => {
+      const target = event.target;
+      const typing =
+        target instanceof Element &&
+        target.closest(
+          'input, textarea, select, [contenteditable]:not([contenteditable="false"]), #display-settings[open]',
+        );
+      if (
+        event.key.toLowerCase() === 'f' &&
+        enabled &&
+        !pending &&
+        !typing &&
+        !event.repeat &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        !event.altKey &&
+        !event.defaultPrevented
+      ) {
+        event.preventDefault();
+        void toggleFullscreen();
+      }
       if (event.key === 'Escape' && expanded && !document.fullscreenElement) {
         event.preventDefault();
         void leave();
@@ -98,6 +119,7 @@
 </script>
 
 <div bind:this={viewport} class="play-viewport" class:play-expanded={expanded}>
+  {#if expanded}<FullscreenStars />{/if}
   {#if enabled}
     <div class="play-view-controls">
       {#if notice}<span role="status">{notice}</span>{/if}
@@ -105,6 +127,8 @@
         bind:this={toggle}
         type="button"
         aria-pressed={expanded}
+        aria-keyshortcuts="F"
+        title={expanded ? 'Exit fullscreen (F)' : 'Fullscreen (F)'}
         disabled={pending}
         onclick={() => void toggleFullscreen()}
         >{expanded ? 'Exit fullscreen' : 'Fullscreen'}</button

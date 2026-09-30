@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { parallax } from '../../visual/parallax';
   import { sceneFor, scenePresets, type Scene } from './scenes';
   let scene = $state<Scene>(
     sceneFor(typeof location === 'undefined' ? '' : location.hash),
@@ -43,5 +44,11 @@
         aria-hidden="true"
       ></i>{/each}
   </div>
-  <div class="sc-atmosphere-mesh lg-figure" aria-hidden="true"></div>
+  <div
+    class="lounge-figure-depth"
+    aria-hidden="true"
+    use:parallax={{ speed: 0.015, pointer: 5, fixed: true }}
+  >
+    <div class="sc-atmosphere-mesh lg-figure" aria-hidden="true"></div>
+  </div>
 </div>

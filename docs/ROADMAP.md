@@ -400,3 +400,23 @@ See [LOUNGE_NOTES](../design/LOUNGE_NOTES.md) for verification, screenshots and 
 - [x] Cover native/fallback fullscreen, focus/cleanup, live actions and coach placement in browser tests.
 
 Tournament rules/coaching and existing engine benchmark measurements are unchanged.
+
+## Display image and subtle motion
+
+- [x] Restore loading on the local Vite dev server and make compact styles a direct module import.
+- [x] Open existing Display settings by clicking or keyboard-activating the lounge image.
+- [x] Shorten the lobby tagline to “heads-up or six-max.”
+- [x] Add selective 4–6px corners and reduced-motion-aware artwork parallax.
+
+Engine benchmarks, game rules and lesson content remain unchanged.
+
+## Display themes and live chip presentation
+
+- [x] Move the Display menu out of the top rail and provide nine persistent themes plus Surprise me.
+- [x] Preserve both supplied artworks and show the full drawing in a separate home column.
+- [x] Add F to toggle practice fullscreen, with input and repeat guards.
+- [x] Draw themed live chip piles beside every player’s cards and in the pot.
+- [x] Confine drifting stars and pointer parallax to the expanded practice terminal.
+- [x] Verify the existing Last decision assessment and next-hand reset in browser coverage.
+
+No engine, lesson, tournament-rule or protected-file changes; performance benchmarks were not rerun.

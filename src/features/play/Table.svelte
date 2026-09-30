@@ -2,6 +2,7 @@
   import type { Game, Action } from '../../engine/game';
   import PlayingCards from '../../ui/PlayingCards.svelte';
   import PixiTable from './PixiTable.svelte';
+  import ChipStack from '../../lib/ChipStack.svelte';
   let {
     game,
     total,
@@ -43,7 +44,7 @@
         <PlayingCards cards={game.runouts[1]} />
       </div>{/if}
     <span class="pot-chip"
-      >{game.complete ? 'Final pot' : 'Pot'}
+      ><ChipStack amount={total} />{game.complete ? 'Final pot' : 'Pot'}
       <strong>{total.toLocaleString()}</strong></span
     >
     <p class="table-status" role="status">
@@ -73,22 +74,25 @@
           <span class="seat-stack">{player.stack.toLocaleString()} chips</span>
         </div>
       </div>
-      <PlayingCards
-        cards={seat === 0 ||
-        (game.complete &&
-          (!tournament ||
-            (!player.folded &&
-              game.players.filter((p) => !p.folded).length > 1)))
-          ? player.hand
-          : []}
-        hidden={seat !== 0 &&
-        (!game.complete ||
-          (tournament &&
-            (player.folded ||
-              game.players.filter((p) => !p.folded).length === 1)))
-          ? 2
-          : 0}
-      />
+      <div class="seat-cards-and-chips">
+        <PlayingCards
+          cards={seat === 0 ||
+          (game.complete &&
+            (!tournament ||
+              (!player.folded &&
+                game.players.filter((p) => !p.folded).length > 1)))
+            ? player.hand
+            : []}
+          hidden={seat !== 0 &&
+          (!game.complete ||
+            (tournament &&
+              (player.folded ||
+                game.players.filter((p) => !p.folded).length === 1)))
+            ? 2
+            : 0}
+        />
+        <ChipStack amount={player.stack} compact />
+      </div>
       <span class="seat-action"
         >{player.folded
           ? 'Folded'

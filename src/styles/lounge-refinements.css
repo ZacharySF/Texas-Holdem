@@ -1,0 +1,144 @@
+/* A few softer surfaces; the table, cards and main grid retain their geometry. */
+#root :is(.coach-sidebar, .display-menu, .table-settings, .saved-hands-drawer),
+#root .action-panel {
+  border-radius: 6px;
+}
+#root .home-actions :is(button, .button),
+#root .play-view-controls button {
+  border-radius: 4px;
+}
+#root button.display-plate {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--lg-rim);
+  border-radius: 6px;
+  background: var(--lg-panel);
+  box-shadow: inset 0 1px 0 var(--lg-highlight);
+  text-align: left;
+  cursor: pointer;
+}
+#root button.display-plate::after {
+  content: none;
+}
+#root button.display-plate:hover {
+  border-color: var(--cyan);
+  background: var(--lg-panel);
+}
+#root .display-plate .photo-plate {
+  border: 0;
+}
+#root .plate-depth {
+  display: block;
+  pointer-events: none;
+  transition: none;
+}
+#root .display-plate-label {
+  display: block;
+  position: relative;
+  padding: 8px 12px;
+  background: var(--ink-1);
+  color: var(--text);
+  font: 12px/1.5 var(--f-body);
+}
+#root .lounge-figure-depth {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: none;
+}
+#root .lounge-figure-depth > .lg-figure {
+  position: absolute;
+}
+/* Give the full drawing a dedicated home column; controls never overlap it. */
+#root:has(.home-page) .lounge-figure-depth {
+  visibility: hidden;
+}
+#root .site-shell:has(.home-page) > .side-index {
+  display: none;
+}
+#root .site-shell:has(.home-page) > .site-main {
+  grid-column: 1 / -1;
+}
+#root .home-hero {
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.9fr);
+  gap: 24px 32px;
+}
+#root .home-title {
+  grid-column: 1;
+  grid-row: 1;
+}
+#root .home-hero > .display-plate {
+  grid-column: 1;
+  grid-row: 2;
+  width: min(100%, 320px);
+}
+#root .home-graphic-nav {
+  grid-column: 1;
+  grid-row: 3;
+}
+#root .home-artwork {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  align-self: start;
+  position: relative;
+  /* Blend the transformed layer itself, so Firefox does not isolate the image on black. */
+  mix-blend-mode: screen;
+  height: min(620px, 65dvh);
+  min-height: 300px;
+  pointer-events: none;
+  transition: none;
+}
+#root .home-artwork :is(picture, img) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#root .home-artwork img {
+  filter: url('#lounge-transparent-ink');
+  mix-blend-mode: normal;
+  opacity: 0.62;
+}
+#root .artwork-filter {
+  position: absolute;
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  #root .home-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #root .home-artwork {
+    grid-column: 1;
+    grid-row: 2;
+    height: min(480px, 65dvh);
+  }
+  #root .home-hero > .display-plate {
+    grid-row: 3;
+    width: min(100%, 320px);
+  }
+  #root .home-graphic-nav {
+    grid-row: 4;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #root :is(.plate-depth, .lounge-figure-depth, .home-artwork) {
+    transform: none !important;
+    will-change: auto !important;
+  }
+}
+@media (forced-colors: active) {
+  #root .home-artwork {
+    display: none;
+  }
+  #root button.display-plate,
+  #root .display-plate-label {
+    background: ButtonFace;
+    color: ButtonText;
+    border-color: ButtonText;
+  }
+}

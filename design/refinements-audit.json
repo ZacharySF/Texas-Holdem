@@ -1,0 +1,20 @@
+[
+  {
+    "width": 1440,
+    "errors": [],
+    "displayOpen": true,
+    "overlay": false,
+    "overflow": false,
+    "heading": "72px",
+    "plateRadius": "6px"
+  },
+  {
+    "width": 390,
+    "errors": [],
+    "displayOpen": true,
+    "overlay": false,
+    "overflow": false,
+    "heading": "36px",
+    "plateRadius": "6px"
+  }
+]

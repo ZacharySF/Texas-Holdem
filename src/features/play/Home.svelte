@@ -1,5 +1,6 @@
 <script lang="ts">
-  import PhotoPlate from '../../decor/PhotoPlate.svelte';
+  import DisplayPlate from '../../lib/DisplayPlate.svelte';
+  import LoungeArtwork from '../../lib/LoungeArtwork.svelte';
   import { SITE_NAME } from '../../decor/site';
   import HomeNavigation from '../../decor/HomeNavigation.svelte';
   let {
@@ -18,7 +19,7 @@
 <section class="home-hero">
   <div class="home-title">
     <h2 aria-label="contemprorary">{SITE_NAME}</h2>
-    <p>heads-up or six-max. the math is on screen.</p>
+    <p>heads-up or six-max.</p>
     <div class="home-actions">
       <button
         class="primary start-game"
@@ -33,6 +34,7 @@
       >
     </div>
   </div>
-  <PhotoPlate />
+  <LoungeArtwork />
+  <DisplayPlate />
   <HomeNavigation {onplay} disabled={dealing || bankroll < 1} />
 </section>

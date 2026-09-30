@@ -1,0 +1,128 @@
+[
+  {
+    "width": 1440,
+    "seats": [
+      {
+        "seat": "0",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "2000"
+      },
+      {
+        "seat": "1",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "995"
+      },
+      {
+        "seat": "2",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "1190"
+      },
+      {
+        "seat": "3",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "1400"
+      },
+      {
+        "seat": "4",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "1600"
+      },
+      {
+        "seat": "5",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "1800"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "seats": [
+      {
+        "seat": "0",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "2000"
+      },
+      {
+        "seat": "1",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "995"
+      },
+      {
+        "seat": "2",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "1190"
+      },
+      {
+        "seat": "3",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "1400"
+      },
+      {
+        "seat": "4",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "1600"
+      },
+      {
+        "seat": "5",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "1800"
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "seats": [
+      {
+        "seat": "0",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "2000"
+      },
+      {
+        "seat": "1",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "995"
+      },
+      {
+        "seat": "2",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "1190"
+      },
+      {
+        "seat": "3",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "1400"
+      },
+      {
+        "seat": "4",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "1600"
+      },
+      {
+        "seat": "5",
+        "chipsBeside": true,
+        "inside": true,
+        "amount": "1800"
+      }
+    ],
+    "overflow": false
+  }
+]

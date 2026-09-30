@@ -3,21 +3,27 @@ import { URL } from 'node:url';
 import console from 'node:console';
 
 export function checkLoungeContrast(contrast) {
-  const css = readFileSync(
-    new URL('../src/styles/lounge-tokens.css', import.meta.url),
-    'utf8',
-  );
-  const blocks = [...css.matchAll(/\{([^{}]*)\}/g)]
-    .map((match) =>
-      Object.fromEntries(
-        [...match[1].matchAll(/(--[\w-]+):\s*([^;]+);/g)].map((pair) => [
+  const css =
+    readFileSync(
+      new URL('../src/styles/lounge-tokens.css', import.meta.url),
+      'utf8',
+    ) +
+    readFileSync(
+      new URL('../src/styles/theme-options.css', import.meta.url),
+      'utf8',
+    );
+  const blocks = [...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)]
+    .map((match) => ({
+      name: match[1].match(/data-theme='([^']+)'/)?.[1] ?? 'violet',
+      values: Object.fromEntries(
+        [...match[2].matchAll(/(--[\w-]+):\s*([^;]+);/g)].map((pair) => [
           pair[1],
           pair[2].trim(),
         ]),
       ),
-    )
-    .filter((block) => block['--ink-0']);
-  const base = blocks[0];
+    }))
+    .filter((block) => block.values['--ink-0']);
+  const base = blocks[0].values;
   const rgb = (value) =>
     [1, 3, 5].map((offset) => parseInt(value.slice(offset, offset + 2), 16));
   const hex = (values) =>
@@ -29,13 +35,13 @@ export function checkLoungeContrast(contrast) {
     front.map((value, i) => value * alpha + back[i] * (1 - alpha));
   let pass = true;
   for (const [index, block] of blocks.entries()) {
-    const tokens = { ...base, ...block };
+    const tokens = { ...base, ...block.values };
     const report = (name, front, back, threshold) => {
       const ratio = contrast(front, back);
       const ok = ratio >= threshold;
       pass &&= ok;
       console.log(
-        `${ok ? 'PASS' : 'FAIL'} lounge ${index ? 'blue' : 'violet'} ${name}: ${ratio.toFixed(2)}:1 (requires ${threshold})`,
+        `${ok ? 'PASS' : 'FAIL'} lounge ${index ? block.name : 'violet'} ${name}: ${ratio.toFixed(2)}:1 (requires ${threshold})`,
       );
     };
     // Even a white source pixel is dimmed by the art opacity and full-screen shield.

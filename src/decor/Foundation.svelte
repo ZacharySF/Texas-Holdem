@@ -1,5 +1,8 @@
 <script lang="ts">
   import '../styles/decor.css';
+  import '../styles/compact-play.css';
+  import '../styles/lounge-refinements.css';
+  import '../styles/theme-options.css';
   import displayFont from '../styles/fonts/archivo-latin.woff2?url';
   import { SITE_NAME } from './site';
   import Atmosphere from '../lib/softclub/Atmosphere.svelte';

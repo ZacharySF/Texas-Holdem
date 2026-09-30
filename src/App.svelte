@@ -6,6 +6,7 @@
   import Routes from './Routes.svelte';
   import { navigation, navigate } from './navigation.svelte';
   import { fourColorDeck, theme } from './visual/display';
+  import { themes, isTheme, type ThemeId } from './lib/themes';
   const modes = [
     ['play', 'Play'],
     ['learn', 'Course'],
@@ -40,12 +41,12 @@
       return false;
     }
   }
-  function readTheme(): 'dark' | 'blue' {
+  function readTheme(): ThemeId {
     try {
-      return JSON.parse(localStorage.getItem('holdem-settings') ?? '{}')
-        .theme === 'blue'
-        ? 'blue'
-        : 'dark';
+      const saved = JSON.parse(
+        localStorage.getItem('holdem-settings') ?? '{}',
+      ).theme;
+      return isTheme(saved) ? saved : 'dark';
     } catch {
       return 'dark';
     }
@@ -54,7 +55,10 @@
   let fourColor = $state(readDeck());
   $effect(() => {
     document.documentElement.dataset.theme = selectedTheme;
-    theme.set(selectedTheme);
+    // Preserve the legacy renderer's two palettes; DOM materials use the full theme tokens.
+    theme.set(
+      selectedTheme === 'blue' || selectedTheme === 'ocean' ? 'blue' : 'dark',
+    );
     document.documentElement.dataset.fourColor = String(fourColor);
     fourColorDeck.set(fourColor);
     try {
@@ -66,6 +70,11 @@
       /* Memory-only settings remain available. */
     }
   });
+  function surpriseTheme() {
+    const choices = themes.filter((item) => item.id !== selectedTheme);
+    const random = crypto.getRandomValues(new Uint32Array(1))[0];
+    selectedTheme = choices[random % choices.length].id;
+  }
   onMount(() => {
     if (!location.hash) navigate('/play', true);
     const change = () => {
@@ -121,24 +130,27 @@
         ><span class="section-code" aria-hidden="true">0{i + 1}</span>{label}</a
       >{/each}
   </nav>
-  <details class="settings">
+</header>
+<DecorShell><Routes {homeVisit} /></DecorShell>
+
+<div class="display-dock">
+  <details class="settings" id="display-settings">
     <summary>Display</summary>
     <div class="display-menu sc-glass sc-glass--live">
-      <span>Dark theme</span>
+      <span>Choose a theme</span>
       <div class="theme-options" role="group" aria-label="Color theme">
-        <button
-          aria-pressed={selectedTheme === 'dark'}
-          onclick={() => (selectedTheme = 'dark')}>Violet</button
-        >
-        <button
-          aria-pressed={selectedTheme === 'blue'}
-          onclick={() => (selectedTheme = 'blue')}>Blue</button
-        >
+        {#each themes as option (option.id)}
+          <button
+            aria-pressed={selectedTheme === option.id}
+            onclick={() => (selectedTheme = option.id)}>{option.label}</button
+          >
+        {/each}
       </div>
+      <button class="surprise-theme" onclick={surpriseTheme}>Surprise me</button
+      >
       <label
         ><input type="checkbox" bind:checked={fourColor} /> Four-color deck</label
       >
     </div>
   </details>
-</header>
-<DecorShell><Routes {homeVisit} /></DecorShell>
+</div>
