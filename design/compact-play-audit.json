@@ -1,0 +1,125 @@
+[
+  {
+    "width": 1440,
+    "overflow": false,
+    "heading": "72px",
+    "body": "14px",
+    "table": {
+      "x": 32,
+      "y": 425.5,
+      "width": 1000,
+      "height": 702,
+      "top": 425.5,
+      "right": 1032,
+      "bottom": 1127.5,
+      "left": 32
+    },
+    "coach": {
+      "x": 1048,
+      "y": 425.5,
+      "width": 360,
+      "height": 414.6875,
+      "top": 425.5,
+      "right": 1408,
+      "bottom": 840.1875,
+      "left": 1048
+    }
+  },
+  {
+    "width": 1440,
+    "fullscreen": true,
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "overflow": false,
+    "heading": "51.2px",
+    "body": "14px",
+    "table": {
+      "x": 32,
+      "y": 404.703125,
+      "width": 672,
+      "height": 702,
+      "top": 404.703125,
+      "right": 704,
+      "bottom": 1106.703125,
+      "left": 32
+    },
+    "coach": {
+      "x": 720,
+      "y": 404.703125,
+      "width": 272,
+      "height": 478.6875,
+      "top": 404.703125,
+      "right": 992,
+      "bottom": 883.390625,
+      "left": 720
+    }
+  },
+  {
+    "width": 1024,
+    "fullscreen": true,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "overflow": false,
+    "heading": "36px",
+    "body": "14px",
+    "table": {
+      "x": 16,
+      "y": 500.71875,
+      "width": 358,
+      "height": 864,
+      "top": 500.71875,
+      "right": 374,
+      "bottom": 1364.71875,
+      "left": 16
+    },
+    "coach": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    }
+  },
+  {
+    "width": 390,
+    "fullscreen": true,
+    "overflow": false
+  },
+  {
+    "route": "#/learn",
+    "heading": "72px",
+    "body": "14px",
+    "overflow": false
+  },
+  {
+    "route": "#/learn/12-2?seed=f8c177f0f47ebca9df00f6e82c76ae9b",
+    "heading": "56px",
+    "body": "14px",
+    "overflow": false
+  },
+  {
+    "route": "#/arcade?seed=25afd36463a3c9df07b97098f1918c66",
+    "heading": "72px",
+    "body": "14px",
+    "overflow": false
+  },
+  {
+    "route": "#/lab?state=%7B%22players%22%3A%5B%5B51%2C50%5D%2C%5B47%2C46%5D%5D%2C%22board%22%3A%5B%5D%2C%22dead%22%3A%5B%5D%2C%22seed%22%3A%225c4af8d7ead1f3d28428509a72fa0ca5%22%2C%22samples%22%3A10000%2C%22method%22%3A%22monteCarlo%22%7D",
+    "heading": "72px",
+    "body": "14px",
+    "overflow": false
+  },
+  {
+    "route": "#/stats",
+    "heading": "72px",
+    "body": "14px",
+    "overflow": false
+  }
+]

@@ -1,0 +1,244 @@
+/* Smaller type, with readable captions and unchanged minimum tap targets. */
+html:root,
+html:root[data-theme='blue'] {
+  --type-control: 14px;
+  --type-body: 14px;
+  --type-heading: 18px;
+  --type-question: 24px;
+  --type-title: 40px;
+  --type-masthead: clamp(36px, 5vw, 72px);
+  --type-lesson: clamp(30px, 4vw, 56px);
+}
+html body,
+#root .site-main,
+#root .course-main {
+  font-size: 14px;
+  line-height: 1.5;
+}
+#root main p,
+#root .coach-sidebar p,
+#root .index-line,
+#root .index-line a,
+#root .course-index-chapter small,
+#root .lesson-nav a {
+  font-size: 14px;
+  line-height: 1.5;
+}
+#root main :is(h2, h3, h4),
+#root .coach-sidebar h2,
+#root .course-index-chapter h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-block: 16px 12px;
+}
+#root main h3,
+#root .course-index-chapter strong {
+  font-size: 16px;
+}
+#root main h4 {
+  font-size: 14px;
+}
+#root :is(button, input, select, textarea),
+#root .home-graphic-nav a {
+  font-size: 14px;
+}
+#root :is(small, .hint, .field-label),
+#root .side-index :is(a, button),
+#root .course-contents :is(h2, summary, a, button, label),
+#root .course-index-number,
+#root .course-index-status,
+#root .course-breadcrumb,
+#root .coach-tabs button {
+  font-size: 12px;
+}
+#root .brand {
+  font-size: 15px;
+}
+#root .page-masthead,
+#root .learn-header {
+  margin-bottom: 16px;
+}
+#root .page-masthead h1,
+#root .learn-header h1 {
+  padding-bottom: 16px;
+}
+#root .page-masthead .panel-label {
+  padding-block: 8px;
+}
+#root .progress-overview .progress-figure {
+  font-size: clamp(48px, 7vw, 88px);
+}
+#root .lesson-finish .lesson-nav a {
+  font-size: clamp(16px, 2vw, 24px);
+}
+#root .panel:has(#outs-answer) > h2,
+#root .drill-stripe + h2,
+#root .spec-readout dd {
+  font-size: 24px;
+}
+#root .bankroll strong {
+  font-size: 22px;
+}
+#root .tool-page {
+  --type-5-8rem: 40px;
+  --type-4-4rem: 32px;
+  --type-3-8rem: 28px;
+  --type-3rem: 24px;
+  --type-2-1rem: 20px;
+}
+#root .coach-sidebar .probability strong,
+#root .chart-number {
+  font-size: 24px;
+}
+#root .seat :is(h2, h3) {
+  font: 14px/1.5 var(--f-body);
+  margin: 0 0 8px;
+}
+#root .play-header h2 {
+  font: 11px/1.5 var(--f-mono);
+  margin: 0;
+}
+#root .coach-sidebar > header h2 {
+  margin: 0;
+}
+#root .coach-sidebar :is(.coach-intro, .coach-topic > p) {
+  font-size: 12px;
+}
+#root .play.in-game .home-stats {
+  padding-block: 8px;
+}
+#root .play-viewport {
+  min-width: 0;
+}
+#root .play-viewport:not(:has(.poker-workspace)) {
+  display: none;
+}
+#root .play-view-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+#root .play-view-controls > span {
+  font-size: 12px;
+}
+#root .play-view-controls button {
+  min-height: 44px;
+  padding: 8px 16px;
+}
+#root .play-actions button,
+#root .raise-controls button {
+  min-height: 44px;
+}
+/* Practice gets the full available width so its coach can remain beside it. */
+@media (min-width: 900px) {
+  #root .play.in-game {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  #root .play.in-game > * {
+    grid-column: 1 / -1;
+  }
+  #root .play.in-game > .play-header {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  #root .play.in-game > .home-stats {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+  #root .site-shell:has(.play.in-game) > .side-index {
+    display: none;
+  }
+  #root .site-shell:has(.play.in-game) > .site-main {
+    grid-column: 1 / -1;
+  }
+  #root .play.in-game .poker-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(272px, 26vw, 360px);
+    gap: 16px;
+    align-items: start;
+  }
+  #root .play.in-game :is(.mobile-coach-button, .close-coach) {
+    display: none;
+  }
+  #root .play.in-game .coach-sidebar {
+    display: flex;
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    inset: 16px auto auto;
+    width: auto;
+    max-height: calc(100dvh - 64px);
+    overflow: hidden;
+  }
+  #root .play.in-game .coach-topic {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+@media (max-width: 899px) {
+  #root .play.in-game .poker-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  #root .play.in-game .coach-sidebar {
+    position: static;
+    width: 100%;
+    max-height: none;
+  }
+  #root .play.in-game .coach-topic {
+    overflow: visible;
+  }
+}
+/* A single mounted viewport serves both browser fullscreen and its fallback. */
+#root .play-viewport.play-expanded {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  z-index: 100;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 16px;
+  background: var(--ink-0);
+  color: var(--text);
+}
+#root .play-expanded .play-view-controls {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-block: 8px;
+  background: var(--ink-0);
+}
+#root .play.in-game .play-expanded .coach-sidebar {
+  top: 80px;
+  max-height: calc(100dvh - 112px);
+}
+#root .play-viewport::backdrop {
+  background: var(--ink-0);
+}
+@media (max-width: 767px) {
+  /* Keep entry fields at 16px to prevent automatic zoom on mobile Safari. */
+  #root :is(input, select, textarea) {
+    font-size: 16px;
+  }
+  #root .brand {
+    font-size: 13px;
+  }
+  #root .play.in-game .play-expanded .coach-sidebar {
+    max-height: none;
+  }
+}
+@media (forced-colors: active) {
+  #root .play-viewport.play-expanded,
+  #root .play-expanded .play-view-controls {
+    background: Canvas;
+    color: CanvasText;
+  }
+}

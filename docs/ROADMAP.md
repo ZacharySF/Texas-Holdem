@@ -391,3 +391,12 @@ See [the pass notes](../design/SOFTCLUB_NOTES.md) for actual screenshot and perf
 - [x] Preserve application logic and extend composited contrast checks.
 
 See [LOUNGE_NOTES](../design/LOUNGE_NOTES.md) for verification, screenshots and mobile effects. Existing engine benchmark measurements remain unchanged.
+
+## Compact practice view
+
+- [x] Reduce oversized titles, headings, reading text and controls site-wide.
+- [x] Keep the coach beside practice play at desktop/tablet widths, with the existing phone toggle.
+- [x] Add practice fullscreen and an expanded-window fallback without restarting the hand.
+- [x] Cover native/fallback fullscreen, focus/cleanup, live actions and coach placement in browser tests.
+
+Tournament rules/coaching and existing engine benchmark measurements are unchanged.

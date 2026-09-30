@@ -46,6 +46,7 @@
   import HistoryPanel from './HistoryPanel.svelte';
   import './play.css';
   import Home from './Home.svelte';
+  import PlayViewport from '../../lib/PlayViewport.svelte';
   import { navigation } from '../../navigation.svelte';
   import { untrack } from 'svelte';
   function readProfile(): Profile {
@@ -650,166 +651,173 @@
         >Deal committed hand</button
       >
     </section>{/if}
-  <div class={game ? 'poker-workspace' : undefined}>
-    <div class="table-column">
-      {#if game}<Table {game} {persona}
-        ></Table>{/if}{#if game?.complete}<section
-          class="hand-result"
-          aria-label="Hand result"
-        >
-          <div>
-            <h2>
-              {game.players[0].stack > game.config.stacks[0]
-                ? 'Hand won'
-                : game.players[0].stack < game.config.stacks[0]
-                  ? 'Hand lost'
-                  : 'Hand tied'}
-            </h2>
-            <p>
-              <strong
-                >{game.players[0].stack - game.config.stacks[0] > 0
-                  ? '+'
-                  : ''}{game.players[0].stack - game.config.stacks[0]} chips</strong
-              >
-              this hand · {game.awards[0]} returned from the pots
-            </p>
-          </div>
-          <button
-            class="primary"
-            disabled={dealing || !!pending || profile.bankroll < 1}
-            onclick={() => void prepare()}
-            >{dealing ? 'Shuffling…' : 'Deal next hand'}</button
+  <PlayViewport enabled={!!game}>
+    <div class={game ? 'poker-workspace' : undefined}>
+      <div class="table-column">
+        {#if game}<Table {game} {persona}
+          ></Table>{/if}{#if game?.complete}<section
+            class="hand-result"
+            aria-label="Hand result"
           >
-        </section>{/if}{#if heroTurn && exam && revealedAt !== game?.history.length}<section
-          class="panel"
-        >
-          <h2>Estimate before you reveal</h2>
-          <form
-            onsubmit={(e) => {
-              e.preventDefault();
-              const n = Number(guess);
-              if (guess.trim() && Number.isFinite(n) && n >= 0 && n <= 100) {
-                if (game) setRevealedAt(game.history.length);
-                setError('');
-              } else
-                setError(
-                  `Enter an equity estimate from ${new Rational(0).display().percent} to ${new Rational(1).display().percent}.`,
-                );
-            }}
-          >
-            <label for="exam-guess">Your estimated equity, in percent</label
-            ><input
-              id="exam-guess"
-              value={guess}
-              oninput={(e) => setGuess(e.currentTarget.value)}
-              inputmode="decimal"
-            /><button disabled={!assessment} type="submit">Reveal coach</button>
-          </form>
-        </section>{/if}{#if heroTurn && legal && game}<section
-          class="panel action-panel"
-        >
-          <div class="action-heading">
-            <h2>Your move</h2>
-            <span
-              >{legal.canCheck
-                ? 'You can check for free'
-                : `${legal.toCall} chips to stay in`}</span
+            <div>
+              <h2>
+                {game.players[0].stack > game.config.stacks[0]
+                  ? 'Hand won'
+                  : game.players[0].stack < game.config.stacks[0]
+                    ? 'Hand lost'
+                    : 'Hand tied'}
+              </h2>
+              <p>
+                <strong
+                  >{game.players[0].stack - game.config.stacks[0] > 0
+                    ? '+'
+                    : ''}{game.players[0].stack - game.config.stacks[0]} chips</strong
+                >
+                this hand · {game.awards[0]} returned from the pots
+              </p>
+            </div>
+            <button
+              class="primary"
+              disabled={dealing || !!pending || profile.bankroll < 1}
+              onclick={() => void prepare()}
+              >{dealing ? 'Shuffling…' : 'Deal next hand'}</button
             >
-          </div>
-          <div class="play-actions">
-            <button disabled={!canAct} onclick={() => submit({ type: 'fold' })}
-              >Fold{#if guided}<small>Leave this hand</small>{/if}</button
-            >{#if legal.canCheck}<button
-                class="primary"
-                disabled={!canAct}
-                onclick={() => submit({ type: 'check' })}
-                >Check{#if guided}<small>Stay in for free</small>{/if}</button
-              >{:else}<button
-                class="primary"
-                disabled={!canAct}
-                onclick={() => submit({ type: 'call' })}
-                >Call {legal.toCall}{game.players[0].stack === legal.toCall
-                  ? ' · all in'
-                  : ''}{#if guided}<small>Match the bet</small>{/if}</button
-              >{/if}
-          </div>
-          {#if legal.canRaise}<div class="raise-controls">
-              <input
-                aria-label="Raise amount"
-                type="range"
-                min={Math.min(legal.minRaiseTo, legal.maxRaiseTo)}
-                max={legal.maxRaiseTo}
-                step="1"
-                value={modelRaiseTo}
-                disabled={!canAct}
-                oninput={(e) => setRaise(e.currentTarget.value)}
-              /><label for="raise-to">Raise to (total chips this round)</label
+          </section>{/if}{#if heroTurn && exam && revealedAt !== game?.history.length}<section
+            class="panel"
+          >
+            <h2>Estimate before you reveal</h2>
+            <form
+              onsubmit={(e) => {
+                e.preventDefault();
+                const n = Number(guess);
+                if (guess.trim() && Number.isFinite(n) && n >= 0 && n <= 100) {
+                  if (game) setRevealedAt(game.history.length);
+                  setError('');
+                } else
+                  setError(
+                    `Enter an equity estimate from ${new Rational(0).display().percent} to ${new Rational(1).display().percent}.`,
+                  );
+              }}
+            >
+              <label for="exam-guess">Your estimated equity, in percent</label
               ><input
-                id="raise-to"
-                type="number"
-                min={Math.min(legal.minRaiseTo, legal.maxRaiseTo)}
-                max={legal.maxRaiseTo}
-                step="1"
-                value={raise}
-                oninput={(e) => setRaise(e.currentTarget.value)}
-              /><button
-                disabled={!canAct ||
-                  !Number.isInteger(raiseTo) ||
-                  raiseTo <= game.bet ||
-                  raiseTo > legal.maxRaiseTo ||
-                  (raiseTo < legal.minRaiseTo && raiseTo !== legal.maxRaiseTo)}
-                onclick={() => submit({ type: 'raise', to: raiseTo })}
-                >Raise to {raise || '…'}</button
-              ><button
+                id="exam-guess"
+                value={guess}
+                oninput={(e) => setGuess(e.currentTarget.value)}
+                inputmode="decimal"
+              /><button disabled={!assessment} type="submit"
+                >Reveal coach</button
+              >
+            </form>
+          </section>{/if}{#if heroTurn && legal && game}<section
+            class="panel action-panel"
+          >
+            <div class="action-heading">
+              <h2>Your move</h2>
+              <span
+                >{legal.canCheck
+                  ? 'You can check for free'
+                  : `${legal.toCall} chips to stay in`}</span
+              >
+            </div>
+            <div class="play-actions">
+              <button
                 disabled={!canAct}
-                onclick={() => {
-                  setRaise(String(legal.maxRaiseTo));
-                }}>Set all-in amount</button
-              >
-              <details class="raise-explanation">
-                <summary>How raising works</summary>
-                <p class="hint">
-                  Full minimum: {legal.minRaiseTo}. Maximum: {legal.maxRaiseTo}.
-                  A shorter raise is allowed only for your full stack and does
-                  not reopen betting for a player who already acted.
-                </p>
-              </details>
-            </div>{/if}
-        </section>{/if}
-    </div>
-    {#if game}<CoachSidebar feedback={grade}
-        >{#snippet course()}{#if courseLesson}<section
-              class="coach-course-focus"
-            >
-              <span class="course-reference"
-                >LESSON {courseLesson.id.replace('-', '.')} · YOUR FOCUS</span
-              >
-              <p>{practiceFocus(courseLesson.chapter)}</p>
-              {#if game?.complete}<a href={'#' + returnToLesson}
-                  >Return to your lesson →</a
+                onclick={() => submit({ type: 'fold' })}
+                >Fold{#if guided}<small>Leave this hand</small>{/if}</button
+              >{#if legal.canCheck}<button
+                  class="primary"
+                  disabled={!canAct}
+                  onclick={() => submit({ type: 'check' })}
+                  >Check{#if guided}<small>Stay in for free</small>{/if}</button
+                >{:else}<button
+                  class="primary"
+                  disabled={!canAct}
+                  onclick={() => submit({ type: 'call' })}
+                  >Call {legal.toCall}{game.players[0].stack === legal.toCall
+                    ? ' · all in'
+                    : ''}{#if guided}<small>Match the bet</small>{/if}</button
                 >{/if}
-            </section>{/if}{/snippet}{#snippet odds(
-          topic,
-        )}{#if showCoach && game && assessment}<CoachPanel
-              {topic}
-              view={playerView(game, 0)}
-              {assessment}
-              raiseTo={modelRaiseTo}
-              {foldPercent}
-              onFoldPercent={setFoldPercent}
-            ></CoachPanel>{:else}<p role="status">
-              {game?.complete
-                ? 'This hand is over. Open Review this hand below the table to see the cards, replay the action, and explore the results.'
-                : exam && heroTurn && revealedAt !== game?.history.length
-                  ? 'Make your equity prediction at the table first, then choose Reveal coach.'
-                  : !coach
-                    ? 'Turn on Coach in Table settings to see the estimates.'
-                    : heroTurn && thinking
-                      ? 'Updating your estimate. You can still act while it loads.'
-                      : 'Your pot-odds calculation appears when it is your turn. Watch the bets change the price.'}
-            </p>{/if}{/snippet}</CoachSidebar
-      >{/if}
-  </div>
+            </div>
+            {#if legal.canRaise}<div class="raise-controls">
+                <input
+                  aria-label="Raise amount"
+                  type="range"
+                  min={Math.min(legal.minRaiseTo, legal.maxRaiseTo)}
+                  max={legal.maxRaiseTo}
+                  step="1"
+                  value={modelRaiseTo}
+                  disabled={!canAct}
+                  oninput={(e) => setRaise(e.currentTarget.value)}
+                /><label for="raise-to">Raise to (total chips this round)</label
+                ><input
+                  id="raise-to"
+                  type="number"
+                  min={Math.min(legal.minRaiseTo, legal.maxRaiseTo)}
+                  max={legal.maxRaiseTo}
+                  step="1"
+                  value={raise}
+                  oninput={(e) => setRaise(e.currentTarget.value)}
+                /><button
+                  disabled={!canAct ||
+                    !Number.isInteger(raiseTo) ||
+                    raiseTo <= game.bet ||
+                    raiseTo > legal.maxRaiseTo ||
+                    (raiseTo < legal.minRaiseTo &&
+                      raiseTo !== legal.maxRaiseTo)}
+                  onclick={() => submit({ type: 'raise', to: raiseTo })}
+                  >Raise to {raise || '…'}</button
+                ><button
+                  disabled={!canAct}
+                  onclick={() => {
+                    setRaise(String(legal.maxRaiseTo));
+                  }}>Set all-in amount</button
+                >
+                <details class="raise-explanation">
+                  <summary>How raising works</summary>
+                  <p class="hint">
+                    Full minimum: {legal.minRaiseTo}. Maximum: {legal.maxRaiseTo}.
+                    A shorter raise is allowed only for your full stack and does
+                    not reopen betting for a player who already acted.
+                  </p>
+                </details>
+              </div>{/if}
+          </section>{/if}
+      </div>
+      {#if game}<CoachSidebar feedback={grade}
+          >{#snippet course()}{#if courseLesson}<section
+                class="coach-course-focus"
+              >
+                <span class="course-reference"
+                  >LESSON {courseLesson.id.replace('-', '.')} · YOUR FOCUS</span
+                >
+                <p>{practiceFocus(courseLesson.chapter)}</p>
+                {#if game?.complete}<a href={'#' + returnToLesson}
+                    >Return to your lesson →</a
+                  >{/if}
+              </section>{/if}{/snippet}{#snippet odds(
+            topic,
+          )}{#if showCoach && game && assessment}<CoachPanel
+                {topic}
+                view={playerView(game, 0)}
+                {assessment}
+                raiseTo={modelRaiseTo}
+                {foldPercent}
+                onFoldPercent={setFoldPercent}
+              ></CoachPanel>{:else}<p role="status">
+                {game?.complete
+                  ? 'This hand is over. Open Review this hand below the table to see the cards, replay the action, and explore the results.'
+                  : exam && heroTurn && revealedAt !== game?.history.length
+                    ? 'Make your equity prediction at the table first, then choose Reveal coach.'
+                    : !coach
+                      ? 'Turn on Coach in Table settings to see the estimates.'
+                      : heroTurn && thinking
+                        ? 'Updating your estimate. You can still act while it loads.'
+                        : 'Your pot-odds calculation appears when it is your turn. Watch the bets change the price.'}
+              </p>{/if}{/snippet}</CoachSidebar
+        >{/if}
+    </div>
+  </PlayViewport>
   {#if game && !game?.complete}<details class="commitment-current">
       <summary>Current deal commitment</summary><code class="seed-code"
         >{commitment}</code
