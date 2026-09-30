@@ -1,0 +1,982 @@
+[
+  {
+    "name": "play",
+    "path": "/play",
+    "width": 1440,
+    "scene": "terminal",
+    "masthead": "chrome",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 3,
+    "plateStreakSources": 3,
+    "mobileMesh": 3,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#6449d7",
+    "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+    "hiddenProblems": [],
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 164
+      }
+    ],
+    "blue": {
+      "scene": "terminal",
+      "masthead": "chrome",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 164
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 3,
+      "plateStreakSources": 3,
+      "mobileMesh": 3,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#548ac7",
+      "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+      "hiddenProblems": []
+    },
+    "longTasks": []
+  },
+  {
+    "name": "play",
+    "path": "/play",
+    "width": 390,
+    "scene": "terminal",
+    "masthead": "chrome",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 1,
+    "plateStreakSources": 2,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#6449d7",
+    "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+    "hiddenProblems": [],
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 164
+      }
+    ],
+    "blue": {
+      "scene": "terminal",
+      "masthead": "chrome",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 164
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 1,
+      "plateStreakSources": 2,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#548ac7",
+      "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "course",
+    "path": "/learn",
+    "width": 1440,
+    "scene": "study",
+    "masthead": "glass",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 0,
+    "plateStreakSources": 0,
+    "mobileMesh": 1,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#6449d7",
+    "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+    "hiddenProblems": [],
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 164
+      }
+    ],
+    "blue": {
+      "scene": "study",
+      "masthead": "glass",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 164
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 0,
+      "plateStreakSources": 0,
+      "mobileMesh": 1,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#548ac7",
+      "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "course",
+    "path": "/learn",
+    "width": 390,
+    "scene": "study",
+    "masthead": "glass",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 0,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#6449d7",
+    "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+    "hiddenProblems": [],
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 164
+      }
+    ],
+    "blue": {
+      "scene": "study",
+      "masthead": "glass",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 164
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 0,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#548ac7",
+      "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "lesson",
+    "path": "/learn/12-2",
+    "width": 1440,
+    "scene": "study-quiet",
+    "masthead": "glow",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 0,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#6449d7",
+    "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+    "hiddenProblems": [],
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 164
+      }
+    ],
+    "blue": {
+      "scene": "study-quiet",
+      "masthead": "glow",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 164
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 0,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#548ac7",
+      "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "lesson",
+    "path": "/learn/12-2",
+    "width": 390,
+    "scene": "study-quiet",
+    "masthead": "glow",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 0,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#6449d7",
+    "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+    "hiddenProblems": [],
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 164
+      }
+    ],
+    "blue": {
+      "scene": "study-quiet",
+      "masthead": "glow",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 164
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 0,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#548ac7",
+      "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "drills",
+    "path": "/arcade",
+    "width": 1440,
+    "scene": "tunnel",
+    "masthead": "glow",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      },
+      {
+        "name": "sc-tunnel-travel",
+        "target": "sc-tunnel-plane",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 4,
+    "plateStreakSources": 0,
+    "mobileMesh": 1,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#6449d7",
+    "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+    "hiddenProblems": [],
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 164
+      }
+    ],
+    "blue": {
+      "scene": "tunnel",
+      "masthead": "glow",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 164
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        },
+        {
+          "name": "sc-tunnel-travel",
+          "target": "sc-tunnel-plane",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 4,
+      "plateStreakSources": 0,
+      "mobileMesh": 1,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#548ac7",
+      "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "drills",
+    "path": "/arcade",
+    "width": 390,
+    "scene": "tunnel",
+    "masthead": "glow",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      },
+      {
+        "name": "sc-tunnel-travel",
+        "target": "sc-tunnel-plane",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 3,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#6449d7",
+    "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+    "hiddenProblems": [],
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 164
+      }
+    ],
+    "blue": {
+      "scene": "tunnel",
+      "masthead": "glow",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 164
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        },
+        {
+          "name": "sc-tunnel-travel",
+          "target": "sc-tunnel-plane",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 3,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#548ac7",
+      "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "tools",
+    "path": "/lab",
+    "width": 1440,
+    "scene": "skyline",
+    "masthead": "glass",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 2,
+    "plateStreakSources": 0,
+    "mobileMesh": 1,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#6449d7",
+    "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+    "hiddenProblems": [],
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 164
+      }
+    ],
+    "blue": {
+      "scene": "skyline",
+      "masthead": "glass",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 164
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 2,
+      "plateStreakSources": 0,
+      "mobileMesh": 1,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#548ac7",
+      "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "tools",
+    "path": "/lab",
+    "width": 390,
+    "scene": "skyline",
+    "masthead": "glass",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 2,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#6449d7",
+    "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+    "hiddenProblems": [],
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 164
+      }
+    ],
+    "blue": {
+      "scene": "skyline",
+      "masthead": "glass",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 164
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 2,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#548ac7",
+      "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "progress",
+    "path": "/stats",
+    "width": 1440,
+    "scene": "nightwindow",
+    "masthead": "chrome",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 2,
+    "plateStreakSources": 0,
+    "mobileMesh": 1,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#6449d7",
+    "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+    "hiddenProblems": [],
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 164
+      }
+    ],
+    "blue": {
+      "scene": "nightwindow",
+      "masthead": "chrome",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 164
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 2,
+      "plateStreakSources": 0,
+      "mobileMesh": 1,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#548ac7",
+      "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "progress",
+    "path": "/stats",
+    "width": 390,
+    "scene": "nightwindow",
+    "masthead": "chrome",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 2,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#6449d7",
+    "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+    "hiddenProblems": [],
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(14px) saturate(1.25)",
+        "height": 164
+      }
+    ],
+    "blue": {
+      "scene": "nightwindow",
+      "masthead": "chrome",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(14px) saturate(1.25)",
+          "height": 164
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 2,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#548ac7",
+      "glass": "color(srgb 0.054902 0.0352941 0.188235 / 0.98)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "preferences": {
+      "motion": true,
+      "transparency": true,
+      "loops": 0,
+      "blur": "none",
+      "overlays": 0
+    }
+  },
+  {
+    "forcedColors": {
+      "atmosphere": "none",
+      "plate": "none",
+      "title": "rgb(0, 0, 0)"
+    }
+  },
+  {
+    "firefox": "Playwright Firefox is not installed; skipped"
+  }
+]

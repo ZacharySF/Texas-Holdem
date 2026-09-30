@@ -370,3 +370,15 @@ Before/removal/final captures and grid overlays are in `design/shots/`. Per-scre
 This is a single-table local event against bots. Multiplayer, resumable tournaments, payouts, and physical floor procedures are outside this request's implementation. Existing evaluation/simulation benchmark measurements remain unchanged.
 
 Validation: 116 unit tests, all 46 desktop/phone browser tests, typecheck (no Svelte diagnostics), lint, production build and the palette contrast script pass. Engine coverage is 99.22% statements, 98.47% branches, 100% functions and 99.34% lines. New captures: `docs/screenshots/tournament-desktop.png` and `docs/screenshots/tournament-phone.png`.
+
+## Additive soft-club visual pass
+
+- [x] Add theme-driven shared atmosphere and glass, gel, acrylic and LCD materials.
+- [x] Preserve existing grid, masthead geometry, controls, teaching and game behavior.
+- [x] Add six procedural plate scenes and optional size-limited AVIF/WebP photo preparation.
+- [x] Add composited contrast checks and reduced-effects/system-color fallbacks.
+- [x] Verify each phase with unit/browser tests, typecheck, lint, build and contrast checks.
+- [ ] Larger hero plates outside Play: need explicit permission to add layout slots.
+- [ ] Native route transition: deferred because the router is protected.
+
+See [the pass notes](../design/SOFTCLUB_NOTES.md) for actual screenshot and performance measurements. Existing math and engine benchmark values are unchanged.

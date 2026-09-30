@@ -27,7 +27,7 @@
   .sc-atmosphere-mesh {
     opacity: 0.2;
   }
-  #root .sc-plate-overlay {
+  #root .sc-plate .sc-plate-overlay {
     display: none;
   }
 }
@@ -65,5 +65,44 @@
   }
   #root :is(.sc-gel, button, .button, .home-graphic-nav a):focus-visible {
     outline-color: Highlight;
+  }
+}
+@media (forced-colors: active) {
+  #root
+    :is(
+      .panel,
+      .coach-sidebar,
+      .course-contents,
+      .lesson-section,
+      .course-index-chapter,
+      .tool-fields,
+      .spec-readout,
+      .pot-chip,
+      .tournament-readout,
+      input,
+      select,
+      textarea
+    ) {
+    background: Canvas;
+    color: CanvasText;
+    border-color: CanvasText;
+    box-shadow: none;
+  }
+  #root
+    :is(
+      .bankroll strong,
+      .seat-stack,
+      .pot-chip strong,
+      .spec-readout dd,
+      .probability strong,
+      .equity-equation strong,
+      .progress-figure,
+      .tournament-readout strong
+    ) {
+    color: CanvasText;
+    text-shadow: none;
+  }
+  #root .sc-spine::after {
+    display: none;
   }
 }

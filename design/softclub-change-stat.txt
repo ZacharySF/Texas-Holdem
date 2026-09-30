@@ -1,0 +1,49 @@
+ README.md                                          |   6 +-
+ design/SOFTCLUB_NOTES.md                           |  64 ++
+ design/shots/softclub/phase-2/play-1440.png        | Bin 0 -> 1097931 bytes
+ design/shots/softclub/phase-2/play-390.png         | Bin 0 -> 265073 bytes
+ design/shots/softclub/phase-4/course-1440.png      | Bin 0 -> 2209925 bytes
+ design/shots/softclub/phase-4/course-390.png       | Bin 0 -> 1631557 bytes
+ design/shots/softclub/phase-4/drills-1440.png      | Bin 0 -> 917217 bytes
+ design/shots/softclub/phase-4/drills-390.png       | Bin 0 -> 330878 bytes
+ design/shots/softclub/phase-4/lesson-1440.png      | Bin 0 -> 2391965 bytes
+ design/shots/softclub/phase-4/lesson-390.png       | Bin 0 -> 1491399 bytes
+ .../shots/softclub/phase-4/play-1440-reduced.png   | Bin 0 -> 311972 bytes
+ design/shots/softclub/phase-4/play-1440.png        | Bin 0 -> 1114211 bytes
+ design/shots/softclub/phase-4/play-390.png         | Bin 0 -> 274413 bytes
+ design/shots/softclub/phase-4/progress-1440.png    | Bin 0 -> 1591787 bytes
+ design/shots/softclub/phase-4/progress-390.png     | Bin 0 -> 688128 bytes
+ design/shots/softclub/phase-4/tools-1440.png       | Bin 0 -> 1016990 bytes
+ design/shots/softclub/phase-4/tools-390.png        | Bin 0 -> 386290 bytes
+ design/softclub-phase-2-audit.json                 | 129 +++
+ design/softclub-phase-4-audit.json                 | 982 +++++++++++++++++++++
+ design/softclub-protected-audit.json               | 890 +++++++++++++++++++
+ design/softclub-validation.json                    |  46 +
+ docs/ARCHITECTURE.md                               |   6 +
+ docs/ROADMAP.md                                    |  12 +
+ public/plates/README.md                            |  13 +
+ scripts/contrast-check.mjs                         |   2 +
+ scripts/prepare-softclub-plate.py                  |  35 +
+ scripts/softclub-contrast.mjs                      |  78 ++
+ src/App.svelte                                     |   4 +-
+ src/decor/Foundation.svelte                        |   2 +
+ src/decor/PageMasthead.svelte                      |  15 +-
+ src/decor/PhotoPlate.svelte                        |  27 +-
+ src/decor/SideIndex.svelte                         |   2 +-
+ src/decor/StatusBar.svelte                         |  12 +-
+ src/features/learn/Learn.svelte                    |  11 +-
+ src/features/play/Table.svelte                     |   2 +-
+ src/lib/softclub/Atmosphere.svelte                 |  47 +
+ src/lib/softclub/Plate.svelte                      | 170 ++++
+ src/lib/softclub/TerminalLight.svelte              |  18 +
+ src/lib/softclub/plates.json                       |   1 +
+ src/lib/softclub/scenes.ts                         |  47 +
+ src/styles/decor.css                               |   6 +
+ src/styles/softclub-accessibility.css              | 108 +++
+ src/styles/softclub-atmosphere.css                 | 136 +++
+ src/styles/softclub-materials.css                  | 312 +++++++
+ src/styles/softclub-motion.css                     |  29 +
+ src/styles/softclub-plates.css                     | 312 +++++++
+ src/styles/softclub-tokens.css                     |  64 ++
+ src/ui/PlayingCards.svelte                         |   6 +-
+ 48 files changed, 3558 insertions(+), 36 deletions(-)

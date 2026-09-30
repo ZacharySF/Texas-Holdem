@@ -1,0 +1,46 @@
+[
+  {
+    "phase": 1,
+    "unitTests": 116,
+    "browserTests": 46,
+    "test": "pass",
+    "browser": "pass",
+    "typecheck": "pass",
+    "lint": "pass",
+    "build": "pass",
+    "contrast": "pass"
+  },
+  {
+    "phase": 2,
+    "unitTests": 116,
+    "browserTests": 46,
+    "test": "pass",
+    "browser": "pass",
+    "typecheck": "pass",
+    "lint": "pass",
+    "build": "pass",
+    "contrast": "pass"
+  },
+  {
+    "phase": 3,
+    "unitTests": 116,
+    "browserTests": 46,
+    "test": "pass",
+    "browser": "pass",
+    "typecheck": "pass",
+    "lint": "pass",
+    "build": "pass",
+    "contrast": "pass"
+  },
+  {
+    "phase": 4,
+    "unitTests": 116,
+    "browserTests": 46,
+    "test": "pass",
+    "browser": "pass",
+    "typecheck": "pass",
+    "lint": "pass",
+    "build": "pass",
+    "contrast": "pass"
+  }
+]

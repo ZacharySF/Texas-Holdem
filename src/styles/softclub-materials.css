@@ -73,6 +73,7 @@
     .active
   ) {
   --sc-glow: 0.6;
+  --sc-gel-top: color-mix(in srgb, var(--sc-key) 20%, var(--sc-ink-1));
   box-shadow:
     inset 0 -2px 0 var(--sc-cyan-ice),
     0 0 10px color-mix(in srgb, var(--sc-key) 30%, transparent);
@@ -296,4 +297,16 @@
 #root .app-header {
   position: relative;
   z-index: 60;
+}
+/* The existing lesson sections keep their dimensions and receive an opaque reading surface. */
+#root .lesson-section {
+  background: var(--sc-glass-fill);
+  border-color: var(--sc-edge);
+  box-shadow: inset 0 1px 0 var(--sc-edge-hi);
+}
+@media (max-height: 640px) {
+  #root .display-menu.sc-glass--live {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
 }

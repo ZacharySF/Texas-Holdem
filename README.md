@@ -10,7 +10,7 @@ Phases 0–9 are implemented locally. Learn contains 53 lessons across chapters 
 
 Every page and UI controller uses Svelte 5, including play, coaching, all tools, drills, progress, and the 53 lessons. Lessons use Svelte Markdown (`.svx`, compiled by mdsvex) and native Svelte components for their experiments and practice. There is no React, React DOM, React Router, JSX, or adapter runtime. A small hash-navigation module preserves the same routes and query strings for static hosting. See [the migration plan and verification](docs/SVELTE-MIGRATION.md).
 
-Display offers two dark palettes: Violet and a lighter dark Blue. Both use flat panels, thin rules, and limited bright highlights; the choice persists across reloads and updates the Pixi table. A lazily loaded Pixi canvas draws the poker table and the same visible cards announced by the accessible HTML. If WebGL is unavailable, HTML keeps the table playable. Effects turn off after sustained slow frames; reduced motion stops animation entirely.
+Display offers two dark palettes: Violet and a lighter dark Blue. Both use glass materials, thin rules, and limited bright highlights; the choice persists across reloads and updates the Pixi table. A lazily loaded Pixi canvas draws the poker table and the same visible cards announced by the accessible HTML. If WebGL is unavailable, HTML keeps the table playable. Effects turn off after sustained slow frames; reduced motion stops animation entirely.
 
 - Theme: [`src/design-tokens.css`](src/design-tokens.css).
 - Pixi colors, filters, performance budget, and all parallax magnitudes: [`src/visual/config.ts`](src/visual/config.ts).
@@ -275,3 +275,7 @@ Measured September 28, 2026 local time (September 29 UTC), Node 24.20.0, Intel C
 The previous evaluator/equity/payout algorithms remain unchanged. Relative to the September 27 measurement, throughput was +1.8% evaluation, +1.7% random equity, −0.4% weighted equity, −1.9% lesson trials, and +1.5% payouts. These small differences are single-run timing variation, not evidence of an algorithmic change. Bot decision timings are new workloads with no earlier comparable baseline.
 
 The latest presentation audit and limitations are in [DESIGN_NOTES.md](DESIGN_NOTES.md). Before/removal/after screenshots and grid overlays are under `design/shots/`; contrast, accessibility and Lighthouse reports are under `design/`. The UI remains Svelte; image plates are generated offline and add no React runtime.
+
+## Additive soft-club materials
+
+The presentation adds shared scene lighting, gel controls, acrylic card edges, LCD readouts and six procedural plate treatments. The existing grid, titles, teaching content, game and tournament behavior remain unchanged. Violet and Blue share token-driven materials, with reduced-motion, reduced-transparency and forced-color fallbacks. No runtime dependency or WebGL canvas was added. See [the visual audit](design/SOFTCLUB_NOTES.md) for phase checks, protected-file verification, screenshot paths and the smaller header-strip compromise where no hero slot exists. Optional user-photo preparation is documented in [public/plates](public/plates/README.md).

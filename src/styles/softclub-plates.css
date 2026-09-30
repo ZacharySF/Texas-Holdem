@@ -173,12 +173,14 @@
 }
 #root .sc-plate .sc-terminal-reflection {
   top: 70%;
-  height: 70%;
-  transform: scaleY(-1);
-  transform-origin: center 21.4%;
+  overflow: hidden;
   filter: blur(2px);
   opacity: 0.4;
-  mask-image: linear-gradient(transparent 30%, var(--sc-black));
+  mask-image: linear-gradient(var(--sc-black), transparent 70%);
+}
+#root .sc-terminal-reflection .sc-terminal-field {
+  height: 233.333%;
+  transform: scaleY(-1);
 }
 #root .sc-tunnel-haze {
   background:
@@ -297,8 +299,14 @@
   #root .sc-plate {
     max-height: 42vh;
   }
-  #root .sc-terminal-mesh,
+  #root .sc-terminal-field .sc-terminal-mesh,
   #root .sc-terminal-streaks i:nth-child(3) {
     display: none;
   }
+}
+/* Crop a photographic field into the existing padding; do not compress it into a diagram. */
+#root .sc-plate--header > :not(.sc-jewel-highlight):not(.sc-filter-defs) {
+  height: 120px;
+  top: -48px;
+  bottom: auto;
 }

@@ -50,6 +50,14 @@ export function checkSoftclubContrast(contrast) {
     for (const [label, color] of Object.entries(texts))
       record(`glass × ${label}`, color, glass, 4.5);
     record('gel hover × label', texts.text, gel, 4.5);
+    const selected = hex(
+      blend(
+        rgb('#ffffff'),
+        blend(rgb('#ffffff'), blend(rgb(key), rgb(fill), 0.2), 0.03),
+        0.06,
+      ),
+    );
+    record('selected gel hover × label', texts.text, selected, 4.5);
     for (const color of [
       '#eef0fa',
       '#b1b7d0',
