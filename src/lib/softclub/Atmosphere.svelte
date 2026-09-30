@@ -43,5 +43,5 @@
         aria-hidden="true"
       ></i>{/each}
   </div>
-  <div class="sc-atmosphere-mesh" aria-hidden="true"></div>
+  <div class="sc-atmosphere-mesh lg-figure" aria-hidden="true"></div>
 </div>

@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "ambient-lounge",
+    "src": "/art/lounge/ambient-lounge.avif",
+    "fallback": "/art/lounge/ambient-lounge.webp",
+    "scene": "terminal",
+    "focal": "50% 90%",
+    "caption": "ambient lounge / contemporary"
+  }
+]

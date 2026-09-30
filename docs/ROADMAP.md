@@ -382,3 +382,12 @@ Validation: 116 unit tests, all 46 desktop/phone browser tests, typecheck (no Sv
 - [ ] Native route transition: deferred because the router is protected.
 
 See [the pass notes](../design/SOFTCLUB_NOTES.md) for actual screenshot and performance measurements. Existing math and engine benchmark values are unchanged.
+
+## Gen X Soft Club / Ambient Lounge presentation
+
+- [x] Integrate the user's supplied photography and 2D artwork; remove the generated portrait.
+- [x] Add slate/silver/ice tokens, Michroma display type and Outfit reading text.
+- [x] Recolor vector cards with frosted faces while retaining geometry and suit-mode behavior.
+- [x] Preserve application logic and extend composited contrast checks.
+
+See [LOUNGE_NOTES](../design/LOUNGE_NOTES.md) for verification, screenshots and mobile effects. Existing engine benchmark measurements remain unchanged.

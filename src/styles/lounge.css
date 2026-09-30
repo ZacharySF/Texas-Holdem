@@ -1,0 +1,495 @@
+/* Supplied lounge photography and line art stays behind content. Every visible surface is an existing element. */
+html body {
+  background: radial-gradient(ellipse at 45% 20%, var(--ink-0), var(--lg-edge));
+  color: var(--text);
+}
+#root .sc-atmosphere-base {
+  background: radial-gradient(ellipse at 40% 30%, var(--ink-0), var(--lg-edge));
+}
+#root .sc-atmosphere-base::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: image-set(
+      url('../../public/art/lounge/ambient-lounge.avif') type('image/avif'),
+      url('../../public/art/lounge/ambient-lounge.webp') type('image/webp')
+    )
+    60% 92% / auto 300% no-repeat;
+  filter: saturate(0.45) blur(2px);
+  opacity: var(--lg-art-opacity);
+}
+#root .sc-atmosphere-base::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: var(--ink-0);
+  opacity: var(--lg-shield-opacity);
+}
+#root .sc-atmosphere-light {
+  background:
+    radial-gradient(
+      ellipse at 4% 60%,
+      color-mix(in oklab, var(--lg-secondary) 6%, transparent),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 85% 8%,
+      color-mix(in oklab, var(--cyan) 6%, transparent),
+      transparent 50%
+    );
+}
+#root .sc-atmosphere-mesh {
+  opacity: 0.08;
+}
+#root .sc-haze-band {
+  opacity: 0.12;
+}
+#root .sc-streak {
+  opacity: 0.1;
+}
+html:root:has(.sc-atmosphere) {
+  --sc-scene-a: var(--cyan);
+  --sc-scene-b: var(--lg-secondary);
+}
+#root .sc-masthead-surface {
+  background: transparent;
+}
+#root h1[data-masthead] {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-variation-settings: normal;
+  letter-spacing: 0.025em;
+  text-transform: lowercase;
+  color: var(--text);
+  background: none;
+  -webkit-text-stroke: 0;
+  filter: none;
+  text-shadow: 0 0 28px color-mix(in srgb, var(--sc-key) 20%, transparent);
+}
+#root h1[data-masthead='glow'] {
+  color: var(--sc-key);
+}
+#root h1[data-masthead='chrome'] {
+  color: var(--text);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+#root :is(h2, h3, h4) {
+  font-family: var(--f-display);
+  font-weight: 500;
+  letter-spacing: 0.012em;
+}
+#root .brand {
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+#root .panel-label {
+  background: none;
+  border-top-color: var(--lg-rim);
+  color: var(--text);
+}
+#root
+  :is(
+    .panel,
+    .coach-sidebar,
+    .course-contents,
+    .lesson-section,
+    .course-index-chapter,
+    .tool-fields,
+    .sc-glass,
+    .sc-table
+  ) {
+  background:
+    linear-gradient(
+      125deg,
+      color-mix(in srgb, var(--cyan) 2%, transparent),
+      transparent 30%,
+      color-mix(in srgb, var(--lg-secondary) 2%, transparent)
+    ),
+    var(--lg-panel);
+  border-color: var(--lg-rim);
+  box-shadow:
+    inset 0 1px 0 var(--lg-highlight),
+    0 12px 32px -28px var(--lg-shadow);
+  -webkit-backdrop-filter: blur(12px) saturate(1.15);
+  backdrop-filter: blur(12px) saturate(1.15);
+}
+/* No blanket will-change or GPU promotion: browsers allocate layers for live blur.
+   Hover changes light, not blur radius, to avoid repainting the artwork each frame. */
+#root :is(.app-header, .display-menu, .status-rail) {
+  background-color: color-mix(in srgb, var(--ink-1) 94%, transparent);
+}
+#root .side-index {
+  border: 1px solid var(--lg-rim);
+  background: var(--lg-panel);
+}
+#root .side-index .panel-label {
+  padding-inline: 12px;
+}
+#root .side-index :is(a, button) {
+  padding-inline: 12px;
+  box-shadow: none;
+  background: none;
+}
+#root .side-index [aria-current] {
+  color: var(--cyan-hi);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--cyan) 8%, transparent),
+    transparent
+  );
+  box-shadow: inset 2px 0 0 var(--lg-secondary);
+  text-shadow: 0 0 12px color-mix(in srgb, var(--cyan) 35%, transparent);
+}
+#root .sc-spine::after {
+  background: linear-gradient(transparent, var(--lg-rim), transparent);
+}
+#root :is(button, .button, .home-graphic-nav a) {
+  color: var(--text);
+  background: linear-gradient(
+    125deg,
+    var(--lg-control),
+    color-mix(in srgb, var(--ink-1) 92%, transparent)
+  );
+  border: 1px solid color-mix(in srgb, var(--cyan) 42%, var(--ink-3));
+  box-shadow:
+    inset 0 1px 0 var(--lg-highlight),
+    0 0 calc(var(--sc-glow) * 18px)
+      color-mix(in srgb, var(--cyan) 20%, transparent);
+}
+#root
+  :is(button, .button, .home-graphic-nav a):is(
+    [aria-pressed='true'],
+    [aria-selected='true'],
+    .active
+  ) {
+  color: var(--text);
+  background: var(--lg-primary);
+  box-shadow:
+    inset 0 -2px 0 var(--cyan),
+    0 0 18px color-mix(in srgb, var(--cyan) 10%, transparent);
+}
+#root .home-actions button:first-child {
+  background: var(--lg-primary);
+  border-color: var(--sc-key);
+}
+#root :is(button, .button, .home-graphic-nav a):hover:not(:disabled) {
+  border-color: var(--cyan);
+}
+#root
+  :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+#root
+  :is(
+    input:not([type='checkbox']):not([type='radio']):not([type='range']),
+    select,
+    textarea
+  ) {
+  color: var(--text);
+  background: color-mix(in srgb, var(--ink-0) 90%, transparent);
+  border-color: var(--text-dim);
+  box-shadow: inset 0 1px 4px var(--lg-shadow);
+}
+#root input[type='range'] {
+  accent-color: var(--cyan);
+}
+#root input[type='range']::-webkit-slider-thumb {
+  box-shadow: 0 0 12px color-mix(in srgb, var(--cyan) 50%, transparent);
+}
+#root input[type='range']::-moz-range-thumb {
+  background: var(--cyan);
+  border-color: var(--cyan-hi);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--cyan) 50%, transparent);
+}
+#root .sc-table {
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      color-mix(in srgb, var(--sc-key) 6%, transparent),
+      transparent 68%
+    ),
+    color-mix(in srgb, var(--ink-1) 88%, transparent);
+  border-color: color-mix(in srgb, var(--cyan) 26%, transparent);
+  box-shadow:
+    inset 0 0 40px color-mix(in srgb, var(--ink-0) 70%, transparent),
+    inset 0 1px 0 var(--lg-highlight);
+}
+#root .sc-acrylic {
+  background: var(--lg-slate);
+  border-color: color-mix(in srgb, var(--text) 45%, transparent);
+  box-shadow:
+    inset 0 1px 0 var(--lg-highlight),
+    0 4px 18px -10px color-mix(in srgb, var(--cyan) 30%, transparent);
+}
+#root .sc-acrylic::after {
+  opacity: 0.035;
+}
+#root
+  :is(
+    .sc-lcd,
+    .bankroll strong,
+    .seat-stack,
+    .pot-chip strong,
+    .spec-readout dd,
+    .probability strong,
+    .equity-equation strong,
+    .progress-figure,
+    .tournament-readout strong
+  ) {
+  text-shadow: none;
+}
+#root .spec-readout dd {
+  color: var(--cyan-hi);
+}
+#root .spec-readout .outs-number {
+  color: var(--orange);
+}
+#root .sc-led-rail {
+  background-image: none;
+}
+#root .photo-plate {
+  border-color: var(--lg-rim);
+  background: var(--lg-panel);
+  box-shadow: 0 12px 32px -24px var(--lg-shadow);
+}
+#root .plate-caption {
+  color: var(--text-dim);
+}
+#root .sc-photo-tint {
+  opacity: 0.18;
+}
+#root .sc-photo-ghost {
+  opacity: 0.14;
+}
+#root .sc-jewel-highlight {
+  opacity: 0.5;
+}
+#root .sc-plate--header {
+  opacity: 0.35;
+}
+@media (max-width: 767px) {
+  #root .sc-atmosphere-base::before {
+    background-position: 50% 92%;
+    opacity: 0.35;
+  }
+  #root h1[data-masthead] {
+    letter-spacing: 0.015em;
+  }
+  #root
+    :is(
+      .panel,
+      .coach-sidebar,
+      .course-contents,
+      .lesson-section,
+      .course-index-chapter,
+      .tool-fields,
+      .side-index,
+      .sc-table
+    ) {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #root *,
+  #root *::before,
+  #root *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  html:root {
+    --lg-panel: var(--ink-1);
+  }
+  #root .sc-atmosphere-base::before {
+    opacity: 0.12;
+  }
+  #root
+    :is(
+      .panel,
+      .coach-sidebar,
+      .course-contents,
+      .lesson-section,
+      .course-index-chapter,
+      .tool-fields,
+      .sc-glass,
+      .side-index,
+      .sc-table
+    ) {
+    background: var(--ink-1);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+@media (forced-colors: active) {
+  #root
+    :is(
+      .panel,
+      .coach-sidebar,
+      .course-contents,
+      .lesson-section,
+      .course-index-chapter,
+      .tool-fields,
+      .sc-glass,
+      .side-index,
+      .sc-table
+    ) {
+    color: CanvasText;
+    background: Canvas;
+    border-color: CanvasText;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  #root :is(button, .button, .home-graphic-nav a, input, select, textarea) {
+    color: ButtonText;
+    background: ButtonFace;
+    border-color: ButtonText;
+    box-shadow: none;
+  }
+  #root h1[data-masthead] {
+    color: CanvasText;
+    background: none;
+    -webkit-text-fill-color: CanvasText;
+    text-shadow: none;
+  }
+}
+#root .photo-plate:not(.compact) .sc-plate-photo img {
+  transform: scale(1.6);
+  transform-origin: 50% 88%;
+}
+/* The index is a list on one floating surface, not a stack of button boxes. */
+#root .side-index :is(a, button) {
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+#root .side-index :is(a, button):hover {
+  background: color-mix(in srgb, var(--cyan) 6%, transparent);
+}
+#root .side-index [aria-current] {
+  box-shadow: inset 2px 0 0 var(--lg-secondary);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--cyan) 8%, transparent),
+    transparent
+  );
+}
+#root .app-header nav a[aria-current] {
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent)
+    bottom / 100% 2px no-repeat;
+}
+#root .home-actions button:first-child,
+#root button:is([aria-pressed='true'], [aria-selected='true']) {
+  background: linear-gradient(
+    110deg,
+    var(--lg-primary),
+    color-mix(in srgb, var(--lg-primary) 70%, var(--ink-1))
+  );
+}
+#root input:is([type='checkbox'], [type='radio']) {
+  accent-color: var(--cyan);
+}
+
+/* The user's original flat line art remains atmospheric, never a new portrait. */
+#root .lg-figure {
+  display: block;
+  left: auto;
+  right: -2vw;
+  top: 16vh;
+  bottom: 0;
+  width: clamp(260px, 36vw, 560px);
+  background: image-set(
+      url('../../public/art/lounge/line-art.avif') type('image/avif'),
+      url('../../public/art/lounge/line-art.webp') type('image/webp')
+    )
+    center / contain no-repeat;
+  filter: grayscale(1) invert(1);
+  mix-blend-mode: screen;
+  opacity: var(--lg-figure-opacity);
+  mask-image: linear-gradient(
+    transparent,
+    var(--sc-black) 16%,
+    var(--sc-black) 82%,
+    transparent
+  );
+}
+#root .sc-atmosphere[data-scene='study-quiet'] .lg-figure {
+  opacity: 0.06;
+}
+#root h1[data-masthead] {
+  text-shadow: none;
+}
+#root :is(h2, h3, h4) {
+  font-weight: 400;
+}
+#root .brand {
+  letter-spacing: -0.025em;
+}
+#root
+  :is(
+    .home-actions button:first-child,
+    button[aria-pressed='true'],
+    button[aria-selected='true']
+  ) {
+  background: linear-gradient(160deg, var(--text), var(--lg-primary));
+  color: var(--lg-primary-text);
+  border-color: var(--lg-primary);
+  box-shadow: inset 0 1px 0 var(--text);
+}
+#root .side-index [aria-current] {
+  box-shadow: inset 2px 0 0 var(--cyan);
+  text-shadow: none;
+}
+#root .sc-photo-tint {
+  opacity: 0.12;
+}
+#root .sc-photo-highlight {
+  opacity: 0.12;
+}
+#root .sc-photo-ghost {
+  opacity: 0.1;
+}
+#root .sc-acrylic {
+  background: var(--lg-slate);
+}
+#root .sc-acrylic.card-back {
+  background: linear-gradient(160deg, var(--lg-primary), var(--ink-4));
+}
+#root .sc-plate--header {
+  opacity: 0.28;
+}
+#root .panel-label {
+  letter-spacing: 0.12em;
+}
+@media (max-width: 767px) {
+  #root .lg-figure {
+    display: block;
+    width: 80vw;
+    right: -8vw;
+    opacity: 0.07;
+  }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  #root .lg-figure {
+    display: none;
+  }
+}
+@media (forced-colors: active) {
+  #root
+    :is(
+      .home-actions button:first-child,
+      button[aria-pressed='true'],
+      button[aria-selected='true']
+    ) {
+    background: ButtonFace;
+    color: ButtonText;
+    border-color: ButtonText;
+    box-shadow: none;
+  }
+}

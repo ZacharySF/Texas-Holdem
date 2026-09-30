@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { URL } from 'node:url';
 import console from 'node:console';
 import process from 'node:process';
+import { checkLoungeContrast } from './lounge-contrast.mjs';
 import { checkSoftclubContrast } from './softclub-contrast.mjs';
 const css = readFileSync(
   new URL('../src/styles/tokens.css', import.meta.url),
@@ -48,6 +49,7 @@ for (const [use, foreground, background, minimum] of pairs) {
 }
 if (failed) process.exitCode = 1;
 if (!checkSoftclubContrast(contrast)) process.exitCode = 1;
+if (!checkLoungeContrast(contrast)) process.exitCode = 1;
 
 // Validate measured browser pairs as well as the allowed token pairings.
 if (process.argv.includes('--rendered')) {

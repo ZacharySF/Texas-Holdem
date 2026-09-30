@@ -1,0 +1,2089 @@
+[
+  {
+    "name": "play",
+    "path": "/play",
+    "width": 1440,
+    "scene": "terminal",
+    "masthead": "chrome",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "side-index sc-glass sc-spine",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 78
+      },
+      {
+        "class": "panel table-settings",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 62
+      },
+      {
+        "class": "panel saved-hands-drawer",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 62
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 3,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#b7d9e7",
+    "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+    "hiddenProblems": [],
+    "fonts": {
+      "heading": "Michroma, \"Lounge Fallback\", sans-serif",
+      "body": "Outfit, \"Lounge Fallback\", sans-serif"
+    },
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 164
+      },
+      {
+        "class": "side-index sc-glass sc-spine",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 78
+      },
+      {
+        "class": "panel table-settings",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 62
+      },
+      {
+        "class": "panel saved-hands-drawer",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 62
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "blue": {
+      "scene": "terminal",
+      "masthead": "chrome",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 164
+        },
+        {
+          "class": "side-index sc-glass sc-spine",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 78
+        },
+        {
+          "class": "panel table-settings",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 62
+        },
+        {
+          "class": "panel saved-hands-drawer",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 62
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 3,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#c3e2ea",
+      "glass": "color(srgb 0.0862745 0.168627 0.235294 / 0.94)",
+      "hiddenProblems": []
+    },
+    "longTasks": [],
+    "table": {
+      "scene": "terminal",
+      "masthead": "chrome",
+      "plates": 0,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "side-index sc-glass sc-spine",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 157
+        },
+        {
+          "class": "felt-table sc-table table-6",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 702
+        },
+        {
+          "class": "panel action-panel",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 424
+        },
+        {
+          "class": "coach-sidebar ",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 447.5
+        },
+        {
+          "class": "panel table-settings",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 62
+        },
+        {
+          "class": "panel saved-hands-drawer",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 62
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 3,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#b7d9e7",
+      "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+      "hiddenProblems": []
+    },
+    "tableLongTasks": []
+  },
+  {
+    "name": "play",
+    "path": "/play",
+    "width": 390,
+    "scene": "terminal",
+    "masthead": "chrome",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 1,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#b7d9e7",
+    "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+    "hiddenProblems": [],
+    "fonts": {
+      "heading": "Michroma, \"Lounge Fallback\", sans-serif",
+      "body": "Outfit, \"Lounge Fallback\", sans-serif"
+    },
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 164
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "blue": {
+      "scene": "terminal",
+      "masthead": "chrome",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 164
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 1,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#c3e2ea",
+      "glass": "color(srgb 0.0862745 0.168627 0.235294 / 0.94)",
+      "hiddenProblems": []
+    },
+    "table": {
+      "scene": "terminal",
+      "masthead": "chrome",
+      "plates": 0,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 1,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#b7d9e7",
+      "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "course",
+    "path": "/learn",
+    "width": 1440,
+    "scene": "study",
+    "masthead": "glass",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "course-contents",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 868
+      },
+      {
+        "class": "course-start panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 418
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 554.5
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 0,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#b7d9e7",
+    "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+    "hiddenProblems": [],
+    "fonts": {
+      "heading": "Michroma, \"Lounge Fallback\", sans-serif",
+      "body": "Outfit, \"Lounge Fallback\", sans-serif"
+    },
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 164
+      },
+      {
+        "class": "course-contents",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 868
+      },
+      {
+        "class": "course-start panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 418
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 554.5
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "course-index-chapter",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 413
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "blue": {
+      "scene": "study",
+      "masthead": "glass",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 164
+        },
+        {
+          "class": "course-contents",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 868
+        },
+        {
+          "class": "course-start panel",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 418
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 554.5
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "course-index-chapter",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 413
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 0,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#c3e2ea",
+      "glass": "color(srgb 0.0862745 0.168627 0.235294 / 0.94)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "course",
+    "path": "/learn",
+    "width": 390,
+    "scene": "study",
+    "masthead": "glass",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 0,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#b7d9e7",
+    "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+    "hiddenProblems": [],
+    "fonts": {
+      "heading": "Michroma, \"Lounge Fallback\", sans-serif",
+      "body": "Outfit, \"Lounge Fallback\", sans-serif"
+    },
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 164
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "blue": {
+      "scene": "study",
+      "masthead": "glass",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 164
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 0,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#c3e2ea",
+      "glass": "color(srgb 0.0862745 0.168627 0.235294 / 0.94)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "lesson",
+    "path": "/learn/12-2",
+    "width": 1440,
+    "scene": "study-quiet",
+    "masthead": "glow",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "course-contents",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 868
+      },
+      {
+        "class": "lesson-section",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 233
+      },
+      {
+        "class": "lesson-section",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 4781.8125
+      },
+      {
+        "class": "lesson-section",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 476.046875
+      },
+      {
+        "class": "lesson-section",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 521
+      },
+      {
+        "class": "lesson-section practice",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 544.78125
+      },
+      {
+        "class": "lesson-section",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 421.5
+      },
+      {
+        "class": "lesson-section",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 233
+      },
+      {
+        "class": "lesson-game-stop panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 356.5
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 0,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#b7d9e7",
+    "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+    "hiddenProblems": [],
+    "fonts": {
+      "heading": "Michroma, \"Lounge Fallback\", sans-serif",
+      "body": "Outfit, \"Lounge Fallback\", sans-serif"
+    },
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 164
+      },
+      {
+        "class": "course-contents",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 868
+      },
+      {
+        "class": "lesson-section",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 233
+      },
+      {
+        "class": "lesson-section",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 4781.8125
+      },
+      {
+        "class": "lesson-section",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 476.046875
+      },
+      {
+        "class": "lesson-section",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 521
+      },
+      {
+        "class": "lesson-section practice",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 544.78125
+      },
+      {
+        "class": "lesson-section",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 421.5
+      },
+      {
+        "class": "lesson-section",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 233
+      },
+      {
+        "class": "lesson-game-stop panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 356.5
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "blue": {
+      "scene": "study-quiet",
+      "masthead": "glow",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 164
+        },
+        {
+          "class": "course-contents",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 868
+        },
+        {
+          "class": "lesson-section",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 233
+        },
+        {
+          "class": "lesson-section",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 4781.8125
+        },
+        {
+          "class": "lesson-section",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 476.046875
+        },
+        {
+          "class": "lesson-section",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 521
+        },
+        {
+          "class": "lesson-section practice",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 544.78125
+        },
+        {
+          "class": "lesson-section",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 421.5
+        },
+        {
+          "class": "lesson-section",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 233
+        },
+        {
+          "class": "lesson-game-stop panel",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 356.5
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 0,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#c3e2ea",
+      "glass": "color(srgb 0.0862745 0.168627 0.235294 / 0.94)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "lesson",
+    "path": "/learn/12-2",
+    "width": 390,
+    "scene": "study-quiet",
+    "masthead": "glow",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 0,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#b7d9e7",
+    "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+    "hiddenProblems": [],
+    "fonts": {
+      "heading": "Michroma, \"Lounge Fallback\", sans-serif",
+      "body": "Outfit, \"Lounge Fallback\", sans-serif"
+    },
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 164
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "blue": {
+      "scene": "study-quiet",
+      "masthead": "glow",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 164
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 0,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#c3e2ea",
+      "glass": "color(srgb 0.0862745 0.168627 0.235294 / 0.94)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "drills",
+    "path": "/arcade",
+    "width": 1440,
+    "scene": "tunnel",
+    "masthead": "glow",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "side-index sc-glass sc-spine",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 275.5
+      },
+      {
+        "class": "panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 492.5
+      },
+      {
+        "class": "panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 331.5
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      },
+      {
+        "name": "sc-tunnel-travel",
+        "target": "sc-tunnel-plane",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 4,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#b7d9e7",
+    "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+    "hiddenProblems": [],
+    "fonts": {
+      "heading": "Michroma, \"Lounge Fallback\", sans-serif",
+      "body": "Outfit, \"Lounge Fallback\", sans-serif"
+    },
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 164
+      },
+      {
+        "class": "side-index sc-glass sc-spine",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 275.5
+      },
+      {
+        "class": "panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 492.5
+      },
+      {
+        "class": "panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 331.5
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "blue": {
+      "scene": "tunnel",
+      "masthead": "glow",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 164
+        },
+        {
+          "class": "side-index sc-glass sc-spine",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 275.5
+        },
+        {
+          "class": "panel",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 492.5
+        },
+        {
+          "class": "panel",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 331.5
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        },
+        {
+          "name": "sc-tunnel-travel",
+          "target": "sc-tunnel-plane",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 4,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#c3e2ea",
+      "glass": "color(srgb 0.0862745 0.168627 0.235294 / 0.94)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "drills",
+    "path": "/arcade",
+    "width": 390,
+    "scene": "tunnel",
+    "masthead": "glow",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      },
+      {
+        "name": "sc-tunnel-travel",
+        "target": "sc-tunnel-plane",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 3,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#b7d9e7",
+    "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+    "hiddenProblems": [],
+    "fonts": {
+      "heading": "Michroma, \"Lounge Fallback\", sans-serif",
+      "body": "Outfit, \"Lounge Fallback\", sans-serif"
+    },
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 164
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "blue": {
+      "scene": "tunnel",
+      "masthead": "glow",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 164
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        },
+        {
+          "name": "sc-tunnel-travel",
+          "target": "sc-tunnel-plane",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 3,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#c3e2ea",
+      "glass": "color(srgb 0.0862745 0.168627 0.235294 / 0.94)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "tools",
+    "path": "/lab",
+    "width": 1440,
+    "scene": "skyline",
+    "masthead": "glass",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "side-index sc-glass sc-spine",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 433.5
+      },
+      {
+        "class": "panel _setup_1vp5x_64",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 1118.609375
+      },
+      {
+        "class": "panel _resultPanel_1vp5x_153",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 594.109375
+      },
+      {
+        "class": "panel _chartPanel_1vp5x_154",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 379.5
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 2,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#b7d9e7",
+    "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+    "hiddenProblems": [],
+    "fonts": {
+      "heading": "Michroma, \"Lounge Fallback\", sans-serif",
+      "body": "Outfit, \"Lounge Fallback\", sans-serif"
+    },
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 164
+      },
+      {
+        "class": "side-index sc-glass sc-spine",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 433.5
+      },
+      {
+        "class": "panel _setup_1vp5x_64",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 1118.609375
+      },
+      {
+        "class": "panel _resultPanel_1vp5x_153",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 594.109375
+      },
+      {
+        "class": "panel _chartPanel_1vp5x_154",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 379.5
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "blue": {
+      "scene": "skyline",
+      "masthead": "glass",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 164
+        },
+        {
+          "class": "side-index sc-glass sc-spine",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 433.5
+        },
+        {
+          "class": "panel _setup_1vp5x_64",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 1118.609375
+        },
+        {
+          "class": "panel _resultPanel_1vp5x_153",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 594.109375
+        },
+        {
+          "class": "panel _chartPanel_1vp5x_154",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 379.5
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 2,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#c3e2ea",
+      "glass": "color(srgb 0.0862745 0.168627 0.235294 / 0.94)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "tools",
+    "path": "/lab",
+    "width": 390,
+    "scene": "skyline",
+    "masthead": "glass",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 2,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#b7d9e7",
+    "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+    "hiddenProblems": [],
+    "fonts": {
+      "heading": "Michroma, \"Lounge Fallback\", sans-serif",
+      "body": "Outfit, \"Lounge Fallback\", sans-serif"
+    },
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 164
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "blue": {
+      "scene": "skyline",
+      "masthead": "glass",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 164
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 2,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#c3e2ea",
+      "glass": "color(srgb 0.0862745 0.168627 0.235294 / 0.94)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "progress",
+    "path": "/stats",
+    "width": 1440,
+    "scene": "nightwindow",
+    "masthead": "chrome",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "side-index sc-glass sc-spine",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 255.5
+      },
+      {
+        "class": "panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 553.5
+      },
+      {
+        "class": "panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 1164.421875
+      },
+      {
+        "class": "panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 277.5
+      },
+      {
+        "class": "panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 1935.34375
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 2,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#b7d9e7",
+    "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+    "hiddenProblems": [],
+    "fonts": {
+      "heading": "Michroma, \"Lounge Fallback\", sans-serif",
+      "body": "Outfit, \"Lounge Fallback\", sans-serif"
+    },
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 164
+      },
+      {
+        "class": "side-index sc-glass sc-spine",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 255.5
+      },
+      {
+        "class": "panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 553.5
+      },
+      {
+        "class": "panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 1164.421875
+      },
+      {
+        "class": "panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 277.5
+      },
+      {
+        "class": "panel",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 1935.34375
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "blue": {
+      "scene": "nightwindow",
+      "masthead": "chrome",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 164
+        },
+        {
+          "class": "side-index sc-glass sc-spine",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 255.5
+        },
+        {
+          "class": "panel",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 553.5
+        },
+        {
+          "class": "panel",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 1164.421875
+        },
+        {
+          "class": "panel",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 277.5
+        },
+        {
+          "class": "panel",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 1935.34375
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 2,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#c3e2ea",
+      "glass": "color(srgb 0.0862745 0.168627 0.235294 / 0.94)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "name": "progress",
+    "path": "/stats",
+    "width": 390,
+    "scene": "nightwindow",
+    "masthead": "chrome",
+    "plates": 1,
+    "canvas": 0,
+    "liveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "loops": [
+      {
+        "name": "sc-drift",
+        "target": "sc-atmosphere-light",
+        "filter": "none",
+        "blend": "normal"
+      }
+    ],
+    "streaks": 2,
+    "plateStreakSources": 0,
+    "mobileMesh": 0,
+    "textFilters": 0,
+    "overflow": false,
+    "key": "#b7d9e7",
+    "glass": "color(srgb 0.0784314 0.133333 0.215686 / 0.94)",
+    "hiddenProblems": [],
+    "fonts": {
+      "heading": "Michroma, \"Lounge Fallback\", sans-serif",
+      "body": "Outfit, \"Lounge Fallback\", sans-serif"
+    },
+    "menuLiveGlass": [
+      {
+        "class": "app-header sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 48
+      },
+      {
+        "class": "display-menu sc-glass sc-glass--live",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 164
+      },
+      {
+        "class": "status-rail sc-glass sc-led-rail",
+        "blur": "blur(12px) saturate(1.15)",
+        "height": 28
+      }
+    ],
+    "blue": {
+      "scene": "nightwindow",
+      "masthead": "chrome",
+      "plates": 1,
+      "canvas": 0,
+      "liveGlass": [
+        {
+          "class": "app-header sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 48
+        },
+        {
+          "class": "display-menu sc-glass sc-glass--live",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 164
+        },
+        {
+          "class": "status-rail sc-glass sc-led-rail",
+          "blur": "blur(12px) saturate(1.15)",
+          "height": 28
+        }
+      ],
+      "loops": [
+        {
+          "name": "sc-drift",
+          "target": "sc-atmosphere-light",
+          "filter": "none",
+          "blend": "normal"
+        }
+      ],
+      "streaks": 2,
+      "plateStreakSources": 0,
+      "mobileMesh": 0,
+      "textFilters": 0,
+      "overflow": false,
+      "key": "#c3e2ea",
+      "glass": "color(srgb 0.0862745 0.168627 0.235294 / 0.94)",
+      "hiddenProblems": []
+    }
+  },
+  {
+    "preferences": {
+      "motion": true,
+      "transparency": true,
+      "loops": 0,
+      "blur": "none",
+      "overlays": 0
+    }
+  },
+  {
+    "forcedColors": {
+      "atmosphere": "none",
+      "plate": "none",
+      "title": "rgb(0, 0, 0)"
+    }
+  },
+  {
+    "firefox": "Playwright Firefox is not installed; skipped"
+  }
+]

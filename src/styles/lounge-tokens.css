@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'Michroma';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/michroma-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('./fonts/outfit-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lounge Fallback';
+  src: local('Arial');
+  size-adjust: 98%;
+  ascent-override: 98%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+html:root,
+html:root[data-theme='blue'] {
+  --ink-0: #0f172a;
+  --ink-1: #142237;
+  --ink-2: #23374a;
+  --ink-3: #314c61;
+  --ink-4: #557a90;
+  --ink-5: #b7d9e7;
+  --text: #f8fafc;
+  --text-dim: #94a3b8;
+  --red: #e9b2ac;
+  --cyan: #7dd3fc;
+  --cyan-hi: #d2edf4;
+  --orange: #e2c695;
+  --lime: #cad6aa;
+  --f-display: 'Michroma', 'Lounge Fallback', sans-serif;
+  --f-body: 'Outfit', 'Lounge Fallback', sans-serif;
+  --lg-edge: #0c1622;
+  --lg-secondary: #b9c9cf;
+  --lg-slate: #e1ebee;
+  --lg-control: #263c50;
+  --lg-primary: #cbe5ed;
+  --lg-primary-text: #22384a;
+  --lg-art-opacity: 0.46;
+  --lg-shield-opacity: 0.58;
+  --lg-figure-opacity: 0.14;
+  --lg-panel-alpha: 0.88;
+  --lg-panel: color-mix(in srgb, var(--ink-1) 88%, transparent);
+  --lg-rim: color-mix(in srgb, var(--cyan-hi) 24%, transparent);
+  --lg-highlight: color-mix(in srgb, var(--text) 10%, transparent);
+  --lg-shadow: color-mix(in srgb, var(--lg-edge) 50%, transparent);
+  --sc-ink-0: var(--ink-0);
+  --sc-ink-1: var(--ink-1);
+  --sc-ink-2: var(--ink-2);
+  --sc-ink-3: var(--ink-3);
+  --sc-key: var(--ink-5);
+  --sc-key-deep: var(--ink-3);
+  --sc-violet-5: var(--ink-4);
+  --sc-violet-6: var(--ink-5);
+  --sc-frost: var(--text);
+  --sc-haze: var(--text-dim);
+  --sc-cobalt: #557a90;
+  --sc-cyan: var(--cyan);
+  --sc-cyan-ice: var(--cyan-hi);
+  --sc-red: var(--red);
+  --sc-scene-a: var(--cyan);
+  --sc-scene-b: var(--lg-secondary);
+  --sc-glass-fill: var(--lg-panel);
+  --sc-glass-highlight: color-mix(in srgb, var(--text) 3%, transparent);
+  --sc-glass-blur: 12px;
+  --sc-edge: var(--lg-rim);
+  --sc-edge-hi: var(--lg-highlight);
+  --sc-shadow: 0 12px 40px -24px var(--lg-shadow);
+  --sc-gel-top: var(--lg-control);
+  --sc-well-top: var(--ink-0);
+  --sc-well-bottom: var(--ink-1);
+  --sc-light-weight: 12%;
+  --sc-stroke: var(--text);
+}
+html:root[data-theme='blue'] {
+  --ink-0: #101e2e;
+  --ink-1: #162b3c;
+  --ink-2: #263e50;
+  --ink-3: #3b566b;
+  --ink-4: #608496;
+  --ink-5: #c3e2ea;
+  --lg-edge: #0d1a25;
+  --lg-control: #29465a;
+  --lg-primary: #dcebef;
+  --lg-secondary: #bbd2d5;
+}
