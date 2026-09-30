@@ -307,3 +307,7 @@ DecisionReview reads the current action history plus matching stored DecisionNot
 Existing newGame/chooseBot/playerView already implement real blind deductions, turn order and selection of the highest sampled net return using only the acting player's hand and public information. Added tests verify both table sizes, all six privacy boundaries and every persona's argmax selection. No engine/worker change was needed. The model still does not solve future betting or all possible raise sizes.
 
 Table now labels SB/BB from the existing blind configuration and only reveals live opponents at contested showdowns, matching tournament behavior. The post-hand history keeps other cards hidden by default; a separate study checkbox enables x-ray after the hand. Card visibility and review UI change; pot settlement, RNG, betting rules and the original protected tests remain unchanged.
+
+## Release verification and documentation
+
+The September 30 audit separates exact enumeration, sampled estimates and teaching abstractions in [MATH_AUDIT.md](MATH_AUDIT.md). Passing checks is evidence for the implemented models, not a claim of complete Hold’em strategy coverage. README now describes the current Svelte application and actual hash routes instead of accumulating phase notes. Dated performance measurements moved to BENCHMARKS.md without being rerun. The audit adds screenshots and documentation only; the 173 protected files remain unchanged.

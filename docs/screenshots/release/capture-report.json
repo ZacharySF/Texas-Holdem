@@ -1,0 +1,107 @@
+[
+  {
+    "file": "docs/screenshots/release/home-1440.png",
+    "route": "#/play",
+    "width": 1440,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "file": "docs/screenshots/release/course-1440.png",
+    "route": "#/learn",
+    "width": 1440,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "file": "docs/screenshots/release/lesson-1440.png",
+    "route": "#/learn/12-2",
+    "width": 1440,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "file": "docs/screenshots/release/drills-1440.png",
+    "route": "#/arcade",
+    "width": 1440,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "file": "docs/screenshots/release/tools-1440.png",
+    "route": "#/lab",
+    "width": 1440,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "file": "docs/screenshots/release/progress-1440.png",
+    "route": "#/stats",
+    "width": 1440,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "file": "docs/screenshots/release/practice-1440.png",
+    "route": "#/play (active hand)",
+    "width": 1440,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "file": "docs/screenshots/release/fullscreen-1440.png",
+    "route": "#/play (fullscreen)",
+    "width": 1440,
+    "idleSampleMs": 3000,
+    "longTasks": []
+  },
+  {
+    "file": "docs/screenshots/release/home-390.png",
+    "route": "#/play",
+    "width": 390,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "file": "docs/screenshots/release/course-390.png",
+    "route": "#/learn",
+    "width": 390,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "file": "docs/screenshots/release/lesson-390.png",
+    "route": "#/learn/12-2",
+    "width": 390,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "file": "docs/screenshots/release/drills-390.png",
+    "route": "#/arcade",
+    "width": 390,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "file": "docs/screenshots/release/tools-390.png",
+    "route": "#/lab",
+    "width": 390,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "file": "docs/screenshots/release/progress-390.png",
+    "route": "#/stats",
+    "width": 390,
+    "horizontalOverflow": false,
+    "errors": []
+  },
+  {
+    "file": "docs/screenshots/release/practice-390.png",
+    "route": "#/play (active hand)",
+    "width": 390,
+    "horizontalOverflow": false,
+    "errors": []
+  }
+]

@@ -439,3 +439,12 @@ No protected game, lesson, state or routing changes; engine benchmarks were not 
 - [x] Verify existing blind posting, private player views and best-estimated-action selection for all personas.
 
 Bots maximize modeled sampled chip returns; they are not a solved GTO strategy. No engine algorithm or benchmark change.
+
+## September 30 release audit
+
+- [x] Rerun the unit suite with coverage and the exhaustive seven-card verifier.
+- [x] Map all 53 lessons to mathematical test evidence and document model limits.
+- [x] Rerun browser flows, typecheck, lint, production build and contrast checks.
+- [x] Replace the accumulated README updates with a current guide and desktop/phone screenshots.
+
+See [MATH_AUDIT.md](MATH_AUDIT.md) for counts and caveats. Historical performance measurements previously in README now live in [BENCHMARKS.md](BENCHMARKS.md). No engine or lesson changes were needed.
