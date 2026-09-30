@@ -311,3 +311,7 @@ Table now labels SB/BB from the existing blind configuration and only reveals li
 ## Release verification and documentation
 
 The September 30 audit separates exact enumeration, sampled estimates and teaching abstractions in [MATH_AUDIT.md](MATH_AUDIT.md). Passing checks is evidence for the implemented models, not a claim of complete Hold’em strategy coverage. README now describes the current Svelte application and actual hash routes instead of accumulating phase notes. Dated performance measurements moved to BENCHMARKS.md without being rerun. The audit adds screenshots and documentation only; the 173 protected files remain unchanged.
+
+## Pending fullscreen cancellation
+
+Native fullscreen is asynchronous. The presentation class can update before the browser resolves its request, so ignoring input while pending lost a rapid second F press. PlayViewport now records toggle intent during entry and leaves once that request settles; Escape requests cancellation explicitly. This touches local presentation state only. A controlled pending-promise browser test reproduces the original failure without timing sleeps. Existing tests remain unchanged, and CI retains failed browser traces for diagnosis.

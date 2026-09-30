@@ -75,7 +75,7 @@ node scripts/contrast-check.mjs
 npm run verify:7card
 ```
 
-The September 30, 2026 audit passed 119 unit tests and 78 Chromium browser checks across desktop and phone layouts. Engine coverage was 99.22% statements, 98.47% branches, 100% functions, and 99.34% lines. Typecheck, lint, build, and contrast checks passed too.
+The September 30, 2026 audit passed 119 unit tests and 82 Chromium browser checks across desktop and phone layouts. Engine coverage was 99.22% statements, 98.47% branches, 100% functions, and 99.34% lines. Typecheck, lint, build, and contrast checks passed too.
 
 The slow verifier counted all 133,784,560 seven-card combinations and compared another million seeded hands with the independent reference evaluator. The regular suite also exhausts all 2,598,960 five-card hands. These are checks of the implemented calculations, not a claim that all poker strategy has been solved. The [audit](docs/MATH_AUDIT.md) maps the course to its tests and records the limits.
 
@@ -83,7 +83,7 @@ Pushes to main run GitHub Actions checks and deploy Pages after they pass. CI ru
 
 ## Under the hood
 
-The seeded xoshiro128** generator makes experiments reproducible. Bounded draws use rejection sampling; deals use Fisher–Yates without replacement. New seeds come from browser crypto outside the engine. This is reproducible randomness, not a cryptographic game server.
+The seeded `xoshiro128**` generator makes experiments reproducible. Bounded draws use rejection sampling; deals use Fisher–Yates without replacement. New seeds come from browser crypto outside the engine. This is reproducible randomness, not a cryptographic game server.
 
 Practice commits a SHA-256 hash before dealing and reveals the seed afterward. Saved hands include actions for replay. Analysis uses separate derived seeds. This helps inspect a local hand; it isn't protection against someone controlling their own browser.
 

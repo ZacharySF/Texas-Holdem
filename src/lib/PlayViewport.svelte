@@ -6,6 +6,7 @@
   let toggle = $state<HTMLButtonElement>();
   let expanded = $state(false);
   let pending = $state(false);
+  let cancelEntry = false;
   let notice = $state('');
   let mounted = false;
 
@@ -25,8 +26,15 @@
   }
 
   async function toggleFullscreen() {
+    // Browser entry can outlast the next keypress. Remember the user's final
+    // intent instead of discarding F while requestFullscreen is unresolved.
+    if (pending) {
+      cancelEntry = !cancelEntry;
+      return;
+    }
     if (expanded) return leave();
     pending = true;
+    cancelEntry = false;
     notice = '';
     expanded = true;
     if (viewport.requestFullscreen && document.fullscreenEnabled) {
@@ -44,6 +52,10 @@
         'Browser fullscreen is unavailable. The table is expanded in this window.';
     }
     pending = false;
+    if (mounted && cancelEntry) {
+      cancelEntry = false;
+      await leave();
+    }
   }
 
   onMount(() => {
@@ -67,7 +79,6 @@
       if (
         event.key.toLowerCase() === 'f' &&
         enabled &&
-        !pending &&
         !typing &&
         !event.repeat &&
         !event.ctrlKey &&
@@ -80,7 +91,8 @@
       }
       if (event.key === 'Escape' && expanded && !document.fullscreenElement) {
         event.preventDefault();
-        void leave();
+        if (pending) cancelEntry = true;
+        else void leave();
       }
     };
     document.addEventListener('fullscreenchange', sync);

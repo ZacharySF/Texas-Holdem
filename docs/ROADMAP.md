@@ -448,3 +448,11 @@ Bots maximize modeled sampled chip returns; they are not a solved GTO strategy. 
 - [x] Replace the accumulated README updates with a current guide and desktop/phone screenshots.
 
 See [MATH_AUDIT.md](MATH_AUDIT.md) for counts and caveats. Historical performance measurements previously in README now live in [BENCHMARKS.md](BENCHMARKS.md). No engine or lesson changes were needed.
+
+## Fullscreen entry timing
+
+- [x] Retain F/Escape exit intent while the browser's fullscreen request is still pending.
+- [x] Reproduce the race with a controlled pending request and add desktop/phone regression checks.
+- [x] Keep browser failure traces in CI for investigating future runner-only failures.
+
+No existing assertion, timeout, engine calculation or tournament rule changed.

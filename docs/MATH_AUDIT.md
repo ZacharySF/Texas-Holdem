@@ -13,7 +13,7 @@ Audited September 30, 2026 against the current Svelte application. This checks t
 | TypeScript and Svelte                       | Passed, zero errors and warnings    |
 | ESLint and Prettier                         | Passed                              |
 | Production build                            | Passed                              |
-| Chromium browser suite                      | 78 passed: 39 desktop, 39 phone     |
+| Chromium browser suite                      | 82 passed: 41 desktop, 41 phone     |
 | Palette and composite contrast checks       | Passed                              |
 | Exhaustive seven-card category counts       | All 133,784,560 combinations passed |
 | Independent seven-card reference comparison | 1,000,000 seeded hands passed       |
@@ -95,8 +95,12 @@ Tournament tests cover absolute decision deadlines, timeout check/fold, level ch
 
 ## Change boundary
 
-This audit changed documentation and captured screenshots. It did not alter poker logic, probability algorithms, lessons, state, routing or existing tests. All 173 files in the [protected inventory](../src/decor/LOGIC-LOCK.md) matched their saved hashes. Engine benchmarks were retained as dated records in [BENCHMARKS.md](BENCHMARKS.md), not represented as rerun.
+The initial audit changed documentation and captured screenshots. Its first GitHub run then exposed a fullscreen timing bug: a second F press could be discarded while browser entry was pending. The follow-up preserves that exit intent, including Escape, in the presentation wrapper and adds deterministic browser regression checks. Existing tests and thresholds were not weakened. Failure traces are now retained by CI. Poker logic, probability algorithms, lessons, application stores and routing are unchanged. All 173 files in the [protected inventory](../src/decor/LOGIC-LOCK.md) matched their saved hashes. Engine benchmarks were retained as dated records in [BENCHMARKS.md](BENCHMARKS.md), not represented as rerun.
 
 ## Screenshot check
 
 Fifteen fresh captures cover the six main routes, the pot-odds lesson and active practice at desktop and phone sizes, plus fullscreen practice. No JavaScript page errors or horizontal overflow were recorded in the sampled normal views. The three-second fullscreen idle sample recorded no tasks over 50 ms. See the [screenshots and capture report](screenshots/release/README.md).
+
+## First remote run
+
+The first GitHub run passed lint, typecheck, coverage and build, then failed two browser checks. The fullscreen failure was reproduced with a deliberately unresolved browser request; the regression failed before the fix and passed afterward. The tournament flow also hit its total test deadline while returning to practice. It passed locally again with fourfold CPU throttling in 31 seconds; no tournament rule or timer was changed to accommodate it. Retained CI traces will make any recurrence inspectable.
