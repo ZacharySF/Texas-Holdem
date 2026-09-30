@@ -2,6 +2,7 @@
   import type { Game, Action } from '../../engine/game';
   import PlayingCards from '../../ui/PlayingCards.svelte';
   import PixiTable from './PixiTable.svelte';
+  import FullscreenStars from '../../lib/FullscreenStars.svelte';
   import ChipStack from '../../lib/ChipStack.svelte';
   let {
     game,
@@ -21,6 +22,20 @@
     tournament?: boolean;
   } = $props();
   const last = $derived(game.history.at(-1));
+  const smallBlindSeat = $derived(
+    game.config.tournamentBlinds
+      ? game.config.tournamentBlinds.small
+      : game.players.length === 2
+        ? game.config.button
+        : (game.config.button + 1) % game.players.length,
+  );
+  const bigBlindSeat = $derived(
+    game.config.tournamentBlinds?.big ??
+      ((smallBlindSeat ?? 0) + 1) % game.players.length,
+  );
+  const showdown = $derived(
+    game.complete && game.players.filter((player) => !player.folded).length > 1,
+  );
 </script>
 
 <section
@@ -28,6 +43,7 @@
   aria-label="Poker table"
 >
   <PixiTable />
+  {#if !tournament}<FullscreenStars />{/if}
   <div class="table-center">
     <span class="table-street"
       >{game.complete ? 'HAND COMPLETE' : game.street.toUpperCase()}</span
@@ -70,26 +86,24 @@
                 title="Dealer button"
                 aria-label="Dealer button">D</span
               >{/if}
+            {#if seat === smallBlindSeat}<span
+                class="blind-position"
+                aria-label="Small blind"
+                title={`Small blind: ${game.config.smallBlind}`}>SB</span
+              >{/if}
+            {#if seat === bigBlindSeat}<span
+                class="blind-position"
+                aria-label="Big blind"
+                title={`Big blind: ${game.config.bigBlind}`}>BB</span
+              >{/if}
           </h2>
           <span class="seat-stack">{player.stack.toLocaleString()} chips</span>
         </div>
       </div>
       <div class="seat-cards-and-chips">
         <PlayingCards
-          cards={seat === 0 ||
-          (game.complete &&
-            (!tournament ||
-              (!player.folded &&
-                game.players.filter((p) => !p.folded).length > 1)))
-            ? player.hand
-            : []}
-          hidden={seat !== 0 &&
-          (!game.complete ||
-            (tournament &&
-              (player.folded ||
-                game.players.filter((p) => !p.folded).length === 1)))
-            ? 2
-            : 0}
+          cards={seat === 0 || (showdown && !player.folded) ? player.hand : []}
+          hidden={seat !== 0 && (!showdown || player.folded) ? 2 : 0}
         />
         <ChipStack amount={player.stack} compact />
       </div>

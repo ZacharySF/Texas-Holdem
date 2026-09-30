@@ -7,6 +7,35 @@
   import { navigation, navigate } from './navigation.svelte';
   import { fourColorDeck, theme } from './visual/display';
   import { themes, isTheme, type ThemeId } from './lib/themes';
+  import DeckPreview from './lib/DeckPreview.svelte';
+  let displaySettings: HTMLDetailsElement;
+  function closeDisplay(restoreFocus = false) {
+    displaySettings.open = false;
+    if (restoreFocus)
+      displaySettings.querySelector('summary')?.focus({ preventScroll: true });
+  }
+  onMount(() => {
+    const dismiss = (event: PointerEvent) => {
+      if (
+        displaySettings.open &&
+        event.target instanceof Node &&
+        !displaySettings.contains(event.target)
+      )
+        closeDisplay();
+    };
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && displaySettings.open) {
+        event.preventDefault();
+        closeDisplay(true);
+      }
+    };
+    document.addEventListener('pointerdown', dismiss);
+    document.addEventListener('keydown', escape);
+    return () => {
+      document.removeEventListener('pointerdown', dismiss);
+      document.removeEventListener('keydown', escape);
+    };
+  });
   const modes = [
     ['play', 'Play'],
     ['learn', 'Course'],
@@ -134,7 +163,7 @@
 <DecorShell><Routes {homeVisit} /></DecorShell>
 
 <div class="display-dock">
-  <details class="settings" id="display-settings">
+  <details class="settings" id="display-settings" bind:this={displaySettings}>
     <summary>Display</summary>
     <div class="display-menu sc-glass sc-glass--live">
       <span>Choose a theme</span>
@@ -150,6 +179,10 @@
       >
       <label
         ><input type="checkbox" bind:checked={fourColor} /> Four-color deck</label
+      >
+      <DeckPreview />
+      <button class="display-done" onclick={() => closeDisplay(true)}
+        >Done</button
       >
     </div>
   </details>

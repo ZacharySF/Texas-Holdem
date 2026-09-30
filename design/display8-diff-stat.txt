@@ -1,0 +1,60 @@
+ README.md                                       |   6 +-
+ design/DISPLAY8_NOTES.md                        |  26 +++++++
+ design/display8-performance.json                |   4 ++
+ design/shots/display8/fullscreen-1440.png       | Bin 0 -> 455123 bytes
+ design/shots/display8/last-decision.png         | Bin 0 -> 122741 bytes
+ design/shots/display8/menu-1440.png             | Bin 0 -> 1348811 bytes
+ design/shots/display8/menu-390.png              | Bin 0 -> 329585 bytes
+ design/shots/display8/progress-1440.png         | Bin 0 -> 1296534 bytes
+ design/shots/display8/progress-390.png          | Bin 0 -> 290874 bytes
+ design/shots/display8/progress-firefox-1440.png | Bin 0 -> 1545108 bytes
+ design/shots/display8/regular-table.png         | Bin 0 -> 273634 bytes
+ docs/ARCHITECTURE.md                            |  18 +++++
+ docs/ROADMAP.md                                 |  19 ++++++
+ e2e/display-plate.spec.ts                       |  82 ++++++++++++++++++++++
+ e2e/play-viewport.spec.ts                       |  27 ++------
+ e2e/theme-chips.spec.ts                         |  87 +++++++++++++++++++++---
+ public/cards/10_of_clubs-four.svg               |  12 ++--
+ public/cards/10_of_diamonds-four.svg            |  12 ++--
+ public/cards/2_of_clubs-four.svg                |   8 +--
+ public/cards/2_of_diamonds-four.svg             |  10 +--
+ public/cards/3_of_clubs-four.svg                |   8 +--
+ public/cards/3_of_diamonds-four.svg             |  10 +--
+ public/cards/4_of_clubs-four.svg                |   8 +--
+ public/cards/4_of_diamonds-four.svg             |  10 +--
+ public/cards/5_of_clubs-four.svg                |   8 +--
+ public/cards/5_of_diamonds-four.svg             |  10 +--
+ public/cards/6_of_clubs-four.svg                |   8 +--
+ public/cards/6_of_diamonds-four.svg             |  10 +--
+ public/cards/7_of_clubs-four.svg                |   8 +--
+ public/cards/7_of_diamonds-four.svg             |  10 +--
+ public/cards/8_of_clubs-four.svg                |   8 +--
+ public/cards/8_of_diamonds-four.svg             |  10 +--
+ public/cards/9_of_clubs-four.svg                |   8 +--
+ public/cards/9_of_diamonds-four.svg             |  10 +--
+ public/cards/ace_of_clubs-four.svg              |   8 +--
+ public/cards/ace_of_diamonds-four.svg           |  10 +--
+ public/cards/jack_of_clubs-four.svg             |   8 +--
+ public/cards/jack_of_diamonds-four.svg          |  10 +--
+ public/cards/king_of_clubs-four.svg             |   8 +--
+ public/cards/king_of_diamonds-four.svg          |  10 +--
+ public/cards/queen_of_clubs-four.svg            |   8 +--
+ public/cards/queen_of_diamonds-four.svg         |  10 +--
+ scripts/lounge-contrast.mjs                     |   2 +-
+ src/App.svelte                                  |  35 +++++++++-
+ src/features/play/CoachSidebar.svelte           |   3 +
+ src/features/play/HistoryPanel.svelte           |  20 ++++--
+ src/features/play/Play.svelte                   |   6 +-
+ src/features/play/Table.svelte                  |  42 ++++++++----
+ src/lib/DecisionReview.svelte                   |  61 +++++++++++++++++
+ src/lib/DeckPreview.svelte                      |  15 ++++
+ src/lib/FullscreenStars.svelte                  |   6 +-
+ src/lib/PlayViewport.svelte                     |  18 ++---
+ src/lib/softclub/Atmosphere.svelte              |  21 ++++++
+ src/lib/table-realism.test.ts                   |  60 ++++++++++++++++
+ src/lib/themes.ts                               |   2 +-
+ src/styles/compact-play.css                     |  13 +++-
+ src/styles/fullscreen-terminal.css              |  48 +++++++++++--
+ src/styles/lounge-refinements.css               |  13 ++++
+ src/styles/theme-options.css                    |  66 ++++++++++++++++++
+ 59 files changed, 744 insertions(+), 196 deletions(-)

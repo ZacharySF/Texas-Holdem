@@ -420,3 +420,22 @@ Engine benchmarks, game rules and lesson content remain unchanged.
 - [x] Verify the existing Last decision assessment and next-hand reset in browser coverage.
 
 No engine, lesson, tournament-rule or protected-file changes; performance benchmarks were not rerun.
+
+## Display settings clarity
+
+- [x] Rename the visible Anime theme to Purple while retaining saved preferences.
+- [x] Show a live deck preview and use clearly distinct green clubs / blue diamonds.
+- [x] Close settings with Done, Escape or outside click.
+- [x] Apply transparent line art to Progress and other backgrounds without changing Play's artwork.
+
+No protected game, lesson, state or routing changes; engine benchmarks were not rerun.
+
+## Practice feedback and realism follow-up
+
+- [x] Make dotted star parallax visible inside normal and fullscreen practice, without changing the site background.
+- [x] Remove fullscreen's top controls; retain F/Escape and focus restoration.
+- [x] Show the actual last action, street and saved estimate rather than only generic feedback.
+- [x] Label SB/BB and keep folded/uncontested hands hidden until explicit post-hand study.
+- [x] Verify existing blind posting, private player views and best-estimated-action selection for all personas.
+
+Bots maximize modeled sampled chip returns; they are not a solved GTO strategy. No engine algorithm or benchmark change.

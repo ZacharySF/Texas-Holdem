@@ -5,10 +5,12 @@
     odds,
     feedback,
     course,
+    decision,
   }: {
     odds: Snippet<[topic: 'odds' | 'equity']>;
     feedback: string;
     course?: Snippet;
+    decision?: Snippet;
   } = $props();
   let open = $state.raw(false);
   let tab = $state.raw<'odds' | 'equity' | 'review'>('odds');
@@ -81,6 +83,7 @@
       <p>
         <a href="#/lab/charts">Hand charts & poker reference →</a>
       </p>{/if}{#if tab === 'review'}<h3>Your last choice</h3>
+      {@render decision?.()}
       <p>
         {feedback ||
           'Make a decision first. When an estimate is ready, I’ll compare your choice with the simple model here.'}

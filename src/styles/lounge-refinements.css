@@ -142,3 +142,16 @@
     border-color: ButtonText;
   }
 }
+
+/* Match the lobby's transparent ink on other routes; its home layer is untouched. */
+#root .lounge-figure-depth {
+  mix-blend-mode: screen;
+}
+#root .lounge-figure-depth > .lg-figure {
+  filter: url('#lounge-atmosphere-ink');
+  mix-blend-mode: normal;
+}
+#root .atmosphere-ink-filter {
+  position: absolute;
+  pointer-events: none;
+}

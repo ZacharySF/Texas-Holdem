@@ -47,6 +47,7 @@
   import './play.css';
   import Home from './Home.svelte';
   import PlayViewport from '../../lib/PlayViewport.svelte';
+  import DecisionReview from '../../lib/DecisionReview.svelte';
   import { navigation } from '../../navigation.svelte';
   import { untrack } from 'svelte';
   function readProfile(): Profile {
@@ -785,7 +786,10 @@
           </section>{/if}
       </div>
       {#if game}<CoachSidebar feedback={grade}
-          >{#snippet course()}{#if courseLesson}<section
+          >{#snippet decision()}{#if game}<DecisionReview
+                {game}
+                readNotes={() => notes}
+              />{/if}{/snippet}{#snippet course()}{#if courseLesson}<section
                 class="coach-course-focus"
               >
                 <span class="course-reference"

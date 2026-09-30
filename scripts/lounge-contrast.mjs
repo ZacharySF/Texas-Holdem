@@ -89,7 +89,7 @@ export function checkLoungeContrast(contrast) {
       4.5,
     );
     report('focus outline', tokens['--cyan'], hex(glass), 3);
-    for (const color of ['#854746', '#285e77', '#426653', '#22384a'])
+    for (const color of ['#854746', '#005cb8', '#006b38', '#22384a'])
       report('card rank/suit', color, tokens['--lg-slate'], 4.5);
   }
   return pass;

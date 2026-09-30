@@ -34,25 +34,10 @@ test('practice fullscreen keeps the live hand mounted and exits through browser 
   expect(await page.locator('.commitment-current code').textContent()).toBe(
     commitment,
   );
-  if (page.viewportSize()!.width >= 900) {
-    await page.locator('.play-viewport').evaluate((element) => {
-      element.scrollTop = 200;
-    });
-    await expect
-      .poll(async () => {
-        const controls = await page
-          .locator('.play-view-controls')
-          .boundingBox();
-        const coach = await page.locator('.coach-sidebar').boundingBox();
-        return coach!.y >= controls!.y + controls!.height;
-      })
-      .toBe(true);
-  }
+  await expect(page.locator('.play-view-controls')).toHaveCount(0);
   await page.getByRole('button', { name: /^Fold/ }).click();
   await expect(page.getByRole('region', { name: 'Hand result' })).toBeVisible();
-  await page
-    .getByRole('button', { name: 'Exit fullscreen', exact: true })
-    .click();
+  await page.keyboard.press('f');
   await expect
     .poll(() => page.evaluate(() => document.fullscreenElement))
     .toBeNull();
@@ -86,7 +71,7 @@ test('expanded fallback supports Escape, keyboard isolation and route cleanup', 
     page.getByText(
       'Browser fullscreen is unavailable. The table is expanded in this window.',
     ),
-  ).toBeVisible();
+  ).toBeAttached();
   await expect(page.locator('.play-viewport')).toHaveClass(/play-expanded/);
   for (let n = 0; n < 12; n++) {
     await page.keyboard.press('Tab');
@@ -131,12 +116,10 @@ test('denied fullscreen uses the fallback without interrupting play', async ({
     page.getByText(
       'Browser fullscreen is unavailable. The table is expanded in this window.',
     ),
-  ).toBeVisible();
+  ).toBeAttached();
   await page.getByRole('button', { name: /^Fold/ }).click();
   await expect(page.getByRole('region', { name: 'Hand result' })).toBeVisible();
-  await page
-    .getByRole('button', { name: 'Exit fullscreen', exact: true })
-    .click();
+  await page.keyboard.press('f');
   await expect(page.locator('.play-viewport')).not.toHaveClass(/play-expanded/);
 });
 

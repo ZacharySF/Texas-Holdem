@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { onMount, type Snippet } from 'svelte';
-  import FullscreenStars from './FullscreenStars.svelte';
+  import { onMount, tick, type Snippet } from 'svelte';
 
   let { enabled, children }: { enabled: boolean; children: Snippet } = $props();
   let viewport: HTMLDivElement;
@@ -21,6 +20,7 @@
     }
     expanded = false;
     notice = '';
+    await tick();
     toggle?.focus({ preventScroll: true });
   }
 
@@ -52,7 +52,9 @@
       expanded = document.fullscreenElement === viewport;
       if (!expanded) {
         notice = '';
-        toggle?.focus({ preventScroll: true });
+        void tick().then(() => {
+          if (mounted) toggle?.focus({ preventScroll: true });
+        });
       }
     };
     const escape = (event: KeyboardEvent) => {
@@ -119,19 +121,17 @@
 </script>
 
 <div bind:this={viewport} class="play-viewport" class:play-expanded={expanded}>
-  {#if expanded}<FullscreenStars />{/if}
-  {#if enabled}
+  {#if notice}<span class="fullscreen-notice" role="status">{notice}</span>{/if}
+  {#if enabled && !expanded}
     <div class="play-view-controls">
-      {#if notice}<span role="status">{notice}</span>{/if}
       <button
         bind:this={toggle}
         type="button"
         aria-pressed={expanded}
         aria-keyshortcuts="F"
-        title={expanded ? 'Exit fullscreen (F)' : 'Fullscreen (F)'}
+        title="Fullscreen (F)"
         disabled={pending}
-        onclick={() => void toggleFullscreen()}
-        >{expanded ? 'Exit fullscreen' : 'Fullscreen'}</button
+        onclick={() => void toggleFullscreen()}>Fullscreen</button
       >
     </div>
   {/if}

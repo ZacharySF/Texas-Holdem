@@ -32,6 +32,27 @@
   style:--sc-light-origin={preset.light}
   aria-hidden="true"
 >
+  <svg
+    class="atmosphere-ink-filter"
+    width="0"
+    height="0"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <defs>
+      <filter id="lounge-atmosphere-ink" color-interpolation-filters="sRGB">
+        <feColorMatrix
+          in="SourceGraphic"
+          type="matrix"
+          values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -0.2126 -0.7152 -0.0722 0 1"
+          result="tone"
+        />
+        <feComposite in="tone" in2="SourceAlpha" operator="in" result="ink" />
+        <feFlood flood-color="var(--text)" />
+        <feComposite in2="ink" operator="in" />
+      </filter>
+    </defs>
+  </svg>
   <div class="sc-atmosphere-base" aria-hidden="true"></div>
   <div class="sc-atmosphere-light" aria-hidden="true"></div>
   <div class="sc-atmosphere-haze" aria-hidden="true">

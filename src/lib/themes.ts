@@ -5,7 +5,7 @@ export const themes = [
   { id: 'night', label: 'Dark' },
   { id: 'darker', label: 'Darker' },
   { id: 'green', label: 'Green' },
-  { id: 'anime', label: 'Anime' },
+  { id: 'anime', label: 'Purple' },
   { id: 'amber', label: 'Amber' },
   { id: 'ocean', label: 'Ocean' },
 ] as const;

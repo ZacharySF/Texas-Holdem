@@ -217,8 +217,8 @@ html body,
   background: var(--ink-0);
 }
 #root .play.in-game .play-expanded .coach-sidebar {
-  top: 80px;
-  max-height: calc(100dvh - 112px);
+  top: 16px;
+  max-height: calc(100dvh - 32px);
 }
 #root .play-viewport::backdrop {
   background: var(--ink-0);
@@ -241,4 +241,13 @@ html body,
     background: Canvas;
     color: CanvasText;
   }
+}
+
+#root .fullscreen-notice {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }

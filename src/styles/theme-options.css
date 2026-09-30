@@ -309,3 +309,69 @@ html:root[data-theme='ocean'] {
     stroke: CanvasText;
   }
 }
+
+/* Display previews use the same assets and deck store as the table. */
+#root .display-menu .deck-preview {
+  margin-block: 8px 12px;
+}
+#root .display-menu .deck-preview .playing-cards {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 8px;
+}
+#root .display-menu .deck-preview .playing-card {
+  width: 40px;
+  height: 58px;
+  min-height: 0;
+  padding: 0;
+  animation: none;
+}
+#root .display-menu .deck-preview p {
+  color: var(--text);
+  font: 12px/1.5 var(--f-body);
+  margin: 8px 0 0;
+}
+#root .display-menu .display-done {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px;
+}
+#root .display-menu input[type='checkbox'] {
+  appearance: auto;
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  background: none;
+  box-shadow: none;
+  accent-color: var(--cyan);
+}
+
+#root .decision-review {
+  border-block: 1px solid var(--lg-rim);
+  padding-block: 12px;
+  margin-block: 12px;
+}
+#root .decision-review .decision-action {
+  margin: 0 0 12px;
+}
+#root .decision-review dl {
+  margin: 0;
+}
+#root .decision-review dl > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  margin-block: 8px;
+  font-size: 12px;
+}
+#root .decision-review dd {
+  margin: 0;
+  font-family: var(--f-mono);
+  font-variant-numeric: tabular-nums;
+}
+#root .blind-position {
+  display: inline;
+  margin-left: 4px;
+  font: 11px/1.5 var(--f-mono);
+  color: var(--text);
+}

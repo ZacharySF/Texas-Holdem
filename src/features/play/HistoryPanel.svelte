@@ -11,6 +11,7 @@
   import { untrack } from 'svelte';
 
   let { hand }: { hand: SavedHand } = $props();
+  let revealHidden = $state(false);
   let step = $state.raw(untrack(() => hand.actions.length));
   let street = $state.raw<Street>('preflop');
   let result = $state.raw<PayoutResult | null>(null);
@@ -114,14 +115,23 @@
   <h2>Hand history, replay, and x-ray</h2>
   <p>{new Date(hand.date).toLocaleString()} · {hand.persona}</p>
   <p class="hint">
-    All hands are revealed because this hand has ended. Replays preserve the
-    recorded actions.
+    Replays preserve the recorded actions. Folded and uncontested hands stay
+    hidden unless you reveal them for post-hand study.
   </p>
+  <label
+    ><input type="checkbox" bind:checked={revealHidden} /> Reveal hidden hands for
+    post-hand study</label
+  >
   <div class="replay-hands">
-    {#each final.players as p, i (i)}<div>
+    {#each final.players as p, i (i)}{@const visible =
+        i === 0 ||
+        revealHidden ||
+        (!p.folded &&
+          final.players.filter((player) => !player.folded).length > 1)}
+      <div>
         <h3>{i === 0 ? 'You' : `Seat ${i + 1}`}</h3>
-        <PlayingCards cards={p.hand}
-        ></PlayingCards>{#if final.board.length >= 3}<p>
+        <PlayingCards cards={visible ? p.hand : []} hidden={visible ? 0 : 2}
+        ></PlayingCards>{#if visible && final.board.length >= 3}<p>
             {evaluateReference([...p.hand, ...final.board]).name}
           </p>{/if}
       </div>{/each}

@@ -17,7 +17,7 @@ test('nine themes persist, surprise chooses another, and the top rail has no Dis
     ['Green', 'green'],
     ['Amber', 'amber'],
     ['Ocean', 'ocean'],
-    ['Anime', 'anime'],
+    ['Purple', 'anime'],
   ]) {
     await options.getByRole('button', { name: label, exact: true }).click();
     await expect(page.locator('html')).toHaveAttribute('data-theme', id);
@@ -61,9 +61,8 @@ test('F toggles practice fullscreen but does not intercept editing or repeats', 
     .locator('#raise-to')
     .evaluate((element) => (element as HTMLElement).blur());
   await page.keyboard.press('f');
-  await expect(
-    page.getByRole('button', { name: 'Exit fullscreen', exact: true }),
-  ).toBeVisible();
+  await expect(page.locator('.play-viewport')).toHaveClass(/play-expanded/);
+  await expect(page.locator('.play-view-controls')).toHaveCount(0);
   await page.keyboard.press('f');
   await expect(page.locator('.play-viewport')).not.toHaveClass(/play-expanded/);
   await page.evaluate(() =>
@@ -90,7 +89,7 @@ test('pot and personal chip graphics follow live bets and selected theme colors'
     .locator('.chip-face')
     .first()
     .evaluate((element) => getComputedStyle(element).fill);
-  await page.getByRole('button', { name: 'Anime', exact: true }).click();
+  await page.getByRole('button', { name: 'Purple', exact: true }).click();
   await expect
     .poll(() =>
       mine
@@ -155,6 +154,12 @@ test('Last decision shows a computed assessment and resets on the next hand', as
   await page
     .getByRole('button', { name: 'Last decision', exact: true })
     .click();
+  await expect(
+    page.getByRole('region', { name: 'Last decision details' }),
+  ).toContainText('Folded');
+  await expect(
+    page.getByRole('region', { name: 'Last decision details' }),
+  ).toContainText('Equity when you acted');
   await expect(page.locator('.coach-topic')).toContainText(
     /Close to the best direct-odds option|chips below the best modeled option/,
   );
@@ -197,7 +202,7 @@ test('all six chip stacks sit beside cards and match their visible balances', as
   }
 });
 
-test('stars are confined to fullscreen, respond to the pointer, and respect reduced motion', async ({
+test('stars stay in the practice table in normal and fullscreen play and respect reduced motion', async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
@@ -205,9 +210,10 @@ test('stars are confined to fullscreen, respond to the pointer, and respect redu
   await page.goto('/#/play');
   await expect(page.locator('.fullscreen-stars')).toHaveCount(0);
   await page.getByRole('button', { name: 'Take a seat & play' }).click();
-  await expect(page.locator('.fullscreen-stars')).toHaveCount(0);
+  const stars = page.locator('.felt-table > .fullscreen-stars');
+  await expect(stars).toBeVisible();
+  await expect(stars.locator('i')).toHaveCount(300);
   await page.getByRole('button', { name: 'Fullscreen', exact: true }).click();
-  const stars = page.locator('.play-expanded > .fullscreen-stars');
   await expect(stars).toHaveAttribute('aria-hidden', 'true');
   await expect(stars).toHaveCSS('pointer-events', 'none');
   await page.mouse.move(30, 30);
@@ -226,8 +232,69 @@ test('stars are confined to fullscreen, respond to the pointer, and respect redu
     'animation-name',
     'none',
   );
-  await page
-    .getByRole('button', { name: 'Exit fullscreen', exact: true })
-    .click();
+  await page.keyboard.press('f');
+  await expect(stars).toBeVisible();
+  await page.locator('.app-header nav a[href="#/stats"]').click();
   await expect(page.locator('.fullscreen-stars')).toHaveCount(0);
+});
+
+test('Last decision changes from call to fold and keeps its recorded action visible', async ({
+  page,
+}) => {
+  await page.goto('/#/play');
+  await page.getByRole('button', { name: 'Take a seat & play' }).click();
+  const openCoach = page.getByRole('button', {
+    name: 'Open coach · help with this hand',
+  });
+  if (await openCoach.isVisible()) await openCoach.click();
+  await expect(
+    page.getByRole('region', { name: 'Pot odds calculation', exact: true }),
+  ).toBeVisible();
+  await page.getByRole('button', { name: /^Call / }).click();
+  await page
+    .getByRole('button', { name: 'Last decision', exact: true })
+    .click();
+  const details = page.getByRole('region', { name: 'Last decision details' });
+  await expect(details).toContainText('Called');
+  await expect(details).toContainText('Equity when you acted');
+  await page.getByRole('button', { name: /^Fold/ }).click();
+  await expect(details).toContainText('Folded');
+  await expect(details).not.toContainText('Called');
+});
+
+test('blinds are labeled and deducted, and folded hands remain private until explicit post-hand study', async ({
+  page,
+}) => {
+  await page.goto('/#/play');
+  await page.getByRole('button', { name: 'Take a seat & play' }).click();
+  await expect(
+    page.locator('.hero-seat [aria-label="Small blind"]'),
+  ).toBeVisible();
+  await expect(
+    page.locator('.bot-seat [aria-label="Big blind"]'),
+  ).toBeVisible();
+  await expect(page.locator('.hero-seat .seat-stack')).toContainText('1,995');
+  await expect(page.locator('.bot-seat .seat-stack')).toContainText('1,990');
+  await page.getByRole('button', { name: /^Fold/ }).click();
+  await expect(page.getByRole('region', { name: 'Hand result' })).toBeVisible();
+  await expect(
+    page.locator('.bot-seat [aria-label="Hidden opponent card"]'),
+  ).toHaveCount(2);
+  await page.locator('.review-drawer > summary').click();
+  await expect(
+    page.locator('.replay-hands [aria-label="Hidden opponent card"]'),
+  ).toHaveCount(2);
+  await page.getByLabel('Reveal hidden hands for post-hand study').check();
+  await expect(
+    page.locator('.replay-hands [aria-label="Hidden opponent card"]'),
+  ).toHaveCount(0);
+  await page
+    .getByRole('button', { name: 'Deal next hand', exact: true })
+    .click();
+  await expect(
+    page.locator('.hero-seat [aria-label="Big blind"]'),
+  ).toBeVisible();
+  await expect(
+    page.locator('.bot-seat [aria-label="Small blind"]'),
+  ).toBeVisible();
 });
